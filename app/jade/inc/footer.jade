@@ -1,2 +1,72 @@
 footer.footer
-	
+	.footer__top
+		.wrapper
+			.footer-top
+				.footer-top__column
+					a.footer__logo(href="#")
+						img(src="img/footer-logo.png", alt="")
+					.footer__soc
+						.soc
+							a.soc__link(href="#")
+								figure.soc__link-img
+									img(src="img/ico-inst.png")
+								span.soc__link-text Instagram
+							a.soc__link(href="#")
+								figure.soc__link-img
+									img(src="img/ico-vk.png")
+								span.soc__link-text Vkontakte
+							a.soc__link(href="#")
+								figure.soc__link-img
+									img(src="img/ico-fb.png")
+								span.soc__link-text Facebook
+				.footer-top__column
+					.footer__column-title Информация
+					nav.footer__menu
+						ul.f-menu
+							each title in ["О бренде", "Доставка и оплата  ", "Отзывы ", "Оптовикам ", "Контакты", ]
+								li
+									a.f-menu__link(href="#")=title
+				.footer-top__column
+					.footer__column-title Контакты
+					.f-contacts
+						address.f-contacts__phone
+							a(href="tel: 8 (495) 989–20–11") 8 (495) 989–20–11
+						address.f-contacts__phone
+							a(href="tel: 8 (800) 775–05–26") 8 (800) 775–05–26
+						.f-contacts__time 09:00 – 21:00 пн-пт
+						address.f-contacts__mail
+							a(href="mailto: Hello@rocknail.ru") Hello@rocknail.ru
+				.footer-top__column.footer-top__column--big
+					.f-imgs
+						.f-imgs__title
+							.footer__column-title Оплата
+						.f-imgs__list
+							figure.f-imgs__img
+								img(src="img/photos/visa.png", alt="")
+							figure.f-imgs__img
+								img(src="img/photos/mc.png", alt="")
+							figure.f-imgs__img
+								img(src="img/photos/yam.png", alt="")
+							figure.f-imgs__img
+								img(src="img/photos/wm.png", alt="")
+							figure.f-imgs__img
+								img(src="img/photos/qiwi.png", alt="")
+					.f-imgs
+						.f-imgs__title
+							.footer__column-title Доставка
+						.f-imgs__list
+							figure.f-imgs__img
+								img(src="img/photos/cdek.png", alt="")
+							figure.f-imgs__img
+								img(src="img/photos/r-post.png", alt="")
+	.footer__bot
+		.wrapper
+			.footer-bot
+				.footer__copy
+					.copy
+						div Все права защищены
+						div Все цены указаны в рублях с учётом НДС
+				.footer__design
+					.design
+						span.design__text Дизайн сайта —&nbsp;
+						a.design__link(href="#" target="_blank") PASEKA

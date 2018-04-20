@@ -23,10 +23,36 @@ header.head
 				address.head-phone
 					a(href="tel: 8 800 569 89 89") 8 800 569 89 89
 			.head__search
-				a.search-link(href="#")
+				button.search-button
+				.search
+					.search__form
+						form(action="#")
+							.search__form-input
+								input(type="search" placeholder="Более 550 оттенков")
+					.search__close
+						button.search-close
 			.head__favorite
-				a.favorite-link(href="#")
+				a.favorite-link(href="#", data-count="1")
 			.head__lc
 				a.lc-link(href="#")
 			.head__cart
-				a.cart-link(href="#", data-count="")
+				.head__cart-wrap
+					a.cart-link(href="#", data-count="15")
+				.cart-line
+					.cart-line__title Ваша корзина
+					.cart-line__content
+						.small-cart
+							- for (let i = 0; i <= 10; i++)
+								.small-cart__one
+									.tovar-small
+										a.tovar-small__img
+											img(src="img/photos/nail.png")
+										.tovar-small__desc
+											a.tovar-small__desc-title(href="#") Гель-лак Rock Nail Baby Nude
+											.tovar-small__desc-bot
+												.tovar-small__desc-info 045 Blue Ocean
+												.tovar-small__desc-price 1 x 250 Р
+					.cart-line__footer
+						.cart-line__footer-total
+						.cart-line__footer-btn
+							a.default-btn(href="#") Оформить заказ

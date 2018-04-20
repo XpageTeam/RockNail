@@ -25,6 +25,7 @@ button, input, select
 	top: 0
 	left: 0
 	width: 100%
+	z-index: 5
 
 	.wrapper
 		position: relative
@@ -44,9 +45,56 @@ button, input, select
 		display: flex
 		align-items: center
 		justify-content: space-between
+		position: relative
 
-	&__phone
+	&__phone, &__title
 		margin: 0 auto
+
+	&__search, &__favorite
+		margin-right: 10px
+
+	&__cart
+		position: absolute
+		right: 0
+		top: 100%
+		// background: #000
+
+		&-wrap
+			+size(70px 44px)
+			padding-bottom: 8px
+			// border-radius: 0 50% 50% 50%
+			overflow: hidden
+			display: flex
+			align-items: flex-end
+
+.cart-link
+	background: #fff
+	border-radius: 50%
+	background: url("../img/ico-cart.png") center bottom 8px no-repeat, #000
+	display: block
+	+size(70px)
+
+	&[data-count]
+
+		&:after
+			content: attr(data-count)
+			border-radius: 50%
+			border: 1px solid #000
+			background: #fff
+			font-weight: bold
+			font-size: 14px
+			letter-spacing: .02em
+			position: absolute
+			bottom: 0
+			left: 0
+			+size(26px)
+			line-height: 26px
+			text-align: center
+
+.head-phone
+
+	a
+		color: inherit
 
 .logo
 	position: relative
@@ -77,6 +125,262 @@ button, input, select
 
 .menu
 	display: flex
+	font-size: 14px
+	letter-spacing: .02em
+
+	li
+
+		&:not(:last-child)
+			margin-right: rem(24)
+
+	&__link
+		color: #000
+		position: relative
+
+		&:after
+			position: absolute
+			content: ""
+			background: CurrentColor
+			left: 0
+			top: calc(100% + 4px)
+			+size(100% 2px)
+			transition: opacity .3s ease
+			opacity: 0
+
+		&.active, &:hover, &:focus
+
+			&:after
+				opacity: 1
+
+.search
+	display: none
+
+.search-button
+	border: none
+	background: url("../img/ico-search.png") center no-repeat
+	border-radius: 50%
+	+size(30px)
+	display: block
+
+.favorite, .lc
+
+	&-link
+		display: block
+		border-radius: 50%
+		+size(30px)
+
+.favorite
+
+	&-link
+		background: url("../img/ico-favorite.png") center no-repeat
+
+		&[data-count]
+			position: relative
+
+			&:after
+				content: attr(data-count)
+				position: absolute
+				left: 0
+				width: 100%
+				text-align: center
+				bottom: 100%
+
+		&:hover, &:focus, &[data-count]
+			color: #8b69fc
+			background: url("../img/ico-favorite-active.png") center no-repeat, CurrentColor
+
+.lc-link
+	background: url("../img/ico-lc.png") center no-repeat
+
+.main-slider
+
+	&__cont
+		background: url("../img/main-slider-bg.jpg") center no-repeat
+		background-size: cover
+		position: relative
+		padding-bottom: 58px
+
+		&:after
+			content: ""
+			position: absolute
+			background: url("../img/main-slider-bot-decor.png") center top no-repeat
+			+size(100% 58px)
+			background-size: cover
+			bottom: 0
+			left: 0
+
+.footer
+	font-weight: 400
+
+	&__bot
+		background: url("../img/footer-bot-decor.png") center bottom no-repeat, #000
+
+	&__top
+		background: url("../img/footer-bg.png") center top no-repeat, #fff
+		background-size: cover
+		padding: rem(165) 0 rem(90)
+
+	&__soc
+		margin: auto 0 0
+
+.footer-top
+	display: flex
+
+	&__column
+		display: flex
+		flex-direction: column
+		flex: none
+		margin-right: persent(100)
+
+		&--big
+			flex: 1 1 auto
+
+
+.footer__column
+
+	&-title
+		margin-bottom: rem(25)
+		font-weight: bold
+
+.f-menu
+	font-size: 14px
+
+	li
+		margin: 16px 0 0
+
+		&:not(:first-child)
+
+	&__link
+		color: #000
+
+.f-contacts
+	flex: 1 1 auto
+	display: flex
+	flex-direction: column
+	font-size: 14px
+
+	a
+		color: #000
+
+	> div, > address
+		padding: 16px 0 0
+
+		&:last-child
+			margin: auto 0 0
+
+.f-imgs
+
+	&:not(:first-child)
+		margin: auto 0 0
+		padding: 15px 0 0
+
+	&__list
+		display: flex
+		flex-wrap: wrap
+
+	&__img
+		flex: none
+
+		&:not(:last-child)
+			margin-right: 18px
+
+		img
+			display: block
+
+.footer-bot
+	display: flex
+	align-items: center
+	justify-content: space-between
+	color: #fff
+	font-size: 12px
+	padding: 18px 0 22px
+
+.copy
+	font-size: 12px
+	line-height: lh(18, 12)
+
+.design
+	display: flex
+	// align-items: center
+	white-space: nowrap
+
+	&__link
+		text-transform: uppercase
+		color: #fff
+		line-height: 1.1
+		border-bottom: 1px solid CurrentColor
+		// text-decoration: underline
+
+.cart-line
+	position: absolute
+	top: calc(100% + 19px)
+	right: 0
+	background: #fff
+	box-shadow: 0px 12px 27px 0px rgba(9, 3, 5, 0.11)
+	border-top: 2px solid #000
+	padding: 25px 0 30px
+	width: 374px
+
+	&:before
+		content: ""
+		position: absolute
+		+triangle(12px 7px, #000, up)
+		bottom: 100%
+		right: 31px
+
+	&__title, &__footer
+		margin: 0 36px 0 30px
+
+	&__footer
+		border-top: 1px solid $border-color
+		padding: 20px 0 0
+
+	&__title
+		border-bottom: 1px solid $border-color
+		text-transform: uppercase
+		font-weight: 400
+		letter-spacing: .02em
+		font-size: 14px
+		padding-bottom: 21px
+
+.small-cart
+	padding: 0 36px 0 30px
+	overflow-y: auto
+	max-height: 251px
+
+	&::-webkit-scrollbar
+		width: 7px
+
+		&-thumb
+			background: #acacac
+			border-radius: 4px
+
+		&-track
+			border-radius: 4px
+			background: #e8e8e8
+
+	&__one
+		padding: 10px 0 5px
+
+		&:first-child
+			padding-top: 3px
+
+		&:not(:last-child)
+			border-bottom: 1px solid $border-color
+
+.tovar-small
+	display: flex
+	align-items: center
+
+	&__img
+		flex: none
+		margin-right: 13px
+
+		img
+			display: block
+
+	&__desc
+		flex: 1 1 auto
 
 @import "_grid"
 @import "media"

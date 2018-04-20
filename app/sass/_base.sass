@@ -60,14 +60,16 @@ body
 	color: #000
 	position: relative
 
-#content, .content
-	flex: 1 0 auto
+#page-wr
 	display: flex
 	flex-direction: column
+	min-height: 100vh
 
-.head
+.head, .footer
 	flex: none
 
+#content
+	flex: 1 1 auto
 
 select
 	-webkit-appearance: none;
@@ -84,7 +86,7 @@ select
 
 a
 	color: $main-color
-	text-decoration: underline
+	text-decoration: none
 	font-weight: inherit
 
 	&[href^="tel"], &[href^="mail"]
@@ -101,7 +103,7 @@ a
 	max-width: $base-width + px
 	padding: 0 15px
 	margin: 0 auto
-	// box-sizing: content-box
+	box-sizing: content-box
 
 input[type="submit"], button
 	cursor: pointer
@@ -115,16 +117,20 @@ li
 .soc
 	
 	&__link
-		display: inline-block
-		border-radius: 50%
-		+size(42px)
-		background: 
-			position: center
-			repeat: no-repeat
-			color: #4b4b4b
+		color: #000
+		display: flex
+		align-items: center
 
-		&:not(:last-child)
-			margin-right: 9px
+		&-img
+			width: 17px
+			margin-right: 8px
+
+			img
+				display: block
+
+		&:not(:first-child)
+			// margin-right: 9px
+			margin: 12px 0 0
 
 .table-wrap
 	overflow: auto
@@ -357,3 +363,16 @@ li
 			top: 6px
 			background: url("../img/ico-check.png") no-repeat
 			opacity: 0
+
+.default-btn
+	display: inline-block
+	text-decoration: none
+	color: #fff
+	text-transform: uppercase
+	border: none
+	text-align: center
+	font-weight: bold
+	font-size: 14px
+	letter-spacing: .01em
+	padding: 13px 2rem
+	background: linear-gradient(to right, #9667f4, $main-color)
