@@ -20,6 +20,63 @@ button, input, select
 .slick-slide
 	height: auto
 
+.head
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+
+	.wrapper
+		position: relative
+		z-index: 1
+
+	&:after
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		// pointer-events: none
+		+size(100%)
+		background: rgba(#fff, .28)
+		box-shadow: $shadow
+
+	&__wrap
+		display: flex
+		align-items: center
+		justify-content: space-between
+
+	&__phone
+		margin: 0 auto
+
+.logo
+	position: relative
+	display: block
+
+	&:hover, &:focus
+
+		figure
+
+			&:not(:first-child):last-child
+				height: 100%
+
+	img
+		display: block
+
+	figure
+		overflow: hidden
+
+		&:first-child
+			margin-bottom: -29px
+
+		&:not(:first-child):last-child
+			position: absolute
+			top: 0
+			left: 0
+			+size(100% 0)
+			transition: height .1s ease
+
+.menu
+	display: flex
 
 @import "_grid"
 @import "media"

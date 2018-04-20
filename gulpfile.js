@@ -13,7 +13,7 @@ const $ = require('gulp-load-plugins')(),
 		prefixer = require("autoprefixer"),
 		imageminJpegRecompress = require("imagemin-jpeg-recompress");
 
-const projectName = "/"
+const projectName = "RockNail/"
 
 const xpager_path = "/www/html.xpager.ru/"+projectName,
 xpager_conn = ftp.create({

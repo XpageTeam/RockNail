@@ -1,1 +1,32 @@
 header.head
+	.wrapper
+		.head__wrap
+			.head__burger
+				.burger
+					span
+			.head__logo
+				a.logo(href="#")
+					figure
+						img(src="img/photos/logo.png", alt="RockNail", title="RockNail")
+					figure
+						img(src="img/photos/logo-hover.png", alt="RockNail", title="RockNail")
+			.head__title
+				.head-title Гель * лаки
+			nav.head__menu
+				ul.menu
+					li
+						a.menu__link.active(href="#") Акции
+					each title in ["О нас", "Доставка и оплата", "Отзывы", "Оптовикам", ]
+						li
+							a.menu__link(href="#")=title
+			.head__phone
+				address.head-phone
+					a(href="tel: 8 800 569 89 89") 8 800 569 89 89
+			.head__search
+				a.search-link(href="#")
+			.head__favorite
+				a.favorite-link(href="#")
+			.head__lc
+				a.lc-link(href="#")
+			.head__cart
+				a.cart-link(href="#", data-count="")

@@ -68,25 +68,19 @@ body
 .head
 	flex: none
 
-#page-wr
-	margin: 0 auto
-	min-height: 100vh
-	display: flex
-	flex-direction: column
-	justify-content: space-between
 
-	select
-		-webkit-appearance: none;
-		/* for FF */
-		-moz-appearance: none;
-		text-indent: 0.01px; 
-		text-overflow: '';
-		/* for IE */
-		-ms-appearance: none;
-		appearance: none!important;
+select
+	-webkit-appearance: none;
+	/* for FF */
+	-moz-appearance: none;
+	text-indent: 0.01px; 
+	text-overflow: '';
+	/* for IE */
+	-ms-appearance: none;
+	appearance: none!important;
 
-		&::-ms-expand 
-			display: none;
+	&::-ms-expand 
+		display: none;
 
 a
 	color: $main-color
@@ -105,9 +99,9 @@ a
 
 .wrapper
 	max-width: $base-width + px
-	padding: 0 2rem
+	padding: 0 15px
 	margin: 0 auto
-	box-sizing: content-box
+	// box-sizing: content-box
 
 input[type="submit"], button
 	cursor: pointer
