@@ -18,9 +18,14 @@ html(lang="ru")
 										.main-slider__title Устрой рок <br /> на ногтях
 										.main-slider__text-text Профессиональные гель-лаки нового покаления
 									figure.main-slider__img
-										img(src="img/photos/lac.png")
+										pictrue
+											source(srcset="img/photos/lac.png" media="")
+											source(srcset="" media="")
+											source(srcset="" media="")
+											img
 									.main-slider__price
 										.main-slider__price-title Baby nude  /  8 ml
 										.main-slider__price-price 250 Р
+					include inc/bot-blocks.jade
 			include inc/footer.jade
 		include inc/scripts.jade

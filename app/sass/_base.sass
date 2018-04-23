@@ -364,7 +364,7 @@ li
 			background: url("../img/ico-check.png") no-repeat
 			opacity: 0
 
-.default-btn
+.gradient-btn
 	display: inline-block
 	text-decoration: none
 	color: #fff
@@ -375,4 +375,35 @@ li
 	font-size: 14px
 	letter-spacing: .01em
 	padding: 13px 2rem
-	background: linear-gradient(to right, #9667f4, $main-color)
+	background: linear-gradient(to right, #9667f4 30%, $main-color 100%)
+	position: relative
+
+	&:after
+		position: absolute
+		content: ""
+		top: 0
+		left: 0
+		+size(100%)
+		background: linear-gradient(to right, #9667f4 70%, $main-color 100%)
+		transition: opacity .8s ease
+		opacity: 0
+
+	&__wrap
+		padding: 0
+
+		input[type="submit"]
+			padding: 13px 2rem
+			border: none
+			background: none
+			color: inherit
+			text-transform: inherit
+			letter-spacing: inherit
+
+	span, input[type="submit"]
+		position: relative
+		z-index: 1
+
+	&:hover, &:focus
+
+		&:after
+			opacity: 1

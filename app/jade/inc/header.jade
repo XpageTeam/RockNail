@@ -1,4 +1,36 @@
 header.head
+	.head__search-more
+		.wrapper
+			<!-- для открытия и закрытия поиска есть статические методы opendSearch и closeSearch у класса headSearch -->
+			.search
+				.search__form
+					form(action="#")
+						.search__form-input
+							input(type="search" placeholder="Более 550 оттенков")
+				.search__close
+					button.search-close
+	.head__submenu
+		.wrapper
+			nav.head-submenu
+				.head-submenu__column
+					.head-submenu__column-title Гель   лаки
+					ul.head-submenu__menu.head-submenu__menu--columns
+						each title in ["Baby Nude", "Classik", "Camouflage", "Galaxy", "Gothic", "Summer", "Gray Moon", "Diamond", ]
+							li
+								a.head-submenu__menu-link(href="#" data-img-src="img/photos/ico-series.png")=title
+				.head-submenu__column
+					.head-submenu__column-title TOP
+					ul.head-submenu__menu.head-submenu__menu--columns
+						each title in ["Top", "Top No wipe", "Top Velvet", "Top Rubber",]
+							li
+								a.head-submenu__menu-link(href="#" data-img-src="img/photos/ico-series.png")=title
+				.head-submenu__column
+					.head-submenu__column-title base
+					ul.head-submenu__menu.head-submenu__menu--columns
+						each title in ["Base Rubber",]
+							li
+								a.head-submenu__menu-link(href="#" data-img-src="img/photos/ico-series.png")=title
+				.head-submenu__column.head-submenu__column--img
 	.wrapper
 		.head__wrap
 			.head__burger
@@ -11,7 +43,7 @@ header.head
 					figure
 						img(src="img/photos/logo-hover.png", alt="RockNail", title="RockNail")
 			.head__title
-				.head-title Гель * лаки
+				button.head-title Гель * лаки
 			nav.head__menu
 				ul.menu
 					li
@@ -24,35 +56,34 @@ header.head
 					a(href="tel: 8 800 569 89 89") 8 800 569 89 89
 			.head__search
 				button.search-button
-				.search
-					.search__form
-						form(action="#")
-							.search__form-input
-								input(type="search" placeholder="Более 550 оттенков")
-					.search__close
-						button.search-close
 			.head__favorite
 				a.favorite-link(href="#", data-count="1")
 			.head__lc
 				a.lc-link(href="#")
 			.head__cart
-				.head__cart-wrap
-					a.cart-link(href="#", data-count="15")
-				.cart-line
-					.cart-line__title Ваша корзина
-					.cart-line__content
-						.small-cart
-							- for (let i = 0; i <= 10; i++)
-								.small-cart__one
-									.tovar-small
-										a.tovar-small__img
-											img(src="img/photos/nail.png")
-										.tovar-small__desc
-											a.tovar-small__desc-title(href="#") Гель-лак Rock Nail Baby Nude
-											.tovar-small__desc-bot
-												.tovar-small__desc-info 045 Blue Ocean
-												.tovar-small__desc-price 1 x 250 Р
-					.cart-line__footer
-						.cart-line__footer-total
-						.cart-line__footer-btn
-							a.default-btn(href="#") Оформить заказ
+				cart-line(inline-template="")
+					div
+						.head__cart-wrap
+							a.cart-link(href="#", :data-count="goodsCount")
+						.cart-line__wrap(v-if="goodsCount")
+							.cart-line
+								.cart-line__title Ваша корзина
+								.cart-line__content
+									.small-cart
+										.small-cart__one(v-for="tovar in goodsList")
+											.tovar-small
+												a.tovar-small__img(:href="tovar.link")
+													img(:src="tovar.imgSrc")
+												.tovar-small__desc
+													a.tovar-small__desc-title(:href="tovar.link") {{ tovar.name }}
+													.tovar-small__desc-bot
+														.tovar-small__desc-info {{ tovar.info }}
+														.tovar-small__desc-price {{ tovar.count }} x {{ tovar.price }} Р
+													span.tovar-small__desc-delete(@click="deleteFromCart(tovar.id)")
+								.cart-line__footer
+									.cart-line__footer-total
+										.cart-line__footer-total-count {{ goodsCount }} товара на сумму
+										.cart-line__footer-total-summ {{ goodsPrice }} Р
+									.cart-line__footer-btn
+										a.gradient-btn(href="#") 
+											span Оформить заказ
