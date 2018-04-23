@@ -16,7 +16,25 @@ class headSearch{
 	}
 }
 
-// window.headSearch = headSearch;
+class headSubmenu{
+	static open(){
+		$("body").addClass("js__submenu-opened");
+		$(".head__submenu").addClass("js__opened");
+	}
+	static close(){
+		$("body").removeClass("js__submenu-opened");
+		$(".head__submenu").removeClass("js__opened");
+	}
+	static toggle(){
+		if ($("body").hasClass("js__submenu-opened"))
+			headSubmenu.close()
+		else
+			headSubmenu.open()
+	}
+}
+
+window.headSearch = headSearch;
+window.headSubmenu = headSubmenu;
 
 const loadScripts = e => {
 	$(".fancybox").fancybox({
@@ -36,6 +54,10 @@ const loadScripts = e => {
 
 	$(".search-close").click(e => {
 		headSearch.closeSearch();
+	});
+
+	$(".head-title").click(e => {
+		headSubmenu.toggle()
 	})
 };
 

@@ -47,12 +47,27 @@ button, input, select
 		+size(16px)
 		border: none
 
+.center-dot
+	position: relative
+	text-transform: uppercase
+
+	&:after
+		content: ""
+		position: absolute
+		border-radius: 50%
+		background: currentColor
+		+size(4px)
+		top: calc(50% - 4px)
+		right: 46px
+
 .head
 	position: fixed
 	top: 0
 	left: 0
 	width: 100%
 	z-index: 5
+	background: url("../img/header-bg.png") center no-repeat
+	background-size: cover
 
 	.wrapper
 		position: relative
@@ -77,6 +92,9 @@ button, input, select
 		width: 100%
 		height: 250px
 		overflow: hidden
+		transition: height .3s ease
+		height: 0
+		border-radius: 0 0 50% 50%
 
 		&:after
 			content: ""
@@ -89,10 +107,14 @@ button, input, select
 			position: absolute
 			left: calc(50% - 105vw)
 
+		&.js__opened
+			height: 250px
+
 	&__search-more
 		background: #fff
 		border-top: 2px solid $second-color
 		text-align: right
+		display: none
 
 	&__wrap
 		display: flex
@@ -133,6 +155,13 @@ button, input, select
 
 	&__column
 		margin-right: vw(75)
+
+.head-title
+	font-size: 14px
+	font-weight: bold
+	letter-spacing: .02em
+	border: none
+	background: none
 
 .cart-link
 	background: #fff
@@ -517,8 +546,9 @@ button, input, select
 	&__cont
 		background: url("../img/bot-form-bg.png") center no-repeat
 		background-size: cover
-		padding: 13px 0 85px
+		padding: 60px 0 85px
 		text-align: center
+		margin: 65px 0 0
 
 	&__inputs
 		// display: flex
@@ -540,6 +570,7 @@ button, input, select
 		flex: none
 		width: 270px
 		margin-right: 15px
+		font-weight: bold
 
 	&__input
 		width: 270px
@@ -555,8 +586,41 @@ button, input, select
 			&:not(:first-child)
 				margin: 21px 0 0
 
+			&:first-child
+				align-items: flex-end
+
+				label
+					font-size: rem(20)
+
 			.gradient-btn
 				width: 270px
+
+			&--submit
+
+				label
+					font-weight: 400
+
+.main-slider
+	padding: 113px 0 91px
+
+.seo-text
+	font-size: 14px
+	font-weight: 400
+
+	.text-page
+		column-count: 2
+		column-gap: 30px
+
+		> *
+			break-inside: avoid
+	
+	&__cont
+		padding: 50px 0 32px
+
+	&__title
+		font-weight: bold
+		font-size: rem(20)
+		margin-bottom: 22px
 
 @import "_grid"
 @import "media"
