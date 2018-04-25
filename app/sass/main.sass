@@ -622,5 +622,245 @@ button, input, select
 		font-size: rem(20)
 		margin-bottom: 22px
 
+// .main
+
+// 	&-title, &-subtitle
+// 		text-transform: uppercase
+
+.main-title
+	font-weight: 900
+	text-transform: uppercase
+	font-size: rem(50)
+	color: $main-color
+	line-height: 1
+
+.main-subtitle
+	font-weight: bold
+	font-size: rem(30)
+	line-height: 1
+
+.tabs
+	background: #fff
+	width: 368px
+	flex: none
+	display: inline-flex
+	box-shadow: -1px 4px 54px 0px rgba(9, 3, 5, .09)
+
+	&__one
+		+size(33.33% 106px)
+		cursor: pointer
+		user-select: none
+		text-align: center
+		transition: opacity .3s ease
+		opacity: .3
+		display: flex
+		flex-direction: column
+		justify-content: center
+
+		&.active
+			pointer-events: none
+			opacity: 1
+
+		&-title
+			color: $main-color
+			text-transform: uppercase
+			font-weight: 400
+			letter-spacing: .03em
+			margin: 20px 0 0
+
+		&-img
+
+			img
+				margin: 0 -4px -4px 0
+
+.manifest
+	display: flex
+	flex-wrap: wrap
+	padding: 80px 78px 0 26px
+	justify-content: space-between
+	margin: 0 0 -120px -128px
+
+	&__cont
+		background: url("../img/manifest-bg.png") center no-repeat
+		background-size: cover
+		padding: 87px 0 149px
+
+	&__one
+		width: calc((100% - 128px * 2) / 2)
+		margin: 0 0 120px 128px
+		background: #fff
+		position: relative
+		padding: 23px 158px 17px 26px
+		min-height: 205px
+		box-shadow: -2px 4px 48px 0px rgba(9, 3, 5, 0.14)
+
+		&:nth-child(even)
+			transform: translate3d(0, -115px, 0)
+
+		&-img
+			+size(222px)
+			border-radius: 50%
+			overflow: hidden
+			position: absolute
+			top: -40px
+			right: -61px
+
+			img
+				display: block
+				position: absolute
+				top: 50%
+				left: 50%
+				transform: translate3d(-50%, -50%, 0)
+
+		&-title
+			font-weight: bold
+			font-size: rem(18)
+			line-height: lh(23, 18)
+			color: $main-color
+			min-height: 45px
+			display: flex
+			flex-wrap: wrap
+			align-items: flex-end
+
+		&-text
+			font-size: 14px
+			line-height: lh(20, 14)
+
+.main-catalog
+
+	&__tabs
+		text-align: center
+		margin: -90px 0 0
+		position: relative
+		z-index: 2
+
+	&__slider
+		margin: 74px 0 0
+		padding: 0 93px
+		position: relative
+
+.catalog-slider
+	@extend %clearfix
+	transition: opacity .3s ease
+	margin: 0 -44px
+	position: static
+
+	&:not(.active)
+		position: absolute
+		top: 0
+		left: 0
+		+size(100%)
+		pointer-events: none
+		opacity: 0
+
+	&__slide
+		float: left
+		margin: 0 44px
+
+		&:not(.slick-slide)
+			// width: calc((100% - 30px * 4) / 4)
+
+			&:nth-child(n + 5)
+				display: none
+
+	.slick
+
+		&-arrow
+			border-radius: 50%
+			border: none
+			background: url("../img/main-catalog-arrow.png") center no-repeat, $second-color
+			+size(62px)
+			box-shadow: 0px 4px 13px 0px rgba(9, 3, 5, .31)
+			position: absolute
+			top: calc(50% - 31px)
+			z-index: 5
+
+		&-prev
+			transform: rotate(180deg)
+			left: 0
+
+		&-next
+			right: 0
+
+
+.cat-item
+	
+	&__img
+		margin-bottom: 30px
+		display: block
+
+		img
+			display: block
+
+	&__desc
+		display: flex
+		flex-direction: column
+		align-items: flex-start
+		font-weight: 400
+
+	&__title
+		max-width: 140px
+		color: #000
+		margin-bottom: 10px
+
+	&__info
+		font-size: 12px
+
+	&__bot
+		display: flex
+		justify-content: space-between
+		align-items: flex-end
+		align-self: stretch
+		margin: 5px 0 0
+
+.cat-title
+	// font-weight: 400
+	line-height: 1.3
+
+.cat-price
+	color: $second-color
+	font-size: rem(20)
+	font-weight: bold
+
+.favorite-add
+	display: inline-block
+	+size(20px 25px)
+	background: url("../img/ico-favorite-cat.png") center no-repeat
+	position: relative
+	transition: background .1s ease
+
+	&:hover, &:focus, &.active
+		background: url("../img/ico-favorite-cat-active.png") center no-repeat
+
+	&:hover, &:focus
+
+		.favorite-add__title
+			opacity: 1
+
+	&__title
+		// display: none
+		position: absolute
+		color: #fff
+		background: $second-color
+		text-align: center
+		text-transform: lowercase
+		line-height: 1
+		padding: 5px 8px 6px
+		font-weight: 400
+		font-size: 12px
+		bottom: calc(100% + 7px)
+		left: calc(50% - 37px)
+		border-radius: 3px
+		pointer-events: none
+		opacity: 0
+		transition: opacity .3s ease
+
+		&:after
+			content: ""
+			position: absolute
+			+triangle(5px, $second-color, down)
+			top: 100%
+			left: calc(50% - 3px)
+
 @import "_grid"
 @import "media"

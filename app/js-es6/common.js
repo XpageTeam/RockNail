@@ -58,6 +58,12 @@ const loadScripts = e => {
 
 	$(".head-title").click(e => {
 		headSubmenu.toggle()
+	});
+
+	$(".catalog-slider").slick({
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		slide: ".catalog-slider__slide",
 	})
 };
 
