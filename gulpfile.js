@@ -10,8 +10,7 @@ const $ = require('gulp-load-plugins')(),
 		ftp = require("vinyl-ftp"),
 		sourcemaps = require("gulp-sourcemaps"),
 		postcss = require("gulp-postcss"),
-		prefixer = require("autoprefixer"),
-		imageminJpegRecompress = require("imagemin-jpeg-recompress");
+		prefixer = require("autoprefixer");
 
 const projectName = "RockNail/"
 
