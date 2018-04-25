@@ -1,6 +1,7 @@
 node_modules/
 bower_components/
 dist/
+config/
 *.zip
 *.rar
 app/js/common.js
