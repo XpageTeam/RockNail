@@ -7,6 +7,198 @@ $output-bourbon-deprecation-warnings: false;
 
 *[v-cloak]
 	display: none
+.catalog
+	.cat
+		&-items
+			display: flex 
+			flex-wrap: wrap
+			margin: 0 0 -90px -80px
+
+		&-item
+			width: calc((100% - 90px * 3) / 3)
+			margin: 0 0 90px 80px
+
+.aside
+	width: 170px
+	margin-right: 27px
+
+	&-soc 
+		display: flex
+		justify-contentL center
+
+	.soc__link
+		display: flex
+		justify-content: center
+		align-items: center
+		+size(30px)
+		border-radius: 50%
+		background: $main-color
+
+		img 
+			filter: invert(100)
+
+
+		&:not(:first-child)
+			margin: 0 0 0 15px
+
+.catalog
+	display: flex
+
+	.title-block__title
+		width: 100%
+
+	&-list 
+		width: calc(100% - 170px)
+
+	&-bg
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		pointer-events: none
+		z-index: -1
+
+		img 
+			object-fit: cover
+			width: 100%
+			object-position: center
+			height: 100%
+
+
+.catalog-filter
+	display: flex
+	padding: 20px 25px 25px
+	background: #fff
+	
+	.mobile
+		display: none 
+
+
+	.forms
+
+		&-checkbox
+			position: relative
+			width: 30px
+				
+
+			&:before
+				content: attr(data-title)
+				transform: none
+				color: #fff
+				background: #000
+				width: auto
+				height: auto
+				padding: 5px
+				border-radius: 1px
+				opacity: 0
+				pointer-events: none
+				top: -25px
+				transition: opacity .3s ease
+
+			&:after 
+				content: ""
+				position: absolute
+				top: 5px
+				left: calc(50% - 2px)
+				display: block
+				+size(5px)
+				background: url('../img/ico-arrow-nail.png') no-repeat center
+				background-size: contain
+				opacity: 0
+
+			img 
+				max-width: inherit
+				pointer-events: none
+				margin-left: -10px
+
+			&:hover 
+				&:before, &:after
+					opacity: 1
+
+		&__input
+			height: auto
+
+		&-input-cont 
+			margin: 0
+
+		&-wrap
+			flex-wrap: wrap
+			justify-content: flex-start
+
+			&__title
+				width: 100%
+
+			&:last-child
+				max-width: 250px 
+
+				.forms
+					&-input-cont
+						width: 100%
+						flex-direction: column
+					&-submit-cont
+						width: auto
+						+ .forms-submit-cont
+							margin-left: auto
+
+		&__input--select
+			padding: 0
+		
+	
+		&__checkbox-label
+			position: relative
+			padding: 0
+			z-index: 2
+
+
+
+
+.lacquer-category
+	&__title			
+		
+		font-size: rem(16)
+		font-weight: bold
+		margin-bottom: 13px
+
+		&.active
+			color: $second-color
+
+	&__list 
+		display: flex
+		flex-direction: column
+
+	&__item
+		font-size: rem(14)
+		line-height: rem(18)
+		color: #000
+
+		&:not(:first-child)
+			margin-top: 10px
+
+
+
+
+
+.bread-crumbs
+	padding-bottom: 35px
+
+	&__link
+		color: $second-color
+		&:after
+			content: ""
+			display: inline-block
+			+size(6px)
+			border-radius: 50%
+			background: $second-color
+			margin: 0 15px 2px
+
+	&__this 
+		color: #c9bcfd
+.inner
+	#content
+		padding-top: 100px
+
+	.main-catalog__tabs
+		margin: 0
 
 button, input, select
 	font-family: inherit
