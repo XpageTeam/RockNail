@@ -2,7 +2,7 @@
 html(lang="ru")
 	head
 		meta(charset="utf-8")
-		title Главная
+		title Карточка товара
 		include inc/head.jade
 		include inc/css.jade
 	body.inner.loading
@@ -14,6 +14,10 @@ html(lang="ru")
 						.wrapper
 							.card__top
 								.card__slider
+									.card__slick
+										.card__slick_slide
+											img(src="../img/photos/cat-img-0.png", alt="")
+
 								.card__sample
 									h1 Гель-лак RockNail Baby Nude 
 									h2 #045 Blue Ocean
@@ -77,23 +81,50 @@ html(lang="ru")
 												div Еще 10
 												div оттенков
 									.card__sample_buy
-										.card__sample_buy_price
+										.cat-item__bot
+											.cat-item__bot-price
+												.cat-price 250 Р
+											span
+												.gradient-btn.gradient-btn__wrap
+													input.bot-form__submit(type="submit" value="СООБЩИТЬ О ПОСТУПЛЕНИИ")
+												.cat-item__bot-favorite
+													a.favorite-add(href="#")
+														span.favorite-add__title избранное
 						.main-catalog__cont
 							.wrapper
-								.main-catalog__tabs
-									.tabs
-										.tabs__one.active(data-id="0")
-											figure.tabs__one-img
-												img(src="img/ico-hit.png")
-											.tabs__one-title Хиты
-										.tabs__one(data-id="1")
-											figure.tabs__one-img
-												img(src="img/ico-new.png")
-											.tabs__one-title Новинки
-										.tabs__one(data-id="2")
-											figure.tabs__one-img
-												img(src="img/ico-sale.png")
-											.tabs__one-title Скидки
+								.card__tabs#tabs
+									.card__tabs_left
+										.card__tabs_navi
+											a(href="#tabs-1").active ОПИСАНИЕ
+											a(href="#tabs-2") ДОСТАВКА
+											a(href="#tabs-3") СОСТАВ
+										.card__tabs_left_content_flex#tabs-1
+											.card__tabs_left_content
+												.card__tabs_left_content-title Гель-лак RockNail Baby Nude
+												.text-page
+													p Меняетсвой цвет в зависимости от типа освещения и положения осветительного прибора относительно ногтя.
+													p В состав входят микрочастицы, чувствительные к интенсивности освещения, а так же частички перламутра и крошечная алмазная пыль.
+													p Перламутровая крошка обеспечивает сияние маникюра, а мельчайшие частички алмазов добавляют кристального блеска.
+													p В состав входят микрочастицы, чувствительные к интенсивности освещения, а так же частички перламутра и крошечная.
+										.card__tabs_left_content_flex#tabs-2
+											.card__tabs_left_content
+												.card__tabs_left_content-title Гель-лак RockNail Baby Nude
+												.text-page
+													p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, impedit nulla beatae possimus, voluptatem odio obcaecati. Tempore nisi minus ea, veniam. Ducimus, eius eveniet voluptatibus amet. Nulla similique repellat adipisci laboriosam perspiciatis quaerat laborum soluta commodi vero eveniet harum culpa aliquam earum, cumque, omnis magni doloribus facere ipsum libero voluptatem officiis voluptas odit. Quisquam, at.
+									.card__tabs_right
+										.card__tabs_right-title Rock Nail – ЭТО
+										.card__tabs_right_item
+											img(src="img/card-ico-tab-1.png", alt="")
+											.card__tabs_right_item-title Технологии
+											.card__tabs_right_item-text Архитектурная формула Выравнивающая способность Нанесение в одно скольжение
+										.card__tabs_right_item.fix-1
+											img(src="img/card-ico-tab-2.png", alt="")
+											.card__tabs_right_item-title Технологии
+											.card__tabs_right_item-text Архитектурная формула Выравнивающая способность Нанесение в одно скольжение
+										.card__tabs_right_item.fix-2
+											img(src="img/card-ico-tab-3.png", alt="")
+											.card__tabs_right_item-title Технологии
+											.card__tabs_right_item-text Архитектурная формула Выравнивающая способность Нанесение в одно скольжение
 								.main-catalog__slider
 									.catalog-slider.active(data-id="0")
 										- for (let j = 0; j < 2; j++)
@@ -146,6 +177,42 @@ html(lang="ru")
 																.cat-item__bot-favorite
 																	a.favorite-add(href="#")
 																		span.favorite-add__title избранное
+								.card__feedback
+									.card__feedback_top
+										.card__feedback_top-title Отзывы 
+											span (12)
+										.card__feedback_top-rating <span>5.2</span> Средняя оценка
+									.card__feedback_middle
+										.card__feedback_block
+											.card__feedback_block-name Максутова Виолетта
+											.card__feedback_block-time (2 недели назад)
+											.card__feedback_block-text Лак супер, хорошего качества
+											.card__feedback_block-img 
+
+										.card__feedback_block
+											.card__feedback_block-name Максутова Виолетта
+											.card__feedback_block-time (2 недели назад)
+											.card__feedback_block-text Лак супер, хорошего качества
+											.card__feedback_block-img 
+												a(href="#")
+													img(src="img/photos/card-feedback.png", alt="")
+												a(href="#")
+													img(src="img/photos/cat-img-1.png", alt="")
+
+										.card__feedback_block
+											.card__feedback_block-name Максутова Виолетта
+											.card__feedback_block-time (2 недели назад)
+											.card__feedback_block-text Лак супер, хорошего качества
+											.card__feedback_block-img 
+
+									.card__feedback_bot
+										.card__feedback_btns
+											.card__btn
+												a(href="#") Оставить отзыв
+											.gradient-btn.gradient-btn__wrap
+													input.bot-form__submit(type="submit" value="Показать еще")
+										.card__feedback_paginator
+											include inc/paginator.jade
 						.bot-form__cont
 							.wrapper
 								.bot-form__title #rocknailwork
