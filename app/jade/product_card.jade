@@ -8,157 +8,158 @@ html(lang="ru")
 	body.inner.loading
 		#page-wr
 			include inc/header.jade
-			main#content.card
+			main#content
 				.content
-					.wrapper
-						.card__top
-							.card__slider
-							.card__sample
-								h1 Гель-лак RockNail Baby Nude 
-								h2 #045 Blue Ocean
-								.card__sample_slider
-									a(href="#").card__sample_nail.card__sample_btn.card__sample_btn_back
-										img(src="img/ico-btn-right.png", alt="")
-										div
-											div Еще 10
-											div оттенков
-									a(href="#").card__sample_nail
-										img(src="img/photos/nail.png", alt="")
-										div #045
-										div Blue Ocean
-									a(href="#").card__sample_nail
-										img(src="img/photos/nail.png", alt="")
-										div #045
-										div Blue Ocean
-									a(href="#").card__sample_nail
-										img(src="img/photos/nail.png", alt="")
-										div #045
-										div Blue Ocean
-									a(href="#").card__sample_nail
-										img(src="img/photos/nail.png", alt="")
-										div #045
-										div Blue Ocean
-									a(href="#").card__sample_nail
-										img(src="img/photos/nail.png", alt="")
-										div #045
-										div Blue Ocean
-									a(href="#").card__sample_nail
-										img(src="img/photos/nail.png", alt="")
-										div #045
-										div Blue Ocean
-									a(href="#").card__sample_nail
-										img(src="img/photos/nail.png", alt="")
-										div #045
-										div Blue Ocean
-									a(href="#").card__sample_nail
-										img(src="img/photos/nail.png", alt="")
-										div #045
-										div Blue Ocean
-									a(href="#").card__sample_nail
-										img(src="img/photos/nail.png", alt="")
-										div #045
-										div Blue Ocean
-									a(href="#").card__sample_nail
-										img(src="img/photos/nail.png", alt="")
-										div #045
-										div Blue Ocean
-									a(href="#").card__sample_nail
-										img(src="img/photos/nail.png", alt="")
-										div #045
-										div Blue Ocean
-									a(href="#").card__sample_nail
-										img(src="img/photos/nail.png", alt="")
-										div #045
-										div Blue Ocean
-									a(href="#").card__sample_nail.card__sample_btn
-										img(src="img/ico-btn-right.png", alt="")
-										div
-											div Еще 10
-											div оттенков
-								.card__sample_buy
-									.card__sample_buy_price
-					.main-catalog__cont
+					.card
 						.wrapper
-							.main-catalog__tabs
-								.tabs
-									.tabs__one.active(data-id="0")
-										figure.tabs__one-img
-											img(src="img/ico-hit.png")
-										.tabs__one-title Хиты
-									.tabs__one(data-id="1")
-										figure.tabs__one-img
-											img(src="img/ico-new.png")
-										.tabs__one-title Новинки
-									.tabs__one(data-id="2")
-										figure.tabs__one-img
-											img(src="img/ico-sale.png")
-										.tabs__one-title Скидки
-							.main-catalog__slider
-								.catalog-slider.active(data-id="0")
-									- for (let j = 0; j < 2; j++)
-										- for (let i = 0; i < 4; i++)
-											.catalog-slider__slide
-												.cat-item
-													a.cat-item__img(href="#")
-														img(src="/img/photos/cat-img-"+i+".png")
-													.cat-item__desc
-														a.cat-item__title(href="#")
-															span.cat-title Гель-лак Rock Nail Baby Nude
-														.cat-item__info 045 Blue Ocean
-														.cat-item__bot
-															.cat-item__bot-price
-																.cat-price 250 Р
-															.cat-item__bot-favorite
-																a.favorite-add(href="#")
-																	span.favorite-add__title избранное
-								.catalog-slider(data-id="1")
-									- for (let j = 0; j < 2; j++)
-										- for (let i = 0; i < 4; i++)
-											.catalog-slider__slide
-												.cat-item
-													a.cat-item__img(href="#")
-														img(src="/img/photos/cat-img-"+i+".png")
-													.cat-item__desc
-														a.cat-item__title(href="#")
-															span.cat-title Гель-лак Rock Nail Baby Nude
-														.cat-item__info 045 Blue Ocean
-														.cat-item__bot
-															.cat-item__bot-price
-																.cat-price 250 Р
-															.cat-item__bot-favorite
-																a.favorite-add(href="#")
-																	span.favorite-add__title избранное
-								.catalog-slider(data-id="2")
-									- for (let j = 0; j < 2; j++)
-										- for (let i = 0; i < 4; i++)
-											.catalog-slider__slide
-												.cat-item
-													a.cat-item__img(href="#")
-														img(src="/img/photos/cat-img-"+i+".png")
-													.cat-item__desc
-														a.cat-item__title(href="#")
-															span.cat-title Гель-лак Rock Nail Baby Nude
-														.cat-item__info 045 Blue Ocean
-														.cat-item__bot
-															.cat-item__bot-price
-																.cat-price 250 Р
-															.cat-item__bot-favorite
-																a.favorite-add(href="#")
-																	span.favorite-add__title избранное
-					.bot-form__cont
-						.wrapper
-							.bot-form__title #rocknailwork
-							.bot-form__subtitle Добавляй свои работы <br /> и попади в нашу лену
-							.bot-form
-								form(action="#")
-									.bot-form__inputs
-										.bot-form__input-cont
-											label.bot-form__label Подпишись <br /> на наши новости
-											input.bot-form__input(type="email" placeholder="Почта")
-										.bot-form__input-cont.bot-form__input-cont--submit
-											label.bot-form__label Будь первой, узнавай <br />о наших акциях и конкурсах
-											.gradient-btn.gradient-btn__wrap
-												input.bot-form__submit(type="submit" value="Подписаться")
+							.card__top
+								.card__slider
+								.card__sample
+									h1 Гель-лак RockNail Baby Nude 
+									h2 #045 Blue Ocean
+									.card__sample_slider
+										a(href="#").card__sample_nail.card__sample_btn.card__sample_btn_back
+											img(src="img/ico-btn-right.png", alt="")
+											div
+												div Еще 10
+												div оттенков
+										a(href="#").card__sample_nail
+											img(src="img/photos/nail.png", alt="")
+											div #045
+											div Blue Ocean
+										a(href="#").card__sample_nail
+											img(src="img/photos/nail.png", alt="")
+											div #045
+											div Blue Ocean
+										a(href="#").card__sample_nail
+											img(src="img/photos/nail.png", alt="")
+											div #045
+											div Blue Ocean
+										a(href="#").card__sample_nail
+											img(src="img/photos/nail.png", alt="")
+											div #045
+											div Blue Ocean
+										a(href="#").card__sample_nail
+											img(src="img/photos/nail.png", alt="")
+											div #045
+											div Blue Ocean
+										a(href="#").card__sample_nail
+											img(src="img/photos/nail.png", alt="")
+											div #045
+											div Blue Ocean
+										a(href="#").card__sample_nail
+											img(src="img/photos/nail.png", alt="")
+											div #045
+											div Blue Ocean
+										a(href="#").card__sample_nail
+											img(src="img/photos/nail.png", alt="")
+											div #045
+											div Blue Ocean
+										a(href="#").card__sample_nail
+											img(src="img/photos/nail.png", alt="")
+											div #045
+											div Blue Ocean
+										a(href="#").card__sample_nail
+											img(src="img/photos/nail.png", alt="")
+											div #045
+											div Blue Ocean
+										a(href="#").card__sample_nail
+											img(src="img/photos/nail.png", alt="")
+											div #045
+											div Blue Ocean
+										a(href="#").card__sample_nail
+											img(src="img/photos/nail.png", alt="")
+											div #045
+											div Blue Ocean
+										a(href="#").card__sample_nail.card__sample_btn
+											img(src="img/ico-btn-right.png", alt="")
+											div
+												div Еще 10
+												div оттенков
+									.card__sample_buy
+										.card__sample_buy_price
+						.main-catalog__cont
+							.wrapper
+								.main-catalog__tabs
+									.tabs
+										.tabs__one.active(data-id="0")
+											figure.tabs__one-img
+												img(src="img/ico-hit.png")
+											.tabs__one-title Хиты
+										.tabs__one(data-id="1")
+											figure.tabs__one-img
+												img(src="img/ico-new.png")
+											.tabs__one-title Новинки
+										.tabs__one(data-id="2")
+											figure.tabs__one-img
+												img(src="img/ico-sale.png")
+											.tabs__one-title Скидки
+								.main-catalog__slider
+									.catalog-slider.active(data-id="0")
+										- for (let j = 0; j < 2; j++)
+											- for (let i = 0; i < 4; i++)
+												.catalog-slider__slide
+													.cat-item
+														a.cat-item__img(href="#")
+															img(src="/img/photos/cat-img-"+i+".png")
+														.cat-item__desc
+															a.cat-item__title(href="#")
+																span.cat-title Гель-лак Rock Nail Baby Nude
+															.cat-item__info 045 Blue Ocean
+															.cat-item__bot
+																.cat-item__bot-price
+																	.cat-price 250 Р
+																.cat-item__bot-favorite
+																	a.favorite-add(href="#")
+																		span.favorite-add__title избранное
+									.catalog-slider(data-id="1")
+										- for (let j = 0; j < 2; j++)
+											- for (let i = 0; i < 4; i++)
+												.catalog-slider__slide
+													.cat-item
+														a.cat-item__img(href="#")
+															img(src="/img/photos/cat-img-"+i+".png")
+														.cat-item__desc
+															a.cat-item__title(href="#")
+																span.cat-title Гель-лак Rock Nail Baby Nude
+															.cat-item__info 045 Blue Ocean
+															.cat-item__bot
+																.cat-item__bot-price
+																	.cat-price 250 Р
+																.cat-item__bot-favorite
+																	a.favorite-add(href="#")
+																		span.favorite-add__title избранное
+									.catalog-slider(data-id="2")
+										- for (let j = 0; j < 2; j++)
+											- for (let i = 0; i < 4; i++)
+												.catalog-slider__slide
+													.cat-item
+														a.cat-item__img(href="#")
+															img(src="/img/photos/cat-img-"+i+".png")
+														.cat-item__desc
+															a.cat-item__title(href="#")
+																span.cat-title Гель-лак Rock Nail Baby Nude
+															.cat-item__info 045 Blue Ocean
+															.cat-item__bot
+																.cat-item__bot-price
+																	.cat-price 250 Р
+																.cat-item__bot-favorite
+																	a.favorite-add(href="#")
+																		span.favorite-add__title избранное
+						.bot-form__cont
+							.wrapper
+								.bot-form__title #rocknailwork
+								.bot-form__subtitle Добавляй свои работы <br /> и попади в нашу лену
+								.bot-form
+									form(action="#")
+										.bot-form__inputs
+											.bot-form__input-cont
+												label.bot-form__label Подпишись <br /> на наши новости
+												input.bot-form__input(type="email" placeholder="Почта")
+											.bot-form__input-cont.bot-form__input-cont--submit
+												label.bot-form__label Будь первой, узнавай <br />о наших акциях и конкурсах
+												.gradient-btn.gradient-btn__wrap
+													input.bot-form__submit(type="submit" value="Подписаться")
 					//- include inc/bot-blocks.jade
 			include inc/footer.jade
 		include inc/scripts.jade
