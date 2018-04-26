@@ -36,13 +36,13 @@ html(lang="ru")
 											.lacquer-category__list
 												each name in ["Top", "Top No wipe", "Top Velvet", "Top Rubber"]
 													a(href="#").lacquer-category__item=name
-										.lacquer-category.lacquer-category--top
+										.lacquer-category.lacquer-category--base
 											.lacquer-category__title Base
 											.lacquer-category__list
 												each name in ["Base Rubber"]
 													a(href="#").lacquer-category__item=name
 									.aside-working
-										.aside-working__title
+										.aside-working__title Работы <br> Rock Nail
 										.aside-working__list
 											each i in ["0", "1", "2"]
 												figure.aside-working__item
@@ -151,6 +151,11 @@ html(lang="ru")
 														.cat-item__bot-favorite
 															a.favorite-add(href="#")
 																span.favorite-add__title избранное
+
+									.btn-more
+										a(href="#").gradient-btn Показать еще 9 из 30
+
+									include inc/paginator.jade
 
 
 
