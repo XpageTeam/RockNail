@@ -13,18 +13,23 @@ $output-bourbon-deprecation-warnings: false;
 			display: flex 
 			flex-wrap: wrap
 			margin: 0 0 -90px -80px
+			padding: 55px 10px 10px 55px
 
 		&-item
 			width: calc((100% - 90px * 3) / 3)
-			margin: 0 0 90px 80px
+			margin: 0 0 80px 80px
+
+	.cat-item__img
+		margin-bottom: 25px
 
 .aside
-	width: 170px
-	margin-right: 27px
+	width: 175px
+	margin: 8px 27px 0 0
 
 	&-soc 
 		display: flex
-		justify-contentL center
+		justify-content: center
+		margin-top: 23px
 
 	.soc__link
 		display: flex
@@ -41,14 +46,27 @@ $output-bourbon-deprecation-warnings: false;
 		&:not(:first-child)
 			margin: 0 0 0 15px
 
+	&-working
+		margin-top: 70px
+
+		&__title 
+			font-size: 14px
+			font-weight: 500
+			margin-bottom: 18px
+
+		&__item
+
+			&:not(:first-child)
+				margin-top: 15px
+
+			img 
+				display: block
+
 .catalog
 	display: flex
 
-	.title-block__title
-		width: 100%
-
 	&-list 
-		width: calc(100% - 170px)
+		width: calc(100% - 175px)
 
 	&-bg
 		position: absolute
@@ -64,6 +82,46 @@ $output-bourbon-deprecation-warnings: false;
 			object-position: center
 			height: 100%
 
+.btn-more
+	display: flex
+	align-items: center
+	justify-content: center
+	margin-top: 95px
+
+	.gradient-btn
+		padding: 16px 2.2rem
+		margin-left: -220px
+		font-size: rem(17)
+
+.paginator
+	display: flex
+	justify-content: flex-end
+	max-width: 200px
+	margin-left: auto
+	margin-top: -40px
+	margin-right: 15px
+
+	&__list
+		display: flex
+
+		li
+			
+			
+
+			&:not(:first-child)
+				margin-left: 10px
+
+	&__link
+		display: flex
+		align-items: center
+		justify-content: center
+		color: #fff
+		font-weight: 500
+		+size(26px)
+		border-radius: 50%
+		background: $second-color
+
+		
 
 .catalog-filter
 	display: flex
@@ -79,6 +137,10 @@ $output-bourbon-deprecation-warnings: false;
 		&-checkbox
 			position: relative
 			width: 30px
+			height: 70px
+
+			&:not(:nth-child(2))
+				margin-left: 6px
 				
 
 			&:before
@@ -129,12 +191,15 @@ $output-bourbon-deprecation-warnings: false;
 				width: 100%
 
 			&:last-child
+				flex: none
 				max-width: 250px 
+
 
 				.forms
 					&-input-cont
 						width: 100%
 						flex-direction: column
+						margin-bottom: 25px
 					&-submit-cont
 						width: auto
 						+ .forms-submit-cont
@@ -153,6 +218,16 @@ $output-bourbon-deprecation-warnings: false;
 
 
 .lacquer-category
+	border-bottom: 1px solid #000
+
+	&:last-child
+		border: 0
+
+	&:not(:first-child)
+		margin-top: 19px
+
+		.lacquer-category__title
+			text-transform: uppercase
 	&__title			
 		
 		font-size: rem(16)
@@ -165,6 +240,10 @@ $output-bourbon-deprecation-warnings: false;
 	&__list 
 		display: flex
 		flex-direction: column
+		padding-bottom: 15px
+		
+
+
 
 	&__item
 		font-size: rem(14)
@@ -172,14 +251,14 @@ $output-bourbon-deprecation-warnings: false;
 		color: #000
 
 		&:not(:first-child)
-			margin-top: 10px
+			margin-top: 9px
 
 
 
 
 
 .bread-crumbs
-	padding-bottom: 35px
+	padding-bottom: 32px
 
 	&__link
 		color: $second-color
@@ -193,9 +272,16 @@ $output-bourbon-deprecation-warnings: false;
 
 	&__this 
 		color: #c9bcfd
+
+.title-block__title
+	padding: 0 0 23px rem(27)
+	h1 
+		font-size: rem(20)
+		font-weight: 500
+
 .inner
 	#content
-		padding-top: 100px
+		padding-top: 122px
 
 	.main-catalog__tabs
 		margin: 0
