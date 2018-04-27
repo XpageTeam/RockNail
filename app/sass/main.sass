@@ -8,13 +8,17 @@ $output-bourbon-deprecation-warnings: false;
 *[v-cloak]
 	display: none
 
-.img-hover
-	position: absolute
-	top: 0
-	left: 0
-	opacity: 0
-	pointer-events: none
-	transition: opacity .2s $ease-in-out-back
+.cat-item
+	.img
+		transition: opacity .3s ease
+
+		&-hover
+			position: absolute
+			top: 0
+			left: 0
+			opacity: 0
+			pointer-events: none
+			
 
 .catalog
 	.cat
@@ -27,7 +31,7 @@ $output-bourbon-deprecation-warnings: false;
 		&-item
 			position: relative
 			width: calc((100% - 90px * 3) / 3)
-			margin: 0 0 80px 80px
+			margin: 0 0 70px 80px
 
 
 
@@ -76,12 +80,24 @@ $output-bourbon-deprecation-warnings: false;
 			margin: 0 0 0 15px
 
 	&-working
-		margin-top: 70px
+		margin-top: 57px
 
-		&__title 
+		&__title
+			position: relative
 			font-size: 14px
 			font-weight: 500
 			margin-bottom: 18px
+			padding-left: 34px
+			padding-top: 10px
+
+			&:before 
+				content: ""
+				position: absolute
+				top: 0
+				left: 0
+				width: 23px
+				height: 41px
+				background: url('../img/ico-catalog-worker.png') no-repeat center
 
 		&__item
 
@@ -110,6 +126,41 @@ $output-bourbon-deprecation-warnings: false;
 			width: 100%
 			object-position: center
 			height: 100%
+.selectize-control
+	.selectize-input
+		.item
+			color: $second-color
+			font-size: rem(14)
+		input
+			display: none !important
+	&.single 
+		.selectize-input
+			&:after
+				display: inline-block
+				position: static
+				margin-left: 7px
+				width: 11px
+				height: 11px
+				background: url('../img/ico-select-arrow.png') no-repeat center
+				border: 0
+
+	.selectize-input
+		padding: 0
+
+
+
+.selectize-input.focus
+	box-shadow: none
+.selectize-dropdown
+	border: 0
+	box-shadow: none
+		
+
+.selectize-input
+	border: 0
+	box-shadow: none
+
+	
 
 .btn-more
 	display: flex
@@ -202,13 +253,14 @@ $output-bourbon-deprecation-warnings: false;
 				opacity: 0
 				pointer-events: none
 				top: -25px
+				left: -50%
 				transition: opacity .3s ease
 
 			&:after 
 				content: ""
 				position: absolute
 				top: 5px
-				left: calc(50% - 2px)
+				left: 50%
 				display: block
 				+size(5px)
 				background: url('../img/ico-arrow-nail.png') no-repeat center
@@ -249,6 +301,9 @@ $output-bourbon-deprecation-warnings: false;
 						margin-bottom: 25px
 				.btn-flat + .btn-flat
 					margin-left: 17px
+
+				.forms__input
+					padding: 0
 
 		&__input--select
 			padding: 0

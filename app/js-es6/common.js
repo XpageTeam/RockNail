@@ -5,14 +5,6 @@ $(window).on("load", e => {
 });
 
 
-if($(window).width() > 660) {
-	$(".selectize").each((i, el) =>{
-		let $this = $(el);
-
-		$this.selectize();
-	});
-};
-
 class headSearch{
 	static openSearch(){
 		$(".head__search-more").slideDown(300)
@@ -189,3 +181,17 @@ $(e => {
 		},
 	]);
 })
+
+$(function() {
+	if($(window).width() > 660) {
+		$(".selectize").each((i, el) =>{
+			let $this = $(el);
+
+			$(".selectize").selectize({
+				create: false,
+				sortField: 'text'
+			});
+		});
+	};
+
+});
