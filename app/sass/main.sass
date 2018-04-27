@@ -213,22 +213,35 @@ $output-bourbon-deprecation-warnings: false;
 				background: url('../img/ico-select-arrow.png') no-repeat center
 				border: 0
 
-	.selectize-input
-		padding: 0
 
+		
+.selectize-input.dropdown-active
+	border-radius: 0
+	box-shadow: 0px -16px 20px 5px rgba(0, 0, 0, 0.01), 0 10px 10px rgba(0, 0, 0, 0.08) !important
 
-
-.selectize-input.focus
-	box-shadow: none
 .selectize-dropdown
+	padding: 10px
+	margin: 0 -10px -10px
 	border: 0
 	box-shadow: none
-		
+	box-shadow: 0px 20px 20px 5px rgba(0, 0, 0, 0.01), 0 10px 10px rgba(0, 0, 0, 0.08)
+	
+	.option
+		color: #c9bcfd
+	.active
+		background-color: transparent
+		color: #c9bcfd
+
+
 
 .selectize-input
+	margin: -10px
+	padding: 10px
 	border: 0
 	box-shadow: none
 
+	&.focus
+		box-shadow: none
 	
 
 .btn-more
@@ -314,11 +327,12 @@ $output-bourbon-deprecation-warnings: false;
 				content: attr(data-title)
 				transform: none
 				color: #fff
+				font-size: rem(12)
 				background: #000
 				width: auto
 				height: auto
 				padding: 5px
-				border-radius: 1px
+				border-radius: 4px
 				opacity: 0
 				pointer-events: none
 				top: -25px
@@ -328,7 +342,7 @@ $output-bourbon-deprecation-warnings: false;
 			&:after 
 				content: ""
 				position: absolute
-				top: 5px
+				top: 0
 				left: 50%
 				display: block
 				+size(5px)
@@ -344,6 +358,11 @@ $output-bourbon-deprecation-warnings: false;
 			&:hover 
 				&:before, &:after
 					opacity: 1
+
+				.forms__checkbox-label
+
+					&:after
+						opacity: 1
 
 		&__input
 			height: auto
@@ -382,6 +401,18 @@ $output-bourbon-deprecation-warnings: false;
 			position: relative
 			padding: 0
 			z-index: 2
+
+			&:before 
+				display: none
+
+			&:after
+				height: 2px
+				width: 16px
+				bottom: -10px
+				top: initial
+				left: calc(50% - 8px)
+				transform-origin: right
+				transform: none
 
 
 
