@@ -125,7 +125,7 @@ html(lang="ru")
 
 											.forms-wrap
 												.forms-input-cont
-													select.forms__input.forms__input--select
+													select.forms__input.forms__input--select.selectize
 														option Сначала популярные
 														option Сначала популярные
 														option Сначала популярные
@@ -140,7 +140,8 @@ html(lang="ru")
 										- for (let i = 0; i < 9; i++)
 											.cat-item
 												a.cat-item__img(href="#")
-													img(src="/img/photos/catalog-img-0.png")
+													img(src="/img/photos/catalog-img-0.png").img
+													img(src="/img/photos/catalog-img-hover.jpg", alt="").img-hover
 												.cat-item__desc
 													a.cat-item__title(href="#")
 														span.cat-title Гель-лак Rock Nail Baby Nude
@@ -153,7 +154,8 @@ html(lang="ru")
 																span.favorite-add__title избранное
 
 									.btn-more
-										a(href="#").gradient-btn Показать еще 9 из 30
+										.gradient-btn
+											a(href="#").btn Показать еще 9 из 30
 
 									include inc/paginator.jade
 

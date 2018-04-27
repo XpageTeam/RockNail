@@ -4,6 +4,15 @@ $(window).on("load", e => {
 	$("body").removeClass("loading").addClass("loaded");
 });
 
+
+if($(window).width() > 660) {
+	$(".selectize").each((i, el) =>{
+		let $this = $(el);
+
+		$this.selectize();
+	});
+};
+
 class headSearch{
 	static openSearch(){
 		$(".head__search-more").slideDown(300)
