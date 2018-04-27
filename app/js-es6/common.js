@@ -21,8 +21,8 @@ $(document).ready(function(){
 		let id = $this.attr("data-id");
 		$('.card__tabs_navi span').removeClass('active')
 		$(this).addClass('active')
-		$('.card__tabs_left_content_flex').css("z-index", "1")
-		$(".card__tabs_left_content_flex[data-id='"+id+"']").css("z-index", "2")
+		$('.card__tabs_left_content_flex').css("display", "none")
+		$(".card__tabs_left_content_flex[data-id='"+id+"']").css("display", "flex")
 	});
 	// $("card__feedback_block-img a").fancybox();
 });
