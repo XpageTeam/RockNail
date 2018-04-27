@@ -16,8 +16,26 @@ html(lang="ru")
 								.card__slider
 									.card__slick
 										.card__slick_slide
-											img(src="../img/photos/cat-img-0.png", alt="")
-
+											img(src="img/photos/cat-img-0.png", alt="")
+										.card__slick_slide
+											img(src="img/photos/cat-img-1.png", alt="")
+										.card__slick_slide
+											img(src="img/photos/cat-img-2.png", alt="")
+										.card__slick_slide
+											img(src="img/photos/cat-img-3.png", alt="")
+										.card__slick_slide
+											img(src="img/photos/cat-img-2.png", alt="")
+									.card__slick_nav
+										.card__slick_slide
+											img(src="img/photos/cat-img-0.png", alt="")
+										.card__slick_slide
+											img(src="img/photos/cat-img-1.png", alt="")
+										.card__slick_slide
+											img(src="img/photos/cat-img-2.png", alt="")
+										.card__slick_slide
+											img(src="img/photos/cat-img-3.png", alt="")
+										.card__slick_slide
+											img(src="img/photos/cat-img-2.png", alt="")
 								.card__sample
 									h1 Гель-лак RockNail Baby Nude 
 									h2 #045 Blue Ocean
@@ -95,10 +113,10 @@ html(lang="ru")
 								.card__tabs#tabs
 									.card__tabs_left
 										.card__tabs_navi
-											a(href="#tabs-1").active ОПИСАНИЕ
-											a(href="#tabs-2") ДОСТАВКА
-											a(href="#tabs-3") СОСТАВ
-										.card__tabs_left_content_flex#tabs-1
+											span(data-id="1").active ОПИСАНИЕ
+											span(data-id="2") ДОСТАВКА
+											span(data-id="3") СОСТАВ
+										.card__tabs_left_content_flex(data-id="1")
 											.card__tabs_left_content
 												.card__tabs_left_content-title Гель-лак RockNail Baby Nude
 												.text-page
@@ -106,11 +124,21 @@ html(lang="ru")
 													p В состав входят микрочастицы, чувствительные к интенсивности освещения, а так же частички перламутра и крошечная алмазная пыль.
 													p Перламутровая крошка обеспечивает сияние маникюра, а мельчайшие частички алмазов добавляют кристального блеска.
 													p В состав входят микрочастицы, чувствительные к интенсивности освещения, а так же частички перламутра и крошечная.
-										.card__tabs_left_content_flex#tabs-2
+										.card__tabs_left_content_flex(data-id="2")
 											.card__tabs_left_content
-												.card__tabs_left_content-title Гель-лак RockNail Baby Nude
+												.card__tabs_left_content-title Описание
 												.text-page
 													p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, impedit nulla beatae possimus, voluptatem odio obcaecati. Tempore nisi minus ea, veniam. Ducimus, eius eveniet voluptatibus amet. Nulla similique repellat adipisci laboriosam perspiciatis quaerat laborum soluta commodi vero eveniet harum culpa aliquam earum, cumque, omnis magni doloribus facere ipsum libero voluptatem officiis voluptas odit. Quisquam, at.
+										.card__tabs_left_content_flex(data-id="3")
+											.card__tabs_left_content
+												.card__tabs_left_content-title Состав
+												.text-page
+													ul
+														li Lorem ipsum dolor sit amet.
+														li Lorem ipsum dolor sit amet.
+														li Lorem ipsum dolor sit amet.
+														li Lorem ipsum dolor sit amet.
+														li Lorem ipsum dolor sit amet.
 									.card__tabs_right
 										.card__tabs_right-title Rock Nail – ЭТО
 										.card__tabs_right_item
@@ -194,9 +222,9 @@ html(lang="ru")
 											.card__feedback_block-time (2 недели назад)
 											.card__feedback_block-text Лак супер, хорошего качества
 											.card__feedback_block-img 
-												a(href="#")
-													img(src="img/photos/card-feedback.png", alt="")
-												a(href="#")
+												a(href="img/photos/cat-img-0.png" data-fancybox="feedback").fancybox
+													img(src="img/photos/cat-img-0.png", alt="")
+												a(href="img/photos/cat-img-1.png" data-fancybox="feedback").fancybox
 													img(src="img/photos/cat-img-1.png", alt="")
 
 										.card__feedback_block

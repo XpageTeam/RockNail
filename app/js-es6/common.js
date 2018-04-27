@@ -1,5 +1,34 @@
 Vue.use(Vuex);
+// sergey new code-------------
+$(document).ready(function(){
+	// слайдер
+	$(".card__slick").slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		slide: ".card__slick_slide",
+		asNavFor: '.card__slick_nav',
+	})
+	$('.card__slick_nav').slick({
+		slidesToShow: 5,
+		slidesToScroll: 1,
+		asNavFor: '.card__slick',
+		focusOnSelect: true,
+		arrows: false,
+	});
+	// табы
+	$(".card__tabs_navi span").click(function(){
+		let $this = $(this);
+		let id = $this.attr("data-id");
+		$('.card__tabs_navi span').removeClass('active')
+		$(this).addClass('active')
+		$('.card__tabs_left_content_flex').css("z-index", "1")
+		$(".card__tabs_left_content_flex[data-id='"+id+"']").css("z-index", "2")
+	});
+	// $("card__feedback_block-img a").fancybox();
+});
 
+
+// sergey new code------------ END
 $(window).on("load", e => {
 	$("body").removeClass("loading").addClass("loaded");
 });
