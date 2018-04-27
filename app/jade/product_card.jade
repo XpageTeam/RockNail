@@ -12,7 +12,9 @@ html(lang="ru")
 				.content
 					.card
 						.wrapper
-							.card__top
+							<!-- .sale класс для распродажи -->
+							<!-- .not_exist класс для товара отсутствующего в наличии -->
+							.card__top.sale
 								.card__slider
 									.card__slick
 										.card__slick_slide
@@ -101,10 +103,17 @@ html(lang="ru")
 									.card__sample_buy
 										.cat-item__bot
 											.cat-item__bot-price
+												.cat-price_sale 150 Р
 												.cat-price 250 Р
+											.card__sample_input.exist_btn
+												input(value="1")
+												a(href="#-") -
+												a(href="#+") +
 											span
-												.gradient-btn.gradient-btn__wrap
+												.gradient-btn.gradient-btn__wrap.not_exist_btn
 													input.bot-form__submit(type="submit" value="СООБЩИТЬ О ПОСТУПЛЕНИИ")
+												.gradient-btn.gradient-btn__wrap.exist_btn
+													input.bot-form__submit(type="submit" value="В КОРЗИНУ")
 												.cat-item__bot-favorite
 													a.favorite-add(href="#")
 														span.favorite-add__title избранное
@@ -268,7 +277,7 @@ html(lang="ru")
 											.card__feedback_block-time (2 недели назад)
 											.card__feedback_block-text Лак супер, хорошего качества
 											.card__feedback_block-img 
-
+									.card__feedback_middle-no_feedback У этого товара пока нет отзывов. Если вы заказывали этот товар, поделитесь своим впечатлением о нём, и другие покупатели будут вам благодарны.
 									.card__feedback_bot
 										.card__feedback_btns
 											.card__btn
@@ -280,7 +289,7 @@ html(lang="ru")
 									.card__feedback_form
 										.card__feedback_top-title Отзывы 
 										.card__feedback_form-rating Ваша оценка:
-											
+										
 						.bot-form__cont
 							.wrapper
 								.bot-form__title #rocknailwork
