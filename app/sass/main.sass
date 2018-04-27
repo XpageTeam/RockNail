@@ -863,11 +863,61 @@ button, input, select
 			left: calc(50% - 3px)
 // product_card-------------------------------
 .card
-
+	background: url(../img/card-bg.png) 0 600px no-repeat;
+	// background-size: cover;
 	&__slider
 		width: 45%
 		height: 640px
-		background: gray
+		// background: gray
+		.slick-arrow
+			width: 36px
+			height: 50px
+			position: absolute;
+			top: calc(50% - 25px)
+			z-index: 20;
+			background: url(../img/card-ico-arrow-left.png) center no-repeat;
+			border: 0;
+		.slick-prev
+			left: 10px;
+		.slick-next
+			right: 10px;
+			transform: rotate(180deg);
+	&__slick
+		width: 100%;
+		height: 540px;
+		background-color: #fff;
+		display: flex;
+		align-items: center;
+
+	&__slick_slide
+		width: 100%;
+		height: 100%;
+		img
+			// object-fit: cover;
+			margin: 0 auto;
+
+	&__slick_nav
+		display: flex;
+		height: 120px;
+		padding: 25px 0;
+		padding-bottom: 0;
+		
+		img
+			height: 70px;
+			width: 70px
+			object-fit: contain;
+			background-color: #fff;
+			margin-right: 35px;
+		.slick-current
+			position: relative;
+			&:before
+				content: ""
+				width: calc(100% - 35px)
+				height: 4px;
+				position: absolute;
+				background-color: #8b69fc;
+				left: 0;
+				top: 0
 
 	&__sample
 		width: 55%
@@ -875,6 +925,7 @@ button, input, select
 			font-size: 25px;
 			line-height: 38px;
 			padding-left: 18px;
+
 	&__sample_slider
 		display: flex;
 		flex-wrap: wrap;
@@ -934,10 +985,10 @@ button, input, select
 	&__tabs
 		// height: 500px;
 		display: flex;
-
+		margin-top: 80px;
 	&__tabs_left
 		width: calc(100% - 315px);
-
+		position: relative;
 	&__tabs_right
 		width: 315px;
 		padding-left: 30px;
@@ -980,27 +1031,34 @@ button, input, select
 		align-items: center;
 		height: 100%;
 		background-color: #fff;
-		box-shadow: 0px 0px 42px 0px rgba(0,0,0,0.25);
+		box-shadow: 0px 0px 32px 0px rgba(0,0,0,0.15);
+		position: absolute;
+		width: 100%;
 	&__tabs_left_content
 		display: flex;
 		align-items: flex-start;
 		padding: 0 vw(45);
+		.text-page
+			padding-top: 8px;
 	&__tabs_left_content-title
 		font-size: 34px;
 		display: flex;
+		width: 250px;
+		padding-right: 20px;
 
 	&__tabs_navi
 		height: 30px;
-		a 
+		span 
 			color: #d34c75;
 			font-size: 16px;
 			padding-bottom: 8px;
 			margin-right: 40px;
 			line-height: 1;
 			opacity: 0.5;
-			transition: 0.4s
+			transition: opacity  0.4s
 			&:hover
 				border-bottom: 3px solid #d34c75
+				cursor: pointer;
 		.active
 			border-bottom: 3px solid #d34c75;
 			opacity: 1;
@@ -1144,6 +1202,10 @@ button, input, select
 		span.paginator__link
 			height: 0;
 			font-size: 0;
+	.bot-form__cont
+		position: relative;
+		z-index: 4;
+		margin-bottom: -72px;
 // product_card-------------------------------END
 @import "_grid"
 @import "media"
