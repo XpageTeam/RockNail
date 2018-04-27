@@ -8,19 +8,31 @@ $output-bourbon-deprecation-warnings: false;
 *[v-cloak]
 	display: none
 
-.cat-item
-	.img
-		transition: opacity .3s ease
+.quick-view
+	display: block
+	position: relative
+	padding-left: 22px
+	margin-top: 19px
 
-		&-hover
-			position: absolute
-			top: 0
-			left: 0
-			opacity: 0
-			pointer-events: none
-			
+	&:before 
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		+size(14px)
+		background: url('../img/ico-quick-view.png') no-repeat center
+
+.cat-item
+	
+.btn 
+	cursor: pointer		
+
 
 .catalog
+
+	.img
+		&-hover
+			transition: opacity .3s ease
 	.cat
 		&-items
 			display: flex 
@@ -32,15 +44,57 @@ $output-bourbon-deprecation-warnings: false;
 			position: relative
 			width: calc((100% - 90px * 3) / 3)
 			margin: 0 0 70px 80px
+			transition: outline-width 0s ease, box-shadow .7s ease
 
 
 
 			&:hover
+				outline: 32px solid #fff;
+				box-shadow: 1px 1px 35px 50px rgba(0, 0, 0, 0.05)
+
 				.img
 					opacity: 0
 
 					&-hover
 						opacity: 1
+
+				.cat-item
+
+
+					&__hover
+						// display: flex
+						opacity: 1
+						pointer-events: all
+						background: #fff
+						z-index: 5
+						margin: 0 -32px
+						padding-bottom: 22px
+						box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.05)
+
+			.img
+				transition: opacity .3s ease
+
+				&-hover
+					position: absolute
+					top: 0
+					left: 0
+					opacity: 0
+					pointer-events: none
+
+			&__hover
+				display: flex
+				flex-direction: column
+				align-items: center
+				position: absolute
+				left: 0
+				top: 100%
+				right: 0
+				margin-top: 25px
+				opacity: 0
+				pointer-events: none
+				background: #fff
+				// outline: 32px solid #fff
+				// box-shadow: 1px 1px 35px 50px rgba(0, 0, 0, 0.05)	
 
 
 
