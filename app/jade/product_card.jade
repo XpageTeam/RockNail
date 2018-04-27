@@ -118,7 +118,7 @@ html(lang="ru")
 											span(data-id="3") СОСТАВ
 										.card__tabs_left_content_flex(data-id="1")
 											.card__tabs_left_content
-												.card__tabs_left_content-title Гель-лак RockNail Baby Nude
+												h3 Гель-лак RockNail Baby Nude
 												.text-page
 													p Меняетсвой цвет в зависимости от типа освещения и положения осветительного прибора относительно ногтя.
 													p В состав входят микрочастицы, чувствительные к интенсивности освещения, а так же частички перламутра и крошечная алмазная пыль.
@@ -126,12 +126,49 @@ html(lang="ru")
 													p В состав входят микрочастицы, чувствительные к интенсивности освещения, а так же частички перламутра и крошечная.
 										.card__tabs_left_content_flex(data-id="2")
 											.card__tabs_left_content
-												.card__tabs_left_content-title Описание
 												.text-page
-													p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, impedit nulla beatae possimus, voluptatem odio obcaecati. Tempore nisi minus ea, veniam. Ducimus, eius eveniet voluptatibus amet. Nulla similique repellat adipisci laboriosam perspiciatis quaerat laborum soluta commodi vero eveniet harum culpa aliquam earum, cumque, omnis magni doloribus facere ipsum libero voluptatem officiis voluptas odit. Quisquam, at.
+													table
+														tfoot
+															tr
+																td(colspan="3")
+														thead
+															tr
+																th Компания
+																th Срок 
+																th Цена
+														tbody
+															tr
+																td(data-title="Компания") 
+																	span Курьерская доставка CDEK
+																td(data-title="Срок")
+																	span 1 – 2 дня
+																td(data-title="Цена")
+																	span 199 Р
+															tr
+																td(data-title="Компания") 
+																	span Курьерская доставка CDEK
+																td(data-title="Срок")
+																	span 1 – 2 дня
+																td(data-title="Цена")
+																	span 199 Р
+															tr
+																td(data-title="Компания") 
+																	span Курьерская доставка CDEK
+																td(data-title="Срок")
+																	span 1 – 2 дня
+																td(data-title="Цена")
+																	span 199 Р
+															tr
+																td(data-title="Компания") 
+																	span Курьерская доставка CDEK
+																td(data-title="Срок")
+																	span 1 – 2 дня
+																td(data-title="Цена")
+																	span 199 Р
+
 										.card__tabs_left_content_flex(data-id="3")
 											.card__tabs_left_content
-												.card__tabs_left_content-title Состав
+												h3 Состав
 												.text-page
 													ul
 														li Lorem ipsum dolor sit amet.
@@ -210,13 +247,13 @@ html(lang="ru")
 										.card__feedback_top-title Отзывы 
 											span (12)
 										.card__feedback_top-rating <span>5.2</span> Средняя оценка
+
 									.card__feedback_middle
 										.card__feedback_block
 											.card__feedback_block-name Максутова Виолетта
 											.card__feedback_block-time (2 недели назад)
 											.card__feedback_block-text Лак супер, хорошего качества
 											.card__feedback_block-img 
-
 										.card__feedback_block
 											.card__feedback_block-name Максутова Виолетта
 											.card__feedback_block-time (2 недели назад)
@@ -226,7 +263,6 @@ html(lang="ru")
 													img(src="img/photos/cat-img-0.png", alt="")
 												a(href="img/photos/cat-img-1.png" data-fancybox="feedback").fancybox
 													img(src="img/photos/cat-img-1.png", alt="")
-
 										.card__feedback_block
 											.card__feedback_block-name Максутова Виолетта
 											.card__feedback_block-time (2 недели назад)
@@ -241,6 +277,10 @@ html(lang="ru")
 													input.bot-form__submit(type="submit" value="Показать еще")
 										.card__feedback_paginator
 											include inc/paginator.jade
+									.card__feedback_form
+										.card__feedback_top-title Отзывы 
+										.card__feedback_form-rating Ваша оценка:
+											
 						.bot-form__cont
 							.wrapper
 								.bot-form__title #rocknailwork

@@ -1032,19 +1032,44 @@ button, input, select
 		height: 100%;
 		background-color: #fff;
 		box-shadow: 0px 0px 32px 0px rgba(0,0,0,0.15);
-		position: absolute;
+		// position: absolute;
+		display: none;
 		width: 100%;
+	&__tabs_left_content_flex[data-id="1"]
+		display: flex;
 	&__tabs_left_content
 		display: flex;
 		align-items: flex-start;
 		padding: 0 vw(45);
+		width: 100%;
 		.text-page
 			padding-top: 8px;
-	&__tabs_left_content-title
-		font-size: 34px;
-		display: flex;
-		width: 250px;
-		padding-right: 20px;
+			width: 100%;
+		table
+			width: 100%;
+			text-align: left;
+		td 
+			color: #000;
+			font-size: 16px;
+			&:nth-child(3)
+				color: #9667f3;
+				font-size: 20px;
+				font-weight: bold;
+		th 
+			font-size: 12px;
+			color: #8e8e8e;
+		thead, tfoot
+			border-bottom: 1px solid #8e8e8e;
+		tbody
+			tr 
+				&:nth-child(2n)
+					background-color: #e2effe;
+
+		h3
+			font-size: 34px;
+			display: flex;
+			width: 250px;
+			padding-right: 20px;
 
 	&__tabs_navi
 		height: 30px;
@@ -1175,37 +1200,78 @@ button, input, select
 			&:hover, &:focus
 				border-bottom: 0;
 				border: 2px solid #d561ac
-	&__feedback_paginator
-		.paginator__back, .paginator__next
-			display: none;
-		ul
-			display: flex;
-		a 
-			display: flex
-			justify-content: center;
-			align-items: center;
-			min-width: 30px;
-			min-height: 30px;
-			padding: 5px 6px;
-			transition: .3s;
-			line-height: 0.9;
-			background: #c5b4fd
-			border-radius: 15px
-			margin: 0 7px;
-			color: #fff;
-			font-size: 14px;
-			font-weight: bold;
-			&:hover
-				background: #8b69fc
-		.active, .paginator__link
-			background: #8b69fc
-		span.paginator__link
-			height: 0;
-			font-size: 0;
+		// &__feedback_paginator
+		// 	.paginator__back, .paginator__next
+		// 		display: none;
+		// 	ul
+		// 		display: flex;
+		// 	a 
+		// 		display: flex
+		// 		justify-content: center;
+		// 		align-items: center;
+		// 		min-width: 30px;
+		// 		min-height: 30px;
+		// 		padding: 5px 6px;
+		// 		transition: .3s;
+		// 		line-height: 0.9;
+		// 		background: #c5b4fd
+		// 		border-radius: 15px
+		// 		margin: 0 7px;
+		// 		color: #fff;
+		// 		font-size: 14px;
+		// 		font-weight: bold;
+		// 		&:hover
+		// 			background: #8b69fc
+		// 	.active, .paginator__link
+		// 		background: #8b69fc
+		// 	span.paginator__link
+		// 		height: 0;
+		// 		font-size: 0;
 	.bot-form__cont
 		position: relative;
 		z-index: 4;
 		margin-bottom: -72px;
+//Paginator------------------------ 
+.paginator
+	display: flex
+	justify-content: flex-end
+	max-width: 200px
+	margin-left: auto
+	margin-top: -40px
+	margin-right: 15px
+
+	&__list
+		display: flex
+
+		li
+			
+			&:not(:first-child)
+				margin-left: 10px
+
+
+
+			&.active
+				.paginator__link
+					background: $second-color
+		span.paginator__link
+			background: url('../img/ico-paginator-dots.png') no-repeat center
+
+	&__link
+		display: flex
+		align-items: center
+		justify-content: center
+		color: #fff
+		font-weight: 500
+		+size(26px)
+		border-radius: 50%
+		background: #c5b4fd
+//Paginator------------------------ END
+// paginator fix--------
+.card__feedback_paginator
+	display: flex;
+	align-items: center;
+	.paginator
+		margin-top: 0;
 // product_card-------------------------------END
 @import "_grid"
 @import "media"
