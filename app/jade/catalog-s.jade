@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Каталог Серия 1
+		include inc/head.jade
+		include inc/css.jade
+	body.inner.loading
+		#page-wr
+			include inc/header.jade
+			main#content
+				.content
+					
+					.catalog-banner
+						img(src="img/photos/catalog-s-bg.jpg", alt="")
+					.catalog-bg
+						img(src="img/catalog-bg-top.png", alt="")
+
+					.titile-block
+						.wrapper
+							.title-block__crumbs
+								.bread-crumbs
+									a.bread-crumbs__link(href='#') Главная
+									span.bread-crumbs__this Все категории
+							
+					.catalog__cont
+						.wrapper
+							
+
+							.catalog
+								aside.aside
+									.aside-category
+										.lacquer-category
+											.lacquer-category__title.active Гель • лаки
+											.lacquer-category__list
+												each name in ["Baby Nude", "Classik", "Camouflage", "Galaxy", "Gothic", "Summer", "Gray Moon", "Diamond"]
+													a(href="#").lacquer-category__item=name
+										.lacquer-category.lacquer-category--top
+											.lacquer-category__title Top
+											.lacquer-category__list
+												each name in ["Top", "Top No wipe", "Top Velvet", "Top Rubber"]
+													a(href="#").lacquer-category__item=name
+										.lacquer-category.lacquer-category--base
+											.lacquer-category__title Base
+											.lacquer-category__list
+												each name in ["Base Rubber"]
+													a(href="#").lacquer-category__item=name
+									.aside-working
+										.aside-working__title Работы <br> Rock Nail
+										.aside-working__list
+											each i in ["0", "1", "2"]
+												figure.aside-working__item
+													img(src="img/photos/aside-working-"+i+".jpg", alt="")
+
+									.aside-soc
+										a.soc__link(href="#")
+											figure.soc__link
+												img(src="img/ico-inst.png")
+										a.soc__link(href="#")
+											figure.soc__link
+												img(src="img/ico-vk.png")
+										a.soc__link(href="#")
+											figure.soc__link
+												img(src="img/ico-fb.png")
+
+
+
+
+
+
+
+
+								.catalog-list
+									.title-block__title
+										h1 Все категории
+
+									form(action="")
+										.catalog-filter
+											.forms-wrap
+												.forms-wrap__title Выбрать цвет
+												each img, i in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+													.forms-checkbox(data-title="Розовые")
+														input(type="checkbox" id="checkbox-"+(i+1)).forms__checkbox 
+														label(for="checkbox-"+(i+1)).forms__checkbox-label 
+															img(src="img/nail-"+img+".png", alt="")
+
+												.forms-input-cont.mobile
+													select.forms__input.forms__input--select
+														option Сначала популярные
+														option Сначала популярные
+														option Сначала популярные
+														option Сначала популярные
+													.forms__label Выбрать цвет
+													.forms__error-message
+														i.forms__error-message-icon
+											.forms-wrap
+												.forms-wrap__title Эффект
+												each img, i in ["10", "11", "12", "13", "14"]
+													.forms-checkbox(data-title="Розовые")
+														input(type="checkbox" id="checkbox-1"+(i+1)).forms__checkbox 
+														label(for="checkbox-"+(i+1)).forms__checkbox-label 
+															img(src="img/nail-"+img+".png", alt="")
+												.forms-input-cont.mobile
+													select.forms__input.forms__input--select
+														option Сначала популярные
+														option Сначала популярные
+														option Сначала популярные
+														option Сначала популярные
+													.forms__label Эффект
+													.forms__error-message
+														i.forms__error-message-icon
+
+											.forms-wrap
+												.forms-wrap__title Френч
+												each img, i in ["15", "16"]
+													.forms-checkbox(data-title="Розовые")
+														input(type="checkbox" id="checkbox-1"+(i+1)).forms__checkbox 
+														label(for="checkbox-"+(i+1)).forms__checkbox-label 
+															img(src="img/nail-"+img+".png", alt="")
+												.forms-input-cont.mobile
+													select.forms__input.forms__input--select
+														option Сначала популярные
+														option Сначала популярные
+														option Сначала популярные
+														option Сначала популярные
+													.forms__label Френч
+													.forms__error-message
+														i.forms__error-message-icon
+
+											.forms-wrap
+												.forms-input-cont
+													select.forms__input.selectize
+														option(value="1") Сначала популярные
+														option(value="2") Сначала популярные
+														option(value="3") Сначала популярные
+														option(value="4") Сначала популярные
+												.btn-flat.btn-flat--purple
+													input(type="submit" value="Применить")
+
+												.btn-flat
+													input(type="submit" value="Сбросить")
+
+									.cat-items
+										- for (let i = 0; i < 9; i++)
+											.cat-item
+												a.cat-item__img(href="#")
+													img(src="/img/photos/catalog-img-0.png").img
+													img(src="/img/photos/catalog-img-hover.jpg", alt="").img-hover
+												.cat-item__desc
+													a.cat-item__title(href="#")
+														span.cat-title Гель-лак Rock Nail Baby Nude
+													.cat-item__info 045 Blue Ocean
+													.cat-item__bot
+														.cat-item__bot-price
+															.cat-price 250 Р
+														.cat-item__bot-favorite
+															a.favorite-add(href="#")
+																span.favorite-add__title избранное
+												.cat-item__hover
+													.btn-wrap
+														a(href="#").btn.gradient-btn В корзину
+
+													a(href="/img/photos/catalog-img-hover.jpg" data-fancybox="quick-view").fancybox.quick-view Быстрый просмотр
+
+									.btn-more
+										.gradient-btn
+											a(href="#").btn Показать еще 9 из 30
+
+									include inc/paginator.jade
+
+
+
+
+							
+					
+						.bot-form__cont
+							.wrapper
+								.bot-form__title #rocknailwork
+								.bot-form__subtitle Добавляй свои работы <br /> и попади в нашу лену
+								.bot-form
+									form(action="#")
+										.bot-form__inputs
+											.bot-form__input-cont
+												label.bot-form__label Подпишись <br /> на наши новости
+												input.bot-form__input(type="email" placeholder="Почта")
+											.bot-form__input-cont.bot-form__input-cont--submit
+												label.bot-form__label Будь первой, узнавай <br />о наших акциях и конкурсах
+												.gradient-btn.gradient-btn__wrap
+													input.bot-form__submit(type="submit" value="Подписаться")
+
+
+						.seo-text__cont
+							.wrapper
+								.seo-text__title Заголовок сео
+								.seo-text
+									.text-page
+										p Каждый человек должен знать достойный интернет магазин интересных вещей и подарков, ведь поводов для покупки презентов – огромное количество! Начиная со всевозможных серьезных годовщин и юбилеев, заканчивая просто хорошим настроением – по-настоящему оригинальные подарки пригодятся всегда.
+										p Для девушки, для мужчины средних лет или любимой тетушки, благополучно «разменявшей» девятый десяток у нас найдется прикольный подарок любому человеку, которого вы решите порадовать.
+										p Каждый человек должен знать достойный интернет магазин интересных вещей и подарков, ведь поводов для покупки презентов – огромное количество! Начиная со всевозможных серьезных годовщин и юбилеев, заканчивая просто хорошим настроением – по-настоящему оригинальные подарки пригодятся всегда.
+										p Для девушки, для мужчины средних лет или любимой тетушки, благополучно «разменявшей» девятый десяток у нас найдется прикольный подарок любому человеку, которого вы решите порадовать.
+
+
+							
+					//- include inc/bot-blocks.jade
+			include inc/footer.jade
+		include inc/scripts.jade
