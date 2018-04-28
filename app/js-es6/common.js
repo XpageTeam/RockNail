@@ -24,9 +24,23 @@ $(document).ready(function(){
 		$('.card__tabs_left_content_flex').css("display", "none")
 		$(".card__tabs_left_content_flex[data-id='"+id+"']").css("display", "flex")
 	});
-	// $("card__feedback_block-img a").fancybox();
+	// форма отзыва
+	// появление
+	$(".card__btn").click(function(){
+		$('.card__feedback_middle').css("display", "none")
+		$('.card__feedback_middle-no_feedback').css("display", "none")
+		$('.card__feedback_bot').css("display", "none")
+		$('.card__feedback_form').css("display", "block")
+	});
+	// закрытие
+	$(".card__feedback_form-close").click(function(){
+		$('.card__feedback_form').css("display", "none")
+		$('.card__feedback_middle').css("display", "block")
+		$('.card__feedback_middle-no_feedback').css("display", "block")
+		$('.card__feedback_bot').css("display", "block")
+		
+	});
 });
-
 
 // sergey new code------------ END
 $(window).on("load", e => {
