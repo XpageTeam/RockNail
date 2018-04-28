@@ -200,6 +200,7 @@ html(lang="ru")
 											.card__tabs_right_item-title Технологии
 											.card__tabs_right_item-text Архитектурная формула Выравнивающая способность Нанесение в одно скольжение
 								.main-catalog__slider
+									.card__main-catalog__slider-title Похожие оттенки
 									.catalog-slider.active(data-id="0")
 										- for (let j = 0; j < 2; j++)
 											- for (let i = 0; i < 4; i++)
@@ -251,12 +252,13 @@ html(lang="ru")
 																.cat-item__bot-favorite
 																	a.favorite-add(href="#")
 																		span.favorite-add__title избранное
+								#form_anchor
 								.card__feedback
 									.card__feedback_top
 										.card__feedback_top-title Отзывы 
 											span (12)
 										.card__feedback_top-rating <span>5.2</span> Средняя оценка
-
+									<!-- выводить блок .card__feedback_middle когда есть отзывы -->
 									.card__feedback_middle
 										.card__feedback_block
 											.card__feedback_block-name Максутова Виолетта
@@ -277,19 +279,45 @@ html(lang="ru")
 											.card__feedback_block-time (2 недели назад)
 											.card__feedback_block-text Лак супер, хорошего качества
 											.card__feedback_block-img 
+									<!-- выводить блок .card__feedback_middle-no_feedback когда нет отзывов -->
 									.card__feedback_middle-no_feedback У этого товара пока нет отзывов. Если вы заказывали этот товар, поделитесь своим впечатлением о нём, и другие покупатели будут вам благодарны.
 									.card__feedback_bot
 										.card__feedback_btns
 											.card__btn
-												a(href="#") Оставить отзыв
+												a(href="#form_anchor") Оставить отзыв
 											.gradient-btn.gradient-btn__wrap
 													input.bot-form__submit(type="submit" value="Показать еще")
 										.card__feedback_paginator
 											include inc/paginator.jade
-									.card__feedback_form
-										.card__feedback_top-title Отзывы 
+									.card__feedback_form.form#form
+										.card__feedback_form-close
+											img(src="img/card-ico-form-close.png", alt="")
+										.forms__title оставить отзыв 
 										.card__feedback_form-rating Ваша оценка:
-										
+										form(vh-on:submit="validate_form" action="#" data-data-var="datavar")
+											.forms-wrap
+												.forms-input-cont.imp_input
+													input.forms__input(placeholder="Имя:"  name="prop_12"  required="" type="text")
+													label.forms__label Имя:
+													.forms__error-message {Поле не заполнено}
+														i.forms__error-message-icon
+												.forms-input-cont.imp_input
+													input.forms__input(placeholder="Е-mail:" name="prop_12"  required="" type="text")
+													label.forms__label Е-mail:
+													.forms__error-message {Поле не заполнено}
+														i.forms__error-message-icon
+											.forms-input-cont.forms-input-cont--textarea
+												textarea.forms__input.forms__input--textarea(required="" placeholder="Сообщение:" )
+												label.forms__label Сообщение:
+												.forms__error-message 
+														i.forms__error-message-icon
+											.forms-input-cont.forms-input-cont--file
+												input#file-1
+												label.forms__label--file-1(for="file-1")
+													img(src="img/card-ico-feedback-btn.png", alt="")
+													span Добавить фото
+											.forms-submit-cont
+												input.forms__submit(type="submit" value="Отправить")
 						.bot-form__cont
 							.wrapper
 								.bot-form__title #rocknailwork
