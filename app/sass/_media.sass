@@ -5,3 +5,169 @@ $output-bourbon-deprecation-warnings: false;
 @media screen and (min-width: 1000px)
 	.head__burger
 		display: none
+
+
+@media screen and (max-width: 1200px)
+
+	.catalog-filter
+		flex-wrap: wrap
+
+		.forms-wrap
+			width: auto
+			margin-bottom: 1.4rem
+
+// @media (pointer: coarse)
+	
+@media screen and (max-width: 1000px)
+	.titile-block
+		display: none 
+
+	.aside
+		width: auto
+		margin: 0
+		display: none
+
+		&-title
+			display: block
+
+			.gradient-btn
+				position: relative
+				padding: 10px 80px 10px 22px
+
+				&:before
+					content: ""
+					position: absolute
+					width: 35px
+					height: 16px
+					right: 10px
+					top: calc(50% - 8px)
+					background: url('../img/ico-arrow-catalog-next.png') no-repeat center
+
+		&-category, &-working, &-soc
+			display: none
+
+	.js__catalog-filter
+		display: block
+
+	.catalog-list
+		width: 100%
+
+	.title-block__title
+		display: flex 
+		justify-content: space-between
+		align-items: center
+		padding: 0
+		margin-bottom: 40px
+
+		h1 
+			font-size: rem(42)
+			font-weight: bold 
+			color: $second-color
+	
+	.catalog-filter
+		box-shadow: 0px 20px 63px -13px rgba(0, 0, 0, 0.2)
+
+		.forms-wrap__title, .forms-checkbox
+			display: none
+
+		.forms-wrap
+			justify-content: space-between
+
+			.forms-input-cont
+				display: flex
+				flex-direction: column-reverse
+
+				&.mobile
+						width: 100%
+
+			&:nth-child(1)
+				width: 100%
+
+			&:nth-child(2), &:nth-child(3)
+				width: 48%
+
+			&:nth-child(3)
+				margin-left: 27px
+
+			&:last-child
+				width: 100%
+				max-width: 100%
+				flex-wrap: nowrap
+
+				.forms-input-cont
+					width: 48%
+					display: flex
+					flex-direction: row
+					align-items: center
+					margin-bottom: 0
+					margin-right: auto
+
+					&:after
+						content: ""
+						display: inline-block
+						+size(15px)
+						background: url(../img/ico-select-arrow.png) center no-repeat
+						margin-left: 10px
+
+				.forms__input
+					border: 0 !important
+					width: auto
+					height: auto !important
+
+
+		.forms__input--select 
+			padding: 0 30px 0 10px
+				
+
+
+	.forms__input
+		height: 50px !important
+		border: 1px solid $second-color !important
+
+	.forms-input-cont.mobile
+		display: block
+
+
+	.cat-item__hover
+		position: static
+		opacity: 1;
+		pointer-events: all
+
+	.quick-view
+		display: none
+
+	.cat-item 
+		.img-hover
+			display: none
+
+		&__hover
+			opacity: 1
+			outline: none
+			box-shadow: none
+			transition: none
+
+		&:hover
+			outline: none
+			box-shadow: none
+			.img 
+				opacity: 1
+
+
+			.cat-item 
+				&__hover
+					// margin: 0;
+					// padding: 0;
+					box-shadow: none
+
+
+	.forms-input-cont.mobile
+		position: relative
+
+		&:before 
+			content: ""
+			position: absolute
+			top: 0
+			left: 0
+			+size(10px)
+
+			

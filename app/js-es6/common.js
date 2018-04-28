@@ -183,7 +183,7 @@ $(e => {
 })
 
 $(function() {
-	if($(window).width() > 660) {
+	if($(window).width() > 790) {
 		$(".selectize").each((i, el) =>{
 			let $this = $(el);
 
@@ -194,4 +194,21 @@ $(function() {
 		});
 	};
 
+	var asideClone = $('.catalog .aside').clone().addClass('js__catalog-filter');
+	$('.catalog .title-block__title').append(asideClone);
+
+	$('.catalog-filter select').on('change', function(){
+		var $this = $(this);
+		var str = "";
+
+		$("select option:selected").each(function() {
+	      str += $this.text() + " ";
+	    });
+
+	    $(".forms-input-cont.mobile").text(str);
+	});
+
 });
+
+
+
