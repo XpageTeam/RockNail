@@ -197,18 +197,31 @@ $(function() {
 	var asideClone = $('.catalog .aside').clone().addClass('js__catalog-filter');
 	$('.catalog .title-block__title').append(asideClone);
 
-	$('.catalog-filter select').on('change', function(){
-		var $this = $(this);
-		var str = "";
 
-		$("select option:selected").each(function() {
-	      str += $this.text() + " ";
+
+
+	$('.catalog-filter select').on('change', function(){
+
+		var $this = $(this);
+
+
+
+
+		$this.find('option').each(function() {
+
+			var $sort = $(this).attr('data-src');
+
+	        if($(this).prop('selected') == true){ 
+	          $(this).closest('.forms-input-cont.mobile').attr('data-src', $sort);
+	        }
 	    });
 
-	    $(".forms-input-cont.mobile").text(str);
 	});
 
+
+
 });
+
 
 
 

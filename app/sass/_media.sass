@@ -87,7 +87,7 @@ $output-bourbon-deprecation-warnings: false;
 				width: 48%
 
 			&:nth-child(3)
-				margin-left: 27px
+				margin-left: 26px
 
 			&:last-child
 				width: 100%
@@ -159,6 +159,15 @@ $output-bourbon-deprecation-warnings: false;
 					// padding: 0;
 					box-shadow: none
 
+	.cat
+		&-items
+			margin: 0 0 -90px -35px
+			padding: 55px 0px 10px 0
+
+		&-item
+			width: calc((100% - 35px * 3) / 3)
+			margin: 0 0 70px 35px
+
 
 	.forms-input-cont.mobile
 		position: relative
@@ -169,5 +178,39 @@ $output-bourbon-deprecation-warnings: false;
 			top: 0
 			left: 0
 			+size(10px)
+
+	.gradient-btn
+		padding: 13px 3rem
+
+	.btn-more
+		justify-content: flex-start
+
+		.gradient-btn
+			margin-left: rem(20)
+
+@media screen and (max-width: 660px)
+
+	.cat
+		&-items
+			margin: 0 0 -90px -35px
+			padding: 55px 0px 10px 0
+
+		&-item
+			width: calc((100% - 35px * 2) / 2)
+			margin: 0 0 70px 35px
+
+	.js__catalog-filter
+		display: none
+
+	.paginator
+		margin: 0 auto
+		margin-top: 40px
+
+	.btn-more
+		justify-content: center
+
+		.gradient-btn
+			margin-left: 0
+
 
 			
