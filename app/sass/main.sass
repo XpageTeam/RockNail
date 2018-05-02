@@ -909,6 +909,7 @@ button, input, select
 			object-fit: contain;
 			background-color: #fff;
 			margin-right: 35px;
+			cursor: pointer;
 		.slick-current
 			position: relative;
 			&:before
@@ -1200,6 +1201,16 @@ button, input, select
 		font-size: 16px;
 		color: #d34c75;
 		font-weight: bold;
+		position: relative;
+		&:before
+			content: ""
+			background: url('../img/card-ico-star-red-big.png') no-repeat;
+			position: absolute;
+			left: -30px
+			top: -4px
+			width: 22px
+			height: 22px
+
 
 	&__feedback_block
 		border-bottom: 1px solid #acacac;
@@ -1222,6 +1233,9 @@ button, input, select
 		margin-bottom: 30px;
 		position: relative;
 		padding-left: 40px;
+		display: inline-block;
+		width: calc(100% - 105px)
+		padding-right: 10px;
 		&:after
 			content: ""
 			background: url(../img/card-ico-feedback.png) no-repeat;
@@ -1230,7 +1244,12 @@ button, input, select
 			position: absolute;
 			left: 0;
 			top: -2px
-
+	&__feedback_block-rating
+		width: 100px
+		display: inline-block;
+		text-align: right;
+		img 
+			padding: 0 2px
 	&__feedback_block-img
 		margin-bottom: 25px;
 
@@ -1320,11 +1339,12 @@ button, input, select
 			text-transform: uppercase;
 			text-align: left;
 			margin-top: 10px;
-
 		.card__feedback_form-rating
 			font-size: 14px;
 			margin-bottom: 44px;
-
+			display: flex;
+			#reviewStars-input
+				margin-left: 20px
 		input, textarea
 			border: 1px solid #b8b8b8;
 			&::placeholder
@@ -1488,6 +1508,7 @@ button, input, select
 	align-items: center;
 	.paginator
 		margin-top: 0;
+
 // product_card-------------------------------END
 @import "_grid"
 @import "media"
