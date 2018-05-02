@@ -1508,6 +1508,34 @@ button, input, select
 	align-items: center;
 	.paginator
 		margin-top: 0;
+// media 
+@media screen and (max-width: 770px)
+	.card
+		&__tabs_right
+			display: none;
+		&__tabs_left
+			width: 100%
+			min-height: 350px;
+		&__slick_nav
+			display: none;
+		&__sample_slider
+			display: none;
+		&__top
+			flex-direction: column;
+		&__slider
+			width: 100%
+			height: calc(100vh - 380px)
+			margin-bottom: 50px
+		&__slick
+			height: 100%
+		&__sample
+			width: 100%
+		&__tabs_navi
+			display: flex;
+			justify-content: space-between;
+			padding-left: 0;
+			span 
+				margin: 0 25px
 
 // product_card-------------------------------END
 @import "_grid"
