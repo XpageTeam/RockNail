@@ -4,7 +4,7 @@ $output-bourbon-deprecation-warnings: false;
 @import "vars"
 @import "base"
 @import "functions"
-1
+
 *[v-cloak]
 	display: none
 
@@ -1509,6 +1509,7 @@ button, input, select
 			object-fit: contain;
 			background-color: #fff;
 			margin-right: 35px;
+			cursor: pointer;
 		.slick-current
 			position: relative;
 			&:before
@@ -1726,6 +1727,32 @@ button, input, select
 		padding: 0 vw(45);
 		.text-page
 			padding-top: 8px;
+			width: 100%;
+		table
+			width: 100%;
+			text-align: left;
+		td 
+			color: #000;
+			font-size: 16px;
+			&:nth-child(3)
+				color: #9667f3;
+				font-size: 20px;
+				font-weight: bold;
+		th 
+			font-size: 12px;
+			color: #8e8e8e;
+		thead, tfoot
+			border-bottom: 1px solid #8e8e8e;
+		tbody
+			tr 
+				&:nth-child(2n)
+					background-color: #e2effe;
+
+		h3
+			font-size: 34px;
+			display: flex;
+			width: 250px;
+			padding-right: 20px;
 	&__tabs_left_content-title
 		font-size: 34px;
 		display: flex;
@@ -1778,6 +1805,16 @@ button, input, select
 		font-size: 16px;
 		color: #d34c75;
 		font-weight: bold;
+		position: relative;
+		&:before
+			content: ""
+			background: url('../img/card-ico-star-red-big.png') no-repeat;
+			position: absolute;
+			left: -30px
+			top: -4px
+			width: 22px
+			height: 22px
+
 
 	&__feedback_block
 		border-bottom: 1px solid #acacac;
@@ -1800,6 +1837,9 @@ button, input, select
 		margin-bottom: 30px;
 		position: relative;
 		padding-left: 40px;
+		display: inline-block;
+		width: calc(100% - 105px)
+		padding-right: 10px;
 		&:after
 			content: ""
 			background: url(../img/card-ico-feedback.png) no-repeat;
@@ -1808,7 +1848,12 @@ button, input, select
 			position: absolute;
 			left: 0;
 			top: -2px
-
+	&__feedback_block-rating
+		width: 100px
+		display: inline-block;
+		text-align: right;
+		img 
+			padding: 0 2px
 	&__feedback_block-img
 		margin-bottom: 25px;
 
@@ -1898,11 +1943,12 @@ button, input, select
 			text-transform: uppercase;
 			text-align: left;
 			margin-top: 10px;
-
 		.card__feedback_form-rating
 			font-size: 14px;
 			margin-bottom: 44px;
-
+			display: flex;
+			#reviewStars-input
+				margin-left: 20px
 		input, textarea
 			border: 1px solid #b8b8b8;
 			&::placeholder
@@ -2025,6 +2071,48 @@ button, input, select
 		position: relative;
 		z-index: 4;
 		margin-bottom: -72px;
+//Paginator------------------------ 
+.paginator
+	display: flex
+	justify-content: flex-end
+	max-width: 200px
+	margin-left: auto
+	margin-top: -40px
+	margin-right: 15px
+
+	&__list
+		display: flex
+
+		li
+			
+			&:not(:first-child)
+				margin-left: 10px
+
+
+
+			&.active
+				.paginator__link
+					background: $second-color
+		span.paginator__link
+			background: url('../img/ico-paginator-dots.png') no-repeat center
+
+	&__link
+		display: flex
+		align-items: center
+		justify-content: center
+		color: #fff
+		font-weight: 500
+		+size(26px)
+		border-radius: 50%
+		background: #c5b4fd
+//Paginator------------------------ END
+// paginator fix--------
+.card__feedback_paginator
+	display: flex;
+	align-items: center;
+	.paginator
+		margin-top: 0;
+
 // product_card-------------------------------END
 @import "_grid"
 @import "media"

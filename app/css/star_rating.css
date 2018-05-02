@@ -1,0 +1,57 @@
+/*sprite with stars*/
+#reviewStars-input input:checked ~ label, 
+#reviewStars-input label, 
+#reviewStars-input label:hover, 
+#reviewStars-input label:hover ~ label {
+  background: url(../img/card-ico-star-white.png) no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+}
+.info #reviewStars-input{
+	margin-left: 10%;
+  	*zoom: 1;  
+}
+
+#reviewStars-input input {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  height: 19px;
+  width: 19px;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+
+}
+
+#reviewStars-input input:checked ~ label {
+  /*background-position: 0 -20px;*/
+  background: url(../img/card-ico-star-red-big.png) no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+  height: 19px;
+  width: 19px;
+}
+
+#reviewStars-input label {
+  /*background-position: 0 0;*/
+  background: url(../img/card-ico-star-white.png) no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+  height: 19px;
+  width: 19px;
+  cursor: pointer;
+  float: right;
+	z-index: 1;
+}
+
+#reviewStars-input label:hover, 
+#reviewStars-input label:hover ~ label {
+  /*background-position: 0 -20px;*/
+  background: url(../img/card-ico-star-red-big.png) no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+  height: 19px;
+  width: 19px;
+}
+
+/*sprite with stars END*/

@@ -264,11 +264,23 @@ html(lang="ru")
 											.card__feedback_block-name Максутова Виолетта
 											.card__feedback_block-time (2 недели назад)
 											.card__feedback_block-text Лак супер, хорошего качества
+											.card__feedback_block-rating 
+												img(src="img/card-ico-star-red.png", alt="")
+												img(src="img/card-ico-star-red.png", alt="") 
+												img(src="img/card-ico-star-red.png", alt="") 
+												img(src="img/card-ico-star-red.png", alt="") 
+												img(src="img/card-ico-star-red.png", alt="")
 											.card__feedback_block-img 
 										.card__feedback_block
 											.card__feedback_block-name Максутова Виолетта
 											.card__feedback_block-time (2 недели назад)
 											.card__feedback_block-text Лак супер, хорошего качества
+											.card__feedback_block-rating 
+												img(src="img/card-ico-star-red.png", alt="")
+												img(src="img/card-ico-star-red.png", alt="") 
+												img(src="img/card-ico-star-red.png", alt="") 
+												img(src="img/card-ico-star-white.png", alt="") 
+												img(src="img/card-ico-star-white.png", alt="")
 											.card__feedback_block-img 
 												a(href="img/photos/cat-img-0.png" data-fancybox="feedback").fancybox
 													img(src="img/photos/cat-img-0.png", alt="")
@@ -278,6 +290,12 @@ html(lang="ru")
 											.card__feedback_block-name Максутова Виолетта
 											.card__feedback_block-time (2 недели назад)
 											.card__feedback_block-text Лак супер, хорошего качества
+											.card__feedback_block-rating 
+												img(src="img/card-ico-star-red.png", alt="")
+												img(src="img/card-ico-star-red.png", alt="") 
+												img(src="img/card-ico-star-red.png", alt="") 
+												img(src="img/card-ico-star-white.png", alt="") 
+												img(src="img/card-ico-star-white.png", alt="")
 											.card__feedback_block-img 
 									<!-- выводить блок .card__feedback_middle-no_feedback когда нет отзывов -->
 									.card__feedback_middle-no_feedback У этого товара пока нет отзывов. Если вы заказывали этот товар, поделитесь своим впечатлением о нём, и другие покупатели будут вам благодарны.
@@ -294,6 +312,18 @@ html(lang="ru")
 											img(src="img/card-ico-form-close.png", alt="")
 										.forms__title оставить отзыв 
 										.card__feedback_form-rating Ваша оценка:
+											#reviewStars-input
+												input#star-4(type="radio" name="reviewStars")
+												label( title="отлично" for="star-4")
+												input#star-3(type="radio" name="reviewStars")
+												label( title="хорошо" for="star-3")
+												input#star-2(type="radio" name="reviewStars")
+												label( title="нормально" for="star-2")
+												input#star-1(type="radio" name="reviewStars")
+												label( title="плохо" for="star-1")
+												input#star-0(type="radio" name="reviewStars")
+												label( title="очень плохо" for="star-0")
+
 										form(vh-on:submit="validate_form" action="#" data-data-var="datavar")
 											.forms-wrap
 												.forms-input-cont.imp_input
