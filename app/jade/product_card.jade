@@ -150,9 +150,9 @@ html(lang="ru")
 																td(data-title="Компания") 
 																	span Курьерская доставка CDEK
 																td(data-title="Срок")
-																	span 1 – 2 дня
+																	span 1&nbsp;–&nbsp;2 дня
 																td(data-title="Цена")
-																	span 199 Р
+																	span 199&nbsp;Р
 															tr
 																td(data-title="Компания") 
 																	span Курьерская доставка CDEK
@@ -173,7 +173,7 @@ html(lang="ru")
 																td(data-title="Срок")
 																	span 1 – 2 дня
 																td(data-title="Цена")
-																	span 199 Р
+																	span 199&nbsp;Р
 
 										.card__tabs_left_content_flex(data-id="3")
 											.card__tabs_left_content
@@ -193,12 +193,12 @@ html(lang="ru")
 											.card__tabs_right_item-text Архитектурная формула Выравнивающая способность Нанесение в одно скольжение
 										.card__tabs_right_item.fix-1
 											img(src="img/card-ico-tab-2.png", alt="")
-											.card__tabs_right_item-title Технологии
-											.card__tabs_right_item-text Архитектурная формула Выравнивающая способность Нанесение в одно скольжение
+											.card__tabs_right_item-title Палитра
+											.card__tabs_right_item-text Ультрамодные коллекции Сочетаемость оттенков Высокая пигментация
 										.card__tabs_right_item.fix-2
 											img(src="img/card-ico-tab-3.png", alt="")
-											.card__tabs_right_item-title Технологии
-											.card__tabs_right_item-text Архитектурная формула Выравнивающая способность Нанесение в одно скольжение
+											.card__tabs_right_item-title Упаковка
+											.card__tabs_right_item-text Умная кисть Soft Touch Эргономичная баночка До последней капли
 								.main-catalog__slider
 									.card__main-catalog__slider-title Похожие оттенки
 									.catalog-slider.active(data-id="0")
@@ -341,13 +341,14 @@ html(lang="ru")
 												label.forms__label Сообщение:
 												.forms__error-message 
 														i.forms__error-message-icon
-											.forms-input-cont.forms-input-cont--file
-												input#file-1
-												label.forms__label--file-1(for="file-1")
-													img(src="img/card-ico-feedback-btn.png", alt="")
-													span Добавить фото
-											.forms-submit-cont
-												input.forms__submit(type="submit" value="Отправить")
+											.card__form_btns
+												.forms-input-cont.forms-input-cont--file.card__form_btn
+													input#file-1
+													label.forms__label--file-1(for="file-1")
+														img(src="img/card-ico-feedback-btn.png", alt="")
+														span Добавить фото
+												.forms-submit-cont.card__form_btn.card__form_btn-fix
+													input.forms__submit(type="submit" value="Отправить")
 						.bot-form__cont
 							.wrapper
 								.bot-form__title #rocknailwork
