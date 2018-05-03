@@ -1635,7 +1635,7 @@ button, input, select
 				align-items: center;
 				div
 					&:first-child
-						margin-right: 30px;
+						margin-right: 3vw
 		&__feedback_form
 			form 
 				.forms-wrap
@@ -1648,10 +1648,15 @@ button, input, select
 			
 		&__form_btn-fix
 			margin-top: 0 !important;
-			margin-left: 15px;
+			// margin-left: 15px;
+
 		&__form_btns
 			display: flex;
 			margin-bottom: 30px;
+			flex-wrap: wrap;
+			justify-content: space-around;
+			.card__form_btn
+				margin-bottom: 10px;
 @media screen and (max-width: 600px)
 	.card
 		&__feedback_bot
@@ -1696,15 +1701,18 @@ button, input, select
 			input
 				padding-right: 15px !important;
 				padding-left: 15px !important;
-		&__btn
-			white-space: nowrap;
-			a 
-				padding-right: 15px;
-				padding-left: 15px;
+			.card__btn
+				white-space: nowrap;
+				a 
+					padding-right: 15px;
+					padding-left: 15px;
 		.text-page table td, .text-page table th
 			padding: 10px;
 		.text-page td[data-title="Цена"]
 			white-space: nowrap;
+		&__sample_buy 
+			.cat-item__bot-price
+				margin-bottom: 10px;
 // product_card-------------------------------END
 @import "_grid"
 @import "media"
