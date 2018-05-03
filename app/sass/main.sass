@@ -1485,16 +1485,22 @@ button, input, select
 			transform: rotate(180deg);
 	&__slick
 		width: 100%;
-		// height: 540px;
-		height: 45vw;
-		max-height: 540px;
+		// height: 45vw;
+		// max-height: 540px;
 		background-color: #fff;
 		display: flex;
 		align-items: center;
 
+		.slick-track
+			display: flex;
+			align-items: center;
+			height: 40vw;
+			max-height: 540px;
+
 	&__slick_slide
 		width: 100%;
-		height: 100%;
+		// height: 100%;
+		// min-height: 540px;
 		// padding-right: 35px;
 		// margin-right: 35px;
 		img
@@ -1597,6 +1603,7 @@ button, input, select
 			&:nth-child(3)
 				right: 0
 				padding-right: 5px;
+
 	&__sample_btn
 		color: #9667f4;
 		display: flex;
@@ -1623,13 +1630,15 @@ button, input, select
 	&__top
 		display: flex;
 		padding-top: 100px;
-	
+	&__select
+		display: none;
 	.cat-price_sale
 		color: #cc2a5c;
 		font-size: 35px;
 		font-weight: bold;
 		display: none;
 		white-space: nowrap;
+
 	// sale
 	.sale
 		.cat-price_sale
@@ -2207,8 +2216,13 @@ button, input, select
 
 		&__slick
 			// height: 100%
-			height: calc(100vh - 380px)
-
+			// height: calc(100vh - 380px)
+			left: -15px;
+			width: calc(100% + 30px);
+			overflow: hidden;
+			.slick-track
+				height: calc(100vw)
+				max-height: none
 		&__sample
 			width: 100%
 			padding-left: 0;
@@ -2262,62 +2276,112 @@ button, input, select
 			justify-content: space-around;
 			.card__form_btn
 				margin-bottom: 10px;
+
+	.sale
+		.card__slider
+			&:after
+				right: -15px !important;
+
 @media screen and (max-width: 600px)
 	.card
 		&__feedback_bot
 			flex-wrap: wrap;
+
 		&__feedback_btns
 			width: 100%;
 			justify-content: space-around;
+
 			.gradient-btn.gradient-btn__wrap
 				margin-left: 0;
+
 		&__feedback_paginator
 			margin-top: 35px;
 			width: 100%;
 			justify-content: center;
+
 			.paginator
 				margin-left: 0;
+
 		&__sample_buy
 			padding: 0;
+
 @media screen and (max-width: 480px)
 	.card
-		&__slick_nav
-			// display: none;
+		&__select
+			display: block;
+
+			select
+				border: 1px solid #8b69fc;
+				height: 50px;
+				font-size: 16px;
+				font-weight: bold;
+				color: #9667f3;
+				padding-left: 50px;
+			.forms__label
+				margin-top: 40px;
+			.forms-input-cont 
+				flex-direction: column;
+
+			option
+				color: #000;
 		&__sample_slider
 			display: none;
+
 		&__tabs_right
 			display: none;
+
 		&__tabs_navi
 			justify-content: space-between;
+
 			span 
 				margin: 0;
+
 				&:first-child
 					margin-left: 4vw;
+
 				&:last-child
 					margin-right: 4vw;
+
 		&__slick
 			height: calc(100vw - 30px);
+
 		&__tabs_left
 			margin-top: 0;
+
 		&__sample_buy
 			.cat-item__bot
 				flex-wrap: wrap;
+
 		&__feedback_btns
 			input
 				padding-right: 15px !important;
 				padding-left: 15px !important;
+
 			.card__btn
 				white-space: nowrap;
+
 				a 
 					padding-right: 15px;
 					padding-left: 15px;
+
 		.text-page table td, .text-page table th
 			padding: 10px;
+
 		.text-page td[data-title="Цена"]
 			white-space: nowrap;
+
 		&__sample_buy 
 			.cat-item__bot-price
 				margin-bottom: 10px;
+				flex-direction: column;
+
+		&__sample
+			padding-left: 4vw;
+			padding-right: 4vw;
+			h1, h2
+				padding-left: 0;
+		&__sample_input
+			margin: 0;
 // product_card-------------------------------END
 @import "_grid"
 @import "media"
