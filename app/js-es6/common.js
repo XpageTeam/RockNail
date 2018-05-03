@@ -191,6 +191,11 @@ $(function() {
 		});
 	};
 
+	$(".cart-current-city .selectize").each((i, el) =>{
+		let $this = $(el);
+		$(".selectize").selectize();
+	});
+
 	var asideClone = $('.catalog .aside').clone().addClass('js__catalog-filter');
 	$('.catalog .title-block__title').append(asideClone);
 
