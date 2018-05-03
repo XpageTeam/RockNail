@@ -8,41 +8,31 @@ $output-bourbon-deprecation-warnings: false;
 *[v-cloak]
 	display: none
 
-.cat-item
-	.img
-		transition: opacity .3s ease
+.quick-view
+	display: block
+	position: relative
+	padding-left: 22px
+	margin-top: 19px
 
-		&-hover
-			position: absolute
-			top: 0
-			left: 0
-			opacity: 0
-			pointer-events: none
-			
+	&:before 
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		+size(14px)
+		background: url('../img/ico-quick-view.png') no-repeat center
+
+.cat-item
+	
+.btn 
+	cursor: pointer		
+
 
 .catalog
-	.cat
-		&-items
-			display: flex 
-			flex-wrap: wrap
-			margin: 0 0 -90px -80px
-			padding: 55px 10px 10px 55px
 
-		&-item
-			position: relative
-			width: calc((100% - 90px * 3) / 3)
-			margin: 0 0 70px 80px
-
-
-
-			&:hover
-				.img
-					opacity: 0
-
-					&-hover
-						opacity: 1
-
-
+	.img
+		&-hover
+			transition: opacity .3s ease
 
 	.cat-item__img
 		margin-bottom: 25px
@@ -53,11 +43,96 @@ $output-bourbon-deprecation-warnings: false;
 		height: 35px
 		
 		&:hover 
-			background: url('../img/ico-favorite-catalog.png') no-repeat center !important		
+			background: url('../img/ico-favorite-catalog.png') no-repeat center !important	
+.cat
+	&-items
+		display: flex 
+		flex-wrap: wrap
+		margin: 0 0 -90px -80px
+		padding: 55px 10px 10px 55px
+
+	&-item
+		position: relative
+		width: calc((100% - 62px * 3) / 3)
+		margin: 0 0 70px 62px
+		transition: outline-width 0s ease, box-shadow .5s ease
+
+
+
+		&__desc
+			padding: 0 18px
+
+		&:not(:hover)
+			.cat-item
+
+				&__hover
+					transition: none
+
+		&:hover
+			outline: 13px solid #fff
+			box-shadow: 1px 1px 35px 12px rgba(0, 0, 0, 0.04)
+
+			.img
+				opacity: 0
+
+				&-hover
+					opacity: 1
+
+			.cat-item
+
+
+				&__hover
+					// display: flex
+					opacity: 1
+					pointer-events: all
+					background: #fff
+					z-index: 5
+					margin: 0 -13px
+					padding: 22px 0
+					box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.04)
+
+		.img
+			transition: opacity .3s ease
+
+			&-hover
+				position: absolute
+				top: 0
+				left: 0
+				opacity: 0
+				pointer-events: none
+
+		&__hover
+			display: flex
+			flex-direction: column
+			align-items: center
+			position: absolute
+			left: 0
+			top: 100%
+			right: 0
+			margin-top: 25px
+			opacity: 0
+			pointer-events: none
+			background: #fff
+			transition: box-shadow .7s ease, opacity .3s ease	
+
+
+
+	
+
+.gradient-btn
+	cursor: pointer
+
+	.btn
+		position: relative
+		z-index: 1
+		color: #fff
 
 .aside
 	width: 175px
 	margin: 8px 27px 0 0
+
+	&-title
+		display: none
 
 	&-soc 
 		display: flex
@@ -113,6 +188,16 @@ $output-bourbon-deprecation-warnings: false;
 	&-list 
 		width: calc(100% - 175px)
 
+	&-banner 
+		margin-top: -44px
+		margin-bottom: 20px
+		img 
+			display: block
+			width: 100%
+
+		+ .catalog-bg
+			top: 350px
+
 	&-bg
 		position: absolute
 		top: 0
@@ -126,6 +211,7 @@ $output-bourbon-deprecation-warnings: false;
 			width: 100%
 			object-position: center
 			height: 100%
+
 .selectize-control
 	.selectize-input
 		.item
@@ -144,22 +230,35 @@ $output-bourbon-deprecation-warnings: false;
 				background: url('../img/ico-select-arrow.png') no-repeat center
 				border: 0
 
-	.selectize-input
-		padding: 0
 
+		
+.selectize-input.dropdown-active
+	border-radius: 0
+	box-shadow: 0px -16px 20px 5px rgba(0, 0, 0, 0.01), 0 10px 10px rgba(0, 0, 0, 0.08) !important
 
-
-.selectize-input.focus
-	box-shadow: none
 .selectize-dropdown
+	padding: 10px
+	margin: 0 -10px -10px
 	border: 0
 	box-shadow: none
-		
+	box-shadow: 0px 20px 20px 5px rgba(0, 0, 0, 0.01), 0 10px 10px rgba(0, 0, 0, 0.08)
+	
+	.option
+		color: #c9bcfd
+	.active
+		background-color: transparent
+		color: #c9bcfd
+
+
 
 .selectize-input
+	margin: -10px
+	padding: 10px
 	border: 0
 	box-shadow: none
 
+	&.focus
+		box-shadow: none
 	
 
 .btn-more
@@ -245,11 +344,12 @@ $output-bourbon-deprecation-warnings: false;
 				content: attr(data-title)
 				transform: none
 				color: #fff
+				font-size: rem(12)
 				background: #000
 				width: auto
 				height: auto
 				padding: 5px
-				border-radius: 1px
+				border-radius: 4px
 				opacity: 0
 				pointer-events: none
 				top: -25px
@@ -259,7 +359,7 @@ $output-bourbon-deprecation-warnings: false;
 			&:after 
 				content: ""
 				position: absolute
-				top: 5px
+				top: 0
 				left: 50%
 				display: block
 				+size(5px)
@@ -275,6 +375,11 @@ $output-bourbon-deprecation-warnings: false;
 			&:hover 
 				&:before, &:after
 					opacity: 1
+
+				.forms__checkbox-label
+
+					&:after
+						opacity: 1
 
 		&__input
 			height: auto
@@ -314,7 +419,20 @@ $output-bourbon-deprecation-warnings: false;
 			padding: 0
 			z-index: 2
 
+			&:before 
+				display: none
 
+			&:after
+				height: 2px
+				width: 16px
+				bottom: -10px
+				top: initial
+				left: calc(50% - 8px)
+				transform-origin: right
+				transform: none
+
+.js__catalog-filter
+	display: none
 
 
 .lacquer-category

@@ -2,7 +2,7 @@
 html(lang="ru")
 	head
 		meta(charset="utf-8")
-		title Главная
+		title Каталог Серия 1
 		include inc/head.jade
 		include inc/css.jade
 	body.inner.loading
@@ -10,6 +10,9 @@ html(lang="ru")
 			include inc/header.jade
 			main#content
 				.content
+					
+					.catalog-banner
+						img(src="img/photos/catalog-s-bg.jpg", alt="")
 					.catalog-bg
 						img(src="img/catalog-bg-top.png", alt="")
 
@@ -20,17 +23,16 @@ html(lang="ru")
 									a.bread-crumbs__link(href='#') Главная
 									span.bread-crumbs__this Все категории
 							
-
 					.catalog__cont
 						.wrapper
+							
+
 							.catalog
 								aside.aside
-									.aside-title.gradient-btn
-										.btn Каталог
 									.aside-category
 										.lacquer-category
 											.lacquer-category__title.active Гель • лаки
-											.lacquer-category__list <!--на элементы списка добавь пожалуйста класс active-->
+											.lacquer-category__list
 												each name in ["Baby Nude", "Classik", "Camouflage", "Galaxy", "Gothic", "Summer", "Gray Moon", "Diamond"]
 													a(href="#").lacquer-category__item=name
 										.lacquer-category.lacquer-category--top
@@ -63,6 +65,11 @@ html(lang="ru")
 
 
 
+
+
+
+
+
 								.catalog-list
 									.title-block__title
 										h1 Все категории
@@ -78,12 +85,11 @@ html(lang="ru")
 															img(src="img/nail-"+img+".png", alt="")
 
 												.forms-input-cont.mobile
-													img(src="", alt="").ico-select-img
 													select.forms__input.forms__input--select
-														option(data-src="img/ico-color-catalog1.png") Сначала популярные
-														option(data-src="img/ico-color-catalog2.png") Сначала популярные
-														option(data-src="img/ico-color-catalog3.png") Сначала популярные
-														option(data-src="img/ico-color-catalog1.png") Сначала популярные
+														option Сначала популярные
+														option Сначала популярные
+														option Сначала популярные
+														option Сначала популярные
 													.forms__label Выбрать цвет
 													.forms__error-message
 														i.forms__error-message-icon
@@ -95,12 +101,11 @@ html(lang="ru")
 														label(for="checkbox-"+(i+1)).forms__checkbox-label 
 															img(src="img/nail-"+img+".png", alt="")
 												.forms-input-cont.mobile
-													img(src="", alt="").ico-select-img
 													select.forms__input.forms__input--select
-														option(data-src="img/ico-color-catalog.png") Сначала популярные
-														option(data-src="img/ico-color-catalog1.png") Сначала популярные
-														option(data-src="img/ico-color-catalog2.png") Сначала популярные
-														option(data-src="img/ico-color-catalog3.png") Сначала популярные
+														option Сначала популярные
+														option Сначала популярные2
+														option Сначала популярные3
+														option Сначала популярные4
 													.forms__label Эффект
 													.forms__error-message
 														i.forms__error-message-icon
@@ -113,12 +118,11 @@ html(lang="ru")
 														label(for="checkbox-"+(i+1)).forms__checkbox-label 
 															img(src="img/nail-"+img+".png", alt="")
 												.forms-input-cont.mobile
-													img(src="", alt="").ico-select-img
 													select.forms__input.forms__input--select
-														option(data-src="img/ico-color-catalog.png") Сначала популярные
-														option(data-src="img/ico-color-catalog1.png") Сначала популярные
-														option(data-src="img/ico-color-catalog2.png") Сначала популярные
-														option(data-src="img/ico-color-catalog3.png") Сначала популярные
+														option Сначала популярные
+														option Сначала популярные2
+														option Сначала популярные3
+														option Сначала популярные4
 													.forms__label Френч
 													.forms__error-message
 														i.forms__error-message-icon
@@ -127,9 +131,9 @@ html(lang="ru")
 												.forms-input-cont
 													select.forms__input.selectize
 														option(value="1") Сначала популярные
-														option(value="2") Сначала популярные
-														option(value="3") Сначала популярные
-														option(value="4") Сначала популярные
+														option(value="2") Сначала популярные2
+														option(value="3") Сначала популярные3
+														option(value="4") Сначала популярные4
 												.btn-flat.btn-flat--purple
 													input(type="submit" value="Применить")
 
@@ -153,8 +157,8 @@ html(lang="ru")
 															a.favorite-add(href="#")
 																span.favorite-add__title избранное
 												.cat-item__hover
-													.btn-wrap.gradient-btn
-														a(href="#").btn В корзину
+													.btn-wrap
+														a(href="#").btn.gradient-btn В корзину
 
 													a(href="/img/photos/catalog-img-hover.jpg" data-fancybox="quick-view").fancybox.quick-view Быстрый просмотр
 

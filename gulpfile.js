@@ -104,11 +104,11 @@ gulp.task("prefixer", () =>
 
 gulp.task('imagemin', () =>  
 	gulp.src('app/img/**/*', {since: gulp.lastRun("imagemin")})
-		 .pipe($.cache($.imagemin({
-			interlaced: true,
-			progressive: true,
-			svgoPlugins: [{removeViewBox: false}],
-			use: [pngquant()]
+		 // .pipe($.cache($.imagemin({
+			// interlaced: true,
+			// progressive: true,
+			// svgoPlugins: [{removeViewBox: false}],
+			// use: [pngquant()]
 		// 	$.imagemin.gifsicle({
 		// 		interlaced: true,
 		// 	}),
@@ -126,7 +126,7 @@ gulp.task('imagemin', () =>
   //     		pngquant({quality: '65-70', speed: 5})
 		// ],{
   //    		verbose: true
-    	})))
+    	// })))
 		.pipe(gulp.dest('app/img'))
 );
 
