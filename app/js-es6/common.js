@@ -65,6 +65,17 @@ const loadScripts = e => {
 		slidesToShow: 4,
 		slidesToScroll: 1,
 		slide: ".catalog-slider__slide",
+	});
+
+	$(".big-slider").slick({
+		slidesToShow: 5,
+		slidesToScroll: 1,
+		slide: ".big-slider__slide",
+		centerMode: true,
+		centerPadding: 0,
+		// arrows: false,
+		appendArrows: $(".big-slider__arrows"),
+		// variableWidth: true
 	})
 };
 
