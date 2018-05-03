@@ -16,9 +16,56 @@ $output-bourbon-deprecation-warnings: false;
 			width: auto
 			margin-bottom: 1.4rem
 
+	.cart
+		&-info
+			width: calc(100% - 380px)
+
+		&-aside
+			width: 440px
+			margin-left: 20px
+
+
+			&__title
+				font-size: 21px
+				align-items: center
+				display: flex
+
+			&__footer
+				flex-wrap: wrap 
+
+				&-price 
+					margin-top: 20px
+
+
+	.gradient-btn
+		flex: none
+
+	.cart-delivery-method 
+		.title
+			font-size: 15px
+
+	.payment-method__item
+		font-size: 13px
+
+
 // @media (pointer: coarse)
 	
 @media screen and (max-width: 1000px)
+	.mobile-info
+		display: block
+
+	.cart
+		flex-direction: column
+
+		&-info
+			width: 100%
+			order: 2
+
+		&-aside
+			width: 100%
+			margin-left: 0
+			order: 1
+
 	.titile-block
 		display: none 
 

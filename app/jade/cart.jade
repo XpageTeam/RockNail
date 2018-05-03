@@ -41,7 +41,7 @@ html(lang="ru")
 													.forms__error-message
 														i.forms__error-message-icon
 												.forms-input-cont
-													input(required="" type="text").forms__input
+													input(required="" type="text" placeholder="Имя, фамилия").forms__input
 													label.forms__label Имя
 													.forms__error-message
 														i.forms__error-message-icon
@@ -125,7 +125,7 @@ html(lang="ru")
 														i.forms__error-message-icon
 
 										.cart-payment-method
-											.cart-block__title Адрес доставки
+											.cart-block__title Способ оплаты
 											.forms-wrap
 												.forms-input-cont
 													input( type="radio" id="radio-10" name="radio").forms__input
@@ -165,50 +165,75 @@ html(lang="ru")
 										.cart-price
 											.cart-price__list
 												.cart-price__item
+													span Товары
+													span 500 Р
+												.cart-price__item
+													span Доставка
+													span 249 Р
 
 											.cart-price__total
 												span Итого:
 												span.sum 749 Р
 
-									.cart-footer
+										.cart-footer
 
-										.gradient-btn
-											a(href="#") Подтвердить заказ
-										.policy
-											p Нажимая на кнопку, вы подтверждаете свое совершеннолетие,<br> соглашаетесь на обработку персональных данных в соответствии<br> <a href="#">С условиями</a>, а также <a href="#">С условиями продажи</a>
+											.gradient-btn
+												a(href="#").btn Подтвердить заказ
+											.policy
+												p Нажимая на кнопку, вы подтверждаете свое совершеннолетие,<br> соглашаетесь на обработку персональных данных в соответствии<br> <a href="#">С условиями</a>, а также <a href="#">С условиями продажи</a>
 
 
-								.cart-aside
-									.cart-aside__header
-										.cart-aside__title Ваш заказ 2 товара
-										.garadient-btn
-											a(href="#").btn Купить в 1 клик
-									.cart-aside__list
-										.cart-aside__item
-											figure.cart-aside__img
-												img(src="", alt="")
-											.cart-aside__info
-												.cart-aside__info-title Гель-лак Rock Nail<br> Baby Nude
-												.cart-aside__info-color
-													span.color
-													span.color-name 045 Blue Ocean
-												.cart-aside-quantity
-													.cart-counter-wrapper
-														a(href="javascript:;").cart-counter__link.cart-counter__link--minus
-														input(type="text" readonly="").cart-counter__input
-														a(href="javascript:;").cart-counter__link.cart-counter__link--plus
-											.cart-aside__total
-												a(href="#").cart-aside__item-close
-												.cart-aside__total 250 Р
+									.cart-aside
+										.cart-aside__cont
+											.cart-aside__header
+												.cart-aside__title 
+													span Ваш заказ 2 товара
+													.mobile-info На сумму: 500 Р
+												.gradient-btn
+													a(href="#").btn Купить в 1 клик
+											.cart-aside__list
+												.cart-aside__item
+													figure.cart-aside__img
+														img(src="img/photos/tovar-aside.png", alt="")
+													.cart-aside__info
+														a(href="#").cart-aside__info-title Гель-лак Rock Nail<br> Baby Nude
+														.cart-aside__info-color
+															span.color(style="background-color: #4ec4dc;")
+															span.color-name 045 Blue Ocean
+														.cart-aside-quantity
+															.cart-counter-wrapper
+																a(href="javascript:;").cart-counter__link.cart-counter__link--minus
+																input(type="text" ).cart-counter__input
+																a(href="javascript:;").cart-counter__link.cart-counter__link--plus
+													.cart-aside__total
+														a(href="#").cart-aside__item-close
+														.cart-aside__total-sum 250 Р
+												.cart-aside__item
+													figure.cart-aside__img
+														img(src="img/photos/tovar-aside.png", alt="")
+													.cart-aside__info
+														a(href="#").cart-aside__info-title Гель-лак Rock Nail<br> Baby Nude
+														.cart-aside__info-color
+															span.color(style="background-color: #4ec4dc;")
+															span.color-name 045 Blue Ocean
+														.cart-aside-quantity
+															.cart-counter-wrapper
+																a(href="javascript:;").cart-counter__link.cart-counter__link--minus
+																input(type="text" ).cart-counter__input
+																a(href="javascript:;").cart-counter__link.cart-counter__link--plus
+													.cart-aside__total
+														a(href="#").cart-aside__item-close
+														.cart-aside__total-sum 250 Р
 
-									.cart-aside__footer
-										.promo-input
-											input(type="text")
-											a(href="#").btn-flat.btn-flat--purple Активировать
+											.cart-aside__footer
+												.promo-input
+													input(type="text" placeholder="Промокод")
+													.btn-flat.btn-flat--purple
+														input(type="submit" value="Активировать") 
 
-										.cart-aside__footer-price 
-											span Итого: 
-											span 500 Р
+												.cart-aside__footer-price 
+													span Итого: 
+													span 500 Р
 
 
 			include inc/footer.jade

@@ -1361,9 +1361,12 @@ button, input, select
 .cart
 	display: flex
 
+	&__cont 
+		margin-bottom: 143px
+
 	&-info
 
-		width: calc(100% - 485px)
+		width: calc(100% - 550px)
 
 		
 
@@ -1394,7 +1397,7 @@ button, input, select
 
 	.forms__label
 		color: $second-color
-		margin-bottom: 8px
+		margin-bottom: 5px
 		font-size: rem(14)
 
 	.forms-checkbox
@@ -1404,7 +1407,10 @@ button, input, select
 			top: 1px
 
 .cart-recipient
-	margin-bottom: 53px
+	margin: 9px 0 53px
+
+	.cart-block__title
+		margin-bottom: 14px
 
 	.forms__checkbox-label
 		font-size: rem(10)
@@ -1420,7 +1426,7 @@ button, input, select
 	display: flex
 	color: $second-color
 	font-size: rem(18)
-	margin-bottom: 45px
+	margin-bottom: 41px
 
 	select 
 		border: 0
@@ -1428,9 +1434,10 @@ button, input, select
 		color: $second-color
 
 .cart-delivery-method
-	margin-bottom: 55px
+	margin-bottom: 61px
+
 	.cart-block__title
-		margin-bottom: 25px
+		margin-bottom: 20px
 
 		
 	.row 
@@ -1460,6 +1467,10 @@ button, input, select
 				margin: 0
 				border-bottom: 2px solid transparent
 				opacity: .6
+				transition: opacity .3s ease
+
+				&:hover 
+					opacity: 1
 
 			input[type="radio"] + label
 				&:before
@@ -1498,6 +1509,9 @@ button, input, select
 .cart-delivery-address
 	margin-bottom: 45px
 
+	.cart-block__title
+		margin-bottom: 17px
+
 	.forms-wrap
 		margin: 0 0 0 -17px
 
@@ -1509,7 +1523,10 @@ button, input, select
 
 
 .cart-payment-method
-	margin-bottom: 45px
+	margin-bottom: 54px
+
+	.cart-block__title
+		margin-bottom: 20px
 
 	.forms-wrap
 		margin: 0 0 0 -33px
@@ -1522,7 +1539,7 @@ button, input, select
 
 		input[type="radio"] + label
 			border-bottom: 2px solid transparent
-			padding: 23px 19px
+			padding: 15px 22px 11px
 
 		input[type="radio"]:checked + label
 			border-bottom: 2px solid $second-color
@@ -1532,10 +1549,10 @@ button, input, select
 		+ .row
 			font-size: rem(14)
 			color: #616161
-			margin-top: 10px
+			margin-top: 7px
 		img 
 			&:not(:first-child)
-				margin-left: 17px
+				margin-left: 15px
 
 
 
@@ -1552,17 +1569,17 @@ button, input, select
 	&--current
 		display: flex
 		flex-wrap: wrap
-		margin: 25px 0 -30px -17px
+		margin: 25px 0 -30px -28px
 
 .payment-method__item
 	display: flex
 	align-items: center
-	padding: 11px 11px 11px 54px
+	padding: 11px 11px 7px 54px
 	background: #fff
 	border: 2px solid $border-color
 	color: #919191
-	width: calc((100% - 17px * 3) / 3 )
-	margin: 0 0 30px 17px
+	width: calc((100% - 28px * 3) / 3 )
+	margin: 0 0 30px 28px
 	transition: color .3s ease, font-weight .1s ease
 
 	&.active, &:hover
@@ -1575,29 +1592,260 @@ button, input, select
 	background: url('../img/ico-pay-11.png') no-repeat left 10px center
 .sber
 	background: url('../img/ico-pay-12.png') no-repeat left 10px center
+	padding-left: 75px
 .qiwi
-	background: url('../img/ico-pay-13.png') no-repeat left 10px center
+	background: url('../img/ico-pay-13.png') no-repeat left 17px center
 .sber-online
-	background: url('../img/ico-pay-14.png') no-repeat left 10px center
+	background: url('../img/ico-pay-14.png') no-repeat left 14px center
 .yandex 
-	background: url('../img/ico-pay-15.png') no-repeat left 10px center
+	background: url('../img/ico-pay-15.png') no-repeat left 25px center
 .webmoney
-	background: url('../img/ico-pay-16.png') no-repeat left 10px center
+	background: url('../img/ico-pay-16.png') no-repeat left 20px center
 
 .cart-comment
+
+	.cart-block__title
+		margin-bottom: 22px
 	.forms-wrap
 		margin: 0
 
 	.forms-input-cont
 		width: 100%
+		margin-bottom: 37px
 
 
 
 	textarea
-		width: 100%
+		width: 100% !important
 		min-width: 100%
 		min-height: 107px
 		border: 1px solid $border-color
+		padding: 5px
+
+
+.cart-price
+	display: flex
+
+	&__list
+		max-width: 215px
+		width: 100%
+
+
+	&__item
+		position: relative
+		display: flex
+		justify-content: space-between
+		flex: 1 1 auto
+
+
+		&:not(:first-child)
+			margin-top: 8px
+
+		&:after 
+			content: ""
+			position: absolute
+			background: url('../img/ico-dash.png') center
+			width: 100%
+			height: 2px
+			bottom: 4px
+			left: 0
+			z-index: 1
+
+		span 
+			background: #fff
+			font-size: rem(14)
+			font-weight: 500
+			z-index: 2
+
+			&:first-child
+
+				padding: 0 5px 0 0
+
+			&:last-child
+
+				padding: 0 0 0 5px
+
+	&__total
+		display: flex
+		align-items: flex-end
+		margin-left: auto
+		font-size: rem(25)
+		color: $second-color
+
+		span 
+			font-weight: 500
+		
+
+		.sum
+			
+			font-weight: bold
+			margin-left: 11px
+
+.cart-footer
+	display: flex
+	align-items: flex-start
+	justify-content: space-between
+	margin-top: 45px
+
+.policy
+	text-align: right
+	font-size: rem(12)
+	color: #c0c0c0
+
+.cart-aside
+
+	&__header
+		display: flex
+		justify-content: space-between
+		margin-bottom: 61px
+
+	&__title
+		font-size: rem(25)
+		font-weight: 500
+
+	&-quantity
+		display: flex 
+		align-items: center
+		justify-content: flex-start
+		margin-top: 19px
+
+	&__total
+		display: flex
+		flex-direction: column
+		align-items: flex-end
+		
+
+.cart-aside
+
+	&__list 
+		display: flex
+		flex-direction: column
+	&__item
+		display: flex
+		justify-content: space-between
+		flex: 1 1 auto
+		padding: 24px 16px 30px
+		border-top: 1px solid $border-color
+
+		&-close
+			display: block
+			+size(14px)
+			margin-bottom: auto
+			background: url('../img/ico-close-aside.png') no-repeat center
+		
+	&__info
+		align-self: center
+
+		&-color 
+			display: flex
+			margin-top: 17px
+
+		&-title
+			font-size: rem(16)
+			font-weight: 500
+			color: #000
+
+	.color
+		display: block
+		+size(14px)
+		border-radius: 50%
+		margin-right: 9px
+		&-name
+			font-size: rem(14)
+			font-weight: 500
+
+	&__total-sum
+		font-size: rem(20)
+		font-weight: bold
+		color: $second-color
+
+
+	&__footer
+		display: flex
+		justify-content: space-between
+		padding-top: 41px
+		border-top: 1px solid $border-color
+
+		&-price
+			font-size: rem(25)
+			color: $second-color
+			padding-right: 15px
+			font-weight: 500
+
+			span:last-child
+				font-weight: bold
+				margin-left: 3px
+
+
+.cart-counter
+
+	&-wrapper
+		display: flex
+		align-items: center
+		border: 1px solid $second-color
+		padding: 9px 17px
+
+	&__input
+		width: 40px
+		border: 0
+		text-align: center
+
+	&__link
+		position: relative
+		display: flex
+		width: 20px
+		height: 20px
+
+		&--minus
+
+			&:before 
+				content: ""
+				width: 10px
+				height: 1px
+				background: $border-color
+				position: absolute
+				top: 50%
+				left: calc(50% - 5px)
+
+
+		&--plus
+			&:before 
+				content: ""
+				width: 10px
+				height: 1px
+				background: $border-color
+				position: absolute
+				top: 50%
+				left: calc(50% - 5px)
+			&:after 
+				content: ""
+				width: 10px
+				height: 1px
+				background: $border-color
+				position: absolute
+				top: 50%
+				left: calc(50% - 5px)
+				transform: rotate(90deg)
+
+.promo-input
+	display: flex
+
+	input[type="text"]
+		width: 150px
+		height: 38px
+		padding: 0 15px
+	input[type="submit"]
+		height: 38px
+		width: 120px
+		font-size: rem(14)
+		padding: 5px
+		text-align: center
+.cart-aside__cont
+	position: sticky
+	top: 155px
+
+.mobile-info
+	display: none
 
 @import "_grid"
 @import "media"
