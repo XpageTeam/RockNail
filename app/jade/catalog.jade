@@ -25,12 +25,12 @@ html(lang="ru")
 						.wrapper
 							.catalog
 								aside.aside
-									.aside-title 
-										.gradient-btn Каталог
+									.aside-title.gradient-btn
+										.btn Каталог
 									.aside-category
 										.lacquer-category
 											.lacquer-category__title.active Гель • лаки
-											.lacquer-category__list
+											.lacquer-category__list <!--на элементы списка добавь пожалуйста класс active-->
 												each name in ["Baby Nude", "Classik", "Camouflage", "Galaxy", "Gothic", "Summer", "Gray Moon", "Diamond"]
 													a(href="#").lacquer-category__item=name
 										.lacquer-category.lacquer-category--top
@@ -63,11 +63,6 @@ html(lang="ru")
 
 
 
-
-
-
-
-
 								.catalog-list
 									.title-block__title
 										h1 Все категории
@@ -83,11 +78,12 @@ html(lang="ru")
 															img(src="img/nail-"+img+".png", alt="")
 
 												.forms-input-cont.mobile
+													img(src="", alt="").ico-select-img
 													select.forms__input.forms__input--select
 														option(data-src="img/ico-color-catalog1.png") Сначала популярные
 														option(data-src="img/ico-color-catalog2.png") Сначала популярные
 														option(data-src="img/ico-color-catalog3.png") Сначала популярные
-														option(data-src="img/ico-color-catalog4.png") Сначала популярные
+														option(data-src="img/ico-color-catalog1.png") Сначала популярные
 													.forms__label Выбрать цвет
 													.forms__error-message
 														i.forms__error-message-icon
@@ -99,11 +95,12 @@ html(lang="ru")
 														label(for="checkbox-"+(i+1)).forms__checkbox-label 
 															img(src="img/nail-"+img+".png", alt="")
 												.forms-input-cont.mobile
+													img(src="", alt="").ico-select-img
 													select.forms__input.forms__input--select
-														option(data-src="img/ico-color-catalog.pngimg/ico-color-catalog.png") Сначала популярные
-														option(data-src="img/ico-color-catalog.pngimg/ico-color-catalog.png") Сначала популярные
-														option(data-src="img/ico-color-catalog.pngimg/ico-color-catalog.png") Сначала популярные
-														option(data-src="img/ico-color-catalog.pngimg/ico-color-catalog.png") Сначала популярные
+														option(data-src="img/ico-color-catalog.png") Сначала популярные
+														option(data-src="img/ico-color-catalog1.png") Сначала популярные
+														option(data-src="img/ico-color-catalog2.png") Сначала популярные
+														option(data-src="img/ico-color-catalog3.png") Сначала популярные
 													.forms__label Эффект
 													.forms__error-message
 														i.forms__error-message-icon
@@ -116,11 +113,12 @@ html(lang="ru")
 														label(for="checkbox-"+(i+1)).forms__checkbox-label 
 															img(src="img/nail-"+img+".png", alt="")
 												.forms-input-cont.mobile
+													img(src="", alt="").ico-select-img
 													select.forms__input.forms__input--select
 														option(data-src="img/ico-color-catalog.png") Сначала популярные
-														option(data-src="img/ico-color-catalog.pngimg/ico-color-catalog.png") Сначала популярные
-														option(data-src="img/ico-color-catalog.pngimg/ico-color-catalog.png") Сначала популярные
-														option(data-src="img/ico-color-catalog.pngimg/ico-color-catalog.png") Сначала популярные
+														option(data-src="img/ico-color-catalog1.png") Сначала популярные
+														option(data-src="img/ico-color-catalog2.png") Сначала популярные
+														option(data-src="img/ico-color-catalog3.png") Сначала популярные
 													.forms__label Френч
 													.forms__error-message
 														i.forms__error-message-icon
@@ -155,8 +153,8 @@ html(lang="ru")
 															a.favorite-add(href="#")
 																span.favorite-add__title избранное
 												.cat-item__hover
-													.btn-wrap
-														a(href="#").btn.gradient-btn В корзину
+													.btn-wrap.gradient-btn
+														a(href="#").btn В корзину
 
 													a(href="/img/photos/catalog-img-hover.jpg" data-fancybox="quick-view").fancybox.quick-view Быстрый просмотр
 
