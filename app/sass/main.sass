@@ -1467,7 +1467,7 @@ button, input, select
 	// background-size: cover;
 	&__slider
 		width: 45%
-		height: 640px
+		// height: 640px
 		position: relative;
 		// background: gray
 		.slick-arrow
@@ -1485,7 +1485,9 @@ button, input, select
 			transform: rotate(180deg);
 	&__slick
 		width: 100%;
-		height: 540px;
+		// height: 540px;
+		height: 45vw;
+		max-height: 540px;
 		background-color: #fff;
 		display: flex;
 		align-items: center;
@@ -1493,6 +1495,8 @@ button, input, select
 	&__slick_slide
 		width: 100%;
 		height: 100%;
+		// padding-right: 35px;
+		// margin-right: 35px;
 		img
 			// object-fit: cover;
 			margin: 0 auto;
@@ -1508,13 +1512,14 @@ button, input, select
 			width: 70px
 			object-fit: contain;
 			background-color: #fff;
-			margin-right: 35px;
+			// margin-right: 35px;
 			cursor: pointer;
 		.slick-current
 			position: relative;
 			&:before
 				content: ""
-				width: calc(100% - 35px)
+				// width: calc(100% - 35px)
+				width: 100%;
 				height: 4px;
 				position: absolute;
 				background-color: #8b69fc;
@@ -1541,9 +1546,11 @@ button, input, select
 		color: #787878;
 		width: calc(100% / 7);
 		transition: 0.3s;
+		margin-bottom: 2px;
 		&:hover
 				color: #9667f4;
 				font-weight: bold;
+				margin-bottom: -1px;
 
 	&__sample_buy
 		padding: 0 18px;
@@ -1555,8 +1562,8 @@ button, input, select
 			display: flex;
 			align-items: center;
 
-		.gradient-btn.gradient-btn__wrap
-			margin-right: 45px;
+		.gradient-btn
+			margin-right: vw(45)
 			min-width: 170px;
 
 	&__sample_input
@@ -1622,6 +1629,7 @@ button, input, select
 		font-size: 35px;
 		font-weight: bold;
 		display: none;
+		white-space: nowrap;
 	// sale
 	.sale
 		.cat-price_sale
@@ -1642,6 +1650,7 @@ button, input, select
 			font-weight: normal;
 			position: relative;
 			display: inline-block;
+			white-space: nowrap;
 			&:after
 				content: ""
 				width: 100%
@@ -1724,7 +1733,8 @@ button, input, select
 	&__tabs_left_content
 		display: flex;
 		align-items: flex-start;
-		padding: 0 vw(45);
+		padding: vw(45);
+		width: 100%;
 		.text-page
 			padding-top: 8px;
 			width: 100%;
@@ -1753,6 +1763,16 @@ button, input, select
 			display: flex;
 			width: 250px;
 			padding-right: 20px;
+			position: relative;
+			padding-bottom: 35px;
+			&:before
+				content: ""
+				position: absolute;
+				height: 3px;
+				width: 70px;
+				background-color: #8b69fc;
+				bottom: 0;
+				left: 0;
 	&__tabs_left_content-title
 		font-size: 34px;
 		display: flex;
@@ -1792,7 +1812,7 @@ button, input, select
 		align-items: center;
 		border-bottom: 1px solid #dcdcdc;
 		padding-bottom: 15px;
-
+		flex-wrap: wrap;
 	&__feedback_top-title
 		font-size: 25px;
 		color: #9667f4;
@@ -1806,11 +1826,13 @@ button, input, select
 		color: #d34c75;
 		font-weight: bold;
 		position: relative;
+		padding-left: 30px;
 		&:before
 			content: ""
 			background: url('../img/card-ico-star-red-big.png') no-repeat;
 			position: absolute;
-			left: -30px
+			// left: -30px
+			left: 0;
 			top: -4px
 			width: 22px
 			height: 22px
@@ -2110,37 +2132,184 @@ button, input, select
 .card__feedback_paginator
 	display: flex;
 	align-items: center;
+
 	.paginator
 		margin-top: 0;
+
 // media 
+@media screen and (max-width: 1000px)
+	.card
+		&__sample_buy
+			padding: 0;
+
+			.gradient-btn
+				min-width: unset ;
+				margin-right: 10px;
+
+		&__sample_input
+			margin: 0 10px;
+
 @media screen and (max-width: 770px)
 	.card
+		&__tabs
+			display: flex;
+			flex-direction: column;
+
 		&__tabs_right
-			display: none;
+			width: 100%;
+			order: 1;
+			display: flex;
+			flex-wrap: wrap;
+
 		&__tabs_left
 			width: 100%
 			min-height: 350px;
+			order: 2;
+			margin-top: 40px;
+
+		&__tabs_right-title
+			width: 100%;
+
+		&__tabs_right_item
+			width: calc(100% / 3);
+			padding: 85px 5px 0 5px;
+			text-align: center;
+			img
+				top: 0;
+				left: calc(50% - 15px);
+		.fix-1 
+			img
+				left: calc(50% - 26px);
+				top: 10px;
+		.fix-2 
+			img
+				left: calc(50% - 12px);
+				top: 5px;
+		&__tabs_left_content
+			padding: vw(90);
+			flex-direction: column;
+			h3
+				width: 100%;
+				margin-bottom: 35px;
 		&__slick_nav
-			display: none;
+			// display: none;
+
 		&__sample_slider
-			display: none;
+			// display: none;
+
 		&__top
 			flex-direction: column;
+
 		&__slider
 			width: 100%
-			height: calc(100vh - 380px)
-			margin-bottom: 50px
+			// height: calc(100vh - 380px)
+			margin-bottom: 30px
+
 		&__slick
-			height: 100%
+			// height: 100%
+			height: calc(100vh - 380px)
+
 		&__sample
 			width: 100%
+			padding-left: 0;
+			position: relative;
+
+			.gradient-btn
+				margin-right: 0;
+
+			h1, h2
+				padding-right: 60px;
+
 		&__tabs_navi
 			display: flex;
-			justify-content: space-between;
+			justify-content: center;
 			padding-left: 0;
+
 			span 
 				margin: 0 25px
 
+		&__sample_buy
+			padding: 0 18px;
+
+			.cat-item__bot-favorite
+				position: absolute;
+				top: 5px
+				right: 40px;
+			.cat-item__bot-price
+				display: flex;
+				align-items: center;
+				div
+					&:first-child
+						margin-right: 30px;
+		&__feedback_form
+			form 
+				.forms-wrap
+					flex-direction: column;
+					.forms-input-cont
+						width: 100%;
+		&__form_btn
+			display: inline-block !important;
+			width: auto !important;
+			
+		&__form_btn-fix
+			margin-top: 0 !important;
+			margin-left: 15px;
+		&__form_btns
+			display: flex;
+			margin-bottom: 30px;
+@media screen and (max-width: 600px)
+	.card
+		&__feedback_bot
+			flex-wrap: wrap;
+		&__feedback_btns
+			width: 100%;
+			justify-content: space-around;
+			.gradient-btn.gradient-btn__wrap
+				margin-left: 0;
+		&__feedback_paginator
+			margin-top: 35px;
+			width: 100%;
+			justify-content: center;
+			.paginator
+				margin-left: 0;
+		&__sample_buy
+			padding: 0;
+@media screen and (max-width: 480px)
+	.card
+		&__slick_nav
+			// display: none;
+		&__sample_slider
+			display: none;
+		&__tabs_right
+			display: none;
+		&__tabs_navi
+			justify-content: space-between;
+			span 
+				margin: 0;
+				&:first-child
+					margin-left: 4vw;
+				&:last-child
+					margin-right: 4vw;
+		&__slick
+			height: calc(100vw - 30px);
+		&__tabs_left
+			margin-top: 0;
+		&__sample_buy
+			.cat-item__bot
+				flex-wrap: wrap;
+		&__feedback_btns
+			input
+				padding-right: 15px !important;
+				padding-left: 15px !important;
+		&__btn
+			white-space: nowrap;
+			a 
+				padding-right: 15px;
+				padding-left: 15px;
+		.text-page table td, .text-page table th
+			padding: 10px;
+		.text-page td[data-title="Цена"]
+			white-space: nowrap;
 // product_card-------------------------------END
 @import "_grid"
 @import "media"

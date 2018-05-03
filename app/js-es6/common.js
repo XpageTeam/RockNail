@@ -37,7 +37,7 @@ $(document).ready(function(){
 		$('.card__feedback_form').css("display", "none")
 		$('.card__feedback_middle').css("display", "block")
 		$('.card__feedback_middle-no_feedback').css("display", "block")
-		$('.card__feedback_bot').css("display", "block")
+		$('.card__feedback_bot').css("display", "flex")
 		
 	});
 });
