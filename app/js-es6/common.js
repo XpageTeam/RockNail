@@ -38,7 +38,11 @@ $(document).ready(function(){
 		$('.card__feedback_middle').css("display", "block")
 		$('.card__feedback_middle-no_feedback').css("display", "block")
 		$('.card__feedback_bot').css("display", "flex")
-		
+	});
+	// убирает крестик формы при нажатии на него и очищает инпут
+	$('.delivery-city_reset').click(function(){
+		$('.delivery-city_reset').css("display", "none")
+		$('#city').attr("value", "")
 	});
 });
 

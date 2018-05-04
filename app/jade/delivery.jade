@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Доставка и оплата
+		include inc/head.jade
+		include inc/css.jade
+	body.inner.loading
+		#page-wr
+			include inc/header.jade
+			main#content
+				.content
+					.delivery-
+						.wrapper
+							.delivery-__title
+								h1 Доставка 
+									div и оплата
+						.main-catalog__cont
+							.wrapper
+								.delivery-__city_select
+									.delivery-__city_select_title Ваш населённый пункт
+									form.delivery-__city_select_panel
+										input(type="text" required value="" placeholder="Выберите город").delivery-city
+										input(type="reset" for="city" value="").delivery-city_reset
+										input(type="submit" value="" for="city")
+								.card__tabs#tabs
+									.card__tabs_left
+										.delivery-table
+												table
+														tfoot
+															//- tr
+															//- 	td(colspan="3")
+														thead
+															tr
+																th Способ доставки
+																th Срок доставки 
+																th Стоимость доставки
+														tbody
+															tr
+																td(data-title="Способ доставки") 
+																	span Курьером
+																td(data-title="Срок доставки")
+																	span 2 – 3 дня
+																td(data-title="Стоимость доставки")
+																	span 300 Р
+																	div от 4000 Р доставка бесплатно
+
+															tr
+																td(data-title="Способ доставки" rowspan="2") 
+																	span Почта России
+																td(data-title="Срок доставки" rowspan="2")
+																	span 7 – 10 дней
+																td(data-title="Стоимость доставки")
+																	span При получении 400Р
+															tr
+																td(data-title="Стоимость доставки")
+																	span Оплата на сайе 200Р
+																	div от 4000 Р доставка бесплатно
+															tr
+																td(data-title="Способ доставки" rowspan="2") 
+																	span Постматы и пункты выдачи
+																td(data-title="Срок доставки")
+																	img(src="img/photos/delivery-table-img-1.png", alt="")
+																	span 4 дня
+																td(data-title="Стоимость доставки")
+																	span 199 Р
+																	div от 2000 Р доставка бесплатно
+															tr
+																
+																td(data-title="Срок доставки")
+																	img(src="img/photos/delivery-table-img-2.png", alt="")
+																	span 4 дня
+																td(data-title="Стоимость доставки")
+																	span 199 Р
+																	div от 4000 Р доставка бесплатно
+									.card__tabs_right
+										.card__tabs_right-title Rock Nail – ЭТО
+										.card__tabs_right_item
+											img(src="img/card-ico-tab-1.png", alt="")
+											.card__tabs_right_item-title Технологии
+											.card__tabs_right_item-text Архитектурная формула Выравнивающая способность Нанесение в одно скольжение
+										.card__tabs_right_item.fix-1
+											img(src="img/card-ico-tab-2.png", alt="")
+											.card__tabs_right_item-title Палитра
+											.card__tabs_right_item-text Ультрамодные коллекции Сочетаемость оттенков Высокая пигментация
+										.card__tabs_right_item.fix-2
+											img(src="img/card-ico-tab-3.png", alt="")
+											.card__tabs_right_item-title Упаковка
+											.card__tabs_right_item-text Умная кисть Soft Touch Эргономичная баночка До последней капли
+								.delivery-__map
+									.delivery-__map_title Постаматы и пункты выдачи в вашем населённом пункте
+									.delivery-__map_container
+										.delivery-__map_block
+											img(src="img/photos/delivery-map.jpg", alt="")
+										.delivery-__map_select
+											.delivery-__map_select__top Показывать на карте:
+											.delivery-__map_select__mid
+												div
+													input(type="checkbox")#inp1
+													label(for="inp1")
+														img(src="img/photos/delivery-table-img-1.png", alt="")
+												div
+													input(type="checkbox")#inp2
+													label(for="inp2")
+														img(src="img/photos/delivery-table-img-2.png", alt="")
+											.delivery-__map_select__bot
+												ul
+													li 
+														div Каслинская ул, д. 32
+														div CDEK
+													li
+														div Кирова ул, д. 27
+														div PickPoint
+													li
+														div Ленина пр-кт, д. 21В
+														div CDEK
+													li
+														div Металлургов ш, д. 31Б
+														div PickPoint
+													li
+														div Хлебозаводская улица, д. 34
+														div CDEK
+													li
+														div Каслинская ул, д. 32
+														div PickPoint
+													li
+														div Кирова ул, д. 27
+														div CDEK
+													li
+														div Ленина пр-кт, д. 21В
+														div PickPoint
+													li
+														div Хлебозаводская улица, д. 34
+														div CDEK
+													li
+														div Хлебозаводская улица, д. 34
+														div PickPoint
+													li
+														div Хлебозаводская улица, д. 34
+														div CDEK
+													li
+														div Каслинская ул, д. 32
+														div PickPoint
+													li
+														div Кирова ул, д. 27
+														div CDEK
+													li
+														div Ленина пр-кт, д. 21В
+														div PickPoint
+													li
+														div Хлебозаводская улица, д. 34
+														div CDEK
+													li
+														div Хлебозаводская улица, д. 34
+														div PickPoint
+
+								.delivery-__payment
+									.delivery-__payment_title Способы оплаты
+									.delivery-__payment_container
+										.delivery-__payment_item
+											img(src="img/delivery-ico-pay-1.png", alt="")
+											div Наличными при получении посылки
+										.delivery-__payment_item
+											img(src="img/delivery-ico-pay-2.png", alt="")
+											div Банковской картой системы Visa или MasterCard
+										.delivery-__payment_item
+											img(src="img/delivery-ico-pay-3.png", alt="")
+											div Наложенным платежом при работе с Почтой России
+										.delivery-__payment_item
+											img(src="img/delivery-ico-pay-4.png", alt="")
+											div Электронные денеги Яндекс Деньги, Webmoney, Киви
+										.delivery-__payment_item
+											img(src="img/delivery-ico-pay-5.png", alt="")
+											div Безналичный расчет
+						.bot-form__cont
+							.wrapper
+								.bot-form__title #rocknailwork
+								.bot-form__subtitle Добавляй свои работы <br /> и попади в нашу лену
+								.bot-form
+									form(action="#")
+										.bot-form__inputs
+											.bot-form__input-cont
+												label.bot-form__label Подпишись <br /> на наши новости
+												input.bot-form__input(type="email" placeholder="Почта")
+											.bot-form__input-cont.bot-form__input-cont--submit
+												label.bot-form__label Будь первой, узнавай <br />о наших акциях и конкурсах
+												.gradient-btn.gradient-btn__wrap
+													input.bot-form__submit(type="submit" value="Подписаться")
+					//- include inc/bot-blocks.jade
+			include inc/footer.jade
+		include inc/scripts.jade
