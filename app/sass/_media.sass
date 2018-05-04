@@ -51,8 +51,58 @@ $output-bourbon-deprecation-warnings: false;
 // @media (pointer: coarse)
 	
 @media screen and (max-width: 1000px)
+
+	.cart-aside__title
+		display: flex
+		flex-direction: column
+		align-items: flex-start
+
 	.mobile-info
 		display: block
+		color: $second-color
+		font-size: rem(20)
+		font-weight: bold
+
+	.cart-aside__header
+		align-items: flex-start
+
+
+	.cart-aside__mobile-btn
+		border: 1px solid $second-color
+		color: $second-color
+		text-align: center
+		padding: 15px
+		font-size: rem(18)
+		font-weight: bold
+		margin-bottom: 55px
+		transition: border-color .3s ease, color .3s ease
+		cursor: pointer
+
+		&:hover 
+			border-color: $main-color
+			color: $main-color
+
+	.cart
+		.title-block__title 
+			h1
+				color: #000
+				font-weight: 500
+
+		&__cont
+			margin-bottom: 0
+
+		&-aside
+			&__title
+				font-size: 25px
+
+			&__header
+				margin-bottom: 44px
+
+		&-info
+			margin-top: 50px
+
+		&-recipient
+			margin: 0 0 53px
 
 	.cart
 		flex-direction: column
@@ -65,6 +115,28 @@ $output-bourbon-deprecation-warnings: false;
 			width: 100%
 			margin-left: 0
 			order: 1
+
+		&-recipient
+
+
+
+		&-current-city
+			margin-bottom: 27px
+
+		&-delivery-method
+			margin-bottom: 69px
+
+		&-delivery-address
+			margin-bottom: 68px
+
+		&-payment-method
+			margin-bottom: 61px
+
+			&--current
+				margin: 27px 0 -30px -28px
+
+	.payment-method__item
+		padding: 11px 11px 13px 54px
 
 	.titile-block
 		display: none 
@@ -188,7 +260,7 @@ $output-bourbon-deprecation-warnings: false;
 		justify-content: space-between
 		align-items: center
 		padding: 0
-		margin-bottom: 40px
+		margin-bottom: 32px
 
 		h1 
 			font-size: rem(42)
@@ -258,8 +330,8 @@ $output-bourbon-deprecation-warnings: false;
 
 
 	.forms__input
-		height: 50px !important
-		border: 1px solid $second-color !important
+		height: 40px !important
+		border: 1px solid $border-color !important
 
 	.forms-input-cont.mobile
 		display: block
@@ -348,6 +420,138 @@ $output-bourbon-deprecation-warnings: false;
 
 		.gradient-btn
 			margin-left: 0
+
+	.cart-aside__title
+		font-size: 20px
+
+	.gradient-btn
+		padding: 13px 26px
+
+	.cart-aside__mobile-btn
+		padding: 10px
+		font-size: 14px
+		margin-bottom: 48px
+
+	.cart-aside__footer
+		display: none
+
+	.cart
+		.title-block__title
+			justify-content: center
+
+			h1 
+				font-size: rem(21)
+
+		&-info
+			margin-top: 30px
+
+		.forms-wrap	
+			margin: 0
+
+
+	.cart-recipient
+		position: relative
+
+		.forms-input-cont
+			width: 100%
+			margin: 0
+
+			&:nth-child(1)
+				margin-bottom: 80px
+
+			&:nth-child(2)
+				margin-bottom: 33px
+
+		.forms-wrap--bot
+			margin: 0 !important
+			position: absolute
+			top: 115px
+			left: 0
+
+	.cart
+
+		.title-block__title
+			margin-bottom: 35px
+
+	.cart-recipient
+		margin: 0 0 35px
+
+	.cart-current-city
+		font-size: 18px
+		margin-bottom: 38px
+		justify-content: center
+
+	.cart-delivery-method
+		margin-bottom: 0px
+
+		.forms-input-cont
+			width: 100%
+			margin: 0 0 32px 5px
+
+			.top
+				margin-bottom: 11px
+
+	.cart-delivery-address 
+		.forms-input-cont
+			width: 100%
+			margin: 0 0 30px 0
+
+	.cart-delivery-address
+		margin-bottom: 24px
+
+	.cart-payment-method 
+		.forms-input-cont
+			width: 100%
+			margin: 0 0 37px 0
+
+	.cart-payment-method--current
+		margin: 5px 0 -30px -28px
+
+	.payment-method__item
+		width: calc((100% - 28px * 2) / 2)
+		margin: 0 0 26px 28px
+		min-height: 56px
+
+	.cart-payment-method
+		margin-bottom: 50px
+
+	.cart-price
+		display: flex
+		margin-top: 12px
+
+	.promo-mobile
+		display: block
+		margin-top: 28px
+
+		input[type="text"]
+			width: 100%
+
+		input[type="submit"]
+			width: 136px
+
+	.cart-footer
+		margin-top: 25px
+		flex-direction: column
+
+		.gradient-btn
+			width: 100%
+
+	.policy
+		text-align: center
+		width: 100%
+		margin-top: 33px
+
+	.cart-current-city
+
+		select 
+			background: url("../img/ico-select-arrow.png") no-repeat center right 10px
+   
+
+
+
+			
+
+		
 
 
 			
