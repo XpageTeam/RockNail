@@ -1357,110 +1357,6 @@ button, input, select
 			+triangle(5px, $second-color, down)
 			top: 100%
 			left: calc(50% - 3px)
-
-
-.big-slider
-	margin: rem(65) -15px 0
-
-	&__cont
-		overflow: hidden
-		// z-index: 1
-		// position: relative
-		padding-bottom: 41px
-		margin-bottom: -41px
-
-	&:not(.slick-slide)
-		display: flex
-
-	&__title
-
-		&-cont
-			display: flex
-			align-items: flex-end
-
-		&-img
-			flex: none
-			margin-right: 21px
-
-	img
-		display: block
-
-	.slick
-
-		&-track
-			display: flex
-
-		&-list
-			padding-bottom: 41px !important
-			margin-bottom: -41px
-
-	&__slide
-		margin: 0 15px
-		flex: none
-
-		&:not(.slick-slide)
-			// float: left
-			width: persent(370, 1920)
-
-			&:nth-child(n + 7)
-				display: none
-
-		&-inst
-			display: flex
-			// align-self: stretch
-			width: 100%
-			flex-direction: column
-			// padding-top: 14px
-			margin: 8px 0 0
-
-		&--many
-			display: flex !important
-			flex-wrap: wrap
-			align-items: flex-start
-			justify-content: space-between
-
-			.big-slider__slide-img
-				width: persent(171, 368)
-
-				&:first-child, &:nth-child(2)
-					margin-bottom: auto
-					// padding-bottom: 14px
-
-				&:nth-child(3), &:nth-child(4)
-					margin-top: auto
-					// padding-top: 14px
-
-				&:nth-child(even)
-					// margin-left: rem(28)
-
-.inst-block
-	background: url("../img/inst-bg.png") center right no-repeat
-	background-size: cover
-	flex: 1 1 auto
-	padding: 2rem rem(23) rem(58)
-	position: relative
-	// z-index: 5
-	font-weight: 400
-
-	&__text
-		font-size: 14px
-		max-width: 180px
-		line-height: lh(22, 14)
-
-	&__tag
-		font-size: rem(30)
-		margin: 1rem 0 0
-
-	&__btn
-		position: absolute
-		left: rem(23)
-		bottom: -21px
-		box-shadow:  -2px 4px 20px 0px rgba(9, 3, 5, 0.22)
-
-		.gradient-btn
-			display: block
-
-
 // product_card-------------------------------
 .card
 	background: url(../img/card-bg.png) 0 600px no-repeat;
@@ -1782,11 +1678,6 @@ button, input, select
 				background-color: #8b69fc;
 				bottom: 0;
 				left: 0;
-	&__tabs_left_content-title
-		font-size: 34px;
-		display: flex;
-		width: 250px;
-		padding-right: 20px;
 
 	&__tabs_navi
 		height: 30px;
@@ -2102,6 +1993,108 @@ button, input, select
 		position: relative;
 		z-index: 4;
 		margin-bottom: -72px;
+
+.big-slider
+	margin: rem(65) -15px 0
+
+	&__cont
+		overflow: hidden
+		// z-index: 1
+		// position: relative
+		padding-bottom: 41px
+		margin-bottom: -41px
+
+	&:not(.slick-slide)
+		display: flex
+
+	&__title
+
+		&-cont
+			display: flex
+			align-items: flex-end
+
+		&-img
+			flex: none
+			margin-right: 21px
+
+	img
+		display: block
+
+	.slick
+
+		&-track
+			display: flex
+
+		&-list
+			padding-bottom: 41px !important
+			margin-bottom: -41px
+
+	&__slide
+		margin: 0 15px
+		flex: none
+
+		&:not(.slick-slide)
+			// float: left
+			width: persent(370, 1920)
+
+			&:nth-child(n + 7)
+				display: none
+
+		&-inst
+			display: flex
+			// align-self: stretch
+			width: 100%
+			flex-direction: column
+			// padding-top: 14px
+			margin: 8px 0 0
+
+		&--many
+			display: flex !important
+			flex-wrap: wrap
+			align-items: flex-start
+			justify-content: space-between
+
+			.big-slider__slide-img
+				width: persent(171, 368)
+
+				&:first-child, &:nth-child(2)
+					margin-bottom: auto
+					// padding-bottom: 14px
+
+				&:nth-child(3), &:nth-child(4)
+					margin-top: auto
+					// padding-top: 14px
+
+				&:nth-child(even)
+					// margin-left: rem(28)
+
+.inst-block
+	background: url("../img/inst-bg.png") center right no-repeat
+	background-size: cover
+	flex: 1 1 auto
+	padding: 2rem rem(23) rem(58)
+	position: relative
+	// z-index: 5
+	font-weight: 400
+
+	&__text
+		font-size: 14px
+		max-width: 180px
+		line-height: lh(22, 14)
+
+	&__tag
+		font-size: rem(30)
+		margin: 1rem 0 0
+
+	&__btn
+		position: absolute
+		left: rem(23)
+		bottom: -21px
+		box-shadow:  -2px 4px 20px 0px rgba(9, 3, 5, 0.22)
+
+		.gradient-btn
+			display: block
+		
 //Paginator------------------------ 
 .paginator
 	display: flex
@@ -2120,6 +2113,12 @@ button, input, select
 				margin-left: 10px
 
 
+
+			&.active
+				.paginator__link
+					background: $second-color
+		span.paginator__link
+			background: url('../img/ico-paginator-dots.png') no-repeat center
 
 			&.active
 				.paginator__link
