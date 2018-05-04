@@ -80,10 +80,11 @@ $output-bourbon-deprecation-warnings: false;
 	&table
 		box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.15)
 		padding: 20px;
-
+		overflow-x: auto;
 		table
 			width: 100%;
 			text-align: left;
+			min-width: 410px;
 
 		td 
 			color: #000;
@@ -223,7 +224,17 @@ $output-bourbon-deprecation-warnings: false;
 			margin-bottom: 30px;
 		div 
 			max-width: 160px;
-
+	// .card__tabs_left
+	// 	&:before
+	// 		// visibility: hidden;
+	// 		content: '';
+	// 		position: absolute;
+	// 		right: -3px;
+	// 		top: 0;
+	// 		height: 100%;
+	// 		width: 60px;
+	// 		background: linear-gradient(to left, #fff 0%, rgba(255, 255, 255, 0) 100%);
+	// 		pointer-events: none;
 .delivery-city:valid ~ .delivery-city_reset
 	display: block !important;
 
@@ -312,7 +323,7 @@ $output-bourbon-deprecation-warnings: false;
 
 		&__payment_container
 			margin-left: -10px;
-			
+
 		&__payment_item
 			margin-left: 0
 			width: 50%;
