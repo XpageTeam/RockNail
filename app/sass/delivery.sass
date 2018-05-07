@@ -188,6 +188,14 @@ $output-bourbon-deprecation-warnings: false;
 		ul
 			height: 465px;
 			overflow: auto;
+			&::-webkit-scrollbar-track
+				border-radius: 4px;
+			&::-webkit-scrollbar
+				width: 8px
+				background-color: #e8e8e8;
+			&::-webkit-scrollbar-thumb 
+				border-radius: 4px;
+				background: #acacac;
 		li 
 			display: flex;
 			justify-content: space-between;

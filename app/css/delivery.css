@@ -224,6 +224,20 @@
   overflow: auto;
 }
 
+.delivery-__map_select__bot ul::-webkit-scrollbar-track {
+  border-radius: 4px;
+}
+
+.delivery-__map_select__bot ul::-webkit-scrollbar {
+  width: 8px;
+  background-color: #e8e8e8;
+}
+
+.delivery-__map_select__bot ul::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: #acacac;
+}
+
 .delivery-__map_select__bot li {
   display: flex;
   justify-content: space-between;
