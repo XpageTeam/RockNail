@@ -275,6 +275,18 @@
   max-width: 160px;
 }
 
+.delivery- .shadow:before {
+  visibility: hidden;
+  content: '';
+  position: absolute;
+  right: -3px;
+  top: 0;
+  height: 100%;
+  width: 60px;
+  background: linear-gradient(to left, #fff 0%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none;
+}
+
 .delivery-city:valid ~ .delivery-city_reset {
   display: block !important;
 }
@@ -370,6 +382,9 @@
   }
   .delivery-__payment_title {
     text-align: center;
+  }
+  .delivery- .card__tabs_left:before {
+    visibility: visible;
   }
 }
 

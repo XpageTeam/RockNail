@@ -44,6 +44,19 @@ $(document).ready(function(){
 		$('.delivery-city_reset').css("display", "none")
 		$('#city').attr("value", "")
 	});
+	// скролл таблицы 
+	$('.delivery-table').scroll(function(){
+		var a = $('.delivery-table').scrollLeft();
+		var window_w = (window.innerWidth);
+		var x = (460 - window_w);
+		// удаляет класс с тенью
+		if (a >= x) {
+			$('.delivery- .card__tabs_left').removeClass("shadow")
+		}
+		else{
+			$('.delivery- .card__tabs_left').addClass("shadow")
+		}
+	});
 });
 
 // sergey new code------------ END
