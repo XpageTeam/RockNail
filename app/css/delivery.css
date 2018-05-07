@@ -8,7 +8,7 @@
 }
 
 .delivery-__title {
-  margin-bottom: 60px;
+  margin-bottom: 45px;
 }
 
 .delivery-__title h1 {
@@ -38,10 +38,10 @@
 
 .delivery-__city_select input[type="text"] {
   width: calc(100% - 45px);
-  max-width: 820px;
   border: 1px solid #8b69fc;
   height: 45px;
   padding: 0 45px 0 20px;
+  background-color: transparent;
 }
 
 .delivery-__city_select input[type="submit"] {
@@ -91,6 +91,7 @@
   box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.15);
   padding: 20px;
   overflow-x: auto;
+  background-color: #fff;
 }
 
 .delivery-table table {
@@ -289,6 +290,10 @@
   pointer-events: none;
 }
 
+.delivery- .card__tabs {
+  margin-top: 50px;
+}
+
 .delivery-city:valid ~ .delivery-city_reset {
   display: block !important;
 }
@@ -368,6 +373,46 @@
   padding-top: 20px;
 }
 
+.favorite- .cat-items {
+  padding: 0;
+}
+
+.favorite- .cat-item {
+  width: calc((100% - 62px * 4) / 4);
+}
+
+.favorite- .cat-item__hover {
+  background-color: transparent;
+}
+
+.favorite-__cross {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 4;
+  width: 14px;
+  height: 14px;
+  transition: 0.3s;
+}
+
+.favorite-__cross:hover {
+  transform: rotate(180deg);
+}
+
+.bg_pic {
+  background: url(../img/catalog-bg-top.png) 0 15px no-repeat;
+}
+
+.search- .big-slider__title-cont, .favorite- .big-slider__title-cont, .delivery- .big-slider__title-cont {
+  margin-bottom: 45px;
+}
+
+@media screen and (min-width: 1000px) {
+  .search- .big-slider__title-cont, .favorite- .big-slider__title-cont, .delivery- .big-slider__title-cont {
+    margin-top: 55px;
+  }
+}
+
 @media screen and (max-width: 1000px) {
   .search- .aside {
     display: block;
@@ -386,6 +431,9 @@
   }
   .search-__checkbox div {
     padding-right: 20px;
+  }
+  .favorite- .cat-item {
+    width: calc((100% - 35px * 3) / 3);
   }
 }
 
@@ -438,14 +486,21 @@
   .delivery-__map_select__bot ul {
     height: 190px;
   }
-  .search- .delivery-__title h1 {
-    text-align: center;
-  }
   .search- .delivery-__city_select_panel {
     max-width: none;
   }
   .search- .wrapper {
     padding: 0 5vw;
+  }
+  .search- .big-slider__title-cont, .favorite- .big-slider__title-cont, .delivery- .big-slider__title-cont {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .favorite- .cat-item {
+    width: calc((100% - 35px * 2) / 2);
   }
 }
 
@@ -496,8 +551,18 @@
   .search- .delivery-__city_select {
     padding: 0;
   }
-  .search- .delivery-__title h1 {
+  .favorite- .cat-item {
+    width: calc((100% - 20px * 2) / 2);
+    margin: 0 0 70px 20px;
+  }
+  .favorite- .cat-items {
+    margin: 0 0 -70px -20px;
+  }
+  .search- .main-title, .delivery- .main-title {
     font-size: 42px;
+  }
+  .favorite- .main-title {
+    font-size: 35px;
   }
 }
 

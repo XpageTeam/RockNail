@@ -8,13 +8,20 @@ html(lang="ru")
 	body.inner.loading
 		#page-wr
 			include inc/header.jade
-			main#content
+			main#content.bg_pic
 				.content
+					.titile-block
+						.wrapper
+							.title-block__crumbs
+								.bread-crumbs
+									a.bread-crumbs__link(href='#') Главная
+									span.bread-crumbs__this Доставка и оплата
 					.delivery-
 						.wrapper
-							.delivery-__title
-								h1 Доставка 
-									div и оплата
+							.big-slider__title-cont
+								.big-slider__title
+									.main-title Доставка
+									.main-subtitle и оплата
 						.main-catalog__cont
 							.wrapper
 								.delivery-__city_select

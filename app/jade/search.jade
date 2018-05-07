@@ -8,13 +8,20 @@ html(lang="ru")
 	body.inner.loading
 		#page-wr
 			include inc/header.jade
-			main#content
+			main#content.bg_pic
 				.content
+					.titile-block
+						.wrapper
+							.title-block__crumbs
+								.bread-crumbs
+									a.bread-crumbs__link(href='#') Главная
+									span.bread-crumbs__this Результаты поиска
 					.search-
 						.wrapper
-							.delivery-__title
-								h1 Результаты 
-									div поиска
+							.big-slider__title-cont
+								.big-slider__title
+									.main-title Результаты
+									.main-subtitle поиска
 						.main-catalog__cont
 							.wrapper
 								.delivery-__city_select
