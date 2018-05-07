@@ -2664,5 +2664,987 @@ button, input, select
 .mobile-info
 	display: none
 
+.big-slider
+	margin: rem(65) -15px 0
+
+	&__cont
+		overflow: hidden
+		// z-index: 1
+		// position: relative
+		padding-bottom: 41px
+		margin-bottom: -41px
+
+	&:not(.slick-slide)
+		display: flex
+
+	&__title
+
+		&-cont
+			display: flex
+			align-items: flex-end
+
+		&-img
+			flex: none
+			margin-right: 21px
+
+	img
+		display: block
+
+	.slick
+
+		&-track
+			display: flex
+
+		&-list
+			padding-bottom: 41px !important
+			margin-bottom: -41px
+
+	&__slide
+		margin: 0 15px
+		flex: none
+
+		&:not(.slick-slide)
+			// float: left
+			width: persent(370, 1920)
+
+			&:nth-child(n + 7)
+				display: none
+
+		&-inst
+			display: flex
+			// align-self: stretch
+			width: 100%
+			flex-direction: column
+			// padding-top: 14px
+			margin: 8px 0 0
+
+		&--many
+			display: flex !important
+			flex-wrap: wrap
+			align-items: flex-start
+			justify-content: space-between
+
+			.big-slider__slide-img
+				width: persent(171, 368)
+
+				&:first-child, &:nth-child(2)
+					margin-bottom: auto
+					// padding-bottom: 14px
+
+				&:nth-child(3), &:nth-child(4)
+					margin-top: auto
+					// padding-top: 14px
+
+				&:nth-child(even)
+					// margin-left: rem(28)
+
+.inst-block
+	background: url("../img/inst-bg.png") center right no-repeat
+	background-size: cover
+	flex: 1 1 auto
+	padding: 2rem rem(23) rem(58)
+	position: relative
+	// z-index: 5
+	font-weight: 400
+
+	&__text
+		font-size: 14px
+		max-width: 180px
+		line-height: lh(22, 14)
+
+	&__tag
+		font-size: rem(30)
+		margin: 1rem 0 0
+
+	&__btn
+		position: absolute
+		left: rem(23)
+		bottom: -21px
+		box-shadow:  -2px 4px 20px 0px rgba(9, 3, 5, 0.22)
+
+		.gradient-btn
+			display: block
+
+// product_card-------------------------------
+.card
+	background: url(../img/card-bg.png) 0 600px no-repeat;
+	// background-size: cover;
+	&__slider
+		width: 45%
+		// height: 640px
+		position: relative;
+		// background: gray
+		.slick-arrow
+			width: 36px
+			height: 50px
+			position: absolute;
+			top: calc(50% - 25px)
+			z-index: 20;
+			background: url(../img/card-ico-arrow-left.png) center no-repeat;
+			border: 0;
+		.slick-prev
+			left: 10px;
+		.slick-next
+			right: 10px;
+			transform: rotate(180deg);
+	&__slick
+		width: 100%;
+		// height: 45vw;
+		// max-height: 540px;
+		background-color: #fff;
+		display: flex;
+		align-items: center;
+
+		.slick-track
+			display: flex;
+			align-items: center;
+			height: 40vw;
+			max-height: 540px;
+
+	&__slick_slide
+		width: 100%;
+		// height: 100%;
+		// min-height: 540px;
+		// padding-right: 35px;
+		// margin-right: 35px;
+		img
+			// object-fit: cover;
+			margin: 0 auto;
+
+	&__slick_nav
+		display: flex;
+		height: 120px;
+		padding: 25px 0;
+		padding-bottom: 0;
+		
+		img
+			height: 70px;
+			width: 70px
+			object-fit: contain;
+			background-color: #fff;
+			// margin-right: 35px;
+			cursor: pointer;
+		.slick-current
+			position: relative;
+			&:before
+				content: ""
+				// width: calc(100% - 35px)
+				width: 100%;
+				height: 4px;
+				position: absolute;
+				background-color: #8b69fc;
+				left: 0;
+				top: 0
+
+	&__sample
+		width: 55%
+		padding-left: vw(40);
+		h1, h2
+			font-size: 25px;
+			line-height: 38px;
+			padding-left: 18px;
+
+	&__sample_slider
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: 20px;
+
+	&__sample_nail
+		text-align: center;
+		padding: 12px 5px;
+		font-size: 12px;
+		color: #787878;
+		width: calc(100% / 7);
+		transition: 0.3s;
+		margin-bottom: 2px;
+		&:hover
+				color: #9667f4;
+				font-weight: bold;
+				margin-bottom: -1px;
+
+	&__sample_buy
+		padding: 0 18px;
+		margin-top: 50px;
+		.cat-item__bot
+			align-items: center;
+
+		span
+			display: flex;
+			align-items: center;
+
+		.gradient-btn
+			margin-right: vw(45)
+			min-width: 170px;
+
+	&__sample_input
+		position: relative;
+		input
+			height: 40px;
+			width: 120px;
+			border: 1px solid #8b69fc;
+			font-size: 16px;
+			padding: 10px 40px;
+			color: #000;
+			text-align: center;
+		a 
+			position: absolute;
+			line-height: 8px;
+			font-size: 25px;
+			color: #808080;
+			height: 100%;
+			width: 40px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			top: 0
+			&:hover, &:focus
+				border-bottom: 0;
+				color: #000;
+			&:nth-child(2)
+				left: 0
+				padding-left: 5px;
+				padding-bottom: 4px;
+			&:nth-child(3)
+				right: 0
+				padding-right: 5px;
+
+	&__sample_btn
+		color: #9667f4;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+
+		img 
+			margin-top: 10px;
+			transition: 0.3s ease;
+
+		&:hover
+			img 
+				transform: scale(1.1);
+
+	&__sample_btn_back
+		img
+			transform: rotate(180deg);
+
+		&:hover
+			img 
+				transform: rotate(180deg) scale(1.1);
+
+	&__top
+		display: flex;
+		padding-top: 100px;
+	&__select
+		display: none;
+	.cat-price_sale
+		color: #cc2a5c;
+		font-size: 35px;
+		font-weight: bold;
+		display: none;
+		white-space: nowrap;
+
+	// sale
+	.sale
+		.cat-price_sale
+			display: block;
+		.card__slider
+			&:after
+				content: ""
+				background: url(../img/card-ico-sale.png) no-repeat;
+				width: 47px;
+				height: 47px;
+				position: absolute;
+				right: 0;
+				top: 0
+				z-index: 2;
+		.cat-price
+			font-size: 16px;
+			color: #858585;
+			font-weight: normal;
+			position: relative;
+			display: inline-block;
+			white-space: nowrap;
+			&:after
+				content: ""
+				width: 100%
+				height: 1px;
+				background-color: #000;
+				position: absolute;
+				left: 0;
+				top: 8px
+				z-index: 2;
+				transform: rotate(13deg);
+	// not_exist
+	.not_exist_btn
+		display: none;
+	.not_exist
+		.not_exist_btn
+			display: block;
+		.exist_btn
+			display: none;
+	// tabs-------------------------
+	&__tabs
+		// height: 500px;
+		display: flex;
+		margin-top: 80px;
+	&__tabs_left
+		width: calc(100% - 315px);
+		position: relative;
+	&__tabs_right
+		width: 315px;
+		padding-left: 30px;
+
+	&__tabs_right-title
+		font-size: 25px;
+		color: #9667f4;
+		font-weight: bold;
+		margin-bottom: 30px;
+
+	&__tabs_right_item
+		max-width: 270px;
+		padding-left: 70px;
+		position: relative;
+		margin-bottom: 30px;
+		img
+			position: absolute;
+			left: 12px
+
+	.fix-1
+		img
+			left: 0;
+
+	.fix-2
+		img
+			left: 15px;
+
+	&__tabs_right_item-title
+		font-size: 16px;
+		color: #9667f4;
+		font-weight: bold;
+		margin-bottom: 5px;
+		text-transform: uppercase;
+
+	&__tabs_right_item-text
+		font-size: 14px;
+		color: #000;
+		font-weight: lighter;
+		line-height: 22px;
+	&__tabs_left_content_flex
+		display: flex;
+		align-items: center;
+		height: calc(100% - 30px)
+		background-color: #fff;
+		box-shadow: 0px 0px 32px 0px rgba(0,0,0,0.15);
+		// position: absolute;
+		display: none;
+		width: 100%;
+	&__tabs_left_content_flex[data-id="1"]
+		display: flex;
+	&__tabs_left_content_flex[data-id="2"]
+		.card__tabs_left_content
+			padding: 0;
+	&__tabs_left_content
+		display: flex;
+		align-items: flex-start;
+		padding: vw(45);
+		width: 100%;
+		.text-page
+			padding-top: 8px;
+			width: 100%;
+		table
+			width: 100%;
+			text-align: left;
+		td 
+			color: #000;
+			font-size: 16px;
+			&:nth-child(3)
+				color: #9667f3;
+				font-size: 20px;
+				font-weight: bold;
+		th 
+			font-size: 12px;
+			color: #8e8e8e;
+		thead, tfoot
+			border-bottom: 1px solid #8e8e8e;
+		tbody
+			tr 
+				&:nth-child(2n)
+					background-color: #e2effe;
+
+		h3
+			font-size: 34px;
+			display: flex;
+			width: 250px;
+			padding-right: 20px;
+			position: relative;
+			padding-bottom: 35px;
+			&:before
+				content: ""
+				position: absolute;
+				height: 3px;
+				width: 70px;
+				background-color: #8b69fc;
+				bottom: 0;
+				left: 0;
+	&__tabs_left_content-title
+		font-size: 34px;
+		display: flex;
+		width: 250px;
+		padding-right: 20px;
+
+	&__tabs_navi
+		height: 30px;
+		padding-left: 15px;
+		span 
+			color: #d34c75;
+			font-size: 16px;
+			padding-bottom: 8px;
+			margin-right: 40px;
+			line-height: 1;
+			opacity: 0.5;
+			transition: opacity  0.4s
+			&:hover
+				border-bottom: 3px solid #d34c75
+				cursor: pointer;
+		.active
+			border-bottom: 3px solid #d34c75;
+			opacity: 1;
+	// slider------
+	&__main-catalog__slider-title
+		font-size: 25px;
+		color: #000;
+		text-align: center;
+		margin-bottom: 50px;
+	// feedback--------------
+	&__feedback
+		padding-top: 90px;
+
+	&__feedback_top
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-bottom: 1px solid #dcdcdc;
+		padding-bottom: 15px;
+		flex-wrap: wrap;
+	&__feedback_top-title
+		font-size: 25px;
+		color: #9667f4;
+		font-weight: bold;
+		text-transform: uppercase;
+		span
+			color: #d561aa;
+
+	&__feedback_top-rating
+		font-size: 16px;
+		color: #d34c75;
+		font-weight: bold;
+		position: relative;
+		padding-left: 30px;
+		&:before
+			content: ""
+			background: url('../img/card-ico-star-red-big.png') no-repeat;
+			position: absolute;
+			// left: -30px
+			left: 0;
+			top: -4px
+			width: 22px
+			height: 22px
+
+
+	&__feedback_block
+		border-bottom: 1px solid #acacac;
+
+	&__feedback_block-name
+		font-size: 16px;
+		color: #000;
+		font-weight: bold;
+		margin-top: 40px;
+		margin-bottom: 10px;
+
+	&__feedback_block-time
+		font-size: 12px;
+		color: #000;
+		font-weight: lighter;
+		margin-bottom: 20px;
+
+	&__feedback_block-text
+		font-size: 14px;
+		margin-bottom: 30px;
+		position: relative;
+		padding-left: 40px;
+		display: inline-block;
+		width: calc(100% - 105px)
+		padding-right: 10px;
+		&:after
+			content: ""
+			background: url(../img/card-ico-feedback.png) no-repeat;
+			width: 25px;
+			height: 20px;
+			position: absolute;
+			left: 0;
+			top: -2px
+	&__feedback_block-rating
+		width: 100px
+		display: inline-block;
+		text-align: right;
+		img 
+			padding: 0 2px
+	&__feedback_block-img
+		margin-bottom: 25px;
+
+		img
+			width: 70px;
+			height: 70px;
+			object-fit: cover;
+			// margin-right: 30px;
+			position: relative;
+		a 
+			display: inline-block;
+			position: relative;
+			margin-right: 30px;
+			width: 70px;
+			height: 70px;
+			&:after
+				content: ""
+				background-color: rgba(0,0,0, 0.0);
+				width: 100%
+				height: 100%
+				position: absolute;
+				left: 0
+				top: 0
+				transition: background-color 0.4s;
+			&:hover, &:focus
+				border-bottom: 0;
+				&:after
+					content: ""
+					background: url(../img/card-ico-feedback-lupa.png) 20px no-repeat;
+					background-color: rgba(0,0,0, 0.3);
+					width: 100%
+					height: 100%
+					position: absolute;
+					left: 0
+					top: 0
+					z-index: 999;
+
+	&__feedback_middle-no_feedback
+		font-size: 14px;
+		color: #000;
+		max-width: 600px;
+		margin-top: 40px;
+
+	&__feedback_bot
+		display: flex;
+		justify-content: space-between;
+		padding-top: 50px;
+
+	&__feedback_btns
+		display: flex;
+		align-items: center;
+
+		.gradient-btn.gradient-btn__wrap
+			margin-left: 30px;
+
+	&__btn
+		a 
+			padding: 11px 30px;
+			// padding-bottom: 12px;
+			border: 2px solid #9667f4
+			color: #9667f4;
+			font-size: 14px;
+			line-height: 21px;
+			font-weight: bold;
+			transition: 0.4s;
+			cursor: pointer;
+			&:hover, &:focus
+				border-bottom: 0;
+				border: 2px solid #d561ac
+				color: #d561ac;
+	&__feedback_form-close
+		position: absolute;
+		right: vw(45)
+		top: vw(45)
+		cursor: pointer;
+
+	&__feedback_form
+		box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.15);
+		padding: vw(45);
+		position: relative;
+		display: none;
+		margin-top: 40px;
+		.forms__title
+			font-size: 25px;
+			color: #9667f4;
+			font-weight: bold;
+			text-transform: uppercase;
+			text-align: left;
+			margin-top: 10px;
+		.card__feedback_form-rating
+			font-size: 14px;
+			margin-bottom: 44px;
+			display: flex;
+			#reviewStars-input
+				margin-left: 20px
+		input, textarea
+			border: 1px solid #b8b8b8;
+			&::placeholder
+					color: #333
+
+		.imp_input
+			position: relative;
+			margin-bottom: 30px;
+
+			&:after
+				content: "*";
+				position: absolute;
+				right: 14px;
+				bottom: 15px;
+				width: 10px;
+				height: 10px;
+				text-align: center;
+				font-size: 24px;
+
+			input
+				height: 40px;
+
+		.forms__label
+			display: none;
+			&:after
+				display: none;
+
+		.forms-input-cont--textarea
+			&:after
+				content: "";
+				background: url(../img/card-ico-feedback.png);
+				position: absolute;
+				right: 14px;
+				bottom: 15px;
+				width: 25px;
+				height: 20px;
+				text-align: center;
+				font-size: 24px;
+				z-index: 4;
+			textarea
+				width: 100%;
+				height: 210px;
+				max-height: none;
+				resize: none;
+
+		.forms-submit-cont
+			justify-content: flex-start;
+			position: relative;
+			input 
+				font-weight: bold;
+				font-size: 14px;
+				background-color: #8b69fc;
+				min-width: 	215px;
+				transition: 0.4s;
+				height: 40px;
+				&:hover
+					background-color: #cb63b6;
+				&:after
+					content: "";
+					background: url(../img/card-ico-feedback.png);
+					position: absolute;
+					right: 14px;
+					bottom: 15px;
+					width: 25px;
+					height: 20px;
+					text-align: center;
+					font-size: 24px;
+					z-index: 4;
+		.forms-input-cont--file
+			margin-bottom: 0;
+			input 
+				display: none;
+			label
+				border: 1px solid #8b69fc;
+				display: inline-block;
+				width: 	215px;
+				min-height: 40px;
+				text-align: center;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: #8b69fc;
+				font-size: 14px;
+				cursor: pointer;
+				transition: 0.4s;
+				&:hover
+					color: #cb63b6;
+					border: 1px solid #cb63b6;
+				img 
+					margin-right: 15px;
+
+		// &__feedback_paginator
+		// 	.paginator__back, .paginator__next
+		// 		display: none;
+		// 	ul
+		// 		display: flex;
+		// 	a 
+		// 		display: flex
+		// 		justify-content: center;
+		// 		align-items: center;
+		// 		min-width: 30px;
+		// 		min-height: 30px;
+		// 		padding: 5px 6px;
+		// 		transition: .3s;
+		// 		line-height: 0.9;
+		// 		background: #c5b4fd
+		// 		border-radius: 15px
+		// 		margin: 0 7px;
+		// 		color: #fff;
+		// 		font-size: 14px;
+		// 		font-weight: bold;
+		// 		&:hover
+		// 			background: #8b69fc
+		// 	.active, .paginator__link
+		// 		background: #8b69fc
+		// 	span.paginator__link
+		// 		height: 0;
+		// 		font-size: 0;
+	.bot-form__cont
+		position: relative;
+		z-index: 4;
+		margin-bottom: -72px;
+
+// media 
+@media screen and (max-width: 1000px)
+	.card
+		&__sample_buy
+			padding: 0;
+
+			.gradient-btn
+				min-width: unset ;
+				margin-right: 10px;
+
+		&__sample_input
+			margin: 0 10px;
+
+@media screen and (max-width: 770px)
+	.card
+		&__tabs
+			display: flex;
+			flex-direction: column;
+
+		&__tabs_right
+			width: 100%;
+			order: 1;
+			display: flex;
+			flex-wrap: wrap;
+
+		&__tabs_left
+			width: 100%
+			min-height: 350px;
+			order: 2;
+			margin-top: 40px;
+
+		&__tabs_right-title
+			width: 100%;
+
+		&__tabs_right_item
+			width: calc(100% / 3);
+			padding: 85px 5px 0 5px;
+			text-align: center;
+			img
+				top: 0;
+				left: calc(50% - 15px);
+		.fix-1 
+			img
+				left: calc(50% - 26px);
+				top: 10px;
+		.fix-2 
+			img
+				left: calc(50% - 12px);
+				top: 5px;
+		&__tabs_left_content
+			padding: vw(90);
+			flex-direction: column;
+			h3
+				width: 100%;
+				margin-bottom: 35px;
+		&__slick_nav
+			// display: none;
+
+		&__sample_slider
+			// display: none;
+
+		&__top
+			flex-direction: column;
+
+		&__slider
+			width: 100%
+			// height: calc(100vh - 380px)
+			margin-bottom: 30px
+
+		&__slick
+			// height: 100%
+			// height: calc(100vh - 380px)
+			left: -15px;
+			width: calc(100% + 30px);
+			overflow: hidden;
+			.slick-track
+				height: calc(100vw)
+				max-height: none
+		&__sample
+			width: 100%
+			padding-left: 0;
+			position: relative;
+
+			.gradient-btn
+				margin-right: 0;
+
+			h1, h2
+				padding-right: 60px;
+
+		&__tabs_navi
+			display: flex;
+			justify-content: center;
+			padding-left: 0;
+
+			span 
+				margin: 0 25px
+
+		&__sample_buy
+			padding: 0 18px;
+
+			.cat-item__bot-favorite
+				position: absolute;
+				top: 5px
+				right: 40px;
+			.cat-item__bot-price
+				display: flex;
+				align-items: center;
+				div
+					&:first-child
+						margin-right: 3vw
+		&__feedback_form
+			form 
+				.forms-wrap
+					flex-direction: column;
+					.forms-input-cont
+						width: 100%;
+		&__form_btn
+			display: inline-block !important;
+			width: auto !important;
+			
+		&__form_btn-fix
+			margin-top: 0 !important;
+			// margin-left: 15px;
+
+		&__form_btns
+			display: flex;
+			margin-bottom: 30px;
+			flex-wrap: wrap;
+			justify-content: space-around;
+			.card__form_btn
+				margin-bottom: 10px;
+
+	.sale
+		.card__slider
+			&:after
+				right: -15px !important;
+
+@media screen and (max-width: 600px)
+	.card
+		&__feedback_bot
+			flex-wrap: wrap;
+
+		&__feedback_btns
+			width: 100%;
+			justify-content: space-around;
+
+			.gradient-btn.gradient-btn__wrap
+				margin-left: 0;
+
+		&__feedback_paginator
+			margin-top: 35px;
+			width: 100%;
+			justify-content: center;
+
+			.paginator
+				margin-left: 0;
+
+		&__sample_buy
+			padding: 0;
+
+@media screen and (max-width: 480px)
+	.card
+		&__select
+			display: block;
+
+			select
+				border: 1px solid #8b69fc;
+				height: 50px;
+				font-size: 16px;
+				font-weight: bold;
+				color: #9667f3;
+				padding-left: 50px;
+			.forms__label
+				margin-top: 40px;
+			.forms-input-cont 
+				flex-direction: column;
+
+			option
+				color: #000;
+		&__sample_slider
+			display: none;
+
+		&__tabs_right
+			display: none;
+
+		&__tabs_navi
+			justify-content: space-between;
+
+			span 
+				margin: 0;
+
+				&:first-child
+					margin-left: 4vw;
+
+				&:last-child
+					margin-right: 4vw;
+
+		&__slick
+			height: calc(100vw - 30px);
+
+		&__tabs_left
+			margin-top: 0;
+
+		&__sample_buy
+			.cat-item__bot
+				flex-wrap: wrap;
+
+		&__feedback_btns
+			input
+				padding-right: 15px !important;
+				padding-left: 15px !important;
+
+			.card__btn
+				white-space: nowrap;
+
+				a 
+					padding-right: 15px;
+					padding-left: 15px;
+
+		.text-page table td, .text-page table th
+			padding: 10px;
+
+		.text-page td[data-title="Цена"]
+			white-space: nowrap;
+
+		&__sample_buy 
+			.cat-item__bot-price
+				margin-bottom: 10px;
+				flex-direction: column;
+
+		&__sample
+			padding-left: 4vw;
+			padding-right: 4vw;
+			h1, h2
+				padding-left: 0;
+		&__sample_input
+			margin: 0;
+// product_card-------------------------------END
+
 @import "_grid"
 @import "media"
