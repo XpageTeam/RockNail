@@ -219,6 +219,10 @@
   margin-right: 20px;
 }
 
+.delivery-__map_select__mid input:hover, .delivery-__map_select__mid label:hover {
+  cursor: pointer;
+}
+
 .delivery-__map_select__bot ul {
   height: 465px;
   overflow: auto;
