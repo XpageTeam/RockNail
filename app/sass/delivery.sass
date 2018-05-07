@@ -2,7 +2,7 @@ $output-bourbon-deprecation-warnings: false;
 @import "bourbon"
 @import "vars"
 @import "functions"
-
+// Доставка и оплата-------------------------
 .delivery-
 	.fix-1 
 		img
@@ -16,12 +16,13 @@ $output-bourbon-deprecation-warnings: false;
 		margin-bottom: 60px;
 		h1
 			font-size: 50px
-			font-weight: bold
+			font-weight: 900
 			color: #d461ab;
+			text-transform: uppercase;
 		div 
 			font-size: 30px;
 			color: #000;
-
+			text-transform: none;
 	&__city_select_title
 		font-size: 25px;
 		margin-bottom: 30px;
@@ -237,17 +238,85 @@ $output-bourbon-deprecation-warnings: false;
 			pointer-events: none;
 .delivery-city:valid ~ .delivery-city_reset
 	display: block !important;
-
+// Доставка и оплата-------------------------КОНЕЦ
+// Поиск-----------------------
+.search-
+	.delivery-__city_select_panel
+		width: 100%;
+		max-width: 670px;
+	.aside
+		margin-top: 0;
+	.cat-items
+		padding-top: 0;
+	&__container
+		display: flex;
+		margin-top: 90px;
+	&__checkbox
+		display: flex;
+		flex-direction: column;
+		font-size: 14px;
+		label, input
+			cursor: pointer;
+		div 
+			display: flex;
+			align-items: center;
+			margin-bottom: 14px;
+		input 
+			margin-right: 5px;
+			appearance: none;
+			-webkit-appearance: none;
+			border: 1px solid black;
+			width: 12px;
+			height: 12px;
+			position: relative;
+			&:after
+				content: ""
+				width: 13px;
+				height: 15px;
+				background: url(../img/search-ico-checkbox.png) no-repeat;
+				position: absolute;
+				bottom: 0;
+				left: calc(0)
+				opacity: 0;
+				transition: 0.3s;
+			&:checked
+				border: 1px solid #8b69fc;
+				&:after
+					opacity: 1;
+			&:checked + label
+				color: #8b69fc; 
+	&__checkbox_title
+		font-size: 16px;
+		font-weight: bold;
+		border-top: 1px solid black;
+		padding-top: 20px;
 // media
+@media screen and (max-width: 1000px)
+	.search-
+		.aside 
+			display: block;
+		&__container
+			flex-direction: column;
+			margin-top: 45px;
+		&__checkbox_title
+			border-top: 0;
+			width: 100%;
+		&__checkbox
+			flex-direction: row;
+			flex-wrap: wrap;
+			div 
+				padding-right: 20px;
 @media screen and (max-width: 900px)
+	// Доставка и оплата-------------------------
 	.delivery-
 		&__payment_container
 			margin-left: calc((100% - 160px * 4)/4 * -1);
 
 		&__payment_item
 			margin-left: calc((100% - 160px * 4)/4);
-
+	// Доставка и оплата-------------------------Конец
 @media screen and (max-width: 770px)
+	// Доставка и оплата-------------------------
 	.delivery-
 		.fix-1 
 			img
@@ -290,16 +359,30 @@ $output-bourbon-deprecation-warnings: false;
 		&__map_select__bot
 			ul 
 				height: 190px;
+	// Доставка и оплата-------------------------Конец
+	// Поиск-------------------
+	.search-
+		.delivery-__title
+			h1 
+				text-align: center;
 
+		.delivery-__city_select_panel
+			max-width: none;
+
+		.wrapper
+			padding: 0 5vw;
+	// Поиск-------------------Конец
 @media screen and (max-width: 550px)
+	// Доставка и оплата-------------------------
 	.delivery-
 		&__payment_container
 			margin-left: calc((100% - 160px * 2)/2 * -1);
 
 		&__payment_item
 			margin-left: calc((100% - 160px * 2)/2);
-
+	// Доставка и оплата-------------------------Конец
 @media screen and (max-width: 480px)
+	// Доставка и оплата-------------------------
 	.delivery-
 		&__title
 			margin-bottom: 50px;
@@ -334,3 +417,11 @@ $output-bourbon-deprecation-warnings: false;
 		.card__tabs_left
 			&:before
 				visibility: visible;
+	.search-
+		.delivery-__city_select
+			padding: 0;
+			
+		.delivery-__title 
+			h1 
+				font-size: 42px;
+	// Доставка и оплата-------------------------Конец
