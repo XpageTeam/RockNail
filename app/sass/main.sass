@@ -4,7 +4,7 @@ $output-bourbon-deprecation-warnings: false;
 @import "vars"
 @import "base"
 @import "functions"
-
+1
 *[v-cloak]
 	display: none
 
@@ -27,6 +27,812 @@ $output-bourbon-deprecation-warnings: false;
 .btn 
 	cursor: pointer		
 
+
+.catalog
+
+	.img
+		&-hover
+			transition: opacity .3s ease
+
+	.cat-item__img
+		margin-bottom: 25px
+
+	.favorite-add
+		background: url('../img/ico-favorite-catalog.png') no-repeat center
+		width: 27px
+		height: 35px
+		
+		&:hover 
+			background: url('../img/ico-favorite-catalog.png') no-repeat center !important	
+.cat
+	&-items
+		display: flex 
+		flex-wrap: wrap
+		margin: 0 0 -90px -80px
+		padding: 55px 10px 10px 55px
+
+	&-item
+		position: relative
+		width: calc((100% - 62px * 3) / 3)
+		margin: 0 0 70px 62px
+		transition: outline-width 0s ease, box-shadow .5s ease
+
+
+
+		&__desc
+			padding: 0 18px
+
+		&:not(:hover)
+			.cat-item
+
+				&__hover
+					transition: none
+
+		&:hover
+			outline: 13px solid #fff
+			box-shadow: 1px 1px 35px 12px rgba(0, 0, 0, 0.04)
+
+			.img
+				opacity: 0
+
+				&-hover
+					opacity: 1
+
+			.cat-item
+
+
+				&__hover
+					// display: flex
+					opacity: 1
+					pointer-events: all
+					background: #fff
+					z-index: 5
+					margin: 0 -13px
+					padding: 22px 0
+					box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.04)
+
+		.img
+			transition: opacity .3s ease
+
+			&-hover
+				position: absolute
+				top: 0
+				left: 0
+				opacity: 0
+				pointer-events: none
+
+		&__hover
+			display: flex
+			flex-direction: column
+			align-items: center
+			position: absolute
+			left: 0
+			top: 100%
+			right: 0
+			margin-top: 25px
+			opacity: 0
+			pointer-events: none
+			background: #fff
+			transition: box-shadow .7s ease, opacity .3s ease	
+
+
+
+	
+
+.gradient-btn
+	cursor: pointer
+
+	.btn
+		position: relative
+		z-index: 1
+		color: #fff
+
+.aside
+	width: 175px
+	margin: 8px 27px 0 0
+
+	&-title
+		display: none
+
+	&-soc 
+		display: flex
+		justify-content: center
+		margin-top: 23px
+
+	.soc__link
+		display: flex
+		justify-content: center
+		align-items: center
+		+size(30px)
+		border-radius: 50%
+		background: $main-color
+
+		img 
+			filter: invert(100)
+
+
+		&:not(:first-child)
+			margin: 0 0 0 15px
+
+	&-working
+		margin-top: 57px
+
+		&__title
+			position: relative
+			font-size: 14px
+			font-weight: 500
+			margin-bottom: 18px
+			padding-left: 34px
+			padding-top: 10px
+
+			&:before 
+				content: ""
+				position: absolute
+				top: 0
+				left: 0
+				width: 23px
+				height: 41px
+				background: url('../img/ico-catalog-worker.png') no-repeat center
+
+		&__item
+
+			&:not(:first-child)
+				margin-top: 15px
+
+			img 
+				display: block
+
+.catalog
+	display: flex
+
+	&-list 
+		width: calc(100% - 175px)
+
+	&-banner 
+		margin-top: -44px
+		margin-bottom: 20px
+		img 
+			display: block
+			width: 100%
+
+		+ .catalog-bg
+			top: 350px
+
+	&-bg
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		pointer-events: none
+		z-index: -1
+
+		img 
+			object-fit: cover
+			width: 100%
+			object-position: center
+			height: 100%
+
+.selectize-control
+	.selectize-input
+		.item
+			color: $second-color
+			font-size: rem(14)
+		input
+			display: none !important
+	&.single 
+		.selectize-input
+			&:after
+				display: inline-block
+				position: static
+				margin-left: 7px
+				width: 11px
+				height: 11px
+				background: url('../img/ico-select-arrow.png') no-repeat center
+				border: 0
+
+
+		
+.selectize-input.dropdown-active
+	border-radius: 0
+	box-shadow: 0px -16px 20px 5px rgba(0, 0, 0, 0.01), 0 10px 10px rgba(0, 0, 0, 0.08) !important
+
+.selectize-dropdown
+	padding: 10px
+	margin: 0 -10px -10px
+	border: 0
+	box-shadow: none
+	box-shadow: 0px 20px 20px 5px rgba(0, 0, 0, 0.01), 0 10px 10px rgba(0, 0, 0, 0.08)
+	
+	.option
+		color: #c9bcfd
+	.active
+		background-color: transparent
+		color: #c9bcfd
+
+
+
+.selectize-input
+	margin: -10px
+	padding: 10px
+	border: 0
+	box-shadow: none
+
+	&.focus
+		box-shadow: none
+	
+
+.btn-more
+	display: flex
+	align-items: center
+	justify-content: center
+	margin-top: 95px
+
+	.gradient-btn
+		padding: 16px 2.2rem
+		margin-left: -220px
+		font-size: rem(17)
+
+		&:after
+			z-index: 1
+
+		&:hover 
+
+	.btn 
+		position: relative
+		color: #fff
+		z-index: 2
+
+		
+
+.paginator
+	display: flex
+	justify-content: flex-end
+	max-width: 200px
+	margin-left: auto
+	margin-top: -40px
+	margin-right: 15px
+
+	&__list
+		display: flex
+
+		li
+			
+			&:not(:first-child)
+				margin-left: 10px
+
+
+
+			&.active
+				.paginator__link
+					background: $second-color
+		span.paginator__link
+			background: url('../img/ico-paginator-dots.png') no-repeat center
+
+	&__link
+		display: flex
+		align-items: center
+		justify-content: center
+		color: #fff
+		font-weight: 500
+		+size(26px)
+		border-radius: 50%
+		background: #c5b4fd
+
+		
+
+.catalog-filter
+	display: flex
+	padding: 20px 25px 25px
+	background: #fff
+	
+	.mobile
+		display: none 
+
+
+	.forms
+
+		&-checkbox
+			position: relative
+			width: 30px
+			height: 70px
+
+			&:not(:nth-child(2))
+				margin-left: 6px
+				
+
+			&:before
+				content: attr(data-title)
+				transform: none
+				color: #fff
+				font-size: rem(12)
+				background: #000
+				width: auto
+				height: auto
+				padding: 5px
+				border-radius: 4px
+				opacity: 0
+				pointer-events: none
+				top: -25px
+				left: -50%
+				transition: opacity .3s ease
+
+			&:after 
+				content: ""
+				position: absolute
+				top: 0
+				left: 50%
+				display: block
+				+size(5px)
+				background: url('../img/ico-arrow-nail.png') no-repeat center
+				background-size: contain
+				opacity: 0
+
+			img 
+				max-width: inherit
+				pointer-events: none
+				margin-left: -10px
+
+			&:hover 
+				&:before, &:after
+					opacity: 1
+
+				.forms__checkbox-label
+
+					&:after
+						opacity: 1
+
+		&__input
+			height: auto
+
+		&-input-cont 
+			margin: 0
+
+		&-wrap
+			flex-wrap: wrap
+			justify-content: flex-start
+
+			&__title
+				width: 100%
+
+			&:last-child
+				flex: none
+				max-width: 262px 
+
+
+				.forms
+					&-input-cont
+						width: 100%
+						flex-direction: column
+						margin-bottom: 25px
+				.btn-flat + .btn-flat
+					margin-left: 17px
+
+				.forms__input
+					padding: 0
+
+		&__input--select
+			padding: 0
+		
+	
+		&__checkbox-label
+			position: relative
+			padding: 0
+			z-index: 2
+
+			&:before 
+				display: none
+
+			&:after
+				height: 2px
+				width: 16px
+				bottom: -10px
+				top: initial
+				left: calc(50% - 8px)
+				transform-origin: right
+				transform: none
+
+.js__catalog-filter
+	display: none
+
+
+.lacquer-category
+	border-bottom: 1px solid #000
+
+	&:last-child
+		border: 0
+
+	&:not(:first-child)
+		margin-top: 19px
+
+		.lacquer-category__title
+			text-transform: uppercase
+	&__title			
+		
+		font-size: rem(16)
+		font-weight: bold
+		margin-bottom: 13px
+
+		&.active
+			color: $second-color
+
+	&__list 
+		display: flex
+		flex-direction: column
+		padding-bottom: 15px
+		
+
+
+
+	&__item
+		font-size: rem(14)
+		line-height: rem(18)
+		color: #000
+
+		&:not(:first-child)
+			margin-top: 9px
+
+
+
+
+
+.bread-crumbs
+	padding-bottom: 32px
+
+	&__link
+		color: $second-color
+		&:after
+			content: ""
+			display: inline-block
+			+size(6px)
+			border-radius: 50%
+			background: $second-color
+			margin: 0 15px 2px
+
+	&__this 
+		color: #c9bcfd
+
+.title-block__title
+	padding: 0 0 23px rem(27)
+	h1 
+		font-size: rem(20)
+		font-weight: 500
+
+.inner
+	#content
+		padding-top: 122px
+
+	.main-catalog__tabs
+		margin: 0
+
+button, input, select
+	font-family: inherit
+
+.rub
+	font-style: normal
+	font-size: inherit
+	font-weight: inherit
+	font-family: "Roboto"
+
+.slick-slide
+	height: auto
+
+.search
+	display: inline-flex
+	align-items: flex-end
+	padding: 12px 0 17px
+	width: 100%
+	max-width: 975px
+
+	&__form
+		flex: 1 1 auto
+
+		&-input
+
+			#{$all-text-inputs}
+				+size(100% 32px)
+				border: none
+				border-bottom: 1px solid $border-color
+
+	&__close
+		flex: none
+		margin-left: 25px
+
+	&-close
+		background: #000
+		background: url("../img/ico-search-close.png") center no-repeat
+		+size(16px)
+		border: none
+
+.center-dot
+	position: relative
+	text-transform: uppercase
+
+	&:after
+		content: ""
+		position: absolute
+		border-radius: 50%
+		background: currentColor
+		+size(4px)
+		top: calc(50% - 4px)
+		right: 46px
+
+.head
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	z-index: 5
+	background: url("../img/header-bg.png") center no-repeat
+	background-size: cover
+
+	.wrapper
+		position: relative
+		z-index: 1
+
+	&:after
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		// pointer-events: none
+		+size(100%)
+		background: rgba(#fff, .28)
+		box-shadow: $shadow
+
+	$width: 210vw
+
+	&__submenu
+		position: absolute
+		top: 100%
+		left: 0
+		width: 100%
+		height: 250px
+		overflow: hidden
+		transition: height .3s ease
+		height: 0
+		border-radius: 0 0 50% 50%
+
+		&:after
+			content: ""
+			position: absolute
+			bottom: 0
+			+size($width)
+			border-radius: 50%
+			background: #fff
+			box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.11)
+			position: absolute
+			left: calc(50% - 105vw)
+
+		&.js__opened
+			height: 250px
+
+	&__search-more
+		background: #fff
+		border-top: 2px solid $second-color
+		text-align: right
+		display: none
+
+	&__wrap
+		display: flex
+		align-items: center
+		justify-content: space-between
+		position: relative
+
+	&__phone, &__title
+		margin: 0 auto
+
+	&__search, &__favorite
+		margin-right: 10px
+
+	&__cart
+		position: absolute
+		right: 0
+		top: 100%
+		// background: #000
+
+		&-wrap
+			+size(70px 44px)
+			padding-bottom: 8px
+			// border-radius: 0 50% 50% 50%
+			overflow: hidden
+			display: flex
+			align-items: flex-end
+			position: relative
+			z-index: 4
+
+		&:hover
+
+			.cart-line__wrap
+				pointer-events: all
+				opacity: 1
+
+.head-submenu
+	display: flex
+
+	&__column
+		margin-right: vw(75)
+
+.head-title
+	font-size: 14px
+	font-weight: bold
+	letter-spacing: .02em
+	border: none
+	background: none
+
+.cart-link
+	background: #fff
+	border-radius: 50%
+	background: url("../img/ico-cart.png") center bottom 8px no-repeat, #000
+	display: block
+	+size(70px)
+
+	&[data-count]
+
+		&:after
+			content: attr(data-count)
+			border-radius: 50%
+			border: 1px solid #000
+			background: #fff
+			font-weight: bold
+			font-size: 14px
+			letter-spacing: .02em
+			position: absolute
+			bottom: 0
+			left: 0
+			+size(26px)
+			line-height: 26px
+			text-align: center
+
+	&[data-count="0"]
+
+		&:after
+			display: none
+
+.head-phone
+
+	a
+		color: inherit
+
+.logo
+	position: relative
+	// z-index: 5
+	font-weight: 400
+
+	&__text
+		font-size: 14px
+		max-width: 180px
+		line-height: lh(22, 14)
+
+	&__tag
+		font-size: rem(30)
+		margin: 1rem 0 0
+
+	&__btn
+		position: absolute
+		left: rem(23)
+		bottom: -21px
+		box-shadow:  -2px 4px 20px 0px rgba(9, 3, 5, 0.22)
+
+		.gradient-btn
+			display: block
+		
+//Paginator------------------------ 
+.paginator
+	display: flex
+	justify-content: flex-end
+	max-width: 200px
+	margin-left: auto
+	margin-top: -40px
+	margin-right: 15px
+
+	&__list
+		display: flex
+
+		li
+			
+			&:not(:first-child)
+				margin-left: 10px
+
+
+
+			&.active
+				.paginator__link
+					background: $second-color
+		span.paginator__link
+			background: url('../img/ico-paginator-dots.png') no-repeat center
+
+			&.active
+				.paginator__link
+					background: $second-color
+		span.paginator__link
+			background: url('../img/ico-paginator-dots.png') no-repeat center
+
+	&__link
+		color: #000
+
+.f-contacts
+	flex: 1 1 auto
+	display: flex
+	flex-direction: column
+	font-size: 14px
+
+	a
+		color: #000
+
+	> div, > address
+		padding: 16px 0 0
+
+		&:last-child
+			margin: auto 0 0
+
+.f-imgs
+
+	&:not(:first-child)
+		margin: auto 0 0
+		padding: 15px 0 0
+
+	&__list
+		display: flex
+		flex-wrap: wrap
+
+	&__img
+		flex: none
+
+		&:not(:last-child)
+			margin-right: 18px
+
+		img
+			display: block
+
+.footer-bot
+	display: flex
+	align-items: center
+	justify-content: space-between
+	color: #fff
+	font-size: 12px
+	padding: 18px 0 22px
+
+.copy
+	font-size: 12px
+	line-height: lh(18, 12)
+
+.design
+	display: flex
+	// align-items: center
+	white-space: nowrap
+
+	&__link
+		text-transform: uppercase
+		color: #fff
+		line-height: 1.1
+		border-bottom: 1px solid CurrentColor
+		// text-decoration: underline
+
+.cart-line
+	background: #fff
+	box-shadow: 0px 12px 27px 0px rgba(9, 3, 5, 0.11)
+	border-top: 2px solid #000
+.quick-view
+	display: block
+	position: relative
+	padding-left: 22px
+	margin-top: 19px
+
+	&:before 
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		+size(14px)
+		background: url('../img/ico-quick-view.png') no-repeat center
+
+.cat-item
+	
+.btn 
+	cursor: pointer		
+
+.promo-mobile
+	display: none
 
 .catalog
 
@@ -1357,1030 +2163,506 @@ button, input, select
 			+triangle(5px, $second-color, down)
 			top: 100%
 			left: calc(50% - 3px)
-// product_card-------------------------------
-.card
-	background: url(../img/card-bg.png) 0 600px no-repeat;
-	// background-size: cover;
-	&__slider
-		width: 45%
-		// height: 640px
-		position: relative;
-		// background: gray
-		.slick-arrow
-			width: 36px
-			height: 50px
-			position: absolute;
-			top: calc(50% - 25px)
-			z-index: 20;
-			background: url(../img/card-ico-arrow-left.png) center no-repeat;
-			border: 0;
-		.slick-prev
-			left: 10px;
-		.slick-next
-			right: 10px;
-			transform: rotate(180deg);
-	&__slick
-		width: 100%;
-		// height: 45vw;
-		// max-height: 540px;
-		background-color: #fff;
-		display: flex;
-		align-items: center;
 
-		.slick-track
-			display: flex;
-			align-items: center;
-			height: 40vw;
-			max-height: 540px;
-
-	&__slick_slide
-		width: 100%;
-		// height: 100%;
-		// min-height: 540px;
-		// padding-right: 35px;
-		// margin-right: 35px;
-		img
-			// object-fit: cover;
-			margin: 0 auto;
-
-	&__slick_nav
-		display: flex;
-		height: 120px;
-		padding: 25px 0;
-		padding-bottom: 0;
-		
-		img
-			height: 70px;
-			width: 70px
-			object-fit: contain;
-			background-color: #fff;
-			// margin-right: 35px;
-			cursor: pointer;
-		.slick-current
-			position: relative;
-			&:before
-				content: ""
-				// width: calc(100% - 35px)
-				width: 100%;
-				height: 4px;
-				position: absolute;
-				background-color: #8b69fc;
-				left: 0;
-				top: 0
-
-	&__sample
-		width: 55%
-		padding-left: vw(40);
-		h1, h2
-			font-size: 25px;
-			line-height: 38px;
-			padding-left: 18px;
-
-	&__sample_slider
-		display: flex;
-		flex-wrap: wrap;
-		margin-top: 20px;
-
-	&__sample_nail
-		text-align: center;
-		padding: 12px 5px;
-		font-size: 12px;
-		color: #787878;
-		width: calc(100% / 7);
-		transition: 0.3s;
-		margin-bottom: 2px;
-		&:hover
-				color: #9667f4;
-				font-weight: bold;
-				margin-bottom: -1px;
-
-	&__sample_buy
-		padding: 0 18px;
-		margin-top: 50px;
-		.cat-item__bot
-			align-items: center;
-
-		span
-			display: flex;
-			align-items: center;
-
-		.gradient-btn
-			margin-right: vw(45)
-			min-width: 170px;
-
-	&__sample_input
-		position: relative;
-		input
-			height: 40px;
-			width: 120px;
-			border: 1px solid #8b69fc;
-			font-size: 16px;
-			padding: 10px 40px;
-			color: #000;
-			text-align: center;
-		a 
-			position: absolute;
-			line-height: 8px;
-			font-size: 25px;
-			color: #808080;
-			height: 100%;
-			width: 40px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			top: 0
-			&:hover, &:focus
-				border-bottom: 0;
-				color: #000;
-			&:nth-child(2)
-				left: 0
-				padding-left: 5px;
-				padding-bottom: 4px;
-			&:nth-child(3)
-				right: 0
-				padding-right: 5px;
-
-	&__sample_btn
-		color: #9667f4;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: space-between;
-
-		img 
-			margin-top: 10px;
-			transition: 0.3s ease;
-
-		&:hover
-			img 
-				transform: scale(1.1);
-
-	&__sample_btn_back
-		img
-			transform: rotate(180deg);
-
-		&:hover
-			img 
-				transform: rotate(180deg) scale(1.1);
-
-	&__top
-		display: flex;
-		padding-top: 100px;
-	&__select
-		display: none;
-	.cat-price_sale
-		color: #cc2a5c;
-		font-size: 35px;
-		font-weight: bold;
-		display: none;
-		white-space: nowrap;
-
-	// sale
-	.sale
-		.cat-price_sale
-			display: block;
-		.card__slider
-			&:after
-				content: ""
-				background: url(../img/card-ico-sale.png) no-repeat;
-				width: 47px;
-				height: 47px;
-				position: absolute;
-				right: 0;
-				top: 0
-				z-index: 2;
-		.cat-price
-			font-size: 16px;
-			color: #858585;
-			font-weight: normal;
-			position: relative;
-			display: inline-block;
-			white-space: nowrap;
-			&:after
-				content: ""
-				width: 100%
-				height: 1px;
-				background-color: #000;
-				position: absolute;
-				left: 0;
-				top: 8px
-				z-index: 2;
-				transform: rotate(13deg);
-	// not_exist
-	.not_exist_btn
-		display: none;
-	.not_exist
-		.not_exist_btn
-			display: block;
-		.exist_btn
-			display: none;
-	// tabs-------------------------
-	&__tabs
-		// height: 500px;
-		display: flex;
-		margin-top: 80px;
-	&__tabs_left
-		width: calc(100% - 315px);
-		position: relative;
-	&__tabs_right
-		width: 315px;
-		padding-left: 30px;
-
-	&__tabs_right-title
-		font-size: 25px;
-		color: #9667f4;
-		font-weight: bold;
-		margin-bottom: 30px;
-
-	&__tabs_right_item
-		max-width: 270px;
-		padding-left: 70px;
-		position: relative;
-		margin-bottom: 30px;
-		img
-			position: absolute;
-			left: 12px
-
-	.fix-1
-		img
-			left: 0;
-
-	.fix-2
-		img
-			left: 15px;
-
-	&__tabs_right_item-title
-		font-size: 16px;
-		color: #9667f4;
-		font-weight: bold;
-		margin-bottom: 5px;
-		text-transform: uppercase;
-
-	&__tabs_right_item-text
-		font-size: 14px;
-		color: #000;
-		font-weight: lighter;
-		line-height: 22px;
-	&__tabs_left_content_flex
-		display: flex;
-		align-items: center;
-		height: calc(100% - 30px)
-		background-color: #fff;
-		box-shadow: 0px 0px 32px 0px rgba(0,0,0,0.15);
-		// position: absolute;
-		display: none;
-		width: 100%;
-	&__tabs_left_content_flex[data-id="1"]
-		display: flex;
-	&__tabs_left_content_flex[data-id="2"]
-		.card__tabs_left_content
-			padding: 0;
-	&__tabs_left_content
-		display: flex;
-		align-items: flex-start;
-		padding: vw(45);
-		width: 100%;
-		.text-page
-			padding-top: 8px;
-			width: 100%;
-		table
-			width: 100%;
-			text-align: left;
-		td 
-			color: #000;
-			font-size: 16px;
-			&:nth-child(3)
-				color: #9667f3;
-				font-size: 20px;
-				font-weight: bold;
-		th 
-			font-size: 12px;
-			color: #8e8e8e;
-		thead, tfoot
-			border-bottom: 1px solid #8e8e8e;
-		tbody
-			tr 
-				&:nth-child(2n)
-					background-color: #e2effe;
-
-		h3
-			font-size: 34px;
-			display: flex;
-			width: 250px;
-			padding-right: 20px;
-			position: relative;
-			padding-bottom: 35px;
-			&:before
-				content: ""
-				position: absolute;
-				height: 3px;
-				width: 70px;
-				background-color: #8b69fc;
-				bottom: 0;
-				left: 0;
-
-	&__tabs_navi
-		height: 30px;
-		padding-left: 15px;
-		span 
-			color: #d34c75;
-			font-size: 16px;
-			padding-bottom: 8px;
-			margin-right: 40px;
-			line-height: 1;
-			opacity: 0.5;
-			transition: opacity  0.4s
-			&:hover
-				border-bottom: 3px solid #d34c75
-				cursor: pointer;
-		.active
-			border-bottom: 3px solid #d34c75;
-			opacity: 1;
-	// slider------
-	&__main-catalog__slider-title
-		font-size: 25px;
-		color: #000;
-		text-align: center;
-		margin-bottom: 50px;
-	// feedback--------------
-	&__feedback
-		padding-top: 90px;
-
-	&__feedback_top
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		border-bottom: 1px solid #dcdcdc;
-		padding-bottom: 15px;
-		flex-wrap: wrap;
-	&__feedback_top-title
-		font-size: 25px;
-		color: #9667f4;
-		font-weight: bold;
-		text-transform: uppercase;
-		span
-			color: #d561aa;
-
-	&__feedback_top-rating
-		font-size: 16px;
-		color: #d34c75;
-		font-weight: bold;
-		position: relative;
-		padding-left: 30px;
-		&:before
-			content: ""
-			background: url('../img/card-ico-star-red-big.png') no-repeat;
-			position: absolute;
-			// left: -30px
-			left: 0;
-			top: -4px
-			width: 22px
-			height: 22px
-
-
-	&__feedback_block
-		border-bottom: 1px solid #acacac;
-
-	&__feedback_block-name
-		font-size: 16px;
-		color: #000;
-		font-weight: bold;
-		margin-top: 40px;
-		margin-bottom: 10px;
-
-	&__feedback_block-time
-		font-size: 12px;
-		color: #000;
-		font-weight: lighter;
-		margin-bottom: 20px;
-
-	&__feedback_block-text
-		font-size: 14px;
-		margin-bottom: 30px;
-		position: relative;
-		padding-left: 40px;
-		display: inline-block;
-		width: calc(100% - 105px)
-		padding-right: 10px;
-		&:after
-			content: ""
-			background: url(../img/card-ico-feedback.png) no-repeat;
-			width: 25px;
-			height: 20px;
-			position: absolute;
-			left: 0;
-			top: -2px
-	&__feedback_block-rating
-		width: 100px
-		display: inline-block;
-		text-align: right;
-		img 
-			padding: 0 2px
-	&__feedback_block-img
-		margin-bottom: 25px;
-
-		img
-			width: 70px;
-			height: 70px;
-			object-fit: cover;
-			// margin-right: 30px;
-			position: relative;
-		a 
-			display: inline-block;
-			position: relative;
-			margin-right: 30px;
-			width: 70px;
-			height: 70px;
-			&:after
-				content: ""
-				background-color: rgba(0,0,0, 0.0);
-				width: 100%
-				height: 100%
-				position: absolute;
-				left: 0
-				top: 0
-				transition: background-color 0.4s;
-			&:hover, &:focus
-				border-bottom: 0;
-				&:after
-					content: ""
-					background: url(../img/card-ico-feedback-lupa.png) 20px no-repeat;
-					background-color: rgba(0,0,0, 0.3);
-					width: 100%
-					height: 100%
-					position: absolute;
-					left: 0
-					top: 0
-					z-index: 999;
-
-	&__feedback_middle-no_feedback
-		font-size: 14px;
-		color: #000;
-		max-width: 600px;
-		margin-top: 40px;
-
-	&__feedback_bot
-		display: flex;
-		justify-content: space-between;
-		padding-top: 50px;
-
-	&__feedback_btns
-		display: flex;
-		align-items: center;
-
-		.gradient-btn.gradient-btn__wrap
-			margin-left: 30px;
-
-	&__btn
-		a 
-			padding: 11px 30px;
-			// padding-bottom: 12px;
-			border: 2px solid #9667f4
-			color: #9667f4;
-			font-size: 14px;
-			line-height: 21px;
-			font-weight: bold;
-			transition: 0.4s;
-			cursor: pointer;
-			&:hover, &:focus
-				border-bottom: 0;
-				border: 2px solid #d561ac
-				color: #d561ac;
-	&__feedback_form-close
-		position: absolute;
-		right: vw(45)
-		top: vw(45)
-		cursor: pointer;
-
-	&__feedback_form
-		box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.15);
-		padding: vw(45);
-		position: relative;
-		display: none;
-		margin-top: 40px;
-		.forms__title
-			font-size: 25px;
-			color: #9667f4;
-			font-weight: bold;
-			text-transform: uppercase;
-			text-align: left;
-			margin-top: 10px;
-		.card__feedback_form-rating
-			font-size: 14px;
-			margin-bottom: 44px;
-			display: flex;
-			#reviewStars-input
-				margin-left: 20px
-		input, textarea
-			border: 1px solid #b8b8b8;
-			&::placeholder
-					color: #333
-
-		.imp_input
-			position: relative;
-			margin-bottom: 30px;
-
-			&:after
-				content: "*";
-				position: absolute;
-				right: 14px;
-				bottom: 15px;
-				width: 10px;
-				height: 10px;
-				text-align: center;
-				font-size: 24px;
-
-			input
-				height: 40px;
-
-		.forms__label
-			display: none;
-			&:after
-				display: none;
-
-		.forms-input-cont--textarea
-			&:after
-				content: "";
-				background: url(../img/card-ico-feedback.png);
-				position: absolute;
-				right: 14px;
-				bottom: 15px;
-				width: 25px;
-				height: 20px;
-				text-align: center;
-				font-size: 24px;
-				z-index: 4;
-			textarea
-				width: 100%;
-				height: 210px;
-				max-height: none;
-				resize: none;
-
-		.forms-submit-cont
-			justify-content: flex-start;
-			position: relative;
-			input 
-				font-weight: bold;
-				font-size: 14px;
-				background-color: #8b69fc;
-				min-width: 	215px;
-				transition: 0.4s;
-				height: 40px;
-				&:hover
-					background-color: #cb63b6;
-				&:after
-					content: "";
-					background: url(../img/card-ico-feedback.png);
-					position: absolute;
-					right: 14px;
-					bottom: 15px;
-					width: 25px;
-					height: 20px;
-					text-align: center;
-					font-size: 24px;
-					z-index: 4;
-		.forms-input-cont--file
-			margin-bottom: 0;
-			input 
-				display: none;
-			label
-				border: 1px solid #8b69fc;
-				display: inline-block;
-				width: 	215px;
-				min-height: 40px;
-				text-align: center;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				color: #8b69fc;
-				font-size: 14px;
-				cursor: pointer;
-				transition: 0.4s;
-				&:hover
-					color: #cb63b6;
-					border: 1px solid #cb63b6;
-				img 
-					margin-right: 15px;
-
-		// &__feedback_paginator
-		// 	.paginator__back, .paginator__next
-		// 		display: none;
-		// 	ul
-		// 		display: flex;
-		// 	a 
-		// 		display: flex
-		// 		justify-content: center;
-		// 		align-items: center;
-		// 		min-width: 30px;
-		// 		min-height: 30px;
-		// 		padding: 5px 6px;
-		// 		transition: .3s;
-		// 		line-height: 0.9;
-		// 		background: #c5b4fd
-		// 		border-radius: 15px
-		// 		margin: 0 7px;
-		// 		color: #fff;
-		// 		font-size: 14px;
-		// 		font-weight: bold;
-		// 		&:hover
-		// 			background: #8b69fc
-		// 	.active, .paginator__link
-		// 		background: #8b69fc
-		// 	span.paginator__link
-		// 		height: 0;
-		// 		font-size: 0;
-	.bot-form__cont
-		position: relative;
-		z-index: 4;
-		margin-bottom: -72px;
-
-.big-slider
-	margin: rem(65) -15px 0
-
-	&__cont
-		overflow: hidden
-		// z-index: 1
-		// position: relative
-		padding-bottom: 41px
-		margin-bottom: -41px
-
-	&:not(.slick-slide)
-		display: flex
-
-	&__title
-
-		&-cont
-			display: flex
-			align-items: flex-end
-
-		&-img
-			flex: none
-			margin-right: 21px
-
-	img
-		display: block
-
-	.slick
-
-		&-track
-			display: flex
-
-		&-list
-			padding-bottom: 41px !important
-			margin-bottom: -41px
-
-	&__slide
-		margin: 0 15px
-		flex: none
-
-		&:not(.slick-slide)
-			// float: left
-			width: persent(370, 1920)
-
-			&:nth-child(n + 7)
-				display: none
-
-		&-inst
-			display: flex
-			// align-self: stretch
-			width: 100%
-			flex-direction: column
-			// padding-top: 14px
-			margin: 8px 0 0
-
-		&--many
-			display: flex !important
-			flex-wrap: wrap
-			align-items: flex-start
-			justify-content: space-between
-
-			.big-slider__slide-img
-				width: persent(171, 368)
-
-				&:first-child, &:nth-child(2)
-					margin-bottom: auto
-					// padding-bottom: 14px
-
-				&:nth-child(3), &:nth-child(4)
-					margin-top: auto
-					// padding-top: 14px
-
-				&:nth-child(even)
-					// margin-left: rem(28)
-
-.inst-block
-	background: url("../img/inst-bg.png") center right no-repeat
-	background-size: cover
-	flex: 1 1 auto
-	padding: 2rem rem(23) rem(58)
-	position: relative
-	// z-index: 5
-	font-weight: 400
-
-	&__text
-		font-size: 14px
-		max-width: 180px
-		line-height: lh(22, 14)
-
-	&__tag
-		font-size: rem(30)
-		margin: 1rem 0 0
-
-	&__btn
-		position: absolute
-		left: rem(23)
-		bottom: -21px
-		box-shadow:  -2px 4px 20px 0px rgba(9, 3, 5, 0.22)
-
-		.gradient-btn
-			display: block
-		
-//Paginator------------------------ 
-.paginator
+.cart
 	display: flex
-	justify-content: flex-end
-	max-width: 200px
-	margin-left: auto
-	margin-top: -40px
-	margin-right: 15px
+
+	&__cont 
+		margin-bottom: 143px
+
+	&-info
+
+		width: calc(100% - 550px)
+
+		
+
+	&-block__title
+		font-size: rem(18)
+		font-weight: 500
+
+	.title-block__title
+		padding-left: 0
+
+		h1 
+			font-size: rem(25)
+
+	&-aside 
+		width: 485px
+		margin-left: 65px
+
+	.forms-wrap
+		margin: 0 0 0 -17px
+
+		&--bot
+			font-size: rem(10)
+			text-align: left
+			color: $border-color
+
+	.forms__input
+		border: 1px solid $border-color
+
+	.forms__label
+		color: $second-color
+		margin-bottom: 5px
+		font-size: rem(14)
+
+	.forms-checkbox
+		&:before
+			+size(7px)
+			border-radius: 50%
+			top: 1px
+
+.cart-recipient
+	margin: 9px 0 53px
+
+	.cart-block__title
+		margin-bottom: 14px
+
+	.forms__checkbox-label
+		font-size: rem(10)
+		padding-left: 16px
+		min-height: auto
+		line-height: 1
+
+	.forms-input-cont
+		width: calc((100% - 17px * 3) / 3)
+		margin: 0 0 0 17px
+
+.cart-current-city
+	display: flex
+	color: $second-color
+	font-size: rem(18)
+	margin-bottom: 41px
+
+	select 
+		border: 0
+		padding: 0 6px
+		color: $second-color
+
+	.selectize-input
+		margin: -10px 0 0 0
+		padding: 13px
+
+	.selectize-dropdown
+		padding: 10px
+		margin: 0 0px 0px
+
+	.selectize-control .selectize-input .item
+		font-size: rem(18)
+
+.cart-delivery-method
+	margin-bottom: 61px
+
+	.cart-block__title
+		margin-bottom: 20px
+
+		
+	.row 
+		display: flex
+	.title
+		font-size: rem(18)
+		font-weight: 500
+
+	.price
+		font-size: rem(18)
+		font-weight: 500
+		white-space: nowrap
+		margin-left: auto
+
+	.delay 
+		font-size: rem(14)
+		color: #616161
+
+	.forms
+		&-wrap
+			margin: 0 0 -38px -30px
+
+			
+
+			input[type="radio"] + label
+				padding: 18px 23px 15px 55px
+				margin: 0
+				border-bottom: 2px solid transparent
+				opacity: .6
+				transition: opacity .3s ease
+
+				&:hover 
+					opacity: 1
+
+			input[type="radio"] + label
+				&:before
+					top: 18px
+					left: 19px
+
+				&:after 
+					top: 23px !important
+					left: 24px !important
+
+			input[type="radio"]:checked + label
+				border-bottom: 2px solid $second-color
+				opacity: 1
+
+
+
+
+	.forms-input-cont
+		width: calc((100% - 30px * 2) / 2)
+		margin: 0 0 38px 30px
+		box-shadow: 1px 1px 49px -10px rgba(0, 0, 0, 0.2)
+
+		&:last-child
+			box-shadow: none
+			flex-direction: column
+			justify-content: center
+
+		.top
+			font-size: rem(18)
+			font-weight: 500
+			margin-bottom: 5px
+		.bot 
+			font-size: rem(14)
+			font-weight: 500
+
+.cart-delivery-address
+	margin-bottom: 45px
+
+	.cart-block__title
+		margin-bottom: 17px
+
+	.forms-wrap
+		margin: 0 0 0 -17px
+
+	.forms-input-cont
+		width: calc((100% - 17px * 3) / 3)
+		margin: 0 0 0 17px
+
+
+
+
+.cart-payment-method
+	margin-bottom: 54px
+
+	.cart-block__title
+		margin-bottom: 20px
+
+	.forms-wrap
+		margin: 0 0 0 -33px
+
+		input[type="radio"] + label::before 
+			display: none
+
+		input[type="radio"]:checked + label::after 
+			display: none
+
+		input[type="radio"] + label
+			border-bottom: 2px solid transparent
+			padding: 15px 22px 11px
+
+		input[type="radio"]:checked + label
+			border-bottom: 2px solid $second-color
+			opacity: 1
+
+	.row 
+		+ .row
+			font-size: rem(14)
+			color: #616161
+			margin-top: 7px
+		img 
+			&:not(:first-child)
+				margin-left: 15px
+
+
+
+	.forms__label
+		margin: 0
+		font-size: rem(18)
+		font-weight: 500
+
+	.forms-input-cont
+		width: calc((100% - 33px * 2) / 2)
+		margin: 0 0 0 33px
+		box-shadow: 1px 1px 49px -10px rgba(0, 0, 0, 0.2)
+
+	&--current
+		display: flex
+		flex-wrap: wrap
+		margin: 25px 0 -30px -28px
+
+.payment-method__item
+	display: flex
+	align-items: center
+	padding: 11px 11px 7px 54px
+	background: #fff
+	border: 2px solid $border-color
+	color: #919191
+	width: calc((100% - 28px * 3) / 3 )
+	margin: 0 0 30px 28px
+	transition: color .3s ease, font-weight .1s ease
+
+	&.active, &:hover
+		border: 2px solid $second-color
+		font-weight: bold
+		color: $second-color
+
+
+.visa
+	background: url('../img/ico-pay-11.png') no-repeat left 10px center
+.sber
+	background: url('../img/ico-pay-12.png') no-repeat left 10px center
+	padding-left: 75px
+.qiwi
+	background: url('../img/ico-pay-13.png') no-repeat left 17px center
+.sber-online
+	background: url('../img/ico-pay-14.png') no-repeat left 14px center
+.yandex 
+	background: url('../img/ico-pay-15.png') no-repeat left 25px center
+.webmoney
+	background: url('../img/ico-pay-16.png') no-repeat left 20px center
+
+.cart-comment
+
+	.cart-block__title
+		margin-bottom: 22px
+	.forms-wrap
+		margin: 0
+
+	.forms-input-cont
+		width: 100%
+		margin-bottom: 37px
+
+
+
+	textarea
+		width: 100% !important
+		min-width: 100%
+		min-height: 107px
+		border: 1px solid $border-color
+		padding: 5px
+
+
+.cart-price
+	display: flex
 
 	&__list
+		max-width: 215px
+		width: 100%
+
+
+	&__item
+		position: relative
 		display: flex
+		justify-content: space-between
+		flex: 1 1 auto
 
-		li
+
+		&:not(:first-child)
+			margin-top: 8px
+
+		&:after 
+			content: ""
+			position: absolute
+			background: url('../img/ico-dash.png') center
+			width: 100%
+			height: 2px
+			bottom: 4px
+			left: 0
+			z-index: 1
+
+		span 
+			background: #fff
+			font-size: rem(14)
+			font-weight: 500
+			z-index: 2
+
+			&:first-child
+
+				padding: 0 5px 0 0
+
+			&:last-child
+
+				padding: 0 0 0 5px
+
+	&__total
+		display: flex
+		align-items: flex-end
+		margin-left: auto
+		font-size: rem(25)
+		color: $second-color
+
+		span 
+			font-weight: 500
+		
+
+		.sum
 			
-			&:not(:first-child)
-				margin-left: 10px
+			font-weight: bold
+			margin-left: 11px
+
+.cart-footer
+	display: flex
+	align-items: flex-start
+	justify-content: space-between
+	margin-top: 45px
+
+.policy
+	text-align: right
+	font-size: rem(12)
+	color: #c0c0c0
+
+.cart-aside
+
+	&__header
+		display: flex
+		justify-content: space-between
+		margin-bottom: 61px
+
+	&__title
+		font-size: rem(25)
+		font-weight: 500
+
+	&-quantity
+		display: flex 
+		align-items: center
+		justify-content: flex-start
+		margin-top: 19px
+
+	&__total
+		display: flex
+		flex-direction: column
+		align-items: flex-end
+		
+
+.cart-aside
+
+	&__list 
+		display: flex
+		flex-direction: column
+	&__item
+		display: flex
+		justify-content: space-between
+		flex: 1 1 auto
+		padding: 24px 16px 30px
+		border-top: 1px solid $border-color
+
+		&-close
+			display: block
+			+size(14px)
+			margin-bottom: auto
+			background: url('../img/ico-close-aside.png') no-repeat center
+		
+	&__info
+		align-self: center
+
+		&-color 
+			display: flex
+			margin-top: 17px
+
+		&-title
+			font-size: rem(16)
+			font-weight: 500
+			color: #000
+
+	.color
+		display: block
+		+size(14px)
+		border-radius: 50%
+		margin-right: 9px
+		&-name
+			font-size: rem(14)
+			font-weight: 500
+
+	&__total-sum
+		font-size: rem(20)
+		font-weight: bold
+		color: $second-color
 
 
+	&__footer
+		display: flex
+		justify-content: space-between
+		padding-top: 41px
+		border-top: 1px solid $border-color
 
-			&.active
-				.paginator__link
-					background: $second-color
-		span.paginator__link
-			background: url('../img/ico-paginator-dots.png') no-repeat center
+		&-price
+			font-size: rem(25)
+			color: $second-color
+			padding-right: 15px
+			font-weight: 500
 
-			&.active
-				.paginator__link
-					background: $second-color
-		span.paginator__link
-			background: url('../img/ico-paginator-dots.png') no-repeat center
+			span:last-child
+				font-weight: bold
+				margin-left: 3px
 
-	&__link
+
+.cart-counter
+
+	&-wrapper
 		display: flex
 		align-items: center
-		justify-content: center
-		color: #fff
-		font-weight: 500
-		+size(26px)
-		border-radius: 50%
-		background: #c5b4fd
-//Paginator------------------------ END
-// paginator fix--------
-.card__feedback_paginator
-	display: flex;
-	align-items: center;
+		border: 1px solid $second-color
+		padding: 9px 17px
 
-	.paginator
-		margin-top: 0;
+	&__input
+		width: 40px
+		border: 0
+		text-align: center
 
-// media 
-@media screen and (max-width: 1000px)
-	.card
-		&__sample_buy
-			padding: 0;
+	&__link
+		position: relative
+		display: flex
+		width: 20px
+		height: 20px
 
-			.gradient-btn
-				min-width: unset ;
-				margin-right: 10px;
+		&--minus
 
-		&__sample_input
-			margin: 0 10px;
+			&:before 
+				content: ""
+				width: 10px
+				height: 1px
+				background: $border-color
+				position: absolute
+				top: 50%
+				left: calc(50% - 5px)
 
-@media screen and (max-width: 770px)
-	.card
-		&__tabs
-			display: flex;
-			flex-direction: column;
 
-		&__tabs_right
-			width: 100%;
-			order: 1;
-			display: flex;
-			flex-wrap: wrap;
+		&--plus
+			&:before 
+				content: ""
+				width: 10px
+				height: 1px
+				background: $border-color
+				position: absolute
+				top: 50%
+				left: calc(50% - 5px)
+			&:after 
+				content: ""
+				width: 10px
+				height: 1px
+				background: $border-color
+				position: absolute
+				top: 50%
+				left: calc(50% - 5px)
+				transform: rotate(90deg)
 
-		&__tabs_left
-			width: 100%
-			min-height: 350px;
-			order: 2;
-			margin-top: 40px;
+.promo-input
+	display: flex
 
-		&__tabs_right-title
-			width: 100%;
+	input[type="text"]
+		width: 150px
+		height: 38px
+		padding: 0 15px
+	input[type="submit"]
+		height: 38px
+		width: 120px
+		font-size: rem(14)
+		padding: 5px
+		text-align: center
+.cart-aside__cont
+	position: sticky
+	top: 155px
 
-		&__tabs_right_item
-			width: calc(100% / 3);
-			padding: 85px 5px 0 5px;
-			text-align: center;
-			img
-				top: 0;
-				left: calc(50% - 15px);
-		.fix-1 
-			img
-				left: calc(50% - 26px);
-				top: 10px;
-		.fix-2 
-			img
-				left: calc(50% - 12px);
-				top: 5px;
-		&__tabs_left_content
-			padding: vw(90);
-			flex-direction: column;
-			h3
-				width: 100%;
-				margin-bottom: 35px;
-		&__slick_nav
-			// display: none;
+.mobile-info
+	display: none
 
-		&__sample_slider
-			// display: none;
-
-		&__top
-			flex-direction: column;
-
-		&__slider
-			width: 100%
-			// height: calc(100vh - 380px)
-			margin-bottom: 30px
-
-		&__slick
-			// height: 100%
-			// height: calc(100vh - 380px)
-			left: -15px;
-			width: calc(100% + 30px);
-			overflow: hidden;
-			.slick-track
-				height: calc(100vw)
-				max-height: none
-		&__sample
-			width: 100%
-			padding-left: 0;
-			position: relative;
-
-			.gradient-btn
-				margin-right: 0;
-
-			h1, h2
-				padding-right: 60px;
-
-		&__tabs_navi
-			display: flex;
-			justify-content: center;
-			padding-left: 0;
-
-			span 
-				margin: 0 25px
-
-		&__sample_buy
-			padding: 0 18px;
-
-			.cat-item__bot-favorite
-				position: absolute;
-				top: 5px
-				right: 40px;
-			.cat-item__bot-price
-				display: flex;
-				align-items: center;
-				div
-					&:first-child
-						margin-right: 3vw
-		&__feedback_form
-			form 
-				.forms-wrap
-					flex-direction: column;
-					.forms-input-cont
-						width: 100%;
-		&__form_btn
-			display: inline-block !important;
-			width: auto !important;
-			
-		&__form_btn-fix
-			margin-top: 0 !important;
-			// margin-left: 15px;
-
-		&__form_btns
-			display: flex;
-			margin-bottom: 30px;
-			flex-wrap: wrap;
-			justify-content: space-around;
-			.card__form_btn
-				margin-bottom: 10px;
-
-	.sale
-		.card__slider
-			&:after
-				right: -15px !important;
-
-@media screen and (max-width: 600px)
-	.card
-		&__feedback_bot
-			flex-wrap: wrap;
-
-		&__feedback_btns
-			width: 100%;
-			justify-content: space-around;
-
-			.gradient-btn.gradient-btn__wrap
-				margin-left: 0;
-
-		&__feedback_paginator
-			margin-top: 35px;
-			width: 100%;
-			justify-content: center;
-
-			.paginator
-				margin-left: 0;
-
-		&__sample_buy
-			padding: 0;
-
-@media screen and (max-width: 480px)
-	.card
-		&__select
-			display: block;
-
-			select
-				border: 1px solid #8b69fc;
-				height: 50px;
-				font-size: 16px;
-				font-weight: bold;
-				color: #9667f3;
-				padding-left: 50px;
-			.forms__label
-				margin-top: 40px;
-			.forms-input-cont 
-				flex-direction: column;
-
-			option
-				color: #000;
-		&__sample_slider
-			display: none;
-
-		&__tabs_right
-			display: none;
-
-		&__tabs_navi
-			justify-content: space-between;
-
-			span 
-				margin: 0;
-
-				&:first-child
-					margin-left: 4vw;
-
-				&:last-child
-					margin-right: 4vw;
-
-		&__slick
-			height: calc(100vw - 30px);
-
-		&__tabs_left
-			margin-top: 0;
-
-		&__sample_buy
-			.cat-item__bot
-				flex-wrap: wrap;
-
-		&__feedback_btns
-			input
-				padding-right: 15px !important;
-				padding-left: 15px !important;
-
-			.card__btn
-				white-space: nowrap;
-
-				a 
-					padding-right: 15px;
-					padding-left: 15px;
-
-		.text-page table td, .text-page table th
-			padding: 10px;
-
-		.text-page td[data-title="Цена"]
-			white-space: nowrap;
-
-		&__sample_buy 
-			.cat-item__bot-price
-				margin-bottom: 10px;
-				flex-direction: column;
-
-		&__sample
-			padding-left: 4vw;
-			padding-right: 4vw;
-			h1, h2
-				padding-left: 0;
-		&__sample_input
-			margin: 0;
-// product_card-------------------------------END
 @import "_grid"
 @import "media"

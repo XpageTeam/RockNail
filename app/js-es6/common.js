@@ -262,6 +262,11 @@ $(function() {
 		});
 	};
 
+	// $(".cart-current-city .selectize").each((i, el) =>{
+	// 	let $this = $(el);
+	// 	$(".selectize").selectize();
+	// });
+
 	var asideClone = $('.catalog .aside').clone().addClass('js__catalog-filter');
 	$('.catalog .title-block__title').append(asideClone);
 
@@ -302,18 +307,22 @@ $(function() {
 		$this.closest('.js__catalog-filter').toggleClass('js__open');
 	});
 
-	// $('body').on('resize', function(){
-		if($(window).width() < 1000){
-			$('.lacquer-category').click(function(){
-				var $this = $(this);
 
-				$this.find('.lacquer-category__list').slideToggle('slow');
-			});
-		}
-	// })
-	
+	if($(window).width() < 1000){
+		$('.lacquer-category').click(function(){
+			var $this = $(this);
 
-	
+			$this.find('.lacquer-category__list').slideToggle('slow');
+		});
+	}
+
+	$('.cart-aside__mobile-btn').on('click', function() {
+		$('html, body').animate({
+			scrollTop: $('.cart-info .title-block__title').offset().top+"px"},
+			300
+		);
+	});
+
 
 
 

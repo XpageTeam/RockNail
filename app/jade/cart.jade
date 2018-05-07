@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Корзина
+		include inc/head.jade
+		include inc/css.jade
+	body.inner.loading
+		#page-wr
+			include inc/header.jade
+			main#content
+				.content
+
+					.titile-block
+						.wrapper
+							.title-block__crumbs
+								.bread-crumbs
+									a.bread-crumbs__link(href='#') Главная
+									span.bread-crumbs__this Корзина
+							
+
+					.cart__cont
+						form(action="")
+							.wrapper
+								.cart
+									.cart-info
+										.title-block__title
+											h1 Оформление заказа
+
+										.cart-recipient
+											.cart-block__title Получатель
+											.forms-wrap
+												.forms-input-cont
+													input(required="" type="email").forms__input
+													label.forms__label E-mail
+													.forms__error-message
+														i.forms__error-message-icon
+												.forms-input-cont
+													input(required="" type="tel").forms__input
+													label.forms__label Телефон
+													.forms__error-message
+														i.forms__error-message-icon
+												.forms-input-cont
+													input(required="" type="text" placeholder="Имя, фамилия").forms__input
+													label.forms__label Имя
+													.forms__error-message
+														i.forms__error-message-icon
+											.forms-wrap--bot
+												p Для отслеживания статуса заказа по смс и в личном кабинете
+												.forms-checkbox
+													input(type="checkbox" id="checkbox-1").forms__checkbox
+													label(for="checkbox-1").forms__checkbox-label Хочу получать персональные предложения и скидки по эл. почте
+
+										.cart-current-city
+											label Ваш город:
+											select.selectize
+												option(value="1") Челябинск
+												option(value="2") Екатеринбург
+												option(value="3") Москва
+
+										.cart-delivery-method
+											.cart-block__title Способ доставки
+											.forms-wrap
+												.forms-input-cont
+													input(type="radio" id="radio-1" name="radio").forms__input
+													label(for="radio-1").forms__label 
+														.row
+															span.title Курьером СДЕК
+															span.price 249 Р
+														.row 
+															span.delay 2-3 дня
+												.forms-input-cont
+													input(type="radio" id="radio-2" name="radio").forms__input
+													label(for="radio-2").forms__label 
+														.row
+															span.title Самовывоз СДЕК
+															span.price 249 Р
+														.row 
+															span.delay 2-3 дня
+												.forms-input-cont
+													input(type="radio" id="radio-3" name="radio").forms__input
+													label(for="radio-3").forms__label 
+														.row
+															span.title Пункты  Pickpoint
+															span.price 249 Р
+														.row 
+															span.delay 2-3 дня
+												.forms-input-cont
+													input(type="radio" id="radio-4" name="radio").forms__input
+													label(for="radio-4").forms__label 
+														.row
+															span.title Почта России
+															span.price  249 Р 
+														.row 
+															span.delay (оплата на сайте)
+												.forms-input-cont
+													input(type="radio" id="radio-5" name="radio").forms__input
+													label(for="radio-5").forms__label 
+														.row
+															span.title Почта России
+															span.price 249 Р 
+														.row 
+															span.delay (наложенным платежом)
+
+												.forms-input-cont.forms-input-cont--info
+													.top Бесплатная доставка
+													.bot по Москве и Санкт-Петербургу<br> при заказе от 5000 руб.
+										.cart-delivery-address
+											.cart-block__title Адрес доставки
+											.forms-wrap 
+												.forms-input-cont
+													input(required="" type="text").forms__input
+													label.forms__label Улица
+													.forms__error-message
+														i.forms__error-message-icon
+												.forms-input-cont
+													input(required="" type="text").forms__input
+													label.forms__label Дом / квартира
+													.forms__error-message
+														i.forms__error-message-icon
+												.forms-input-cont
+													input(required="" type="text").forms__input
+													label.forms__label Индекс
+													.forms__error-message
+														i.forms__error-message-icon
+
+										.cart-payment-method
+											.cart-block__title Способ оплаты
+											.forms-wrap
+												.forms-input-cont
+													input( type="radio" id="radio-10" name="radio").forms__input
+													label(for="radio-10").forms__label 
+														.row
+															span При получении
+														.row
+															span наличными или картой
+
+												.forms-input-cont
+													input( type="radio" id="radio-11" name="radio").forms__input
+													label(for="radio-11").forms__label 
+														.row
+															span Сейчас онлайн
+														.row
+															img(src="img/ico-pay-1.png", alt="")
+															img(src="img/ico-pay-2.png", alt="")
+															img(src="img/ico-pay-3.png", alt="")
+															img(src="img/ico-pay-4.png", alt="")
+															img(src="img/ico-pay-5.png", alt="")
+
+											.cart-payment-method--current
+												a(href="#").payment-method__item.visa.active Банковской<br> картой
+												a(href="#").payment-method__item.sber Спасибо<br> от Сбербанка
+												a(href="#").payment-method__item.qiwi QIWI Wallet
+												a(href="#").payment-method__item.sber-online Сбербанк<br> Онлайн
+												a(href="#").payment-method__item.yandex Яндекс.Деньги
+												a(href="#").payment-method__item.webmoney WebMoney
+
+										.cart-comment
+											.cart-block__title Комментарий к заказу
+											.forms-wrap
+												.forms-input-cont
+													textarea(required="" type="text").forms__input
+													.forms__error-message
+														i.forms__error-message-icon
+										.cart-price
+											.cart-price__list
+												.cart-price__item
+													span Товары
+													span 500 Р
+												.cart-price__item
+													span Доставка
+													span 249 Р
+
+											.cart-price__total
+												span Итого:
+												span.sum 749 Р
+
+										.promo-mobile
+											.promo-input
+												input(type="text" placeholder="Промокод")
+												.btn-flat.btn-flat--purple
+													input(type="submit" value="Активировать")
+
+										.cart-footer
+
+											.gradient-btn
+												a(href="#").btn Подтвердить заказ
+											.policy
+												p Нажимая на кнопку, вы подтверждаете свое совершеннолетие,<br> соглашаетесь на обработку персональных данных в соответствии<br> <a href="#">С условиями</a>, а также <a href="#">С условиями продажи</a>
+
+
+									.cart-aside
+										.cart-aside__cont
+											.cart-aside__header
+												.cart-aside__title 
+													span Ваш заказ 2 товара
+													.mobile-info На сумму: 500 Р
+												.gradient-btn
+													a(href="#").btn Купить в 1 клик
+
+											.cart-aside__mobile-btn Перейти к оформлению заказа
+											.cart-aside__list
+												.cart-aside__item
+													figure.cart-aside__img
+														img(src="img/photos/tovar-aside.png", alt="")
+													.cart-aside__info
+														a(href="#").cart-aside__info-title Гель-лак Rock Nail<br> Baby Nude
+														.cart-aside__info-color
+															span.color(style="background-color: #4ec4dc;")
+															span.color-name 045 Blue Ocean
+														.cart-aside-quantity
+															.cart-counter-wrapper
+																a(href="javascript:;").cart-counter__link.cart-counter__link--minus
+																input(type="text" ).cart-counter__input
+																a(href="javascript:;").cart-counter__link.cart-counter__link--plus
+													.cart-aside__total
+														a(href="#").cart-aside__item-close
+														.cart-aside__total-sum 250 Р
+												.cart-aside__item
+													figure.cart-aside__img
+														img(src="img/photos/tovar-aside.png", alt="")
+													.cart-aside__info
+														a(href="#").cart-aside__info-title Гель-лак Rock Nail<br> Baby Nude
+														.cart-aside__info-color
+															span.color(style="background-color: #4ec4dc;")
+															span.color-name 045 Blue Ocean
+														.cart-aside-quantity
+															.cart-counter-wrapper
+																a(href="javascript:;").cart-counter__link.cart-counter__link--minus
+																input(type="text" ).cart-counter__input
+																a(href="javascript:;").cart-counter__link.cart-counter__link--plus
+													.cart-aside__total
+														a(href="#").cart-aside__item-close
+														.cart-aside__total-sum 250 Р
+
+											.cart-aside__footer
+												.promo-input
+													input(type="text" placeholder="Промокод")
+													.btn-flat.btn-flat--purple
+														input(type="submit" value="Активировать") 
+
+												.cart-aside__footer-price 
+													span Итого: 
+													span 500 Р
+
+
+			include inc/footer.jade
+		include inc/scripts.jade
