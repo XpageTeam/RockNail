@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Поиск
+		include inc/head.jade
+		include inc/css.jade
+	body.inner.loading
+		#page-wr
+			include inc/header.jade
+			main#content
+				.content
+					.search-
+						.wrapper
+							.delivery-__title
+								h1 Результаты 
+									div поиска
+						.main-catalog__cont
+							.wrapper
+								.delivery-__city_select
+									.delivery-__city_select_title Вы искали
+									form.delivery-__city_select_panel
+										input(type="text" required value="" placeholder="Выберите цвет").delivery-city
+										input(type="reset" for="city" value="").delivery-city_reset
+										input(type="submit" value="" for="city")
+
+								.search-__container
+									.aside
+										.search-__checkbox
+											.search-__checkbox_title Найдено в разделах
+											div
+												input(type="checkbox")#inp1
+												label(for="inp1") Top
+											div
+												input(type="checkbox")#inp2
+												label(for="inp2") Top No wipe
+											div
+												input(type="checkbox")#inp3
+												label(for="inp3") Top Velvet
+											div
+												input(type="checkbox")#inp4
+												label(for="inp4") Top Rubber
+
+										.aside-working
+											.aside-working__title Работы <br> Rock Nail
+											.aside-working__list
+												each i in ["0", "1", "2"]
+													figure.aside-working__item
+														img(src="img/photos/aside-working-"+i+".jpg", alt="")
+										.aside-soc
+											a.soc__link(href="#")
+												figure.soc__link
+													img(src="img/ico-inst.png")
+											a.soc__link(href="#")
+												figure.soc__link
+													img(src="img/ico-vk.png")
+											a.soc__link(href="#")
+												figure.soc__link
+													img(src="img/ico-fb.png")
+									.catalog-list
+										.cat-items
+											- for (let i = 0; i < 9; i++)
+												.cat-item
+													a.cat-item__img(href="#")
+														img(src="/img/photos/catalog-img-0.png").img
+														img(src="/img/photos/catalog-img-hover.jpg", alt="").img-hover
+													.cat-item__desc
+														a.cat-item__title(href="#")
+															span.cat-title Гель-лак Rock Nail Baby Nude
+														.cat-item__info 045 Blue Ocean
+														.cat-item__bot
+															.cat-item__bot-price
+																.cat-price 250 Р
+															.cat-item__bot-favorite
+																a.favorite-add(href="#")
+																	span.favorite-add__title избранное
+													.cat-item__hover
+														.btn-wrap.gradient-btn
+															a(href="#").btn В корзину
+
+														a(href="/img/photos/catalog-img-hover.jpg" data-fancybox="quick-view").fancybox.quick-view Быстрый просмотр
+
+										.btn-more
+											.gradient-btn
+												a(href="#").btn Показать еще 9 из 30
+
+										include inc/paginator.jade
+
+						.bot-form__cont
+							.wrapper
+								.bot-form__title #rocknailwork
+								.bot-form__subtitle Добавляй свои работы <br /> и попади в нашу лену
+								.bot-form
+									form(action="#")
+										.bot-form__inputs
+											.bot-form__input-cont
+												label.bot-form__label Подпишись <br /> на наши новости
+												input.bot-form__input(type="email" placeholder="Почта")
+											.bot-form__input-cont.bot-form__input-cont--submit
+												label.bot-form__label Будь первой, узнавай <br />о наших акциях и конкурсах
+												.gradient-btn.gradient-btn__wrap
+													input.bot-form__submit(type="submit" value="Подписаться")
+					//- include inc/bot-blocks.jade
+			include inc/footer.jade
+		include inc/scripts.jade
