@@ -11,6 +11,7 @@ $(document).ready(function(){
 	$('.card__slick_nav').slick({
 		slidesToShow: 5,
 		slidesToScroll: 1,
+		slide: ".card__slick_slide",
 		asNavFor: '.card__slick',
 		focusOnSelect: true,
 		arrows: false,
@@ -57,6 +58,20 @@ $(document).ready(function(){
 			$('.delivery- .card__tabs_left').addClass("shadow")
 		}
 	});
+	// табы в форме регистрации
+	$(".login-__form_tabs a").click(function(){
+		let $this = $(this);
+		let id = $this.attr("data-id");
+		$('.login-__form_tabs a').removeClass('active')
+		$(this).addClass('active')
+		$('.login-_form form').css("display", "none")
+		$(".login-_form form[data-id='"+id+"']").css("display", "block")
+	});
+	// закрытие формы покупки товара
+	$(".popup_buy-__close").click(function(){
+		$.fancybox.close()
+	});
+	
 });
 
 // sergey new code------------ END
@@ -105,7 +120,26 @@ const loadScripts = e => {
 		afterClose(){
 			$("body").removeClass("fancy-active")
 		}
+		afterShow(){
+			// слайдер
+			$(".card__slick").slick({
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				slide: ".card__slick_slide",
+				asNavFor: '.card__slick_nav',
+			})
+			$('.card__slick_nav').slick({
+				slidesToShow: 5,
+				slidesToScroll: 1,
+				slide: ".card__slick_slide",
+				asNavFor: '.card__slick',
+				focusOnSelect: true,
+				arrows: false,
+			});
+		}
 	});
+
+	// afterShow
 
 	$(".search-button").click(e => {
 		headSearch.toggleSearch();

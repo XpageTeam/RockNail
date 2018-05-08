@@ -328,6 +328,236 @@ $output-bourbon-deprecation-warnings: false;
 	.big-slider__title-cont
 		margin-bottom: 45px;
 // Избранное-------------------Конец
+// Popup-----------------------
+.fancybox-bg
+	background: url(../img/fancybox_bg.png) no-repeat
+	background-size: cover;
+.login-
+	&__form_tabs
+		display: flex;
+		height: 40px;
+		width: 100%;
+		padding: 0 40px;
+		margin-bottom: 30px;
+		a 
+			width: 50%;
+			height: 100%;
+			border: 1px solid #8b69fc;
+			color: #8b69fc;
+			font-size: 14px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			border-bottom: 1px solid #8b69fc !important;
+			&:hover
+				color: #d162af;
+				border: 1px solid #d162af;
+		.active
+			background-color: #9767f3;
+			color: #fff;
+			&:hover
+				background-color: #9767f3;
+				color: #fff;
+				border: 1px solid #9767f3;
+	&_form
+		background-color: #fff;
+		width: 100%;
+		// height: 100%;
+		max-width: 430px;
+		// max-height: 515px;
+		border-bottom: 3px solid #9767f3;
+		.forms-wrap
+			flex-direction: column;
+		.forms-input-cont
+			width: 100%;
+			margin-bottom: 20px;
+		.forms__label
+			font-size: 14px;
+			color: #a279f4;
+			margin-bottom: 8px;
+		.forms__input
+			padding: 0 40px 0 5px;
+			border: 1px solid #cbcbcb;
+		form
+			padding: 0 40px 40px 40px;
+			display: none;
+		form.active
+			display: block;
+		.card__form_btns
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			a 
+				color: #a279f4;
+		.forms__title
+			font-size: 30px;
+			font-weight: bold;
+			color: #9667f3;
+			text-align: center;
+			margin-top: 15px;
+		.forms-submit-cont
+			margin-top: 0;
+			width: auto;
+		.mail_ico
+			&:before
+				content: "";
+				background: url(../img/ico-mail.png) no-repeat;
+				position: absolute;
+				right: 15px;
+				bottom: 15px;
+				width: 18px;
+				height: 11px;
+				z-index: 4;
+		.pass_ico
+			&:before
+				content: "";
+				background: url(../img/form-ico-pass.png) no-repeat;
+				position: absolute;
+				right: 15px;
+				bottom: 13px;
+				width: 13px;
+				height: 15px;
+				z-index: 4;
+		.social_login
+			width: 100%;
+			// height: 85px;
+			display: block ;
+			border-top: 1px solid #9667f3;
+		.social_login_title
+			text-align: center;
+			span 
+				padding: 0 10px;
+				background-color: #fff;
+				position: relative;
+				top: -10px;
+				font-size: 14px;
+				font-weight: bold;
+				text-transform: uppercase;
+				color: #a279f4;
+		.aside-soc
+			margin-top: 8px;
+			display: flex;
+		.gradient-btn
+			width: 135px
+			padding: 0 !important;
+		form[data-id="2"]
+			.gradient-btn
+				width: 100%;
+.popup_buy-
+	width: 100%;
+	max-width: 430px;
+	background-color: #fff;
+	border-bottom: 3px solid #8b69fc;
+	padding-bottom: 45px;
+	padding-top: 60px;
+	&__title
+		color: #8b69fc;
+		font-size: 25px;
+		font-weight: bold;
+		text-align: center;
+		margin-bottom: 20px;
+	&__block
+		display: flex;
+		font-size: 14px;
+		padding: 0 50px;
+		margin-bottom: 30px;
+	&__block_info
+		display: flex;
+		padding: 0 25px;
+		margin-bottom: 35px;
+		div 
+			&:first-child
+				width: 150px;
+			&:nth-child(2)
+				padding-left: 20px;
+		span.price
+			font-weight: bold;
+			color: #8b69fc;
+		b 
+			color: #8b69fc;
+	&__text
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding-left: 20px;
+	&__text_top, &__text_mid
+		margin-bottom: 25px;
+	&__text_mid
+		font-size: 12px;
+	&__text_bot
+		color: #8b69fc;
+		font-size: 25px;
+		font-weight: bold;
+	&__btns
+		display: flex;
+		height: 40px;
+		// padding: 0 15px;
+	&__close 
+		width: 50%;
+		height: 100%;
+		border: 1px solid #8b69fc;
+		color: #8b69fc;
+		font-size: 14px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		&:hover
+			color: #d162af;
+			border: 1px solid #d162af;
+	&__buy
+		background-color: #9767f3;
+		color: #fff;
+		width: 50%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-bottom: 1px solid transparent
+		&:hover
+			color: #fff !important;
+			background-color: #785ad9;
+			border-color: #785ad9 !important
+
+.fast_buy			
+	.forms__input
+		padding-right: 5px;
+	.forms-input-cont--textarea
+		textarea
+			width: 100%;
+			height: 64px !important;
+			max-height: none;
+			resize: none;
+	.gradient-btn
+		width: auto;
+	.card__form_btns
+		display: block;
+		text-align: center;
+	.forms-checkbox
+		max-width: 240px;
+		margin-top: 15px;
+		&:before
+			width: 10px;
+			height: 10px;
+			border-radius: 5px;
+			top: 10px
+			left: -1px;
+	.forms__checkbox-label
+		font-size: 10px;
+		color: #9b9b9b;
+		padding-left: 15px;
+		&:after
+			top: 9px;
+		&:before
+			top: 12px;
+	.forms-wrap
+		align-items: center;
+	.forms-input-cont
+		margin-bottom: 24px;
+	form
+		padding-bottom: 0px;
+// Popup-----------------------Конец
 // media
 @media screen and (min-width: 1000px)
 	.search-, .favorite-, .delivery-
@@ -491,3 +721,15 @@ $output-bourbon-deprecation-warnings: false;
 	.favorite-
 		.main-title
 			font-size: 35px;
+@media screen and (max-width: 430px)
+	.login-_form 
+		form
+			padding-right: 0;
+			padding-left: 0;
+	.login-__form_tabs
+		padding: 0;
+	.popup_buy-__block
+		padding: 0;
+	.popup_buy-__block_info
+		padding: 0;
+		justify-content: space-between;
