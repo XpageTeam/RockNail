@@ -745,6 +745,10 @@
   padding-bottom: 0px;
 }
 
+.fancybox-stage .card__top {
+  display: flex !important;
+}
+
 @media screen and (min-width: 1000px) {
   .search- .big-slider__title-cont, .favorite- .big-slider__title-cont, .delivery- .big-slider__title-cont {
     margin-top: 55px;

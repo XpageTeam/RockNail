@@ -2,13 +2,13 @@ Vue.use(Vuex);
 // sergey new code-------------
 $(document).ready(function(){
 	// слайдер
-	$(".card__slick").slick({
+	$(".card .card__slick").slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		slide: ".card__slick_slide",
 		asNavFor: '.card__slick_nav',
 	})
-	$('.card__slick_nav').slick({
+	$('.card .card__slick_nav').slick({
 		slidesToShow: 5,
 		slidesToScroll: 1,
 		slide: ".card__slick_slide",
@@ -119,7 +119,7 @@ const loadScripts = e => {
 		},
 		afterClose(){
 			$("body").removeClass("fancy-active")
-		}
+		},
 		afterShow(){
 			// слайдер
 			$(".card__slick").slick({
