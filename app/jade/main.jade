@@ -13,11 +13,12 @@ html(lang="ru")
 					.main-slider__cont
 						.wrapper
 							.main-slider
-								.main-slider__slide
-									figure.main-slider__img
-										picture
-											source(srcset="img/photos/main-banner.png" media="screen and (min-width: 1000px)" data-main)
-											img
+								- for (let i = 0; i < 5; i++)
+									.main-slider__slide
+										figure.main-slider__img
+											picture
+												source(srcset="img/photos/main-banner.png" media="screen and (min-width: 1000px)" data-main)
+												img
 					.main-catalog__cont
 						.wrapper
 							.main-catalog__tabs
@@ -41,7 +42,8 @@ html(lang="ru")
 											.catalog-slider__slide
 												.cat-item
 													a.cat-item__img(href="#")
-														img(src="/img/photos/cat-img-"+i+".png")
+														img(src="/img/photos/catalog-img-0.png").img
+														img(src="/img/photos/catalog-img-hover.jpg", alt="").img-hover
 													.cat-item__desc
 														a.cat-item__title(href="#")
 															span.cat-title Гель-лак Rock Nail Baby Nude
@@ -52,13 +54,19 @@ html(lang="ru")
 															.cat-item__bot-favorite
 																a.favorite-add(href="#")
 																	span.favorite-add__title избранное
+													.cat-item__hover
+														.btn-wrap.gradient-btn
+															a(href="#").btn В корзину
+
+														a(href="/img/photos/catalog-img-hover.jpg" data-fancybox="quick-view").fancybox.quick-view Быстрый просмотр
 								.catalog-slider(data-id="1")
 									- for (let j = 0; j < 2; j++)
 										- for (let i = 0; i < 4; i++)
 											.catalog-slider__slide
 												.cat-item
 													a.cat-item__img(href="#")
-														img(src="/img/photos/cat-img-"+i+".png")
+														img(src="/img/photos/catalog-img-0.png").img
+														img(src="/img/photos/catalog-img-hover.jpg", alt="").img-hover
 													.cat-item__desc
 														a.cat-item__title(href="#")
 															span.cat-title Гель-лак Rock Nail Baby Nude
@@ -69,13 +77,19 @@ html(lang="ru")
 															.cat-item__bot-favorite
 																a.favorite-add(href="#")
 																	span.favorite-add__title избранное
+													.cat-item__hover
+														.btn-wrap.gradient-btn
+															a(href="#").btn В корзину
+
+														a(href="/img/photos/catalog-img-hover.jpg" data-fancybox="quick-view").fancybox.quick-view Быстрый просмотр
 								.catalog-slider(data-id="2")
 									- for (let j = 0; j < 2; j++)
 										- for (let i = 0; i < 4; i++)
 											.catalog-slider__slide
 												.cat-item
 													a.cat-item__img(href="#")
-														img(src="/img/photos/cat-img-"+i+".png")
+														img(src="/img/photos/catalog-img-0.png").img
+														img(src="/img/photos/catalog-img-hover.jpg", alt="").img-hover
 													.cat-item__desc
 														a.cat-item__title(href="#")
 															span.cat-title Гель-лак Rock Nail Baby Nude
@@ -86,6 +100,11 @@ html(lang="ru")
 															.cat-item__bot-favorite
 																a.favorite-add(href="#")
 																	span.favorite-add__title избранное
+													.cat-item__hover
+														.btn-wrap.gradient-btn
+															a(href="#").btn В корзину
+
+														a(href="/img/photos/catalog-img-hover.jpg" data-fancybox="quick-view").fancybox.quick-view Быстрый просмотр
 					.manifest__cont
 						.wrapper
 							.manifest__title-cont

@@ -1,10 +1,9 @@
-
 $output-bourbon-deprecation-warnings: false;
 @import "bourbon"
 @import "vars"
 @import "base"
 @import "functions"
-1
+
 *[v-cloak]
 	display: none
 
@@ -21,8 +20,6 @@ $output-bourbon-deprecation-warnings: false;
 		left: 0
 		+size(14px)
 		background: url('../img/ico-quick-view.png') no-repeat center
-
-.cat-item
 	
 .btn 
 	cursor: pointer		
@@ -44,76 +41,79 @@ $output-bourbon-deprecation-warnings: false;
 		
 		&:hover 
 			background: url('../img/ico-favorite-catalog.png') no-repeat center !important	
-.cat
-	&-items
-		display: flex 
-		flex-wrap: wrap
-		margin: 0 0 -90px -80px
-		padding: 55px 10px 10px 55px
+// .cat
+// 	&-items
+// 		display: flex 
+// 		flex-wrap: wrap
+// 		margin: 0 0 -90px -80px
+// 		padding: 55px 10px 10px 55px
 
-	&-item
-		position: relative
-		width: calc((100% - 62px * 3) / 3)
-		margin: 0 0 70px 62px
-		transition: outline-width 0s ease, box-shadow .5s ease
+// 		.cat-item
+// 			width: calc((100% - 62px * 3) / 3)
+// 			margin: 0 0 70px 62px
+			
 
-
-
-		&__desc
-			padding: 0 18px
-
-		&:not(:hover)
-			.cat-item
-
-				&__hover
-					transition: none
-
-		&:hover
-			outline: 13px solid #fff
-			box-shadow: 1px 1px 35px 12px rgba(0, 0, 0, 0.04)
-
-			.img
-				opacity: 0
-
-				&-hover
-					opacity: 1
-
-			.cat-item
+// 	&-item
+// 		position: relative
+// 		transition: outline-width 0s ease, box-shadow .5s ease
 
 
-				&__hover
-					// display: flex
-					opacity: 1
-					pointer-events: all
-					background: #fff
-					z-index: 5
-					margin: 0 -13px
-					padding: 22px 0
-					box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.04)
 
-		.img
-			transition: opacity .3s ease
+// 		&__desc
+// 			padding: 0 18px
 
-			&-hover
-				position: absolute
-				top: 0
-				left: 0
-				opacity: 0
-				pointer-events: none
+// 		&:not(:hover)
+// 			.cat-item
 
-		&__hover
-			display: flex
-			flex-direction: column
-			align-items: center
-			position: absolute
-			left: 0
-			top: 100%
-			right: 0
-			margin-top: 25px
-			opacity: 0
-			pointer-events: none
-			background: #fff
-			transition: box-shadow .7s ease, opacity .3s ease	
+// 				&__hover
+// 					transition: none
+
+// 		&:hover
+// 			outline: 13px solid #fff
+// 			box-shadow: 1px 1px 35px 12px rgba(0, 0, 0, 0.04)
+
+// 			.img
+// 				opacity: 0
+
+// 				&-hover
+// 					opacity: 1
+
+// 			.cat-item
+
+
+// 				&__hover
+// 					// display: flex
+// 					opacity: 1
+// 					pointer-events: all
+// 					background: #fff
+// 					z-index: 5
+// 					margin: 0 -13px
+// 					padding: 22px 0
+// 					box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.04)
+
+// 		.img
+// 			transition: opacity .3s ease
+
+// 			&-hover
+// 				position: absolute
+// 				top: 0
+// 				left: 0
+// 				opacity: 0
+// 				pointer-events: none
+
+// 		&__hover
+// 			display: flex
+// 			flex-direction: column
+// 			align-items: center
+// 			position: absolute
+// 			left: 0
+// 			top: 100%
+// 			right: 0
+// 			margin-top: 25px
+// 			opacity: 0
+// 			pointer-events: none
+// 			background: #fff
+// 			transition: box-shadow .7s ease, opacity .3s ease	
 
 
 
@@ -556,165 +556,165 @@ button, input, select
 		top: calc(50% - 4px)
 		right: 46px
 
-.head
-	position: fixed
-	top: 0
-	left: 0
-	width: 100%
-	z-index: 5
-	background: url("../img/header-bg.png") center no-repeat
-	background-size: cover
+// .head
+// 	position: fixed
+// 	top: 0
+// 	left: 0
+// 	width: 100%
+// 	z-index: 5
+// 	background: url("../img/header-bg.png") center no-repeat
+// 	background-size: cover
 
-	.wrapper
-		position: relative
-		z-index: 1
+// 	.wrapper
+// 		position: relative
+// 		z-index: 1
 
-	&:after
-		content: ""
-		position: absolute
-		top: 0
-		left: 0
-		// pointer-events: none
-		+size(100%)
-		background: rgba(#fff, .28)
-		box-shadow: $shadow
+// 	&:after
+// 		content: ""
+// 		position: absolute
+// 		top: 0
+// 		left: 0
+// 		// pointer-events: none
+// 		+size(100%)
+// 		background: rgba(#fff, .28)
+// 		box-shadow: $shadow
 
-	$width: 210vw
+// 	$width: 210vw
 
-	&__submenu
-		position: absolute
-		top: 100%
-		left: 0
-		width: 100%
-		height: 250px
-		overflow: hidden
-		transition: height .3s ease
-		height: 0
-		border-radius: 0 0 50% 50%
+// 	&__submenu
+// 		position: absolute
+// 		top: 100%
+// 		left: 0
+// 		width: 100%
+// 		height: 250px
+// 		overflow: hidden
+// 		transition: height .3s ease
+// 		height: 0
+// 		border-radius: 0 0 50% 50%
 
-		&:after
-			content: ""
-			position: absolute
-			bottom: 0
-			+size($width)
-			border-radius: 50%
-			background: #fff
-			box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.11)
-			position: absolute
-			left: calc(50% - 105vw)
+// 		&:after
+// 			content: ""
+// 			position: absolute
+// 			bottom: 0
+// 			+size($width)
+// 			border-radius: 50%
+// 			background: #fff
+// 			box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.11)
+// 			position: absolute
+// 			left: calc(50% - 105vw)
 
-		&.js__opened
-			height: 250px
+// 		&.js__opened
+// 			height: 250px
 
-	&__search-more
-		background: #fff
-		border-top: 2px solid $second-color
-		text-align: right
-		display: none
+// 	&__search-more
+// 		background: #fff
+// 		border-top: 2px solid $second-color
+// 		text-align: right
+// 		display: none
 
-	&__wrap
-		display: flex
-		align-items: center
-		justify-content: space-between
-		position: relative
+// 	&__wrap
+// 		display: flex
+// 		align-items: center
+// 		justify-content: space-between
+// 		position: relative
 
-	&__phone, &__title
-		margin: 0 auto
+// 	&__phone, &__title
+// 		margin: 0 auto
 
-	&__search, &__favorite
-		margin-right: 10px
+// 	&__search, &__favorite
+// 		margin-right: 10px
 
-	&__cart
-		position: absolute
-		right: 0
-		top: 100%
-		// background: #000
+// 	&__cart
+// 		position: absolute
+// 		right: 0
+// 		top: 100%
+// 		// background: #000
 
-		&-wrap
-			+size(70px 44px)
-			padding-bottom: 8px
-			// border-radius: 0 50% 50% 50%
-			overflow: hidden
-			display: flex
-			align-items: flex-end
-			position: relative
-			z-index: 4
+// 		&-wrap
+// 			+size(70px 44px)
+// 			padding-bottom: 8px
+// 			// border-radius: 0 50% 50% 50%
+// 			overflow: hidden
+// 			display: flex
+// 			align-items: flex-end
+// 			position: relative
+// 			z-index: 4
 
-		&:hover
+// 		&:hover
 
-			.cart-line__wrap
-				pointer-events: all
-				opacity: 1
+// 			.cart-line__wrap
+// 				pointer-events: all
+// 				opacity: 1
 
-.head-submenu
-	display: flex
+// .head-submenu
+// 	display: flex
 
-	&__column
-		margin-right: vw(75)
+// 	&__column
+// 		margin-right: vw(75)
 
-.head-title
-	font-size: 14px
-	font-weight: bold
-	letter-spacing: .02em
-	border: none
-	background: none
+// .head-title
+// 	font-size: 14px
+// 	font-weight: bold
+// 	letter-spacing: .02em
+// 	border: none
+// 	background: none
 
-.cart-link
-	background: #fff
-	border-radius: 50%
-	background: url("../img/ico-cart.png") center bottom 8px no-repeat, #000
-	display: block
-	+size(70px)
+// .cart-link
+// 	background: #fff
+// 	border-radius: 50%
+// 	background: url("../img/ico-cart.png") center bottom 8px no-repeat, #000
+// 	display: block
+// 	+size(70px)
 
-	&[data-count]
+// 	&[data-count]
 
-		&:after
-			content: attr(data-count)
-			border-radius: 50%
-			border: 1px solid #000
-			background: #fff
-			font-weight: bold
-			font-size: 14px
-			letter-spacing: .02em
-			position: absolute
-			bottom: 0
-			left: 0
-			+size(26px)
-			line-height: 26px
-			text-align: center
+// 		&:after
+// 			content: attr(data-count)
+// 			border-radius: 50%
+// 			border: 1px solid #000
+// 			background: #fff
+// 			font-weight: bold
+// 			font-size: 14px
+// 			letter-spacing: .02em
+// 			position: absolute
+// 			bottom: 0
+// 			left: 0
+// 			+size(26px)
+// 			line-height: 26px
+// 			text-align: center
 
-	&[data-count="0"]
+// 	&[data-count="0"]
 
-		&:after
-			display: none
+// 		&:after
+// 			display: none
 
-.head-phone
+// .head-phone
 
-	a
-		color: inherit
+// 	a
+// 		color: inherit
 
-.logo
-	position: relative
-	// z-index: 5
-	font-weight: 400
+// .logo
+// 	position: relative
+// 	// z-index: 5
+// 	font-weight: 400
 
-	&__text
-		font-size: 14px
-		max-width: 180px
-		line-height: lh(22, 14)
+// 	&__text
+// 		font-size: 14px
+// 		max-width: 180px
+// 		line-height: lh(22, 14)
 
-	&__tag
-		font-size: rem(30)
-		margin: 1rem 0 0
+// 	&__tag
+// 		font-size: rem(30)
+// 		margin: 1rem 0 0
 
-	&__btn
-		position: absolute
-		left: rem(23)
-		bottom: -21px
-		box-shadow:  -2px 4px 20px 0px rgba(9, 3, 5, 0.22)
+// 	&__btn
+// 		position: absolute
+// 		left: rem(23)
+// 		bottom: -21px
+// 		box-shadow:  -2px 4px 20px 0px rgba(9, 3, 5, 0.22)
 
-		.gradient-btn
-			display: block
+// 		.gradient-btn
+// 			display: block
 		
 //Paginator------------------------ 
 .paginator
@@ -857,10 +857,13 @@ button, input, select
 		margin: 0 0 -90px -80px
 		padding: 55px 10px 10px 55px
 
+		.cat-item
+			width: calc((100% - 62px * 3) / 3)
+			margin: 0 0 70px 62px
+			
+
 	&-item
 		position: relative
-		width: calc((100% - 62px * 3) / 3)
-		margin: 0 0 70px 62px
 		transition: outline-width 0s ease, box-shadow .5s ease
 
 
@@ -1362,12 +1365,19 @@ button, input, select
 		top: calc(50% - 4px)
 		right: 46px
 
+.js__submenu-opened
+
+	.head
+
+		&:after
+			box-shadow: 0px 0px 0px 0px rgba(#000, 0)
+
 .head
 	position: fixed
 	top: 0
 	left: 0
 	width: 100%
-	z-index: 5
+	z-index: 15
 	background: url("../img/header-bg.png") center no-repeat
 	background-size: cover
 
@@ -1384,6 +1394,7 @@ button, input, select
 		+size(100%)
 		background: rgba(#fff, .28)
 		box-shadow: $shadow
+		transition: box-shdow .3s ease
 
 	$width: 210vw
 
@@ -1394,23 +1405,29 @@ button, input, select
 		width: 100%
 		height: 250px
 		overflow: hidden
-		transition: height .3s ease
+		transition: height .3s ease, padding .3s ease
 		height: 0
 		border-radius: 0 0 50% 50%
+		pointer-events: none
+		box-sizing: content-box
+
+		.wrapper
+			pointer-events: all
 
 		&:after
 			content: ""
 			position: absolute
-			bottom: 0
+			bottom: 46px
 			+size($width)
 			border-radius: 50%
 			background: #fff
-			box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.11)
+			box-shadow: 0px 0px 46px 0px rgba(0, 0, 0, 0.11)
 			position: absolute
 			left: calc(50% - 105vw)
 
 		&.js__opened
 			height: 250px
+			padding-bottom: 46px
 
 	&__search-more
 		background: #fff
@@ -1454,9 +1471,76 @@ button, input, select
 
 .head-submenu
 	display: flex
+	justify-content: space-between
+	padding: 30px 0 0
+
+	&:before, &:after
+		flex: none
+
+	&:before
+		content: ""
+		width: 112px
+
+	&:after
+		content: ""
+		width: 80px
 
 	&__column
-		margin-right: vw(75)
+		// margin-right: vw(75)
+
+		&-title
+			font-weight: bold
+			text-transform: uppercase
+			font-size: 14px
+			letter-spacing: .02em
+			margin-bottom: 20px
+
+		&--img
+			width: 135px
+	
+	&__menu
+
+		&--columns
+			column-count: 2
+			column-gap: 2rem
+
+			li
+				break-inside: avoid
+
+		&-link
+			color: #000
+			// transition: padding .3s ease, color .3s ease
+			font-weight: 400
+			letter-spacing: .02em
+			font-size: 14px
+			padding-right: 16px
+			position: relative
+
+			&:before
+				content: ""
+				position: absolute
+				border-radius: 50%
+				background: $second-color
+				+size(6px)
+				left: 0
+				top: calc(50% - 3px)
+				transition: opacity .3s ease
+				// opacity: 0
+				display: none
+
+			&:hover, &:focus, &.active
+				color: $second-color
+				padding: 0 0 0 16px
+				// text-indent: 16px
+
+				&:before
+					// opacity: 1
+					display: block
+
+		li
+
+			&:not(:first-child)
+				margin: 9px 0 0
 
 .head-title
 	font-size: 14px
@@ -1464,6 +1548,23 @@ button, input, select
 	letter-spacing: .02em
 	border: none
 	background: none
+	text-transform: uppercase
+	position: relative
+
+	&:after
+		content: ""
+		+triangle(12px 14px, #fff, up)
+		position: absolute
+		left: calc(50% - 6px)
+		top: 34px
+		transition: opacity .3s ease
+		pointer-events: none
+		opacity: 0
+
+	&.js__active
+
+		&:after
+			opacity: 1
 
 .cart-link
 	background: #fff
@@ -1601,6 +1702,75 @@ button, input, select
 
 .main-slider
 
+	.slick
+
+		&-arrow, &-dots
+			position: absolute
+			z-index: 2
+
+		&-dots
+			left: 0
+			width: 100%
+			bottom: 60px
+			display: flex !important
+			justify-content: center
+
+			li
+
+				&:not(:last-child)
+					margin-right: 6px
+
+			button
+				@extend %clear-text
+				border-radius: 50%
+				border: none
+				+size(16px)
+				background: none
+				position: relative
+
+				&:after
+					transform: scale3d(0, 0, 1)
+					background: #fff
+					+size(100%)
+					top: 0
+					left: 0
+
+				&:before
+					z-index: 1
+					+size(10px)
+					background: #000
+					top: calc(50% - 5px)
+					left: calc(50% - 5px)
+
+				&:after, &:before
+					position: absolute
+					content: ""
+					transition: transform .3s ease
+					border-radius: inherit
+
+			.slick-active
+
+				button
+
+					&:before
+						transform: scale3d(.4, .4, 1)
+
+					&:after
+						transform: scale3d(1, 1, 1)
+
+		&-arrow
+			top: 0
+			+size(56px 100%)
+			background: url("../img/ico-main-slider-arrow.png") center no-repeat
+			border: none
+
+		&-prev
+			left: 0
+			transform: rotate(180deg)
+
+		&-next
+			right: 0
+
 	&__cont
 		background: url("../img/main-slider-bg.jpg") center no-repeat
 		background-size: cover
@@ -1615,6 +1785,19 @@ button, input, select
 			background-size: cover
 			bottom: 0
 			left: 0
+
+	&__slide
+
+		&:not(:first-child)
+
+			&:not(.slick-slide)
+				display: none
+
+	&__img
+		text-align: center
+
+		img
+			margin: 0 -4px -4px 0
 
 .footer
 	font-weight: 400
@@ -1981,6 +2164,7 @@ button, input, select
 	padding: 80px 78px 0 26px
 	justify-content: space-between
 	margin: 0 0 -120px -128px
+	counter-reset: i
 
 	&__cont
 		background: url("../img/manifest-bg.png") center no-repeat
@@ -1992,9 +2176,27 @@ button, input, select
 		margin: 0 0 120px 128px
 		background: #fff
 		position: relative
-		padding: 23px 158px 17px 26px
+		padding: 20px 158px 20px 26px
 		min-height: 205px
 		box-shadow: -2px 4px 48px 0px rgba(9, 3, 5, 0.14)
+		counter-increment: i
+		position: relative
+		display: flex
+		flex-direction: column
+		justify-content: center
+
+		&:before
+			content: "0"counter(i)
+			position: absolute
+			transform-origin: center
+			transform: rotate(-90deg)
+			right: calc(100% - 25px)
+			z-index: 2
+			font-weight: 400
+			font-size: rem(20)
+			top: 32px
+			width: 88px
+			text-align: center
 
 		&:nth-child(even)
 			transform: translate3d(0, -115px, 0)
@@ -2019,14 +2221,27 @@ button, input, select
 			font-size: rem(18)
 			line-height: lh(23, 18)
 			color: $main-color
-			min-height: 45px
+			// min-height: 45px
 			display: flex
 			flex-wrap: wrap
 			align-items: flex-end
+			margin-bottom: 17px
+			max-width: 235px
 
 		&-text
 			font-size: 14px
 			line-height: lh(20, 14)
+			position: relative
+			max-width: 270px
+			padding: 17px 0 0
+
+			&:before
+				content: ""
+				position: absolute
+				top: 0
+				left: -56px
+				+size(80px 1px)
+				background: #000
 
 .main-catalog
 
@@ -2037,13 +2252,14 @@ button, input, select
 		z-index: 2
 
 	&__slider
-		margin: 74px 0 0
-		padding: 0 93px
+		margin: 74px 93px 0
+		// padding: 0 93px
+		padding-bottom: 30px
 		position: relative
 
 .catalog-slider
 	@extend %clearfix
-	transition: opacity .3s ease
+	// transition: opacity .3s ease
 	margin: 0 -44px
 	position: static
 
@@ -2051,7 +2267,8 @@ button, input, select
 		position: absolute
 		top: 0
 		left: 0
-		+size(100%)
+		right: 0
+		height: 100%
 		pointer-events: none
 		opacity: 0
 
@@ -2064,6 +2281,18 @@ button, input, select
 
 			&:nth-child(n + 5)
 				display: none
+
+		.cat-item
+
+			&__hover
+				position: static
+				// opacity: 1
+				// pointer-events: all
+				background: #fff
+				z-index: 5
+				margin: 0 -13px
+				padding: 22px 0
+				box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.04)
 
 	.slick
 
@@ -2079,11 +2308,14 @@ button, input, select
 
 		&-prev
 			transform: rotate(180deg)
-			left: 0
+			left: -93px
 
 		&-next
-			right: 0
-
+			right: -93px
+		
+		&-list
+			padding: 35px 0
+			margin: -35px 0
 
 .cat-item
 	
@@ -2665,7 +2897,29 @@ button, input, select
 	display: none
 
 .big-slider
-	margin: rem(65) -15px 0
+	margin: rem(65) -31px 0
+	transform: translate(-16px, 0)
+
+	&__arrows
+		display: flex
+		justify-content: center
+
+		.slick
+
+			&-arrow
+				border-radius: 50%
+				border: none
+				background: url("../img/main-catalog-arrow.png") center no-repeat, $second-color
+				+size(62px)
+				box-shadow: 0px 4px 13px 0px rgba(9, 3, 5, .31)
+				z-index: 5
+				transform: translate(0, -50%)
+
+				&:not(:first-child)
+					margin-left: 29px
+
+			&-prev
+				transform: rotate(180deg) translate(0, 50%)
 
 	&__cont
 		overflow: hidden
@@ -2673,6 +2927,10 @@ button, input, select
 		// position: relative
 		padding-bottom: 41px
 		margin-bottom: -41px
+
+		.wrapper
+			position: relative
+			z-index: 4
 
 	&:not(.slick-slide)
 		display: flex
@@ -2742,7 +3000,7 @@ button, input, select
 	background: url("../img/inst-bg.png") center right no-repeat
 	background-size: cover
 	flex: 1 1 auto
-	padding: 2rem rem(23) rem(58)
+	padding: 1.8rem 1.4375rem 2.5rem
 	position: relative
 	// z-index: 5
 	font-weight: 400
@@ -2816,6 +3074,10 @@ button, input, select
 		height: 120px;
 		padding: 25px 0;
 		padding-bottom: 0;
+		margin: 0 -15px
+
+		.card__slick_slide
+			margin: 0 15px
 		
 		img
 			height: 70px;

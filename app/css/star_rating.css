@@ -3,8 +3,7 @@
 #reviewStars-input label, 
 #reviewStars-input label:hover, 
 #reviewStars-input label:hover ~ label {
-  background: url(../img/card-ico-star-white.png) no-repeat;
-  -webkit-background-size: contain;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAANCAYAAACZ3F9/AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAYFJREFUeNpUkr9KA0EQxneWQ0ghpLUQLQIqElFQsBPBLpzEIkjwCSzF4iRgoVjY6Aso2CkIFoJ2IoJFLAUJIojBQPQBgrbrb/d2z7slszPfzDd/di4yqCXKHYOIeMOdOvKGvBIIhFTzi4zxfMQAJKSJJOAesXVlfDExWQ+tcicUQJZIGgEvg2ZcQFThRHmcdnfjbKOOwCXwPkXqknuGNSMqRZhjBCs4KvgnSViE2BSxpcwW/kv8fXhf8L6Jde2oOwTf0cfQptFdZBXCD/oXWUGu4HwiMc1OwGW6qQMS+lQ9xKayeRApjN8Bd9AxcIpuNbz32s98htpIE1XTbiJbZFpkDXWKHdsk69DuFY4kd1y7vL9hl2CXYbJPKlWuC/BTWKJ2m5bsHzDO/eKHnOdq4GYq08a/kP8c+r+qI1fpNMB3DrjGTpj6GTxK8TlkKIyviyMpRjJ76A98E75rC84mukT32fD+yPgs1DCER3CLgj3lCtq3qhuit1Bicsoq9ak/AQYArm2cEa3tBGIAAAAASUVORK5CYII=) no-repeat;
   background-size: contain;
 }
 .info #reviewStars-input{
@@ -25,8 +24,7 @@
 
 #reviewStars-input input:checked ~ label {
   /*background-position: 0 -20px;*/
-  background: url(../img/card-ico-star-red-big.png) no-repeat;
-  -webkit-background-size: contain;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAVCAYAAABCIB6VAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAATJJREFUeNpi/OxdzkAkCAfiI0D8lBjFTAzEg2ooZqCmwR5ArAvEyUAsTU2D86E0GxCXUstgLaiLYSCNGFczkeBaGOAkxtWEDJYA4lgs4mlQOZyABYltDMSKQCwHxOrQyFKEupABi6ufA/F3IL6GhX4HMrgRiOsYyAOcUAeBgA2U/gLEnqCgqAfibgbqALChoIwEC+MyIC6g0NCPQOwGzZ0okTcRiCOA+BcZhr4DYmcgPo4rVayE2vqFBENfQw09Syi5HQTiRBIMngXEF4hNx6IkGGxGSgbRpZXBWiQYzA/NUGS5GJRSWoE4CFt4AoElMQaDSi4hJP56INYG4hoo2xCaLG/iCw4mPMFwGYgdoK68gyVZgixLAeJHxBoMcnEW1GUH8YTtXyCeC8SqUJoZWRIgwAAWLzUT+degowAAAABJRU5ErkJggg==) no-repeat;
   background-size: contain;
   height: 19px;
   width: 19px;
@@ -34,8 +32,7 @@
 
 #reviewStars-input label {
   /*background-position: 0 0;*/
-  background: url(../img/card-ico-star-white.png) no-repeat;
-  -webkit-background-size: contain;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAANCAYAAACZ3F9/AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAYFJREFUeNpUkr9KA0EQxneWQ0ghpLUQLQIqElFQsBPBLpzEIkjwCSzF4iRgoVjY6Aso2CkIFoJ2IoJFLAUJIojBQPQBgrbrb/d2z7slszPfzDd/di4yqCXKHYOIeMOdOvKGvBIIhFTzi4zxfMQAJKSJJOAesXVlfDExWQ+tcicUQJZIGgEvg2ZcQFThRHmcdnfjbKOOwCXwPkXqknuGNSMqRZhjBCs4KvgnSViE2BSxpcwW/kv8fXhf8L6Jde2oOwTf0cfQptFdZBXCD/oXWUGu4HwiMc1OwGW6qQMS+lQ9xKayeRApjN8Bd9AxcIpuNbz32s98htpIE1XTbiJbZFpkDXWKHdsk69DuFY4kd1y7vL9hl2CXYbJPKlWuC/BTWKJ2m5bsHzDO/eKHnOdq4GYq08a/kP8c+r+qI1fpNMB3DrjGTpj6GTxK8TlkKIyviyMpRjJ76A98E75rC84mukT32fD+yPgs1DCER3CLgj3lCtq3qhuit1Bicsoq9ak/AQYArm2cEa3tBGIAAAAASUVORK5CYII=) no-repeat;
   background-size: contain;
   height: 19px;
   width: 19px;
@@ -47,8 +44,7 @@
 #reviewStars-input label:hover, 
 #reviewStars-input label:hover ~ label {
   /*background-position: 0 -20px;*/
-  background: url(../img/card-ico-star-red-big.png) no-repeat;
-  -webkit-background-size: contain;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAVCAYAAABCIB6VAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAATJJREFUeNpi/OxdzkAkCAfiI0D8lBjFTAzEg2ooZqCmwR5ArAvEyUAsTU2D86E0GxCXUstgLaiLYSCNGFczkeBaGOAkxtWEDJYA4lgs4mlQOZyABYltDMSKQCwHxOrQyFKEupABi6ufA/F3IL6GhX4HMrgRiOsYyAOcUAeBgA2U/gLEnqCgqAfibgbqALChoIwEC+MyIC6g0NCPQOwGzZ0okTcRiCOA+BcZhr4DYmcgPo4rVayE2vqFBENfQw09Syi5HQTiRBIMngXEF4hNx6IkGGxGSgbRpZXBWiQYzA/NUGS5GJRSWoE4CFt4AoElMQaDSi4hJP56INYG4hoo2xCaLG/iCw4mPMFwGYgdoK68gyVZgixLAeJHxBoMcnEW1GUH8YTtXyCeC8SqUJoZWRIgwAAWLzUT+degowAAAABJRU5ErkJggg==) no-repeat;
   background-size: contain;
   height: 19px;
   width: 19px;

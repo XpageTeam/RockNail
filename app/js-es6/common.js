@@ -11,6 +11,7 @@ $(document).ready(function(){
 	$('.card__slick_nav').slick({
 		slidesToShow: 5,
 		slidesToScroll: 1,
+		slide: ".card__slick_slide",
 		asNavFor: '.card__slick',
 		focusOnSelect: true,
 		arrows: false,
@@ -81,10 +82,12 @@ class headSubmenu{
 	static open(){
 		$("body").addClass("js__submenu-opened");
 		$(".head__submenu").addClass("js__opened");
+		$(".head-title").addClass("js__active");
 	}
 	static close(){
 		$("body").removeClass("js__submenu-opened");
 		$(".head__submenu").removeClass("js__opened");
+		$(".head-title").removeClass("js__active");
 	}
 	static toggle(){
 		if ($("body").hasClass("js__submenu-opened"))
@@ -118,13 +121,7 @@ const loadScripts = e => {
 	});
 
 	$(".head-title").click(e => {
-		headSubmenu.toggle()
-	});
-
-	$(".catalog-slider").slick({
-		slidesToShow: 4,
-		slidesToScroll: 1,
-		slide: ".catalog-slider__slide",
+		headSubmenu.toggle();
 	});
 
 	$(".big-slider").slick({
@@ -136,7 +133,9 @@ const loadScripts = e => {
 		// arrows: false,
 		appendArrows: $(".big-slider__arrows"),
 		// variableWidth: true
-	})
+	}).on("setPosition", slick => {
+		$(".big-slider__arrows").width($(".big-slider__slide:eq(0)").width())
+	});
 };
 
 
@@ -251,7 +250,8 @@ $(e => {
 			count: 1,
 		},
 	]);
-})
+});
+
 
 $(function() {
 	if($(window).width() > 790) {
@@ -262,15 +262,19 @@ $(function() {
 		});
 	};
 
-	// $(".cart-current-city .selectize").each((i, el) =>{
-	// 	let $this = $(el);
-	// 	$(".selectize").selectize();
-	// });
+	window.catSlider = new catalogSlider();
+
+	window.subImg = new submenuImg(".head-submenu__column--img img");
 
 	var asideClone = $('.catalog .aside').clone().addClass('js__catalog-filter');
 	$('.catalog .title-block__title').append(asideClone);
 
-
+	$(".main-slider").slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		slide: ".main-slider__slide",
+		dots: true,
+	});
 
 	$('.catalog-filter select').find('option').each(function() {
 
@@ -299,7 +303,20 @@ $(function() {
 
 	});
 
+	$(".head-submenu__menu-link").hover(function(){
+		let $this = $(this);
 
+		subImg.src = $this.attr("data-img-src");
+	});
+
+	$("body").click(e => {
+		let $target = $(e.target);
+
+		if (!$target.is($(".head-title"))
+			&& !$target.is($(".head-submenu"))
+			&& !$(".head-submenu").has(e.target).length)
+			headSubmenu.close();
+	});
 
 
 	$('.aside-title').click(function(){
@@ -322,12 +339,90 @@ $(function() {
 			300
 		);
 	});
-
-
-
-
 });
 
+class submenuImg{
+	set $img(selector){
+		this._img = document.querySelectorAll(selector)[0];
+	}
+	get $img(){
+		return $(this._img)
+	}
+	set src(src){
+		this._src = src;
+		this.$img.attr("src", this._src);
+	}
+	get src(){
+		return this._src
+	}
 
+	constructor(selector){
+		this.$img = selector;
 
+		this.getFirstImg();
+	}
 
+	getFirstImg(){
+		let $activeLink = $(".head-submenu__menu-link.active");
+
+		if (!$activeLink.length)
+			this.src = $activeLink.attr("data-img-src")
+		else
+			this.src = $($(".head-submenu__menu-link")[0]).attr("data-img-src")
+	}
+}
+
+class catalogSlider{
+	set activeId(id){
+		if (this._activeSliderId == id)
+			return
+
+		this._activeSliderId = id;
+
+		this.changeSlider(id).changeTab(id);
+	}
+
+	constructor(){
+		this.$sliders = $(".catalog-slider").slick({
+			slidesToShow: 4,
+			slidesToScroll: 1,
+			slide: ".catalog-slider__slide",
+			// autoplay: true,
+			autoplaySpeed: 4000,
+		});
+
+		if (!this.$sliders.length)
+			return
+
+		// $(".catalog-slider.active").slick("slickPlay");
+
+		this.activeId = $(".catalog-slider.active").index();
+
+		this.bindEvents()
+	}
+	changeSlider(newSliderId){
+		$(".catalog-slider.active").slick("slickPause");
+		$(".catalog-slider.active").removeClass("active");
+
+		$(".catalog-slider:eq("+newSliderId+")").addClass("active")
+			.slick("slickPlay");
+
+		return this;		
+	}
+	changeTab(newSliderId){
+		$(".tabs__one.active").removeClass("active");
+
+		$(".tabs__one:eq("+newSliderId+")").addClass("active");
+
+		return this;	
+	}
+
+	bindEvents(){
+		let self = this;
+		$(".tabs__one").click(function(){
+			let $this = $(this);
+
+			self.activeId = $this.attr("data-id");
+		})
+	}
+}
