@@ -350,9 +350,11 @@ $output-bourbon-deprecation-warnings: false;
 			justify-content: center;
 			cursor: pointer;
 			border-bottom: 1px solid #8b69fc !important;
+			padding-bottom: 3px;
 			&:hover
 				color: #d162af;
 				border: 1px solid #d162af;
+				border-bottom: 1px solid #d162af !important;
 		.active
 			background-color: #9767f3;
 			color: #fff;
@@ -360,6 +362,7 @@ $output-bourbon-deprecation-warnings: false;
 				background-color: #9767f3;
 				color: #fff;
 				border: 1px solid #9767f3;
+				border-bottom: 0 !important
 	&_form
 		background-color: #fff;
 		width: 100%;
@@ -503,6 +506,7 @@ $output-bourbon-deprecation-warnings: false;
 		align-items: center;
 		justify-content: center;
 		cursor: pointer;
+		padding-bottom: 3px;
 		&:hover
 			color: #d162af;
 			border: 1px solid #d162af;
@@ -515,6 +519,7 @@ $output-bourbon-deprecation-warnings: false;
 		align-items: center;
 		justify-content: center;
 		border-bottom: 1px solid transparent
+		padding-bottom: 4px;
 		&:hover
 			color: #fff !important;
 			background-color: #785ad9;
@@ -584,6 +589,19 @@ $output-bourbon-deprecation-warnings: false;
 	.favorite-
 		.cat-item
 			width: calc((100% - 35px * 3) / 3);
+	// popup--------------------------------
+	.fancybox-stage 
+		.card__top
+			flex-direction: column;
+			padding: 40px;
+			.fancybox-close-small
+				top: 0px;
+				right: 0px;
+		.card__slider
+			width: 100%;
+		.card__sample
+			width: 100%;
+	// popup--------------------------------END
 @media screen and (max-width: 900px)
 	// Доставка и оплата-------------------------
 	.delivery-
@@ -724,6 +742,11 @@ $output-bourbon-deprecation-warnings: false;
 	.favorite-
 		.main-title
 			font-size: 35px;
+	// popup--------------------------
+	.fancybox-stage 
+		.card__top
+			padding-right: 15px;
+			padding-left: 15px;
 @media screen and (max-width: 430px)
 	.login-_form 
 		form

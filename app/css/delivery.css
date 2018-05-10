@@ -445,11 +445,13 @@
   justify-content: center;
   cursor: pointer;
   border-bottom: 1px solid #8b69fc !important;
+  padding-bottom: 3px;
 }
 
 .login-__form_tabs a:hover {
   color: #d162af;
   border: 1px solid #d162af;
+  border-bottom: 1px solid #d162af !important;
 }
 
 .login-__form_tabs .active {
@@ -461,6 +463,7 @@
   background-color: #9767f3;
   color: #fff;
   border: 1px solid #9767f3;
+  border-bottom: 0 !important;
 }
 
 .login-_form {
@@ -662,6 +665,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  padding-bottom: 3px;
 }
 
 .popup_buy-__close:hover {
@@ -678,6 +682,7 @@
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid transparent;
+  padding-bottom: 4px;
 }
 
 .popup_buy-__buy:hover {
@@ -776,6 +781,20 @@
   }
   .favorite- .cat-item {
     width: calc((100% - 35px * 3) / 3);
+  }
+  .fancybox-stage .card__top {
+    flex-direction: column;
+    padding: 40px;
+  }
+  .fancybox-stage .card__top .fancybox-close-small {
+    top: 0px;
+    right: 0px;
+  }
+  .fancybox-stage .card__slider {
+    width: 100%;
+  }
+  .fancybox-stage .card__sample {
+    width: 100%;
   }
 }
 
@@ -905,6 +924,10 @@
   }
   .favorite- .main-title {
     font-size: 35px;
+  }
+  .fancybox-stage .card__top {
+    padding-right: 15px;
+    padding-left: 15px;
   }
 }
 
