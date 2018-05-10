@@ -2,6 +2,14 @@ $output-bourbon-deprecation-warnings: false;
 @import "bourbon"
 @import "vars"
 @import "functions"
+
+.to_top
+	position: absolute;
+	right: 50px;
+	top: 40px;
+	transition: 0.5s;
+	&:hover
+		transform: scale(1.1);
 // Доставка и оплата-------------------------
 .delivery-
 	.fix-1 

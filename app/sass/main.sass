@@ -430,7 +430,7 @@ $output-bourbon-deprecation-warnings: false;
 				left: calc(50% - 8px)
 				transform-origin: right
 				transform: none
-
+				background-color: #8b69fc;
 .js__catalog-filter
 	display: none
 
@@ -660,7 +660,7 @@ button, input, select
 	background: none
 
 .cart-link
-	background: #fff
+	// background: #fff
 	border-radius: 50%
 	background: url("../img/ico-cart.png") center bottom 8px no-repeat, #000
 	display: block
@@ -1161,7 +1161,7 @@ button, input, select
 				top: -25px
 				left: -50%
 				transition: opacity .3s ease
-
+				text-transform: lowercase;
 			&:after 
 				content: ""
 				position: absolute
@@ -1172,7 +1172,7 @@ button, input, select
 				background: url('../img/ico-arrow-nail.png') no-repeat center
 				background-size: contain
 				opacity: 0
-
+				z-index: 2;
 			img 
 				max-width: inherit
 				pointer-events: none
@@ -1360,7 +1360,7 @@ button, input, select
 		background: currentColor
 		+size(4px)
 		top: calc(50% - 4px)
-		right: 46px
+		right: 50%
 
 .head
 	position: fixed
@@ -1464,9 +1464,10 @@ button, input, select
 	letter-spacing: .02em
 	border: none
 	background: none
-
+	span 
+		margin: 0 5px;
 .cart-link
-	background: #fff
+	// background: #fff
 	border-radius: 50%
 	background: url("../img/ico-cart.png") center bottom 8px no-repeat, #000
 	display: block
@@ -1618,7 +1619,7 @@ button, input, select
 
 .footer
 	font-weight: 400
-
+	position: relative;
 	&__bot
 		background: url("../img/footer-bot-decor.png") center bottom no-repeat, #000
 
@@ -2497,6 +2498,7 @@ button, input, select
 			
 			font-weight: bold
 			margin-left: 11px
+			white-space: nowrap;
 
 .cart-footer
 	display: flex
@@ -2575,6 +2577,7 @@ button, input, select
 		font-size: rem(20)
 		font-weight: bold
 		color: $second-color
+		white-space: nowrap;
 
 
 	&__footer

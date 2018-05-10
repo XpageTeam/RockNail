@@ -1,4 +1,15 @@
 @charset "UTF-8";
+.to_top {
+  position: absolute;
+  right: 50px;
+  top: 40px;
+  transition: 0.5s;
+}
+
+.to_top:hover {
+  transform: scale(1.1);
+}
+
 .delivery- .fix-1 img {
   left: 0;
 }

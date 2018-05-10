@@ -71,7 +71,16 @@ $(document).ready(function(){
 	$(".popup_buy-__close").click(function(){
 		$.fancybox.close()
 	});
-	
+	 // плавная прокрутка по якорю
+   $("a.to_top").click(function() {
+      $("html, body").animate({
+         scrollTop: 0
+      }, {
+         duration: 500,
+         easing: "swing"
+      });
+      return false;
+   });
 });
 
 // sergey new code------------ END
