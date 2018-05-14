@@ -766,6 +766,10 @@
   display: flex !important;
 }
 
+.fancy-active_popup .fancybox-slide:before {
+  display: none;
+}
+
 @media screen and (min-width: 1000px) {
   .search- .big-slider__title-cont, .favorite- .big-slider__title-cont, .delivery- .big-slider__title-cont {
     margin-top: 55px;

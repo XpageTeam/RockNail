@@ -129,6 +129,16 @@ const loadScripts = e => {
 		afterClose(){
 			$("body").removeClass("fancy-active")
 		},
+
+	});
+	// slick in fancybox
+	$(".fancybox_popup").fancybox({
+		beforeShow(){
+			$("body").addClass("fancy-active").addClass("fancy-active_popup")
+		},
+		afterClose(){
+			$("body").removeClass("fancy-active").removeClass("fancy-active_popup")
+		},
 		afterShow(){
 			// слайдер
 			$(".card__slick").slick({
