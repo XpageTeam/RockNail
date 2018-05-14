@@ -1,6 +1,7 @@
 
 // sergey new code-------------
 $(document).ready(function(){
+	loadScripts();
 	// слайдер
 	$(".card .card__slick").slick({
 		slidesToShow: 1,
