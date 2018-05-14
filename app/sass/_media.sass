@@ -287,7 +287,7 @@ $output-bourbon-deprecation-warnings: false;
 				width: 100%
 
 			&:nth-child(2), &:nth-child(3)
-				width: 48%
+				width: calc( 50% - 13px)
 
 			&:nth-child(3)
 				margin-left: 26px
@@ -305,16 +305,17 @@ $output-bourbon-deprecation-warnings: false;
 					margin-bottom: 0
 					margin-right: auto
 
-					&:after
-						content: ""
-						display: inline-block
-						+size(15px)
-						background: url(../img/ico-select-arrow.png) center no-repeat
-						margin-left: 10px
+					// &:after
+					// 	content: ""
+					// 	display: inline-block
+					// 	+size(15px)
+					// 	background: url(../img/ico-select-arrow.png) center no-repeat
+					// 	margin-left: 10px
 
 				.forms__input
 					border: 0 !important
-					width: auto
+					// width: auto
+					width: 180px
 					height: auto !important
 
 
@@ -389,7 +390,7 @@ $output-bourbon-deprecation-warnings: false;
 			+size(10px)
 
 	.gradient-btn
-		padding: 13px 3rem
+		// padding: 13px 3rem
 
 	.btn-more
 		justify-content: flex-start
@@ -425,7 +426,7 @@ $output-bourbon-deprecation-warnings: false;
 		font-size: 20px
 
 	.gradient-btn
-		padding: 13px 26px
+		// padding: 13px 26px
 
 	.cart-aside__mobile-btn
 		padding: 10px

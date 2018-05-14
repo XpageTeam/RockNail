@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title окна
+		include inc/head.jade
+		include inc/css.jade
+	body.inner.loading
+		#page-wr
+			include inc/header.jade
+			main#content.bg_pic
+				.content
+					.titile-block
+						.wrapper
+							.title-block__crumbs
+								.bread-crumbs
+									a.bread-crumbs__link(href='#') Главная
+									span.bread-crumbs__this Избранное
+					.pop_up-
+						//- .wrapper
+						//- 	.big-slider__title-cont
+						//- 		.big-slider__title-img
+						//- 			img(src="img/title-img.png")
+						//- 		.big-slider__title
+						//- 			.main-title Pop-up
+						//- 			.main-subtitle Rock Nail
+						.main-catalog__cont
+							.wrapper
+								.favorite-__container
+									//- окна
+									ul
+										li
+											//- окно 1
+											a(href="#popup-1").fancybox_popup pop-up быстрый просмотр
+											.card__top.sale#popup-1.popup
+												.card__slider
+													.card__slick
+														.card__slick_slide
+															img(src="img/photos/cat-img-0.png", alt="")
+														.card__slick_slide
+															img(src="img/photos/cat-img-1.png", alt="")
+														.card__slick_slide
+															img(src="img/photos/cat-img-2.png", alt="")
+														.card__slick_slide
+															img(src="img/photos/cat-img-3.png", alt="")
+														.card__slick_slide
+															img(src="img/photos/cat-img-2.png", alt="")
+														//- .card__slick_slide
+														//- 	img(src="img/photos/architecture-1.jpg", alt="")
+													.card__slick_nav
+														.card__slick_slide
+															img(src="img/photos/cat-img-0.png", alt="")
+														.card__slick_slide
+															img(src="img/photos/cat-img-1.png", alt="")
+														.card__slick_slide
+															img(src="img/photos/cat-img-2.png", alt="")
+														.card__slick_slide
+															img(src="img/photos/cat-img-3.png", alt="")
+														.card__slick_slide
+															img(src="img/photos/cat-img-2.png", alt="")
+														//- .card__slick_slide
+														//- 	img(src="img/photos/architecture-1.jpg", alt="")
+												.card__sample
+													h1 Гель-лак RockNail Baby Nude 
+													h2 #045 Blue Ocean
+													.card__sample_slider
+														a(href="#").card__sample_nail.card__sample_btn.card__sample_btn_back
+															img(src="img/ico-btn-right.png", alt="")
+															div
+																div Еще 10
+																div оттенков
+														a(href="#").card__sample_nail
+															img(src="img/photos/nail.png", alt="")
+															div #045
+															div Blue Ocean
+														a(href="#").card__sample_nail
+															img(src="img/photos/nail.png", alt="")
+															div #045
+															div Blue Ocean
+														a(href="#").card__sample_nail
+															img(src="img/photos/nail.png", alt="")
+															div #045
+															div Blue Ocean
+														a(href="#").card__sample_nail
+															img(src="img/photos/nail.png", alt="")
+															div #045
+															div Blue Ocean
+														a(href="#").card__sample_nail
+															img(src="img/photos/nail.png", alt="")
+															div #045
+															div Blue Ocean
+														a(href="#").card__sample_nail
+															img(src="img/photos/nail.png", alt="")
+															div #045
+															div Blue Ocean
+														a(href="#").card__sample_nail
+															img(src="img/photos/nail.png", alt="")
+															div #045
+															div Blue Ocean
+														a(href="#").card__sample_nail
+															img(src="img/photos/nail.png", alt="")
+															div #045
+															div Blue Ocean
+														a(href="#").card__sample_nail
+															img(src="img/photos/nail.png", alt="")
+															div #045
+															div Blue Ocean
+														a(href="#").card__sample_nail
+															img(src="img/photos/nail.png", alt="")
+															div #045
+															div Blue Ocean
+														a(href="#").card__sample_nail
+															img(src="img/photos/nail.png", alt="")
+															div #045
+															div Blue Ocean
+														a(href="#").card__sample_nail
+															img(src="img/photos/nail.png", alt="")
+															div #045
+															div Blue Ocean
+														a(href="#").card__sample_nail.card__sample_btn
+															img(src="img/ico-btn-right.png", alt="")
+															div
+																div Еще 10
+																div оттенков
+													.card__select
+														.forms-input-cont.mobile
+															.forms__label Другие оттенки:
+															img(src="", alt="").ico-select-img
+															select.forms__input.forms__input--select
+																option(data-src="img/ico-color-catalog1.png") #045 Blue Ocean
+																option(data-src="img/ico-color-catalog2.png") #046 Blue Ocean
+																option(data-src="img/ico-color-catalog3.png") #047 Blue Ocean
+																option(data-src="img/ico-color-catalog1.png") #048 Blue Ocean
+																option(data-src="img/ico-color-catalog1.png") #048 Blue Ocean
+																option(data-src="img/ico-color-catalog1.png") #048 Blue Ocean
+																option(data-src="img/ico-color-catalog1.png") #048 Blue Ocean
+																
+													.card__sample_buy
+														.cat-item__bot
+															.cat-item__bot-price
+																.cat-price_sale 1500 Р
+																.cat-price 2500 Р
+															.card__sample_input.exist_btn
+																input(value="1")
+																a(href="#-") -
+																a(href="#+") +
+															span
+																.gradient-btn.gradient-btn__wrap.not_exist_btn
+																	input.bot-form__submit(type="submit" value="СООБЩИТЬ О ПОСТУПЛЕНИИ")
+																.gradient-btn.gradient-btn__wrap.exist_btn
+																	input.bot-form__submit(type="submit" value="В КОРЗИНУ")
+																.cat-item__bot-favorite
+																	a.favorite-add(href="#")
+																		span.favorite-add__title избранное
+										li
+											//- окно 2
+											a(href="#popup-2").fancybox pop-up вход и регистрация
+											.login-_form.form#popup-2.popup
+												.forms__title Вход 
+												.login-__form_tabs
+													a(href="#1" data-id="1").active Войти
+													a(href="#1" data-id="2") Регистрация
+												//- форма входа
+												form(vh-on:submit="validate_form" action="#" data-id="1" data-data-var="datavar").active
+													.forms-wrap
+														.forms-input-cont.imp_input.mail_ico
+															input.forms__input(placeholder="" name="prop_12"  type="text")
+															label.forms__label Е-mail:
+															.forms__error-message {Поле не заполнено}
+																i.forms__error-message-icon
+														.forms-input-cont.imp_input.pass_ico
+															input.forms__input(placeholder=""  name="prop_12" type="password")
+															label.forms__label Пароль:
+															.forms__error-message {Поле не заполнено}
+																i.forms__error-message-icon
+													.card__form_btns
+														a(href="#") Забыли пароль?
+														.gradient-btn.gradient-btn__wrap.exist_btn
+															input.bot-form__submit(type="submit" value="Войти")
+												//- форма регистрации
+												form(vh-on:submit="validate_form" action="#" data-id="2" data-data-var="datavar")
+													.forms-wrap
+														.forms-input-cont.imp_input.mail_ico
+															input.forms__input(placeholder="" name="prop_12"  type="text")
+															label.forms__label Е-mail:
+															.forms__error-message {Поле не заполнено}
+																i.forms__error-message-icon
+														.forms-input-cont.imp_input.pass_ico
+															input.forms__input(placeholder=""  name="prop_12" type="password")
+															label.forms__label Пароль:
+															.forms__error-message {Поле не заполнено}
+																i.forms__error-message-icon
+														.forms-input-cont.imp_input.pass_ico
+															input.forms__input(placeholder=""  name="prop_12" type="password")
+															label.forms__label Повторите пароль:
+															.forms__error-message {Поле не заполнено}
+																i.forms__error-message-icon
+													.card__form_btns
+														.gradient-btn.gradient-btn__wrap.exist_btn
+															input.bot-form__submit(type="submit" value="Зарегистрироваться")
+												.social_login.aside
+													.social_login_title 
+														span Войти с помощью
+													.aside-soc
+														a.soc__link(href="#")
+															figure.soc__link
+																img(src="img/ico-inst.png")
+														a.soc__link(href="#")
+															figure.soc__link
+																img(src="img/ico-vk.png")
+														a.soc__link(href="#")
+															figure.soc__link
+																img(src="img/ico-fb.png")
+										li
+											//- окно 3
+											a(href="#popup-3").fancybox pop-up Товар добавлен в Корзину!
+											.popup_buy-#popup-3.popup
+												.popup_buy-__title Товар добавлен в Корзину!
+												.popup_buy-__block
+													.popup_buy-__img
+														img(src="img/photos/cat-img-3.png", alt="")
+													.popup_buy-__text
+														.popup_buy-__text_top Гель-лак Rock Nail Baby Nude
+														.popup_buy-__text_mid 045 Blue Ocean
+														.popup_buy-__text_bot 399 Р
+												.popup_buy-__block_info
+													div В вашей корзине:
+													div <span>11</span> товаров на сумму <br><span class="price">12255</span> <b>Р</b>
+												.popup_buy-__btns
+													a(href="#").popup_buy-__close Продолжить покупки
+													a(href="#").popup_buy-__buy Оформить заказ
+										li
+											//- окно 4
+											a(href="#popup-4").fancybox pop-up Купить в 1
+											.login-_form.fast_buy.form#popup-4.popup
+												.forms__title Быстрый заказ 
+												form(vh-on:submit="validate_form" action="#" data-id="1" data-data-var="datavar").active
+													.forms-wrap
+														.forms-input-cont.imp_input
+															input.forms__input(placeholder="Имя, фамилия" required="" name="prop_12"  type="text")
+															label.forms__label Имя:
+															.forms__error-message {Поле не заполнено}
+																i.forms__error-message-icon
+														.forms-input-cont.imp_input
+															input.forms__input(placeholder="+7 (___) ___-__-__"  required="" name="prop_12" type="tel" data-form-input-type="phone")
+															label.forms__label Телефон:
+															.forms__error-message {Поле не заполнено}
+																i.forms__error-message-icon
+														.forms-input-cont.forms-input-cont--textarea
+															textarea.forms__input.forms__input--textarea( placeholder="" )
+															label.forms__label Комментарий к заказу:
+															.forms__error-message 
+																	i.forms__error-message-icon
+													.card__form_btns
+														.gradient-btn.gradient-btn__wrap.exist_btn
+															input.bot-form__submit(type="submit" value="отправить заказ")
+													.forms-wrap
+														.forms-checkbox
+															input(type="checkbox").forms__checkbox#checkbox-1
+															label(for="checkbox-1").forms__checkbox-label Согласен на обработку персональных данных
+						.bot-form__cont
+							.wrapper
+								.bot-form__title #rocknailwork
+								.bot-form__subtitle Добавляй свои работы <br /> и попади в нашу лену
+								.bot-form
+									form(action="#")
+										.bot-form__inputs
+											.bot-form__input-cont
+												label.bot-form__label Подпишись <br /> на наши новости
+												input.bot-form__input(type="email" placeholder="Почта")
+											.bot-form__input-cont.bot-form__input-cont--submit
+												label.bot-form__label Будь первой, узнавай <br />о наших акциях и конкурсах
+												.gradient-btn.gradient-btn__wrap
+													input.bot-form__submit(type="submit" value="Подписаться")
+					//- include inc/bot-blocks.jade
+			include inc/footer.jade
+		include inc/scripts.jade

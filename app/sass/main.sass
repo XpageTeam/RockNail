@@ -3,7 +3,7 @@ $output-bourbon-deprecation-warnings: false;
 @import "vars"
 @import "base"
 @import "functions"
-
+1
 *[v-cloak]
 	display: none
 
@@ -20,6 +20,8 @@ $output-bourbon-deprecation-warnings: false;
 		left: 0
 		+size(14px)
 		background: url('../img/ico-quick-view.png') no-repeat center
+
+.cat-item
 	
 .btn 
 	cursor: pointer		
@@ -430,7 +432,7 @@ $output-bourbon-deprecation-warnings: false;
 				left: calc(50% - 8px)
 				transform-origin: right
 				transform: none
-
+				background-color: #8b69fc;
 .js__catalog-filter
 	display: none
 
@@ -1030,14 +1032,14 @@ button, input, select
 			display: none !important
 	&.single 
 		.selectize-input
-			&:after
-				display: inline-block
-				position: static
-				margin-left: 7px
-				width: 11px
-				height: 11px
-				background: url('../img/ico-select-arrow.png') no-repeat center
-				border: 0
+			// &:after
+			// 	display: inline-block
+			// 	position: static
+			// 	margin-left: 7px
+			// 	width: 11px
+			// 	height: 11px
+			// 	background: url('../img/ico-select-arrow.png') no-repeat center
+			// 	border: 0
 
 
 		
@@ -1164,7 +1166,7 @@ button, input, select
 				top: -25px
 				left: -50%
 				transition: opacity .3s ease
-
+				text-transform: lowercase;
 			&:after 
 				content: ""
 				position: absolute
@@ -1175,7 +1177,7 @@ button, input, select
 				background: url('../img/ico-arrow-nail.png') no-repeat center
 				background-size: contain
 				opacity: 0
-
+				z-index: 2;
 			img 
 				max-width: inherit
 				pointer-events: none
@@ -1363,7 +1365,7 @@ button, input, select
 		background: currentColor
 		+size(4px)
 		top: calc(50% - 4px)
-		right: 46px
+		right: 50%
 
 .js__submenu-opened
 
@@ -1567,7 +1569,7 @@ button, input, select
 			opacity: 1
 
 .cart-link
-	background: #fff
+	// background: #fff
 	border-radius: 50%
 	background: url("../img/ico-cart.png") center bottom 8px no-repeat, #000
 	display: block
@@ -1801,7 +1803,7 @@ button, input, select
 
 .footer
 	font-weight: 400
-
+	position: relative;
 	&__bot
 		background: url("../img/footer-bot-decor.png") center bottom no-repeat, #000
 
@@ -2624,7 +2626,7 @@ button, input, select
 	display: flex
 	align-items: center
 	padding: 11px 11px 7px 54px
-	background: #fff
+	// background: #fff
 	border: 2px solid $border-color
 	color: #919191
 	width: calc((100% - 28px * 3) / 3 )
@@ -2720,7 +2722,7 @@ button, input, select
 		margin-left: auto
 		font-size: rem(25)
 		color: $second-color
-
+		padding-left: 5px;
 		span 
 			font-weight: 500
 		
@@ -2729,6 +2731,7 @@ button, input, select
 			
 			font-weight: bold
 			margin-left: 11px
+			white-space: nowrap;
 
 .cart-footer
 	display: flex
@@ -2807,6 +2810,7 @@ button, input, select
 		font-size: rem(20)
 		font-weight: bold
 		color: $second-color
+		white-space: nowrap;
 
 
 	&__footer
@@ -3097,7 +3101,8 @@ button, input, select
 				background-color: #8b69fc;
 				left: 0;
 				top: 0
-
+		.card__slick_slide
+			margin-right: 30px
 	&__sample
 		width: 55%
 		padding-left: vw(40);
@@ -3116,7 +3121,7 @@ button, input, select
 		padding: 12px 5px;
 		font-size: 12px;
 		color: #787878;
-		width: calc(100% / 7);
+		width: calc(100% / 7 - 1px);
 		transition: 0.3s;
 		margin-bottom: 2px;
 		&:hover
@@ -3198,52 +3203,52 @@ button, input, select
 		// padding-top: 100px;
 	&__select
 		display: none;
-	.cat-price_sale
-		color: #cc2a5c;
-		font-size: 35px;
-		font-weight: bold;
-		display: none;
-		white-space: nowrap;
+	// .cat-price_sale
+	// 	color: #cc2a5c;
+	// 	font-size: 35px;
+	// 	font-weight: bold;
+	// 	display: none;
+	// 	white-space: nowrap;
 
-	// sale
-	.sale
-		.cat-price_sale
-			display: block;
-		.card__slider
-			&:after
-				content: ""
-				background: url(../img/card-ico-sale.png) no-repeat;
-				width: 47px;
-				height: 47px;
-				position: absolute;
-				right: 0;
-				top: 0
-				z-index: 2;
-		.cat-price
-			font-size: 16px;
-			color: #858585;
-			font-weight: normal;
-			position: relative;
-			display: inline-block;
-			white-space: nowrap;
-			&:after
-				content: ""
-				width: 100%
-				height: 1px;
-				background-color: #000;
-				position: absolute;
-				left: 0;
-				top: 8px
-				z-index: 2;
-				transform: rotate(13deg);
-	// not_exist
-	.not_exist_btn
-		display: none;
-	.not_exist
-		.not_exist_btn
-			display: block;
-		.exist_btn
-			display: none;
+	// // sale
+	// .sale
+	// 	.cat-price_sale
+	// 		display: block;
+	// 	.card__slider
+	// 		&:after
+	// 			content: ""
+	// 			background: url(../img/card-ico-sale.png) no-repeat;
+	// 			width: 47px;
+	// 			height: 47px;
+	// 			position: absolute;
+	// 			right: 0;
+	// 			top: 0
+	// 			z-index: 2;
+	// 	.cat-price
+	// 		font-size: 16px;
+	// 		color: #858585;
+	// 		font-weight: normal;
+	// 		position: relative;
+	// 		display: inline-block;
+	// 		white-space: nowrap;
+	// 		&:after
+	// 			content: ""
+	// 			width: 100%
+	// 			height: 1px;
+	// 			background-color: #000;
+	// 			position: absolute;
+	// 			left: 0;
+	// 			top: 8px
+	// 			z-index: 2;
+	// 			transform: rotate(13deg);
+	// // not_exist
+	// .not_exist_btn
+	// 	display: none;
+	// .not_exist
+	// 	.not_exist_btn
+	// 		display: block;
+	// 	.exist_btn
+	// 		display: none;
 	// tabs-------------------------
 	&__tabs
 		// height: 500px;
@@ -3261,6 +3266,7 @@ button, input, select
 		color: #9667f4;
 		font-weight: bold;
 		margin-bottom: 30px;
+		text-transform: uppercase;
 
 	&__tabs_right_item
 		max-width: 270px;
@@ -3369,7 +3375,7 @@ button, input, select
 				border-bottom: 3px solid #d34c75
 				cursor: pointer;
 		.active
-			border-bottom: 3px solid #d34c75;
+			border-bottom: 3px solid #cf5fa9;
 			opacity: 1;
 	// slider------
 	&__main-catalog__slider-title
@@ -3587,7 +3593,7 @@ button, input, select
 				z-index: 4;
 			textarea
 				width: 100%;
-				height: 210px;
+				height: 210px !important;
 				max-height: none;
 				resize: none;
 
@@ -3668,7 +3674,66 @@ button, input, select
 		position: relative;
 		z-index: 4;
 		margin-bottom: -72px;
-
+// not_exist
+.not_exist_btn
+	display: none;
+.not_exist
+	.not_exist_btn
+		display: block;
+	.exist_btn
+		display: none;
+// sale
+.cat-price_sale
+	color: #cc2a5c;
+	font-size: 35px;
+	font-weight: bold;
+	display: none;
+	white-space: nowrap;
+.sale
+	.cat-price_sale
+		display: block;
+	.card__slider
+		&:after
+			content: ""
+			background: url(../img/card-ico-sale.png) no-repeat;
+			width: 47px;
+			height: 47px;
+			position: absolute;
+			right: 0;
+			top: 0
+			z-index: 2;
+	.cat-price
+		font-size: 16px;
+		color: #858585;
+		font-weight: normal;
+		position: relative;
+		display: inline-block;
+		white-space: nowrap;
+		&:after
+			content: ""
+			width: 100%
+			height: 1px;
+			background-color: #000;
+			position: absolute;
+			left: 0;
+			top: 8px
+			z-index: 2;
+			transform: rotate(13deg);
+.popup
+	display: none;
+.fancybox-close-small
+	top: 20px;
+	right: 20px;
+	&:hover
+		&:after
+			background: url(../img/card-ico-form-close.png) no-repeat;
+	&:after
+		content: ""
+		background: url(../img/card-ico-form-close.png) no-repeat;
+		width: 14px;
+		height: 14px;
+		top: calc(50% - 7px);
+		right: calc(50% - 7px);
 // media 
 @media screen and (max-width: 1000px)
 	.card
