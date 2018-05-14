@@ -148,8 +148,6 @@ const loadScripts = e => {
 		}
 	});
 
-	// afterShow
-
 	$(".search-button").click(e => {
 		headSearch.toggleSearch();
 
