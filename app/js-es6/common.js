@@ -3,6 +3,13 @@
 $(document).ready(function(){
 	loadScripts();
 	// слайдер
+
+	$(".color-select").each((i, el) => {
+		new colorSelect({
+			element: el,
+		});
+	});
+
 	$(".card .card__slick").slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,
@@ -424,5 +431,91 @@ class catalogSlider{
 
 			self.activeId = $this.attr("data-id");
 		})
+	}
+}
+
+class colorSelect{
+	set $select(element){
+		this._select = element
+	}
+	get $select(){
+		return $(this._select)
+	}
+
+	set curVal(val){
+		this._curVal = val;
+
+		this.curImgSrc = this.$select.find("option[value='"+val+"']").attr("data-src");
+		this.curItemText = this.$select.find("option[value='"+val+"']").text();
+	}
+	get curVal(){
+		return this._curVal
+	}
+
+	constructor(settings = {}){
+		this.$select = settings.element;
+
+		this.curVal = this.$select.val();
+
+		this.bindEvents();
+
+		this.makeSelect();
+	}
+
+	getOptions(){
+		this.options = "";
+
+		this.$select.find("option").each((i, el) => {
+			let $this = $(el);
+
+			if ($this.attr("value") == this.curVal)
+				return
+
+			let val = $this.attr("value"),
+				text = $this.text(),
+				imgSrc = $this.attr("data-src");
+
+			this.options +="<div class=\"fake-select__list-one\">\
+				<div data-val=\""+val+"\" class=\"fake-select__item\">\
+					<figure class=\"fake-select__item-img\">\
+						<img src=\""+imgSrc+"\"/>\
+					</figure>\
+					<div class=\"fake-select__item-text\">"+text+"</div>\
+				</div>\
+			</div>";
+		});
+	}
+
+	makeSelect(){
+
+		this.getOptions();
+
+		this.template = "<div class='fake-select forms__input forms__input--select'>\
+			<div class=\"fake-select__current\">\
+				<div data-val=\""+this.curVal+"\" class=\"fake-select__item\">\
+					<figure class=\"fake-select__item-img\">\
+						<img src=\""+this.curImgSrc+"\"/>\
+					</figure>\
+					<div class=\"fake-select__item-text\">"+this.curItemText+"</div>\
+				</div>\
+			</div>\
+			<div class=\"fake-select__list\">"+this.options+"</div>\
+		</div>";
+
+		this.$select.after(this.template);
+
+		this.hideSelect()
+	}
+
+	hideSelect(){
+		this.$select.hide();
+	}
+
+
+	bindEvents(){
+		let self = this;
+		this.$select.change(function(){
+			self.curVal = $(this).val()
+		});
 	}
 }

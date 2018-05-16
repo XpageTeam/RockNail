@@ -1800,6 +1800,7 @@ button, input, select
 
 		img
 			margin: 0 -4px -4px 0
+			display: inline-block
 
 .footer
 	font-weight: 400
@@ -3975,6 +3976,27 @@ button, input, select
 		&__sample_input
 			margin: 0;
 // product_card-------------------------------END
+
+.fake-select
+	display: flex
+	position: relative
+
+	&__current
+		width: 100%
+		display: flex
+
+	&__list
+		display: none
+
+	&__item
+		display: flex
+		align-items: center
+
+		&-img
+			flex: none
+
+			img
+				display: block
 
 @import "_grid"
 @import "media"
