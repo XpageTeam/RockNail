@@ -396,6 +396,26 @@ class catalogSlider{
 			slide: ".catalog-slider__slide",
 			// autoplay: true,
 			autoplaySpeed: 4000,
+			responsive: [
+		       {
+		         breakpoint: 1000,
+		         settings: {
+		           slidesToShow: 3
+		         }
+		       },
+		       {
+		         breakpoint: 700,
+		         settings: {
+		           slidesToShow: 2
+		         }
+		       },
+		       {
+		         breakpoint: 430,
+		         settings: {
+		           slidesToShow: 1
+		         }
+		       },
+		       ]
 		});
 
 		if (!this.$sliders.length)

@@ -18,6 +18,7 @@ html(lang="ru")
 										figure.main-slider__img
 											picture
 												source(srcset="img/photos/main-banner.png" media="screen and (min-width: 1000px)" data-main)
+												source(srcset="img/photos/main-banner-tab.png" media="screen and (max-width: 999px)")
 												img
 					.main-catalog__cont
 						.wrapper
@@ -116,6 +117,7 @@ html(lang="ru")
 								each manifest, i in [{title: "Мы дарим выбор!", text: "Мы не хотим ограничивать вас определенным количеством цветов поэтому RockNail предлагает целую радугу оттенков и чуточку больше!"}, {title: " Мы объявляем свободу!", text: "Долой скучный и примитивный маникюр. Отличайся смелостью и оригинальностью в своих идеях. Именно поэтому структура гель-лака RockNail позволяет сочетаться с другими текстурами и дизайнами. "}, {title: "Мы любим насыщенную жизнь!", text: "Тебя поразит удивительно высокая степень пигментации RockNail. Нет необходимости наносить гель-лак в несколько слоев, чтобы увидеть на ногтях тот же оттенок, что и во флаконе. "}, {title: "Мы экономим твое время и гарантируем качество!", text: "Используя гель-лак RockNail можно забыть про неприятные сколы и отслойки на 3 недели. Кроме того все текстуры RockNail легко и равномерно наносятся на ноготь, не создавая разводов или пробелов в оттенке."}, ]
 									.manifest__one
 										.manifest__one-title=manifest.title
+										.manifest__one-btn Читать 
 										.manifest__one-text=manifest.text
 										figure.manifest__one-img
 											img(src="img/photos/manifest-img.jpg")
@@ -133,6 +135,10 @@ html(lang="ru")
 									img(src="img/photos/big-slider-2.jpg")
 								figure.big-slider__slide-img
 									img(src="img/photos/big-slider-3.jpg")
+								figure.big-slider__slide-img.big-slider__slide-img_mobile
+									img(src="img/photos/big-slider-2.jpg")
+								figure.big-slider__slide-img.big-slider__slide-img_mobile
+									img(src="img/photos/big-slider-3.jpg")
 								.big-slider__slide-inst
 									.inst-block
 										.inst-block__text Смотри больше в нашем профиле в Instagram
@@ -140,3 +146,64 @@ html(lang="ru")
 										.inst-block__btn
 											a.gradient-btn.gradient-btn--arrow(href="#")
 												span Перейти
+							
+							.big-slider__slide
+								img(src="img/photos/big-slider-4.jpg")
+							.big-slider__slide.big-slider__slide--many
+								figure.big-slider__slide-img
+									img(src="img/photos/big-slider-5.jpg")
+								figure.big-slider__slide-img
+									img(src="img/photos/big-slider-6.jpg")
+								figure.big-slider__slide-img
+									img(src="img/photos/big-slider-2.jpg")
+								figure.big-slider__slide-img
+									img(src="img/photos/big-slider-8.jpg")
+							.big-slider__slide
+								img(src="img/photos/big-slider-1.jpg")
+							.big-slider__slide.big-slider__slide--many
+								figure.big-slider__slide-img
+									img(src="img/photos/big-slider-5.jpg")
+								figure.big-slider__slide-img
+									img(src="img/photos/big-slider-6.jpg")
+								figure.big-slider__slide-img
+									img(src="img/photos/big-slider-2.jpg")
+								figure.big-slider__slide-img
+									img(src="img/photos/big-slider-8.jpg")
+							.big-slider__slide
+								img(src="img/photos/big-slider-1.jpg")
+							.big-slider__slide.big-slider__slide--many
+								figure.big-slider__slide-img
+									img(src="img/photos/big-slider-5.jpg")
+								figure.big-slider__slide-img
+									img(src="img/photos/big-slider-6.jpg")
+								figure.big-slider__slide-img
+									img(src="img/photos/big-slider-2.jpg")
+								figure.big-slider__slide-img
+									img(src="img/photos/big-slider-8.jpg")
+							.big-slider__slide
+								img(src="img/photos/big-slider-4.jpg")
+							.big-slider__slide.big-slider__slide--many
+								figure.big-slider__slide-img
+									img(src="img/photos/big-slider-5.jpg")
+								figure.big-slider__slide-img
+									img(src="img/photos/big-slider-6.jpg")
+								figure.big-slider__slide-img
+									img(src="img/photos/big-slider-2.jpg")
+								figure.big-slider__slide-img
+									img(src="img/photos/big-slider-8.jpg")
+							.big-slider__slide
+								img(src="img/photos/big-slider-1.jpg")
+						.wrapper
+							.big-slider__arrows
+					.wrapper
+						.inst-block_mobile_cont
+							.inst-block_mobile
+								.inst-block
+									.inst-block__text Смотри больше в нашем профиле в Instagram
+									.inst-block__tag @Rocknail
+									.inst-block__btn
+										a.gradient-btn.gradient-btn--arrow(href="#")
+											span Перейти
+					include inc/bot-blocks.jade
+			include inc/footer.jade
+		include inc/scripts.jade

@@ -398,6 +398,182 @@ $output-bourbon-deprecation-warnings: false;
 		.gradient-btn
 			margin-left: rem(20)
 
+	.main-catalog__slider 
+		.cat-item
+			padding: 0 15px
+	// @media screen and (max-width: 770px)
+	.manifest
+		margin: 0;
+		flex-direction: column
+		padding: 0 15vw;
+
+		&__title-cont
+			text-align: center
+			margin-bottom: 100px;
+
+		&__one
+			width: 100%
+			transform: translate3d(0, 0, 0) !important;
+			margin: 0;
+			margin-bottom: 90px;
+			min-height: 110px;
+
+	.big-slider__title-cont
+		justify-content: center;
+
+	.seo-text 
+		.text-page
+			column-count: 1;
+
+	.footer-top__column--big
+		display: none;
+
+	.to_top
+		right: 1px;
+		top: 15%;
+
+	.inst-block_mobile_cont
+		display: flex;
+		justify-content: center;
+
+	.big-slider__cont
+		.inst-block
+			display: none;
+
+	.big-slider__slide-inst
+		height: 15vw;
+	// адаптив меню
+	.head__mobile_container
+		width: auto;
+		min-width: 300px;
+		position: fixed;
+		// bottom: 0;
+		left: -15px;
+		top: 77px;
+		flex-direction: column;
+		background-color: #fff;
+		align-items: flex-start;
+		box-shadow: 10px 10px 24px 1px rgba(0,0,0,0.2);
+		// padding-left: 40px;
+		transform: translateX(-110%);
+		transition: 0.6s;
+
+	.menu
+		flex-direction: column;
+		padding-left: 40px;
+		li 
+			padding: 7px 0;
+
+	.head__menu
+		margin-top: 10px;
+
+	.head__phone
+		margin: 35px 0;
+		color: #9667f4;
+		font-size: 16px;
+		font-weight: bold;
+		padding-left: 40px;
+
+	.head__title
+		display: none;
+
+	.head__logo
+		margin: 0 auto;
+		padding-left: 105px;
+	.head__mobile_dropdown
+		display: block;
+
+		ul.sub_menu__open
+			&:before
+				transform: rotate(180deg);
+			li 
+				display: block;
+	.burger
+		margin-bottom: 15px;
+		margin-left: 5px;
+		span
+			position: relative;
+			display: inline-block;
+			width: 30px;
+			height: 4px;
+			vertical-align: bottom;
+			background: #000;
+			transition: background .2s .4s;
+			border-radius: 2px;
+			&:before
+				border-radius: 0;
+				transform: none;
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 8px;
+				width: 100%;
+				height: 4px;
+				background: #000;
+				transform-origin: 50% 50%;
+				transition: top .3s .3s,transform .3s;
+				border-radius: 2px;
+			&:after 
+				content: "";
+				position: absolute;
+				left: 0;
+				top: -8px;
+				width: 100%;
+				height: 4px;
+				background: #000;
+				transform-origin: 50% 50%;
+				transition: top .3s .3s,transform .3s;
+				border-radius: 2px;
+
+	.mobile-menu--open 
+		.head__mobile_container
+			transform: translateX(0);
+			overflow-y: auto;
+			max-height: calc(100vh - 77px);
+		.burger > span
+			background-color: transparent;
+			&:before
+				transform: rotate3d(0, 0, 1, 45deg);
+				top: 0;
+				transition: top .3s,transform .3s .5s;
+			&:after
+				transform: rotate3d(0, 0, 1, -45deg);
+				top: 0;
+				transition: top .3s,transform .3s .5s;
+
+	.head__cart
+		position: relative;
+
+	.head__cart-wrap
+		overflow: visible;
+		height: 45px;
+		align-items: center;
+		padding-bottom: 0;
+
+	.cart-link
+		+size(45px)
+		background: url(../img/ico-cart.png) center no-repeat, #000;
+		margin-left: 5px;
+
+	body.mobile-menu--open
+		overflow: hidden;
+
+	.big-slider__slide-img_mobile
+		display: block;
+
+	.big-slider__slide-inst
+		display: none;
+
+	.big-slider
+		margin: 0
+		transform: translate(0)
+
+	.big-slider__arrows
+		width: auto !important;
+
+	.card__sample
+		padding-left: 0;
+
 @media screen and (max-width: 660px)
 
 	.cat
@@ -547,12 +723,112 @@ $output-bourbon-deprecation-warnings: false;
 		select 
 			background: url("../img/ico-select-arrow.png") no-repeat center right 10px
    
+	.main-catalog__slider
+		.cat-item
+			padding: 0
 
+		.catalog-slider 
+			.slick-list
+				padding-left: 10px
+				padding-right: 10px
 
+	.bot-form__input-cont 
+		flex-direction: column;
 
-			
+		.gradient-btn
+			width: 100%;
 
-		
+	.bot-form__input
+		width: 100%;
 
+	.bot-form__label
+		width: 100%;
+		text-align: center;
+		margin-right: 0;
+		padding: 0 15px;
+		margin-bottom: 30px;
 
-			
+	.bot-form
+		padding: 0 15vw;
+		margin-top: 50px;
+
+	.footer-bot_info
+		display: none;
+	.to_top
+		top: 23px;
+@media screen and (max-width: 480px)				
+	.manifest
+
+		&__title-cont
+		&__one-img
+			+size(190px)
+		&__one
+			padding: 20px 140px 20px 26px;
+			&:nth-child(2n)
+				padding: 20px 26px 20px 140px;
+				.manifest__one-img
+					left: -61px;
+		&__one-text
+			display: none;
+			&:before
+				display: none;
+		&__one
+			&:before	
+				display: none;
+		&__one-btn
+			display: block;
+			align-self: flex-start;
+			padding-right: 20px;
+			&:before
+				content: "";
+				background: url(../img/ico-select-arrow-black.png) no-repeat;
+				position: absolute;
+				right: 0;
+				top: calc(50% - 4px)
+				width: 11px;
+				height: 8px
+				transition: 0.5s ;
+		&__one.open
+		 .manifest__one-text
+				display: block;
+			.manifest__one-btn
+				&:before
+					transform: rotate(180deg);
+	.seo-text__cont
+		display: none;
+	.footer-top__column
+		margin-right: 0;
+		&:nth-child(1)
+			order: 2;
+		&:nth-child(2)
+			display: none;
+		&:nth-child(3)
+			order: 1;
+			display: flex;
+			flex-wrap: wrap;
+	.footer-top
+		flex-direction: column;
+	.f-contacts
+		flex-direction: row;
+		flex-wrap: wrap;
+		address, div
+			width: 50%;
+			text-align: center;
+			padding-top: 0;
+			margin-bottom: 25px !important;
+	.footer__logo
+		text-align: center;
+		margin-top: 15px;
+		margin-bottom: 40px;
+	.footer__soc
+		.soc
+			display: flex;
+			justify-content: space-around;
+	.soc__link:not(:first-child)
+		margin-top: 0;
+	.footer__column-title
+		text-align: center;
+	.bot-form__title
+		font-size: 13vw;
+	.head__lc
+		display: none;
