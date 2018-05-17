@@ -148,12 +148,42 @@ html(lang="ru")
 															img(src="img/ico-pay-5.png", alt="")
 
 											.cart-payment-method--current
-												a(href="#").payment-method__item.visa.active Банковской<br> картой
-												a(href="#").payment-method__item.sber Спасибо<br> от Сбербанка
-												a(href="#").payment-method__item.qiwi QIWI Wallet
-												a(href="#").payment-method__item.sber-online Сбербанк<br> Онлайн
-												a(href="#").payment-method__item.yandex Яндекс.Деньги
-												a(href="#").payment-method__item.webmoney WebMoney
+												.payment-method__item
+													input#p-1(type="radio" name="payment")
+													label(for="p-1") 
+														figure
+															img(src="img/ico-pay-11.png")
+														span Банковской<br> картой
+												.payment-method__item
+													input#p-2(type="radio" name="payment" checked)
+													label(for="p-2") 
+														figure
+															img(src="img/ico-pay-12.png")
+														span Спасибо<br> от Сбербанка
+												.payment-method__item
+													input#p-3(type="radio" name="payment")
+													label(for="p-3") 
+														figure
+															img(src="img/ico-pay-13.png")
+														span QIWI Wallet
+												.payment-method__item
+													input#p-4(type="radio" name="payment")
+													label(for="p-4") 
+														figure
+															img(src="img/ico-pay-14.png")
+														span Сбербанк<br> Онлайн
+												.payment-method__item
+													input#p-5(type="radio" name="payment")
+													label(for="p-5") 
+														figure
+															img(src="img/ico-pay-15.png")
+														span Яндекс.Деньги
+												.payment-method__item
+													input#p-6(type="radio" name="payment")
+													label(for="p-6") 
+														figure
+															img(src="img/ico-pay-16.png")
+														span WebMoney
 
 										.cart-comment
 											.cart-block__title Комментарий к заказу
@@ -184,7 +214,8 @@ html(lang="ru")
 										.cart-footer
 
 											.gradient-btn
-												a(href="#").btn Подтвердить заказ
+												input(type="submit" value="Подтвердить заказ")
+												span Подтвердить заказ
 											.policy
 												p Нажимая на кнопку, вы подтверждаете свое совершеннолетие,<br> соглашаетесь на обработку персональных данных в соответствии<br> <a href="#">С условиями</a>, а также <a href="#">С условиями продажи</a>
 
@@ -195,8 +226,8 @@ html(lang="ru")
 												.cart-aside__title 
 													span Ваш заказ 2 товара
 													.mobile-info На сумму: 500 Р
-												.gradient-btn
-													a(href="#").btn Купить в 1 клик
+												a(href="#").gradient-btn
+													span.btn Купить в 1 клик
 
 											.cart-aside__mobile-btn Перейти к оформлению заказа
 											.cart-aside__list

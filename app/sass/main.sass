@@ -1844,7 +1844,7 @@ button, input, select
 		&:after
 			content: ""
 			position: absolute
-			background: url("../img/main-slider-bot-decor.png") center top no-repeat
+			background: url("../img/main-slider-bot-decor.png") center bottom no-repeat
 			+size(100% 58px)
 			background-size: cover
 			bottom: 0
@@ -2701,34 +2701,57 @@ button, input, select
 
 .payment-method__item
 	display: flex
-	align-items: center
-	padding: 11px 11px 7px 54px
+	// align-items: center
 	// background: #fff
-	border: 2px solid $border-color
-	color: #919191
 	width: calc((100% - 28px * 3) / 3 )
 	margin: 0 0 30px 28px
-	transition: color .3s ease, font-weight .1s ease
 
-	&.active, &:hover
-		border: 2px solid $second-color
-		font-weight: bold
-		color: $second-color
+	input[type="radio"]
+		display: none
+
+		&:checked
+
+			+ label
+				border: 2px solid $second-color
+				font-weight: bold
+				color: $second-color
+
+	label
+		padding: 11px 11px 7px
+		display: flex
+		align-items: center
+		width: 100%
+		border: 2px solid $border-color
+		color: #919191
+		transition: color .3s ease
+		cursor: pointer
+
+		&.active, &:hover
+			border: 2px solid $second-color
+			font-weight: bold
+			color: $second-color
+
+	figure
+		flex: none
+		margin-right: 10px
+
+		img
+			display: block
 
 
-.visa
-	background: url('../img/ico-pay-11.png') no-repeat left 10px center
-.sber
-	background: url('../img/ico-pay-12.png') no-repeat left 10px center
-	padding-left: 75px
-.qiwi
-	background: url('../img/ico-pay-13.png') no-repeat left 17px center
-.sber-online
-	background: url('../img/ico-pay-14.png') no-repeat left 14px center
-.yandex 
-	background: url('../img/ico-pay-15.png') no-repeat left 25px center
-.webmoney
-	background: url('../img/ico-pay-16.png') no-repeat left 20px center
+// .visa
+// 	background: url('../img/ico-pay-11.png') no-repeat left 10px center
+// .sber
+// 	background: url('../img/ico-pay-12.png') no-repeat left 10px center
+// 	padding-left: 75px
+// .qiwi
+// 	background: url('../img/ico-pay-13.png') no-repeat left 17px center
+// .sber-online
+// 	background: url('../img/ico-pay-14.png') no-repeat left 14px center
+// .yandex 
+// 	background: url('../img/ico-pay-15.png') no-repeat left 25px center
+// .webmoney
+// 	background: url('../img/ico-pay-16.png') no-repeat left 20px center
 
 .cart-comment
 
@@ -2964,6 +2987,7 @@ button, input, select
 		width: 150px
 		height: 38px
 		padding: 0 15px
+		border: 1px solid $border-color
 	input[type="submit"]
 		height: 38px
 		width: 120px
@@ -4070,16 +4094,62 @@ button, input, select
 			margin: 0;
 // product_card-------------------------------END
 
+div.fake-select
+	border: 1px solid $second-color !important
+	
 .fake-select
 	display: flex
 	position: relative
+
 
 	&__current
 		width: 100%
 		display: flex
 
+		&.forms__input
+			border: none !important
+
+	&.js__opened
+
+		.fake-select
+
+			&__list
+				display: block
+
 	&__list
 		display: none
+		position: absolute
+		top: calc(100% - 1px)
+		left: -1px
+		width: calc(100% + 2px)
+		max-height: 200px
+		overflow-y: auto
+		background: #fff
+		z-index: 5
+		border: 1px solid $second-color
+		border-top: none
+
+		&::-webkit-scrollbar
+			width: 7px
+
+			&-track
+				background: #e8e8e8
+				border-radius: 4px
+
+			&-thumb
+				background: #acacac
+				border-radius: 4px
+
+		&-one.forms__input
+			background: none !important
+			border: none !important
+
+			.fake-select
+
+				&__item
+
+					&-text
+						font-weight: 400
 
 	&__item
 		display: flex
@@ -4087,9 +4157,14 @@ button, input, select
 
 		&-img
 			flex: none
+			margin-right: 14px
 
 			img
 				display: block
+
+		&-text
+			color: $second-color
+			font-weight: bold
 
 @import "_grid"
 @import "media"

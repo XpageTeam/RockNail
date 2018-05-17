@@ -405,9 +405,24 @@ li
 			letter-spacing: inherit
 			width: 100%
 
-	span, input[type="submit"]
+	span
 		position: relative
 		z-index: 1
+
+	input[type="submit"]
+		position: absolute
+		top: 0
+		left: 0
+		+size(100%)
+		background: none
+		border: none
+		font: inherit
+		text-transform: inherit
+		color: inherit
+		z-index: 4
+
+		+ span
+			opacity: 0
 
 	&:hover, &:focus
 

@@ -104,26 +104,27 @@ header.head
 				cart-line(inline-template="")
 					div
 						.head__cart-wrap
-							a.cart-link(href="#", :data-count="goodsCount")
-						.cart-line__wrap(v-if="goodsCount")
+							a.cart-link(href="#", data-count="4")
+						.cart-line__wrap
 							.cart-line
 								.cart-line__title Ваша корзина
 								.cart-line__content
 									.small-cart
-										.small-cart__one(v-for="tovar in goodsList")
-											.tovar-small
-												a.tovar-small__img(:href="tovar.link")
-													img(:src="tovar.imgSrc")
-												.tovar-small__desc
-													a.tovar-small__desc-title(:href="tovar.link") {{ tovar.name }}
-													.tovar-small__desc-bot
-														.tovar-small__desc-info {{ tovar.info }}
-														.tovar-small__desc-price {{ tovar.count }} x {{ tovar.price }} Р
-													span.tovar-small__desc-delete(@click="deleteFromCart(tovar.id)")
+										- for (let i = 0; i < 4; i++)
+											.small-cart__one
+												.tovar-small
+													a.tovar-small__img(href="#") 
+														img(src="img/photos/nail.png")
+													.tovar-small__desc
+														a.tovar-small__desc-title(href="#") Гель-лак Rock Nail Baby Nude
+														.tovar-small__desc-bot
+															.tovar-small__desc-info "045 Blue Ocean",
+															.tovar-small__desc-price 1 x 250 Р
+														a.tovar-small__desc-delete(href="#")
 								.cart-line__footer
 									.cart-line__footer-total
-										.cart-line__footer-total-count {{ goodsCount }} товара на сумму
-										.cart-line__footer-total-summ {{ goodsPrice }} Р
+										.cart-line__footer-total-count 4 товара на сумму
+										.cart-line__footer-total-summ 1234 Р
 									.cart-line__footer-btn
 										a.gradient-btn(href="#") 
 											span Оформить заказ

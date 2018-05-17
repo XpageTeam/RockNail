@@ -79,11 +79,11 @@ html(lang="ru")
 
 												.forms-input-cont.mobile
 													img(src="", alt="").ico-select-img
-													select.forms__input.forms__input--select
-														option(data-src="img/ico-color-catalog1.png") Сначала популярные
-														option(data-src="img/ico-color-catalog2.png") Сначала популярные
-														option(data-src="img/ico-color-catalog3.png") Сначала популярные
-														option(data-src="img/ico-color-catalog1.png") Сначала популярные
+													select.forms__input.forms__input--select.color-select
+														option(value="1" data-src="img/ico-color-catalog1.png") Сначала популярные
+														option(value="2" data-src="img/ico-color-catalog2.png") Сначала популярные
+														option(value="3" data-src="img/ico-color-catalog3.png") Сначала популярные
+														option(value="4" data-src="img/ico-color-catalog1.png") Сначала популярные
 													.forms__label Выбрать цвет
 													.forms__error-message
 														i.forms__error-message-icon
@@ -96,11 +96,11 @@ html(lang="ru")
 															img(src="img/nail-"+img+".png", alt="")
 												.forms-input-cont.mobile
 													img(src="", alt="").ico-select-img
-													select.forms__input.forms__input--select
-														option(data-src="img/ico-color-catalog.png") Сначала популярные
-														option(data-src="img/ico-color-catalog1.png") Сначала популярные
-														option(data-src="img/ico-color-catalog2.png") Сначала популярные
-														option(data-src="img/ico-color-catalog3.png") Сначала популярные
+													select.forms__input.forms__input--select.color-select
+														option(value="1" data-src="img/ico-color-catalog.png") Сначала популярные
+														option(value="2" data-src="img/ico-color-catalog1.png") Сначала популярные
+														option(value="3" data-src="img/ico-color-catalog2.png") Сначала популярные
+														option(value="4" data-src="img/ico-color-catalog3.png") Сначала популярные
 													.forms__label Эффект
 													.forms__error-message
 														i.forms__error-message-icon
@@ -114,11 +114,11 @@ html(lang="ru")
 															img(src="img/nail-"+img+".png", alt="")
 												.forms-input-cont.mobile
 													img(src="", alt="").ico-select-img
-													select.forms__input.forms__input--select
-														option(data-src="img/ico-color-catalog.png") Сначала популярные
-														option(data-src="img/ico-color-catalog1.png") Сначала популярные
-														option(data-src="img/ico-color-catalog2.png") Сначала популярные
-														option(data-src="img/ico-color-catalog3.png") Сначала популярные
+													select.forms__input.forms__input--select.color-select
+														option(value="1" data-src="img/ico-color-catalog.png") Сначала популярные
+														option(value="2" data-src="img/ico-color-catalog1.png") Сначала популярные
+														option(value="3" data-src="img/ico-color-catalog2.png") Сначала популярные
+														option(value="4" data-src="img/ico-color-catalog3.png") Сначала популярные
 													.forms__label Френч
 													.forms__error-message
 														i.forms__error-message-icon
@@ -153,8 +153,8 @@ html(lang="ru")
 															a.favorite-add(href="#")
 																span.favorite-add__title избранное
 												.cat-item__hover
-													.btn-wrap.gradient-btn
-														a(href="#").btn В корзину
+													a.btn-wrap.gradient-btn(href="#")
+														span В корзину
 
 													a(href="img/photos/catalog-img-hover.jpg" data-fancybox="quick-view").fancybox.quick-view Быстрый просмотр
 

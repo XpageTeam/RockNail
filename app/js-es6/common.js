@@ -18,6 +18,25 @@ $(document).ready(function(){
 		});
 	});
 
+	$(".manifest__one").click(function(){
+		// $('.manifest__one-text').toggleClass("display", "none")
+		let $this = $(this);
+		$(this).toggleClass("open")
+	});
+	// dropdown в мобильнои меню
+	$('.head__mobile_dropdown ul').click(function(){
+
+			var $this = $(this);
+			$('.head__mobile_dropdown ul').removeClass('sub_menu__open');
+			$this.addClass('sub_menu__open'); 
+	});
+	// открытие мобильного меню
+	$('.burger').click(function(){
+		$(this).toggleClass('open');
+		$('body').toggleClass("mobile-menu--open");
+		$('.head__mobile_dropdown ul').removeClass('sub_menu__open');
+	});
+
 	$(".card .card__slick").slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,
@@ -99,15 +118,11 @@ class headSubmenu{
 		$("body").addClass("js__submenu-opened");
 		$(".head__submenu").addClass("js__opened");
 		$(".head-title").addClass("js__active");
-
-		console.log("open")
 	}
 	static close(){
 		$("body").removeClass("js__submenu-opened");
 		$(".head__submenu").removeClass("js__opened");
 		$(".head-title").removeClass("js__active");
-
-		console.log("close")
 	}
 	static toggle(){
 		if ($("body").hasClass("js__submenu-opened"))
@@ -166,8 +181,20 @@ const loadScripts = e => {
 		headSearch.closeSearch();
 	});
 
-	$(".head-title").click(e => {
-		headSubmenu.toggle();
+	// $(".head-title").click(e => {
+	// 	headSubmenu.toggle();
+	// });
+
+	let hoverTimeout;
+
+	$(".head-title, .head-submenu").hover(e => {
+		clearTimeout(hoverTimeout);
+
+		headSubmenu.open();
+	}, e => {
+		hoverTimeout = setTimeout(e => {
+			headSubmenu.close();
+		}, 400)
 	});
 
 	$(".big-slider").slick({
@@ -381,7 +408,6 @@ $(function() {
 			&& !$target.is($(".head-submenu"))
 			&& !$(".head-submenu").has(e.target).length){
 			headSubmenu.close();
-			console.log(123);
 		}	
 	});
 
@@ -537,8 +563,13 @@ class colorSelect{
 
 		this.curVal = this.$select.val();
 
-		this.bindEvents();
+		this.makeSelect();		
 
+		
+	}
+
+	remakeSelect(){
+		this.fakeSelect.remove();
 		this.makeSelect();
 	}
 
@@ -555,7 +586,7 @@ class colorSelect{
 				text = $this.text(),
 				imgSrc = $this.attr("data-src");
 
-			this.options +="<div class=\"fake-select__list-one\">\
+			this.options +="<div class=\"fake-select__list-one forms__input forms__input--select\">\
 				<div data-val=\""+val+"\" class=\"fake-select__item\">\
 					<figure class=\"fake-select__item-img\">\
 						<img src=\""+imgSrc+"\"/>\
@@ -570,8 +601,8 @@ class colorSelect{
 
 		this.getOptions();
 
-		this.template = "<div class='fake-select forms__input forms__input--select'>\
-			<div class=\"fake-select__current\">\
+		this.template = "<div class='fake-select'>\
+			<div class=\"fake-select__current forms__input forms__input--select\">\
 				<div data-val=\""+this.curVal+"\" class=\"fake-select__item\">\
 					<figure class=\"fake-select__item-img\">\
 						<img src=\""+this.curImgSrc+"\"/>\
@@ -584,18 +615,48 @@ class colorSelect{
 
 		this.$select.after(this.template);
 
-		this.hideSelect()
+		this.fakeSelect = this.$select.next(".fake-select");
+
+		this.hideSelect();
+
+		this.bindEvents();
 	}
 
 	hideSelect(){
 		this.$select.hide();
 	}
 
+	openSelect(){
+		this.fakeSelect.addClass("js__opened")
+	}
+
+	closeSelect(){
+		this.fakeSelect.removeClass("js__opened")
+	}
+
 
 	bindEvents(){
-		let self = this;
-		this.$select.change(function(){
+		let self = this,
+			$select = this.$select,
+			$fSelect = this.fakeSelect;
+
+		$select.change(function(){
 			self.curVal = $(this).val()
+		});
+
+		$fSelect.find(".fake-select__current").click(e =>{
+			if ($fSelect.hasClass("js__opened"))
+				this.closeSelect();
+			else
+				this.openSelect();
+		});
+
+		$fSelect.find(".fake-select__list-one").click(function(){
+			let $this = $(this).find(".fake-select__item");
+
+			self.curVal = $this.attr("data-val")
+
+			self.remakeSelect();
 		});
 	}
 }
