@@ -91,11 +91,15 @@ class headSubmenu{
 		$("body").addClass("js__submenu-opened");
 		$(".head__submenu").addClass("js__opened");
 		$(".head-title").addClass("js__active");
+
+		console.log("open")
 	}
 	static close(){
 		$("body").removeClass("js__submenu-opened");
 		$(".head__submenu").removeClass("js__opened");
 		$(".head-title").removeClass("js__active");
+
+		console.log("close")
 	}
 	static toggle(){
 		if ($("body").hasClass("js__submenu-opened"))
@@ -321,8 +325,10 @@ $(function() {
 
 		if (!$target.is($(".head-title"))
 			&& !$target.is($(".head-submenu"))
-			&& !$(".head-submenu").has(e.target).length)
+			&& !$(".head-submenu").has(e.target).length){
 			headSubmenu.close();
+			console.log(123);
+		}	
 	});
 
 
