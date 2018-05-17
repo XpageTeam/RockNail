@@ -767,7 +767,8 @@
 }
 
 .fancybox-stage .card__top {
-  display: flex !important;
+  display: inline-flex !important;
+  max-width: 1040px;
 }
 
 .fancy-active_popup .fancybox-slide:before {

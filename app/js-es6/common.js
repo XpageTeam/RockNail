@@ -4,6 +4,14 @@ $(document).ready(function(){
 	loadScripts();
 	// слайдер
 
+	$(".to_top").click(e => {
+		$("html, body").animate({
+			scrollTop: 0,
+		}, 400);
+
+		return false
+	});
+
 	$(".color-select").each((i, el) => {
 		new colorSelect({
 			element: el,
@@ -122,6 +130,32 @@ const loadScripts = e => {
 		}
 	});
 
+	$(".fancybox_popup").fancybox({
+		beforeShow(){
+			$("body").addClass("fancy-active").addClass("fancy-popup")
+		},
+		afterClose(){
+			$("body").removeClass("fancy-active").removeClass("fancy-popup")
+		},
+		afterShow(){
+			$(".popup .card__slick").slick({
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				slide: ".card__slick_slide",
+				asNavFor: '.card__slick_nav',
+			});
+
+			$('.popup .card__slick_nav').slick({
+				slidesToShow: 5,
+				slidesToScroll: 1,
+				slide: ".card__slick_slide",
+				asNavFor: '.card__slick',
+				focusOnSelect: true,
+				arrows: false,
+			});
+		}
+	});
+
 	$(".search-button").click(e => {
 		headSearch.toggleSearch();
 
@@ -144,7 +178,27 @@ const loadScripts = e => {
 		centerPadding: 0,
 		// arrows: false,
 		appendArrows: $(".big-slider__arrows"),
-		// variableWidth: true
+		// variableWidth: true,
+		responsive: [
+				{
+	         breakpoint: 1400,
+	         settings: {
+	           slidesToShow: 4
+	         }
+	       },
+	       {
+	         breakpoint: 1000,
+	         settings: {
+	           slidesToShow: 3
+	         }
+	       },
+	       {
+	         breakpoint: 600,
+	         settings: {
+	           slidesToShow: 1
+	         }
+	       },
+	    ]
 	}).on("setPosition", slick => {
 		$(".big-slider__arrows").width($(".big-slider__slide:eq(0)").width())
 	});

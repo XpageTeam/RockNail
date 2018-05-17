@@ -47,18 +47,53 @@ header.head
 					figure
 						img(src="img/photos/logo-hover.png", alt="RockNail", title="RockNail")
 			.head__title
-				button.head-title
-					Гель • лаки
-			nav.head__menu
-				ul.menu
-					li
-						a.menu__link.active(href="#") Акции
-					each title in ["О нас", "Доставка и оплата", "Отзывы", "Оптовикам", ]
+				button.head-title Гель • лаки
+			.head__mobile_container
+				.head__mobile_dropdown
+					a(href="#").head__mobile_dropdown_btn Вход / Регистрация
+					ul Гель • лаки
+						li 
+							a(href="#1") Все категории
+						li 
+							a(href="#2") Baby Nude
+						li 
+							a(href="#3") Classik
+						li 
+							a(href="#3") Camouflage
+						li 
+							a(href="#3") Galaxy
+						li 
+							a(href="#3") Gothic
+						li 
+							a(href="#3") Summer
+						li 
+							a(href="#3") Gray Moon
+						li 
+							a(href="#3") Diamond				
+					ul TOP
+						li 
+							a(href="#1") Все категории
+						li 
+							a(href="#2") Baby Nude
+						li 
+							a(href="#3") Classik
+					ul base
+						li 
+							a(href="#1") Все категории
+						li 
+							a(href="#2") Baby Nude
+						li 
+							a(href="#3") Classik
+				nav.head__menu
+					ul.menu
 						li
-							a.menu__link(href="#")=title
-			.head__phone
-				address.head-phone
-					a(href="tel: 8 800 569 89 89") 8 800 569 89 89
+							a.menu__link.active(href="#") Акции
+						each title in ["О нас", "Доставка и оплата", "Отзывы", "Оптовикам", ]
+							li
+								a.menu__link(href="#")=title
+				.head__phone
+					address.head-phone
+						a(href="tel: 8 800 569 89 89") 8 800 569 89 89
 			.head__search
 				button.search-button
 			.head__favorite
