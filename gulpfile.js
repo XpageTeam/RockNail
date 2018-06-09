@@ -12,7 +12,7 @@ const $ = require('gulp-load-plugins')(),
 		postcss = require("gulp-postcss"),
 		prefixer = require("autoprefixer");
 
-const projectName = "RockNail/"
+const projectName = "RockNail2/"
 
 const xpager_path = "/www/html.xpager.ru/"+projectName,
 xpager_conn = ftp.create({
@@ -23,15 +23,15 @@ xpager_conn = ftp.create({
 	log: gutil.log
 });
 
-const templatePath = "/";
+const templatePath = "/htdocs/local/templates/main/";
 const remotePathCss = templatePath+"css",
 	remotePathJs = templatePath+"js",
 	remotePathImg = templatePath+"img";
 
 const server_conn = ftp.create({
-	host:      '',
-	user:      '',
-	password:  '',
+	host:      '95.213.253.52',
+	user:      'rocknail.ru',
+	password:  'f3TrbxvE',
 	parallel: 4,
 	log: gutil.log
 });
@@ -204,8 +204,8 @@ gulp.task("deploy:css", () =>
 );
 
 gulp.task("deploy:js", () => 
-	gulp.src("app/js/*.js", {since: gulp.lastRun("deploy:js")})
-		.pipe($.uglify())
+	gulp.src("app/js/*.*", {since: gulp.lastRun("deploy:js")})
+		//.pipe($.uglify())
 		.pipe(server_conn.dest(remotePathJs))
 );
 

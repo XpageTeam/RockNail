@@ -1,8 +1,39 @@
+let updateTimeout;
+
+$(window).on("load resize", e => {
+
+
+	$(".catalog-slider, .cat-items").each((i, el) => {
+		let $this = $(el),
+			$imgs = $this.find(".cat-item__img"),
+			$titles = $this.find(".cat-item__title");
+
+		$imgs.height(getMaxHeight($imgs));
+
+		$titles.height(getMaxHeight($titles));
+	});
+
+	$(".cart-aside__img").width(getMaxWidth($(".cart-aside__img")));
+
+});
+
+const getMaxHeight = $objects => {
+	return Math.max(...$objects.map(function(){
+		return $(this).height()
+	}))
+},
+getMaxWidth = $objects => {
+	return Math.max(...$objects.map(function(){
+		return $(this).width()
+	}))
+};
 
 // sergey new code-------------
 $(document).ready(function(){
 	loadScripts();
 	// слайдер
+
+
 
 	$(".to_top").click(e => {
 		$("html, body").animate({
@@ -23,18 +54,37 @@ $(document).ready(function(){
 		let $this = $(this);
 		$(this).toggleClass("open")
 	});
+
+	// // dropdown в мобильнои меню
+	// $('.head__mobile_dropdown ul').click(function(){
+
+	// 		var $this = $(this);
+	// 		$('.head__mobile_dropdown ul').removeClass('sub_menu__open');
+	// 		$this.addClass('sub_menu__open'); 
+	// });
+
 	// dropdown в мобильнои меню
 	$('.head__mobile_dropdown ul').click(function(){
 
 			var $this = $(this);
-			$('.head__mobile_dropdown ul').removeClass('sub_menu__open');
-			$this.addClass('sub_menu__open'); 
+			$this.find("li").slideToggle(300) 
+			$this.toggleClass('sub_menu__open'); 
+			// $this.slideToggle(300) 
 	});
+
 	// открытие мобильного меню
 	$('.burger').click(function(){
-		$(this).toggleClass('open');
-		$('body').toggleClass("mobile-menu--open");
-		$('.head__mobile_dropdown ul').removeClass('sub_menu__open');
+		mobileMenu.toggle();
+	});
+
+	$("body").click(e => {
+		let $target = $(e.target);
+
+		if (!$(".burger").is($target) 
+			&& !$(".burger").has($target).length
+			&& !$(".head__mobile_container").is($target)
+			&& !$(".head__mobile_container").has($target).length)
+			mobileMenu.close()
 	});
 
 	$(".card .card__slick").slick({
@@ -50,6 +100,20 @@ $(document).ready(function(){
 		asNavFor: '.card__slick',
 		focusOnSelect: true,
 		arrows: false,
+		responsive: [
+			{
+				breakpoint: 660,
+				settings: {
+					slidesToShow: 3,
+				}
+			},
+			{
+				breakpoint: 360,
+				settings: {
+					slidesToShow: 2
+				}
+			}
+		]	
 	});
 	// табы
 	$(".card__tabs_navi span").click(function(){
@@ -59,6 +123,15 @@ $(document).ready(function(){
 		$(this).addClass('active')
 		$('.card__tabs_left_content_flex').css("display", "none")
 		$(".card__tabs_left_content_flex[data-id='"+id+"']").css("display", "flex")
+	});
+	// табы в форме
+	$(".login-__form_tabs a").click(function(){
+		let $this = $(this);
+		let id = $this.attr("data-id");
+		$('#popup-2 form').removeClass('active')
+		$('.login-__form_tabs a').removeClass('active')
+		$(this).addClass('active')
+		$("#popup-2 form[data-id='"+id+"']").addClass('active')
 	});
 	// форма отзыва
 	// появление
@@ -80,6 +153,8 @@ $(document).ready(function(){
 		$('.delivery-city_reset').css("display", "none")
 		$('#city').attr("value", "")
 	});
+
+
 	// скролл таблицы 
 	$('.delivery-table').scroll(function(){
 		var a = $('.delivery-table').scrollLeft();
@@ -92,6 +167,7 @@ $(document).ready(function(){
 		else{
 			$('.delivery- .card__tabs_left').addClass("shadow")
 		}
+
 	});
 });
 
@@ -104,6 +180,7 @@ $(window).on("load", e => {
 class headSearch{
 	static openSearch(){
 		$(".head__search-more").slideDown(300)
+
 	}
 	static closeSearch(){
 		$(".head__search-more").slideUp(300)
@@ -161,7 +238,7 @@ const loadScripts = e => {
 			});
 
 			$('.popup .card__slick_nav').slick({
-				slidesToShow: 5,
+				slidesToShow: 4,
 				slidesToScroll: 1,
 				slide: ".card__slick_slide",
 				asNavFor: '.card__slick',
@@ -231,120 +308,6 @@ const loadScripts = e => {
 	});
 };
 
-
-// Vue.component("cart-line", {
-// 	props: {
-
-// 	},
-// 	data: () => ({
-
-// 	}),
-// 	mounted(){
-// 		console.log("cart-line mounted");
-// 	},
-// 	methods: {
-// 		deleteFromCart(id){
-// 			Store.commit("deleteGoods", id);
-// 		},
-// 	},
-// 	computed: {
-// 		goodsList: () => Store.state.goodsInCart,
-// 		goodsCount: () => Store.state.goodsInCart.length,
-// 		goodsPrice(){
-// 			let totalSumm = 0;
-
-// 			for (let i in this.goodsList)
-// 				totalSumm += this.goodsList[i].price * this.goodsList[i].count
-
-// 			return totalSumm;
-// 		}
-// 	}
-// });
-
-// window.Store = new Vuex.Store({
-// 	state: {
-// 		goodsInCart: []
-// 	},
-// 	mutations: {
-// 		addGoods(state, goods = []){
-// 			for (let i in goods){
-// 				state.goodsInCart.push(goods[i]);
-// 			}
-// 		},
-// 		deleteGoods(state, goodsId){
-// 			let key, canDelete = false;
-
-// 			for (let i in state.goodsInCart){
-// 				key = i;
-
-// 				if (state.goodsInCart[i].id == goodsId){
-// 					canDelete = true;
-// 					break;
-// 				}
-// 			}
-
-
-// 			if (canDelete)
-// 				state.goodsInCart.splice(key, 1);
-// 			else
-// 				console.log("Такого товара нет в списке");
-// 		}
-// 	}
-// });
-
-// window.App = new Vue({
-// 	el: "#page-wr",
-// 	store: Store,
-// 	data: {
-
-// 	},
-// 	mounted(){
-// 		loadScripts();
-// 		console.log("app mounted");
-// 	}
-// });
-
-// $(e => {
-// 	Store.commit("addGoods", [
-// 		{
-// 			id: 0,
-// 			name: "Гель-лак Rock Nail Baby Nude",
-// 			info: "045 Blue Ocean",
-// 			imgSrc: "img/photos/nail.png",
-// 			link: "#",
-// 			price: 250,
-// 			count: 1,
-// 		},
-// 		{
-// 			id: 1,
-// 			name: "Гель-лак Rock Nail Baby Nude",
-// 			info: "045 Blue Ocean",
-// 			imgSrc: "img/photos/nail.png",
-// 			link: "#",
-// 			price: 250,
-// 			count: 3,
-// 		},
-// 		{
-// 			id: 2,
-// 			name: "Гель-лак Rock Nail Baby Nude",
-// 			info: "045 Blue Ocean",
-// 			imgSrc: "img/photos/nail.png",
-// 			link: "#",
-// 			price: 250,
-// 			count: 2,
-// 		},
-// 		{
-// 			id: 3,
-// 			name: "Гель-лак Rock Nail Baby Nude",
-// 			info: "045 Blue Ocean",
-// 			imgSrc: "img/photos/nail.png",
-// 			link: "#",
-// 			price: 250,
-// 			count: 1,
-// 		},
-// 	]);
-// })
-
 $(function() {
 	if($(window).width() > 790) {
 		$(".selectize").each((i, el) =>{
@@ -366,6 +329,14 @@ $(function() {
 		slidesToScroll: 1,
 		slide: ".main-slider__slide",
 		dots: true,
+		responsive: [
+			{
+				breakpoint: 660,
+				settings: {
+					arrows: false
+				}
+			}
+		]
 	});
 
 	$('.catalog-filter select').find('option').each(function() {
@@ -486,22 +457,28 @@ class catalogSlider{
 		       {
 		         breakpoint: 1000,
 		         settings: {
-		           slidesToShow: 3
+		           slidesToShow: 3,
+		           dots: true,
+		           arrows: false,
 		         }
 		       },
 		       {
 		         breakpoint: 700,
 		         settings: {
+	         		arrows: false,
+	         		dots: true,
 		           slidesToShow: 2
 		         }
 		       },
 		       {
-		         breakpoint: 430,
+		         breakpoint: 370,
 		         settings: {
-		           slidesToShow: 1
+		         	arrows: false,
+		         	dots: true,
+					slidesToShow: 1	
 		         }
 		       },
-		       ]
+		    ]
 		});
 
 		if (!this.$sliders.length)
@@ -658,5 +635,23 @@ class colorSelect{
 
 			self.remakeSelect();
 		});
+	}
+}
+
+class mobileMenu{
+	static open(){
+		$('body').addClass("mobile-menu--open");
+		$(".burger").addClass('open');
+		$('.head__mobile_dropdown ul').removeClass('sub_menu__open');
+	}
+	static close(){
+		$('body').removeClass("mobile-menu--open");
+		$(".burger").removeClass('open');
+	}
+	static toggle(){
+		if ($("body").hasClass("mobile-menu--open"))
+			this.close()
+		else
+			this.open()
 	}
 }

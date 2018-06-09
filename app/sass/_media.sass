@@ -6,7 +6,6 @@ $output-bourbon-deprecation-warnings: false;
 	.head__burger
 		display: none
 
-
 @media screen and (max-width: 1200px)
 
 	.catalog-filter
@@ -48,7 +47,9 @@ $output-bourbon-deprecation-warnings: false;
 		font-size: 13px
 
 
-// @media (pointer: coarse)
+@media screen and (max-width: 1040px)
+	.fancybox-stage .card__top
+		max-width: 100%
 	
 @media screen and (max-width: 1000px)
 
@@ -77,7 +78,7 @@ $output-bourbon-deprecation-warnings: false;
 		margin-bottom: 55px
 		transition: border-color .3s ease, color .3s ease
 		cursor: pointer
-
+		display: block;
 		&:hover 
 			border-color: $main-color
 			color: $main-color
@@ -136,7 +137,7 @@ $output-bourbon-deprecation-warnings: false;
 				margin: 27px 0 -30px -28px
 
 	.payment-method__item
-		padding: 11px 11px 13px 54px
+		// padding: 11px 11px 13px 54px
 
 	.titile-block
 		display: none 
@@ -421,7 +422,13 @@ $output-bourbon-deprecation-warnings: false;
 
 	.big-slider__title-cont
 		justify-content: center;
-
+		flex-direction: column;
+		align-items: center;
+		.main-subtitle
+			text-align: center;
+	.big-slider__title-img
+		margin: 0;
+		margin-bottom: 20px;
 	.seo-text 
 		.text-page
 			column-count: 1;
@@ -474,7 +481,8 @@ $output-bourbon-deprecation-warnings: false;
 		font-size: 16px;
 		font-weight: bold;
 		padding-left: 40px;
-
+		a 
+			font-size: 16px;
 	.head__title
 		display: none;
 
@@ -491,11 +499,11 @@ $output-bourbon-deprecation-warnings: false;
 				display: block;
 	.burger
 		margin-bottom: 15px;
-		margin-left: 5px;
+		// margin-left: 5px;
 		span
 			position: relative;
 			display: inline-block;
-			width: 30px;
+			width: 25px;
 			height: 4px;
 			vertical-align: bottom;
 			background: #000;
@@ -550,7 +558,7 @@ $output-bourbon-deprecation-warnings: false;
 		height: 45px;
 		align-items: center;
 		padding-bottom: 0;
-
+		width: auto;
 	.cart-link
 		+size(45px)
 		background: url(../img/ico-cart.png) center no-repeat, #000;
@@ -567,28 +575,87 @@ $output-bourbon-deprecation-warnings: false;
 
 	.big-slider
 		margin: 0
+		margin-top: 70px;
 		transform: translate(0)
 
 	.big-slider__arrows
 		width: auto !important;
 
 	.card__sample
-		padding-left: 0;
+		padding-left: 0
+	.manifest__cont
+		padding-bottom: 0;
+
+	.head__mobile_dropdown ul li a
+		font-size: 14px
+		font-weight: 400
+		text-transform: none
+
+	.cart-line__wrap
+		display: none
+
+	.card__popup
+		flex-direction: column
+
+		.card
+
+			&__slider, &__sample
+				width: 100%
+
+			&__sample
+				padding: 20px 0 0 !important
+
+@media screen and (max-width: 820px)
+	
+	.head__search-more[style*="block"] 
+		.search:after
+			right: 11rem
 		
 @media screen and (max-width: 660px)
+
+	.head__search-more[style*="block"] 
+		.search:after
+			right: 9.1rem
+
+	.catalog-banner
+		display: none
+
+	.catalog-filter
+
+		.fake-select
+
+			&__item
+
+				&-text
+					color: #000
+					font-weight: 400
+
 	.manifest
 		padding: 0 10vw;
 	.cat
 		&-items
-			margin: 0 0 -90px -35px
+			margin: 0 0 -90px -20px
 			padding: 55px 0px 10px 0
 
 		&-item
-			width: calc((100% - 35px * 2) / 2) !important
-			margin: 0 0 70px 35px !important
+			width: calc((100% - 20px * 2) / 2) !important
+			margin: 0 0 70px 20px !important
 
 	.js__catalog-filter
-		display: none
+		// display: none
+		margin: 15px 0 0
+
+		&.js__open
+			width: 100%
+
+	.catalog-filter .forms-wrap:last-child .btn-flat + .btn-flat
+		margin-left: 0
+
+	.title-block
+
+		&__title
+			flex-direction: column
+			align-items: flex-start
 
 	.paginator
 		margin: 0 auto
@@ -753,15 +820,38 @@ $output-bourbon-deprecation-warnings: false;
 	.bot-form
 		padding: 0 15vw;
 		margin-top: 50px;
-
+		.gradient-btn
+			padding: 24px 2rem;
 	.footer-bot_info
 		display: none;
 	.to_top
 		top: 23px;
-@media screen and (max-width: 480px)				
+		z-index: 5;
+
+@media screen and (max-width: 790px)
+	body
+
+		#page-wr
+
+			select.forms__input.selectize
+
+				&:not(.selectized)
+					border: 1px solid $second-color !important
+					width: 100%
+					height: 40px !important
+					padding: 0 30px 0 20px
+					background: url("../img/ico-select-arrow.png") center right 13px no-repeat
+
+@media screen and (max-width: 480px)
+	.head
+
+		&__logo
+			flex: none
+
 	.manifest
 
 		&__title-cont
+			margin-bottom: 35px;
 		&__one-img
 			+size(190px)
 		&__one
@@ -797,7 +887,9 @@ $output-bourbon-deprecation-warnings: false;
 				&:before
 					transform: rotate(180deg);
 	.seo-text__cont
-		display: none;
+		// display: none;
+		padding: 0 20px;
+		padding-top: 80px;
 	.footer-top__column
 		margin-right: 0;
 		&:nth-child(1)
@@ -820,8 +912,8 @@ $output-bourbon-deprecation-warnings: false;
 			margin-bottom: 25px !important;
 	.footer__logo
 		text-align: center;
-		margin-top: 15px;
-		margin-bottom: 40px;
+		margin-top: 10px;
+		margin-bottom: 20px;
 	.footer__soc
 		.soc
 			display: flex;
@@ -832,5 +924,387 @@ $output-bourbon-deprecation-warnings: false;
 		text-align: center;
 	.bot-form__title
 		font-size: 13vw;
-	.head__lc
-		display: none;
+	// .head__lc
+	// 	display: none;
+	.main-slider
+		padding-top: 150px
+		padding-bottom: 105px;
+		
+	.main-catalog__tabs
+		margin-top: -110px
+	.main-slider .slick-dots
+		bottom: 90px;
+	.main-catalog__slider
+		margin: 40px;
+		margin-bottom: 0;
+	.main-title
+		font-size: rem(40)
+	.main-subtitle
+		font-size: rem(20)
+	.big-slider__cont
+		padding-left: 25px;
+		padding-right: 25px;
+	.inst-block_mobile_cont
+		margin-top: 30px;
+	.inst-block_mobile .inst-block
+		min-height: 190px;
+	.bot-form__cont
+		padding-top: 90px;
+	.bot-form
+		margin-top: 40px;
+		padding: 0 45px;
+	.footer__top
+		padding-bottom: 50px;
+		padding-top: 112px;
+	.head__cart-wrap
+		width: auto;
+	.card__tabs_left_content 
+		h3
+			font-size: 25px;
+			margin-bottom: 25px;
+			padding-bottom: 20px;
+	.card__feedback
+		padding-left: 25px;
+		padding-right: 25px;
+		position: relative;
+	.card__feedback_form
+		background: #fff;
+		position: absolute;
+		left: 0;
+		z-index: 5;
+	.card__feedback_btns
+		.card__btn
+			a 
+				display: inline-block;
+				width: 170px;
+				text-align: center;
+				line-height: 15px;
+
+@media screen and (max-width: 450px)
+	.tabs
+		width: 100%
+
+	.manifest
+		padding: 0
+
+		&__one
+			padding: 20px 15px !important
+			display: flex
+			flex-direction: column
+			align-items: center
+			margin-bottom: 40px
+			text-align: center
+
+			&-img
+				order: -1
+				position: relative
+				left: auto !important
+				right: auto
+				top: auto
+				margin: -30px 0 15px
+
+			&-btn
+				align-self: center
+
+	.head
+
+		&__logo
+			order: -1
+			padding-left: 0
+
+		&__burger
+			order: -4
+			margin-right: 15px
+
+		&__lc
+			order: -2
+
+		&__favorite
+			order: -3
+
+	.main-slider
+		padding: 95px 0 50px
+
+		.slick
+
+			&-dots
+				bottom: 60px
+
+	.big-slider
+		margin-top: 15px
+
+		&__cont
+			padding-left: 15px
+			padding-right: 15px
+			padding-bottom: 0
+			margin: 0 -15px
+
+		&__title
+
+			&-img
+				display: none
+
+		&__slide
+
+			&--many
+				grid-gap: 1rem
+
+	.bot-form, .seo-text
+
+		&__cont
+			padding: 3rem 0 
+
+	.footer
+
+		&__top
+
+	.title-block
+
+		&__title
+
+			h1
+				font-size: rem(26)
+
+	.catalog-filter
+		padding: 20px 15px
+
+		.forms-wrap
+			margin-left: 0 !important
+			width: 100% !important
+			margin-bottom: 1rem
+
+			&:last-child
+				flex-direction: column
+
+				.forms-input-cont
+					width: 100%
+					// margin-bottom: 1rem
+
+		.btn-flat
+			width: 100%
+
+			&:not(:first-child)
+				margin: 1rem 0 0
+
+			input[type="submit"]
+				width: inherit
+
+	
+
+	.btn-more
+		margin: 25px 0 0
+
+	.cart
+
+		&-aside
+
+			&__header
+				flex-direction: column
+
+			&__title
+				margin-bottom: 1rem
+
+			&__mobile-btn
+				margin-bottom: 1rem
+
+			&__item
+				padding-left: 0
+				padding-right: 0
+
+	.payment-method__item
+		width: calc(100% - 28px)
+
+	.cart-price
+		flex-direction: column
+
+		&__total
+			margin: 15px 0 0
+			padding-left: 0
+
+	.card
+
+		&__feedback
+			padding: 
+				left: 0
+				right: 0
+
+			&_btns
+				flex-direction: column
+
+				.gradient-btn__wrap
+					margin: 15px 0 0
+
+			&_form
+				position: static
+				// margin: 0 -15px
+				padding: 20px 15px 1px
+
+		&__slick
+
+			&_nav
+				// flex: 1 0 auto
+				width: 100%
+
+		&__form
+
+			&_btns
+				flex-direction: column
+				align-items: center
+
+				.card__form_btn
+
+					&:first-child
+						margin-right: 0
+
+	.cart-aside
+
+		&__item
+
+		&__img
+			flex: none
+			width: 80px
+
+	.footer
+
+		&__top
+			padding: 7.3125rem 15px 1.625rem
+
+			.wrapper
+				padding: 0
+
+	.delivery-
+
+		&__payment
+			padding: 0
+
+			&_container
+				margin-left: 0
+
+			&_item
+				padding-left: 0
+				width: 48%
+
+	.sale.cat-item 
+
+		.cat-item__bot-price
+			display: flex
+			align-items: flex-end
+
+		.cat-price
+			order: -1
+			margin-right: 10px
+
+			&__new
+				margin: 0
+
+	.footer
+
+		&__copy, &__design
+			width: 42%
+
+	.design
+		display: block
+		text-align: right
+		white-space: pre-wrap
+
+	.catalog-slider
+
+		&__slide
+
+			.cat-item__hover
+				background: none
+
+@media screen and (max-width: 450px)
+	.main-catalog
+
+		&__slider
+			margin: 40px 0
+
+	.catalog-slider
+		margin: 0 -20px
+
+		.slick
+
+			&-list
+				margin: 0
+				padding: 0
+
+		&__slide
+			margin: 0 20px
+
+			.cat-item__hover
+				background: none
+
+@media screen and (max-width: 370px)
+	// .main-catalog
+
+	// 	&__slider
+	// 		margin: 
+	// 			left: 0
+	// 			right: 0
+
+	// .catalog-slider
+	// 	margin: 0
+
+	// 	&__slide
+	// 		margin: 0
+
+	.cat-items
+		padding: 2rem 0
+		flex-direction: column
+		margin: 0 0 -20px
+
+		.cat-item
+			width: 100% !important
+			margin: 0 0 20px 0 !important
+
+@media screen and (max-width: 350px)
+	.head
+
+		&__logo
+			width: 80px
+
+		&__wrap
+			min-height: 47px
+
+	.cart-link
+		+size(30px)
+		background-size: 50% !important
+
+		&[data-count]
+
+
+			&:after
+				+size(16px)
+				line-height: 16px
+
+	.inner #content
+		padding-top: 75px
+
+	.card
+		margin: 0px 0 0
+
+	.popup_buy-
+
+		&__block
+
+			&_info
+				flex-direction: column
+
+				div
+
+					&:nth-child(2)
+						padding-left: 0
+						margin: 10px 0 0
+
+		&__btns
+			flex-direction: column
+			height: auto
+
+		&__close, &__buy
+			width: 100%
+			text-align: center
+			padding: 8px 10px 10px
+
+			&:not(:first-child)
+				margin: 10px 0 0

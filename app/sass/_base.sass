@@ -436,21 +436,22 @@ li
 		&:before
 			content: ""
 			position: absolute
-			background: url("../img/ico-arrow-catalog-next.png") no-repeat
+			background: url("../img/ico-arrow-catalog-next.svg") no-repeat
 			+size(35px 16px)
 			right: rem(22)
 			top: calc(50% - 8px)
 
 .btn-flat
-	input[type="submit"]
+	input[type="submit"], a
 		background: transparent
 		color: $second-color
 		border: 1px solid $second-color
 		padding: 5px 23px
+		display: inline-block
 		transition: border-color .3s ease, color .3s ease, background .3s ease
 
 	&:hover 
-		input[type="submit"]
+		input[type="submit"], a
 			border-color: $main-color
 			color: $main-color
 

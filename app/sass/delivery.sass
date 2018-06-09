@@ -8,6 +8,14 @@ $output-bourbon-deprecation-warnings: false;
 	right: 50px;
 	top: 40px;
 	transition: 0.5s;
+	background: #fff
+	border-radius: 50%
+	+size(71px)
+	display: flex
+	justify-content: center
+	align-items: center
+	box-shadow:  0px 4px 54px 0px rgba(0, 0, 0, 0.19);
+
 	&:hover
 		transform: scale(1.1);
 // Доставка и оплата-------------------------
@@ -52,19 +60,21 @@ $output-bourbon-deprecation-warnings: false;
 		input[type="submit"]
 			width: 45px;
 			height: 45px;
-			background: url(../img/delivery-ico-city.png) center no-repeat, #8b69fc;
+			background: url(../img/delivery-ico-city.svg) center no-repeat, #8b69fc;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			cursor: pointer;
 			border: 0;
 			transition: 0.3s;
+
 			&:hover
-				background: url(../img/delivery-ico-city.png) center no-repeat, #8363ed;
+				background-color: #8363ed !important
+
 		input[type="reset"]
 			width: 45px;
 			height: 45px;
-			background: url(../img/delivery-ico-city-close.png) center no-repeat
+			background: url(../img/delivery-ico-city-close.svg) center no-repeat
 			position: absolute;
 			// right: 65px;
 			// top: 	17px;
@@ -97,7 +107,13 @@ $output-bourbon-deprecation-warnings: false;
 			width: 100%;
 			text-align: left;
 			min-width: 410px;
-
+		thead
+			tr
+				height: 50px
+		tbody
+			tr
+				&:first-child
+					height: 90px
 		td 
 			color: #000;
 			font-size: 18px;
@@ -130,7 +146,7 @@ $output-bourbon-deprecation-warnings: false;
 			vertical-align: middle;
 
 		tr 
-			height: 70px;
+			height: 80px;
 
 	&__map_title
 		font-size: 25px;
@@ -230,19 +246,18 @@ $output-bourbon-deprecation-warnings: false;
 				color: #bbbbbb;
 	&__payment_container
 		display: flex;
-		margin-left: calc((100% - 160px * 5)/5 * -1);
+		// margin-left: calc((100% - 160px * 5)/5 * -1);
 		margin-bottom: -60px;
 		flex-wrap: wrap;
-
+		justify-content: space-between
+		
 	&__payment_title
 		font-size: 25px;
 		margin-bottom: 50px;
 
 	&__payment_item
 		margin-bottom: 60px;
-		margin-left: calc((100% - 160px * 5)/5);
-		// &:first-child
-		// 	margin-left: 0;
+		// margin-left: calc((100% - 160px * 5)/5);
 		img 
 			margin-bottom: 30px;
 		div 
@@ -336,6 +351,7 @@ $output-bourbon-deprecation-warnings: false;
 			transform: rotate(180deg);
 .bg_pic
 	background: url(../img/catalog-bg-top.png) 0 15px no-repeat;
+	background-size: 100% auto
 .search-, .favorite-, .delivery-
 	.big-slider__title-cont
 		margin-bottom: 45px;
@@ -403,8 +419,12 @@ $output-bourbon-deprecation-warnings: false;
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
-			a 
-				color: #a279f4;
+			>
+				a
+					border-color: $second-color
+					color: $second-color
+					// color: #a279f4;
+
 		.forms__title
 			font-size: 30px;
 			font-weight: bold;
@@ -427,7 +447,7 @@ $output-bourbon-deprecation-warnings: false;
 		.pass_ico
 			&:before
 				content: "";
-				background: url(../img/form-ico-pass.png) no-repeat;
+				background: url(../img/form-ico-pass.svg) no-repeat;
 				position: absolute;
 				right: 15px;
 				bottom: 13px;
@@ -453,9 +473,11 @@ $output-bourbon-deprecation-warnings: false;
 		.aside-soc
 			margin-top: 8px;
 			display: flex;
+
 		.gradient-btn
-			width: 135px
-			padding: 0 !important;
+			// width: 135px
+			// padding: 0 !important;
+
 		form[data-id="2"]
 			.gradient-btn
 				width: 100%;
@@ -466,6 +488,7 @@ $output-bourbon-deprecation-warnings: false;
 	border-bottom: 3px solid #8b69fc;
 	padding-bottom: 45px;
 	padding-top: 60px;
+	
 	&__title
 		color: #8b69fc;
 		font-size: 25px;
@@ -574,16 +597,87 @@ $output-bourbon-deprecation-warnings: false;
 		margin-bottom: 24px;
 	form
 		padding-bottom: 0px;
+		
 .fancybox-stage
 	.card__top
 		display: inline-flex !important;
+		border-bottom: 3px solid $second-color
 		max-width: 1040px
+
 .fancy-active_popup
 	.fancybox-slide
 		&:before
 			display: none;
 // Popup-----------------------Конец
 // media
+
+@media screen and (min-width: 800px)
+	#popup-3
+		max-width: 705px
+		padding: 30px 60px
+
+		.fancybox-close-small
+			top: 0
+			right: 0
+
+	.popup3__wrap
+		display: grid
+		grid-template-areas: "title in-cart" "block btns"
+		grid-gap: 30px rem(90)
+		text-align: left
+		font-weight: 400
+
+		.popup_buy-
+
+			&__title
+				grid-area: title
+				text-align: left
+				margin-bottom: 0
+				font-size: rem(30)
+				line-height: 1
+
+			&__block
+				grid-area: block
+				padding: 0
+
+				&_info
+					grid-area: in-cart
+					padding: 0
+					flex-direction: column
+					margin-bottom: 0
+
+					div
+
+						&:first-child
+							font-size: 14px
+
+						&:nth-child(2)
+							padding-left: 0
+							white-space: nowrap
+							font-size: 12px
+							margin: 8px 0 0
+
+						br
+							display: none
+
+			&__btns
+				grid-area: btns
+				flex-direction: column
+				align-self: center
+				height: auto
+
+			&__close, &__buy
+				width: 100%
+				height: auto
+				padding: 13px 14px
+				display: block
+				text-align: center
+				// font-weight: 400
+
+				&:not(:first-child)
+					margin: 25px 0 0
+
+
 @media screen and (min-width: 1000px)
 	.search-, .favorite-, .delivery-
 		.big-slider__title-cont
@@ -611,6 +705,8 @@ $output-bourbon-deprecation-warnings: false;
 		.card__top
 			flex-direction: column;
 			padding: 40px;
+			margin: 0 !important
+
 			.fancybox-close-small
 				top: 0px;
 				right: 0px;
@@ -618,12 +714,16 @@ $output-bourbon-deprecation-warnings: false;
 			width: 100%;
 		.card__sample
 			width: 100%;
+	.popup
+		margin: 0
+		min-height: 100%
 	// popup--------------------------------END
 @media screen and (max-width: 900px)
 	// Доставка и оплата-------------------------
 	.delivery-
 		&__payment_container
-			margin-left: calc((100% - 160px * 4)/4 * -1);
+			margin-left: calc((100% - 150px * 4)/4 * -1);
+			justify-content: flex-start;
 
 		&__payment_item
 			margin-left: calc((100% - 160px * 4)/4);
@@ -631,6 +731,8 @@ $output-bourbon-deprecation-warnings: false;
 @media screen and (max-width: 770px)
 	// Доставка и оплата-------------------------
 	.delivery-
+		&__payment_title
+			text-align: center;
 		.fix-1 
 			img
 				left: calc(50% - 26px);
@@ -729,10 +831,13 @@ $output-bourbon-deprecation-warnings: false;
 
 		&__payment_container
 			margin-left: -10px;
-
+			justify-content: space-between;
+		&__payment
+			padding-left: 25px;
+			padding-right: 25px;
 		&__payment_item
 			margin-left: 0
-			width: 50%;
+			// width: 50%;
 			padding-left: 10px;
 
 		&__payment_title

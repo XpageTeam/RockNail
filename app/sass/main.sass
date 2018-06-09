@@ -3,14 +3,55 @@ $output-bourbon-deprecation-warnings: false;
 @import "vars"
 @import "base"
 @import "functions"
-$output-bourbon-deprecation-warnings: false;
-@import "bourbon"
-@import "vars"
-@import "base"
-@import "functions"
-1
+
 *[v-cloak]
 	display: none
+
+.forms-authorization
+	background: url('../img/authorization-bg.png') no-repeat center top 0px, #fff
+	background-size: contain !important
+
+.head__search-more[style*="block"]
+	position: relative
+
+	.search
+
+		&:after
+			content: ""
+			position: absolute
+			bottom: -15px
+			right: 6.5rem
+			+size(10px)
+			border: 5px solid transparent
+			border-top: 13px solid #fff
+.footer
+	&__logo
+		margin-left: -16px
+
+.f-menu
+	display: flex
+	flex-direction: column
+	align-items: flex-start
+
+	li
+		position: relative
+
+		&:after
+			content: ""
+			position: absolute
+			bottom: -4px
+			left: 0
+			width: 100%
+			height: 1px
+			background: $second-color
+			opacity: 0
+			transition: opacity .3s ease
+
+		&:hover
+			&:after
+				opacity: 1
+			a 
+				color: $second-color
 
 .fancy-popup
 
@@ -36,7 +77,11 @@ $output-bourbon-deprecation-warnings: false;
 .cat-item
 	
 .btn 
-	cursor: pointer		
+	cursor: pointer	
+
+	&-wrap
+
+		z-index: 1	
 
 
 .catalog
@@ -323,14 +368,19 @@ $output-bourbon-deprecation-warnings: false;
 			background: url('../img/ico-paginator-dots.png') no-repeat center
 
 	&__link
-		display: flex
-		align-items: center
-		justify-content: center
-		color: #fff
+		// display: flex
+		// align-items: center
+		// justify-content: center
+		display: block
+		color: #fff !important
+		text-align: center
+		line-height: 28px
 		font-weight: 500
 		+size(26px)
 		border-radius: 50%
 		background: #c5b4fd
+		font-size: 14px
+		letter-spacing: .02em
 
 		
 
@@ -411,7 +461,7 @@ $output-bourbon-deprecation-warnings: false;
 			&:last-child
 				flex: none
 				max-width: 262px 
-
+				margin-left: auto
 
 				.forms
 					&-input-cont
@@ -856,6 +906,9 @@ button, input, select
 
 	.cat-item__img
 		margin-bottom: 25px
+		display: flex
+		justify-content: center
+		align-items: center
 
 	.favorite-add
 		background: url('../img/ico-favorite-catalog.png') no-repeat center
@@ -868,6 +921,7 @@ button, input, select
 	&-items
 		display: flex 
 		flex-wrap: wrap
+		align-items: flex-start
 		margin: 0 0 -90px -80px
 		padding: 55px 10px 10px 55px
 
@@ -879,8 +933,6 @@ button, input, select
 	&-item
 		position: relative
 		transition: outline-width 0s ease, box-shadow .5s ease
-
-
 
 		&__desc
 			padding: 0 18px
@@ -895,11 +947,14 @@ button, input, select
 			outline: 13px solid #fff
 			box-shadow: 1px 1px 35px 12px rgba(0, 0, 0, 0.04)
 			background-color: #fff
-			.img
+			a.quick-view
+				color: #8b69fc;
+				text-transform: uppercase;
+			.img:first-child:not(:last-child)
 				opacity: 0
 
-				&-hover
-					opacity: 1
+			.img-hover
+				opacity: 1
 
 			.cat-item
 
@@ -924,6 +979,11 @@ button, input, select
 				opacity: 0
 				pointer-events: none
 
+		&__bot
+
+			&-favorite
+				position: relative
+
 		&__hover
 			display: flex
 			flex-direction: column
@@ -938,8 +998,22 @@ button, input, select
 			background: #fff
 			transition: box-shadow .7s ease, opacity .3s ease	
 
+			
+			&-title
+				text-transform: uppercase
+				font-size: rem(20)
+				letter-spacing: .02em
+				text-align: center
+				color: #fff
+				font-weight: bold
+				margin: 13px 0 10px
 
-
+			&-subscribe
+				text-align: center
+				
+				a
+					color: #fff
+					border-bottom: 1px solid rgba(#fff, .4)
 	
 
 .gradient-btn
@@ -1012,7 +1086,7 @@ button, input, select
 		width: calc(100% - 175px)
 
 	&-banner 
-		margin-top: -44px
+		margin-top: -45px
 		margin-bottom: 20px
 		img 
 			display: block
@@ -1104,49 +1178,13 @@ button, input, select
 		position: relative
 		color: #fff
 		z-index: 2
-
-		
-
-.paginator
-	display: flex
-	justify-content: flex-end
-	max-width: 200px
-	margin-left: auto
-	margin-top: -40px
-	margin-right: 15px
-
-	&__list
-		display: flex
-
-		li
-			
-			&:not(:first-child)
-				margin-left: 10px
-
-
-
-			&.active
-				.paginator__link
-					background: $second-color
-		span.paginator__link
-			background: url('../img/ico-paginator-dots.png') no-repeat center
-
-	&__link
-		display: flex
-		align-items: center
-		justify-content: center
-		color: #fff
-		font-weight: 500
-		+size(26px)
-		border-radius: 50%
-		background: #c5b4fd
-
 		
 
 .catalog-filter
 	display: flex
 	padding: 20px 25px 25px
 	background: #fff
+	box-shadow: 1px 1px 69px 5px rgba(177, 177, 177, 0.47)
 	
 	.mobile
 		display: none 
@@ -1158,9 +1196,31 @@ button, input, select
 			position: relative
 			width: 30px
 			height: 70px
+			display: flex
+			justify-content: center
+			align-items: center
+
+			.forms__checkbox
+
+				&-label
+
+					&:before
+						content: ""
+						display: block !important
+						position: absolute
+						background: url("../img/nail-shadow.png") no-repeat
+						+size(51px 80px)
+						top: calc(50% + 2px)
+						left: calc(50% + 2px)
+						transform: translate(-50%, -50%)
+						opacity: 1
+
+					img
+						position: relative
+						z-index: 1
 
 			&:not(:nth-child(2))
-				margin-left: 6px
+				// margin-left: 6px
 				
 
 			&:before
@@ -1176,9 +1236,11 @@ button, input, select
 				opacity: 0
 				pointer-events: none
 				top: -25px
-				left: -50%
+				left: 50%
+				transform: translateX(-50%)
 				transition: opacity .3s ease
-				text-transform: lowercase;
+				text-transform: lowercase
+
 			&:after 
 				content: ""
 				position: absolute
@@ -1194,6 +1256,7 @@ button, input, select
 				max-width: inherit
 				pointer-events: none
 				margin-left: -10px
+				margin-left: 0
 
 			&:hover 
 				&:before, &:after
@@ -1228,7 +1291,7 @@ button, input, select
 						flex-direction: column
 						margin-bottom: 25px
 				.btn-flat + .btn-flat
-					margin-left: 17px
+					margin-left: 15px
 
 				.forms__input
 					padding: 0
@@ -1248,7 +1311,7 @@ button, input, select
 			&:after
 				height: 2px
 				width: 16px
-				bottom: -10px
+				bottom: -33px
 				top: initial
 				left: calc(50% - 8px)
 				transform-origin: right
@@ -1319,6 +1382,7 @@ button, input, select
 	h1 
 		font-size: rem(20)
 		font-weight: 500
+		letter-spacing: 0.02em
 
 .inner
 	#content
@@ -1345,7 +1409,7 @@ button, input, select
 	padding: 12px 0 17px
 	width: 100%
 	max-width: 975px
-
+	margin-right: 20px;
 	&__form
 		flex: 1 1 auto
 
@@ -1358,7 +1422,7 @@ button, input, select
 
 	&__close
 		flex: none
-		margin-left: 25px
+		margin: 0 6px 0 25px
 
 	&-close
 		background: #000
@@ -1384,7 +1448,7 @@ button, input, select
 	.head
 
 		&:after
-			box-shadow: 0px 0px 0px 0px rgba(#000, 0)
+			// box-shadow: 0px 0px 0px 0px rgba(#000, 0)
 
 .head
 	position: fixed
@@ -1407,7 +1471,7 @@ button, input, select
 		// pointer-events: none
 		+size(100%)
 		background: rgba(#fff, .28)
-		box-shadow: $shadow
+		box-shadow: -1px 6px 30px 0px rgba(113, 113, 113, 0.47);
 		transition: box-shdow .3s ease
 
 	$width: 210vw
@@ -1497,6 +1561,7 @@ button, input, select
 			font-weight: bold;
 			position: relative;
 			border-bottom: 1px solid #dcdcdc;
+			text-transform: uppercase;
 			&:before
 				content: "";
 				background: url(../img/ico-select-arrow-black.png) no-repeat;
@@ -1528,7 +1593,7 @@ button, input, select
 			content: "";
 			background: url(../img/main-mobmenu-btn.png) no-repeat;
 			position: absolute;
-			left: 22px;
+			left: 26px;
 			top: 15px;
 			width: 14px;
 			height: 15px;
@@ -1558,6 +1623,10 @@ button, input, select
 			font-size: 14px
 			letter-spacing: .02em
 			margin-bottom: 20px
+
+			a
+				color: inherit
+				text-decoration: none
 
 		&--img
 			width: 135px
@@ -1633,7 +1702,7 @@ button, input, select
 .cart-link
 	// background: #fff
 	border-radius: 50%
-	background: url("../img/ico-cart.png") center bottom 8px no-repeat, #000
+	background: url("../img/ico-cart.svg") center bottom 8px no-repeat, #000
 	display: block
 	+size(70px)
 
@@ -1653,7 +1722,7 @@ button, input, select
 			+size(26px)
 			line-height: 26px
 			text-align: center
-
+			color: #a55dfe;
 	&[data-count="0"]
 
 		&:after
@@ -1663,10 +1732,12 @@ button, input, select
 
 	a
 		color: inherit
+		font-size: rem(14)
 
 .logo
 	position: relative
 	display: block
+	margin-top: -2px
 
 	&:hover, &:focus
 
@@ -1744,7 +1815,7 @@ button, input, select
 .favorite
 
 	&-link
-		background: url("../img/ico-favorite.png") center no-repeat
+		background: url("../img/ico-favorite.svg") center no-repeat
 
 		&[data-count]
 			position: relative
@@ -1759,7 +1830,7 @@ button, input, select
 
 		&:hover, &:focus, &[data-count]
 			color: #8b69fc
-			background: url("../img/ico-favorite-active.png") center no-repeat, CurrentColor
+			background: url("../img/ico-favorite-active.svg") center no-repeat, CurrentColor
 
 .lc-link
 	background: url("../img/ico-lc.png") center no-repeat
@@ -1846,7 +1917,7 @@ button, input, select
 			position: absolute
 			background: url("../img/main-slider-bot-decor.png") center bottom no-repeat
 			+size(100% 58px)
-			background-size: cover
+			background-size: cover !important
 			bottom: 0
 			left: 0
 
@@ -1872,11 +1943,12 @@ button, input, select
 	&__top
 		background: url("../img/footer-bg.png") center top no-repeat, #fff
 		background-size: cover
-		padding: rem(165) 0 rem(90)
-
+		padding: rem(165) 40px rem(90)
+		.wrapper
+			max-width: 1050px;
 	&__soc
 		margin: auto 0 0
-
+		font-size: 14px;
 .footer-top
 	display: flex
 
@@ -1887,7 +1959,7 @@ button, input, select
 		margin-right: persent(100)
 
 		&--big
-			flex: 1 1 auto
+			// flex: 1 1 auto
 
 
 .footer__column
@@ -1906,7 +1978,20 @@ button, input, select
 
 	&__link
 		color: #000
-
+		position: relative;
+.f-menu__link.active
+	color: #000 
+	&:before
+		position: absolute;
+		content: "";
+		background: #000;
+		left: 0;
+		bottom: -4px;
+		height: 2px;
+		width: 100%;
+		transition: opacity .3s ease;
+		opacity: 1;
+		z-index: 2;
 .f-contacts
 	flex: 1 1 auto
 	display: flex
@@ -2098,9 +2183,9 @@ button, input, select
 	&__cont
 		background: url("../img/bot-form-bg.png") center no-repeat
 		background-size: cover
-		padding: 60px 0 85px
+		padding: 40px 0 100px
 		text-align: center
-		margin: 65px 0 0
+		margin: 0
 
 	&__inputs
 		// display: flex
@@ -2113,6 +2198,7 @@ button, input, select
 	&__title
 		font-size: rem(70)
 		line-height: lh(78, 70)
+		font-weight: 300
 
 	&__subtitle
 		font-weight: 400
@@ -2129,9 +2215,25 @@ button, input, select
 		width: 270px
 		height: 48px
 		padding: 0 16px 0 45px
-		background: url("../img/ico-mail.png") center left 16px no-repeat, #fff
+		background: url("../img/ico-mail.svg") center left 16px no-repeat, #fff
 		border: none
 		box-shadow: -2px 4px 20px 0px rgba(9, 3, 5, .22)
+
+		*::-webkit-input-placeholder
+			color: $second-color !important
+			opacity: 1
+
+		*:-moz-placeholder
+			color: $second-color !important
+			opacity: 1
+
+		*::-moz-placeholder
+			color: $second-color !important
+			opacity: 1
+
+		*:-ms-input-placeholder
+			color: $second-color !important
+			opacity: 1
 
 		&-cont
 			display: flex
@@ -2154,6 +2256,7 @@ button, input, select
 					font-weight: 400
 	.gradient-btn
 		box-shadow: -2px 4px 20px 0px rgba(9, 3, 5, 0.22);
+		padding: 24px 2rem;
 .main-slider
 	padding: 113px 0 91px
 
@@ -2170,7 +2273,8 @@ button, input, select
 	
 	&__cont
 		padding: 50px 0 32px
-
+		.wrapper
+			max-width: 1050px;
 	&__title
 		font-weight: bold
 		font-size: rem(20)
@@ -2216,7 +2320,8 @@ button, input, select
 			opacity: 1
 
 		&-title
-			color: $main-color
+			// color: $main-color
+			color: #ed255d
 			text-transform: uppercase
 			font-weight: 400
 			letter-spacing: .03em
@@ -2236,9 +2341,9 @@ button, input, select
 	counter-reset: i
 
 	&__cont
-		background: url("../img/manifest-bg.png") center no-repeat
-		background-size: cover
-		padding: 87px 0 149px
+		background: url("../img/manifest-bg.png") center top 90px no-repeat
+		background-size: cover !important
+		padding: 87px 0 205px
 
 	&__one
 		width: calc((100% - 128px * 2) / 2)
@@ -2333,9 +2438,63 @@ button, input, select
 		position: relative
 
 		.cat-item
-			margin: 0;
-			width: 100%;
+			margin: 0 !important;
+			width: 100% !important;
+		.slick
 
+			&-arrow, &-dots
+				position: absolute
+				z-index: 2
+
+			&-dots
+				left: 0
+				width: 100%
+				bottom: -20px
+				display: flex !important
+				justify-content: center
+				
+				li
+
+					&:not(:last-child)
+						margin-right: 6px
+
+				button
+					@extend %clear-text
+					border-radius: 50%
+					border: none
+					+size(16px)
+					background: none
+					position: relative
+
+					&:after
+						transform: scale3d(0, 0, 1)
+						background: #9667f4
+						+size(100%)
+						top: 0
+						left: 0
+
+					&:before
+						z-index: 1
+						+size(10px)
+						background: #000
+						top: calc(50% - 5px)
+						left: calc(50% - 5px)
+
+					&:after, &:before
+						position: absolute
+						content: ""
+						transition: transform .3s ease
+						border-radius: inherit
+
+				.slick-active
+
+					button
+
+						&:before
+							transform: scale3d(.4, .4, 1)
+
+						&:after
+							transform: scale3d(1, 1, 1)	
 .catalog-slider
 	@extend %clearfix
 	// transition: opacity .3s ease
@@ -2382,12 +2541,13 @@ button, input, select
 			+size(62px)
 			box-shadow: 0px 4px 13px 0px rgba(9, 3, 5, .31)
 			position: absolute
-			top: calc(50% - 31px)
+			top: 130px
 			z-index: 5
 
 		&-prev
 			transform: rotate(180deg)
 			left: -93px
+			box-shadow: 0px -4px 13px 0px rgba(9, 3, 5, .31)
 
 		&-next
 			right: -93px
@@ -2437,8 +2597,8 @@ button, input, select
 	white-space: nowrap;
 .favorite-add
 	display: inline-block
-	+size(20px 25px)
-	background: url("../img/ico-favorite-cat.png") center no-repeat
+	+size(27px 35px)
+	background: url("../img/ico-favorite-catalog.png") center no-repeat !important
 	position: relative
 	transition: background .1s ease
 
@@ -2484,8 +2644,8 @@ button, input, select
 	&-info
 
 		width: calc(100% - 550px)
-
-		
+	.gradient-btn
+		box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.25)		
 
 	&-block__title
 		font-size: rem(18)
@@ -2620,6 +2780,12 @@ button, input, select
 		width: calc((100% - 30px * 2) / 2)
 		margin: 0 0 38px 30px
 		box-shadow: 1px 1px 49px -10px rgba(0, 0, 0, 0.2)
+		flex-direction: row
+
+		.forms
+
+			&__label
+				width: 100%
 
 		&:last-child
 			box-shadow: none
@@ -3025,6 +3191,7 @@ button, input, select
 
 			&-prev
 				transform: rotate(180deg) translate(0, 50%)
+				box-shadow: 0px -4px 13px 0px rgba(9, 3, 5, .31)
 
 	&__cont
 		overflow: hidden
@@ -3068,6 +3235,7 @@ button, input, select
 	&__slide
 		margin: 0 15px
 		flex: none
+		position: relative
 
 		&:not(.slick-slide)
 			// float: left
@@ -3076,6 +3244,17 @@ button, input, select
 			&:nth-child(n + 7)
 				display: none
 
+		&-img
+			position: relative
+
+		&-img:hover, &:hover
+
+			> .big-slider
+
+				&__counters
+					opacity: 1
+					pointer-events: all
+
 		&-inst
 			display: flex
 			// align-self: stretch
@@ -3083,6 +3262,7 @@ button, input, select
 			flex-direction: column
 			// padding-top: 14px
 			margin: 8px 0 0
+			align-self: stretch
 
 		&--many
 			display: flex !important
@@ -3104,12 +3284,58 @@ button, input, select
 				&:nth-child(even)
 					// margin-left: rem(28)
 
+	&__counters
+		position: absolute
+		top: 0
+		left: 0
+		+size(100%)
+		background: rgba(#000, .6)
+		z-index: 5
+		opacity: 0
+		transition: opacity .3s ease
+		pointer-events: none
+		color: #fff
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-direction: column
+		font-weight: 400
+		font-size: 14px
+		text-align: center
+
+		&-likes, &-comments
+			padding: 22px 0 0
+			position: relative
+
+			&:before
+				content: ""
+				position: absolute
+				top: 0
+
+			&:not(:first-child)
+				margin: 15px 0 0
+
+		&-likes
+
+			&:before
+				background: url("../img/ico-likes.png") no-repeat
+				+size(15px 14px)
+				left: calc(50% - 8px)
+
+		&-comments
+
+			&:before
+				background: url("../img/ico-comments-counter.svg") no-repeat
+				+size(13px 14px)
+				left: calc(50% - 7px)
+
 .inst-block
 	background: url("../img/inst-bg.png") center right no-repeat
 	background-size: cover
 	flex: 1 1 auto
 	// padding: 1.8rem 1.4375rem 2.5rem
-	padding: 7px;
+	// padding: 7px;
+	padding: vw(25) 25px 0 vw(25);
 	position: relative
 	// z-index: 5
 	font-weight: 400
@@ -3146,11 +3372,20 @@ button, input, select
 .big-slider__slide-img_mobile
 	display: none;
 // product_card-------------------------------
+
 .card
 	background: url(../img/card-bg.png) 0 600px no-repeat;
-	// background-size: cover;
+	background-size: contain !important;
+
+	.catalog-slider 
+
+		.slick-arrow
+
+			top: 190px
+
+
 	&__slider
-		width: 45%
+		width: 47%
 		// height: 640px
 		position: relative;
 		// background: gray
@@ -3175,6 +3410,11 @@ button, input, select
 		display: flex;
 		align-items: center;
 
+		.slick
+
+			&-list
+				min-width: 100%
+	
 		.slick-track
 			display: flex;
 			align-items: center;
@@ -3187,6 +3427,7 @@ button, input, select
 		// min-height: 540px;
 		// padding-right: 35px;
 		// margin-right: 35px;
+		flex: none
 		img
 			// object-fit: cover;
 			margin: 0 auto;
@@ -3200,6 +3441,12 @@ button, input, select
 
 		.card__slick_slide
 			margin: 0 15px
+
+		.slick
+
+			&-list
+				// flex: none
+				min-width: 100%
 		
 		img
 			height: 70px;
@@ -3222,7 +3469,7 @@ button, input, select
 		.card__slick_slide
 			margin-right: 30px
 	&__sample
-		width: 55%
+		width: 53%
 		padding-left: vw(40);
 		h1, h2
 			font-size: 25px;
@@ -3250,17 +3497,27 @@ button, input, select
 	&__sample_buy
 		padding: 0 18px;
 		margin-top: 50px;
+
 		.cat-item__bot
 			align-items: center;
+
 		.favorite-add
 			position: inherit;
+
+		.cat-item
+
+			&__bot-price
+				display: flex
+				align-items: flex-start
+				flex-direction: column-reverse
+
 		span
 			display: flex;
 			align-items: center;
 
 		.gradient-btn
 			margin-right: vw(45)
-			min-width: 170px;
+			// min-width: 170px;
 
 	&__sample_input
 		position: relative;
@@ -3444,13 +3701,22 @@ button, input, select
 		td 
 			color: #000;
 			font-size: 16px;
+			&:nth-child(1)
+				width: 40%;
+				padding-left: 40px;
+			&:nth-child(2)
+				width: 47%;
 			&:nth-child(3)
 				color: #9667f3;
 				font-size: 20px;
 				font-weight: bold;
+				width: 13%;
+				white-space: nowrap;
 		th 
 			font-size: 12px;
 			color: #8e8e8e;
+			&:nth-child(1)
+				padding-left: 40px;
 		thead, tfoot
 			border-bottom: 1px solid #8e8e8e;
 		tbody
@@ -3593,19 +3859,20 @@ button, input, select
 			height: 70px;
 			&:after
 				content: ""
-				background-color: rgba(0,0,0, 0.0);
+				// background-color: rgba(0,0,0, 0.0);
+				background: rgba(0,0,0, 0.0);
 				width: 100%
 				height: 100%
 				position: absolute;
 				left: 0
 				top: 0
-				transition: background-color 0.4s;
+				transition: background 0.2s;
 			&:hover, &:focus
 				border-bottom: 0;
 				&:after
 					content: ""
-					background: url(../img/card-ico-feedback-lupa.png) 20px no-repeat;
-					background-color: rgba(0,0,0, 0.3);
+					background: url(../img/card-ico-feedback-lupa.svg) 20px no-repeat, rgba(0,0,0, 0.3) !important;
+					// background-color: rgba(0,0,0, 0.3);
 					width: 100%
 					height: 100%
 					position: absolute;
@@ -3628,7 +3895,7 @@ button, input, select
 		display: flex;
 		align-items: center;
 
-		.gradient-btn.gradient-btn__wrap
+		.gradient-btn__wrap
 			margin-left: 30px;
 
 	&__btn
@@ -3658,6 +3925,23 @@ button, input, select
 		position: relative;
 		display: none;
 		margin-top: 40px;
+		.card__form_btn-fix
+			width: auto;
+			display: inline-flex;
+			position: relative;
+			input 
+				padding-right: 50px;
+			&:after
+				content: "";
+				background: url(../img/card-ico-feedback-btn-2.svg) no-repeat;
+				background-size: 100% 100%
+				position: absolute;
+				right: 55px;
+				top: calc(50% - 10px);
+				width: 21px;
+				height: 20px;
+				z-index: 4;
+				pointer-events: none
 		.forms__title
 			font-size: 25px;
 			color: #9667f4;
@@ -3808,19 +4092,50 @@ button, input, select
 	font-weight: bold;
 	display: none;
 	white-space: nowrap;
+
+.sale, .new
+	position: relative
+
+	&:not(.card__top):after, .card__slider:after
+		content: ""
+		
+		width: 47px;
+		height: 47px;
+		position: absolute;
+		right: 0;
+		top: 0
+		z-index: 2;
+
+.sale, .new, .hit
+	position: relative
+
+	&:not(.card__top):after, .card__slider:after
+		content: ""		
+		width: 47px;
+		height: 47px;
+		position: absolute;
+		right: 0;
+		top: 0
+		z-index: 2;
+
+.hit
+
+	&:not(.card__top):after, .card__slider:after
+		background: url("../img/ico-hit-label.png") no-repeat
+
+.new
+
+	&:not(.card__top):after, .card__slider:after
+		background: url("../img/ico-new-label.png") no-repeat
+
 .sale
+
+	&:not(.card__top):after, .card__slider:after
+		background: url(../img/card-ico-sale.png) no-repeat;
+
 	.cat-price_sale
 		display: block;
-	.card__slider
-		&:after
-			content: ""
-			background: url(../img/card-ico-sale.png) no-repeat;
-			width: 47px;
-			height: 47px;
-			position: absolute;
-			right: 0;
-			top: 0
-			z-index: 2;
+
 	.cat-price
 		font-size: 16px;
 		color: #858585;
@@ -3828,6 +4143,7 @@ button, input, select
 		position: relative;
 		display: inline-block;
 		white-space: nowrap;
+
 		&:after
 			content: ""
 			width: 100%
@@ -3838,6 +4154,65 @@ button, input, select
 			top: 8px
 			z-index: 2;
 			transform: rotate(13deg);
+
+	&.cat-item
+
+		.cat-item
+
+			&__bot
+
+				&-price
+					white-space: nowrap
+
+					.cat-price, .cat-price__new
+						display: inline-block
+						vertical-align: bottom
+
+					.cat-price__new
+						color: #cc2a5c
+						font-size: rem(20)
+						font-weight: bold
+						margin-right: 10px
+
+.no_exist.cat-item
+	position: relative
+
+	&:before
+		content: ""
+		position: absolute
+		top: -13px
+		left: -13px
+		right: -13px
+		bottom: -13px
+		background: url("../img/catalog-no-exist.png") center no-repeat
+		background-size: cover !important
+
+	.cat-item
+
+		&__desc, &__img
+			position: relative !important
+			z-index: 1 !important
+
+		&__hover
+			top: -13px !important
+			left: -13px !important
+			opacity: 1 !important
+			width: auto !important
+			padding: 22px 0 !important
+			margin: 0 !important
+			right: -13px !important
+			background: transparent !important
+			z-index: 5 !important
+			box-shadow: none !important
+			position: absolute !important
+
+.slick-slider
+
+	.no_exist.cat-item
+
+		&:before
+			background: url("../img/main-no-exist.png") center no-repeat
+
 .popup
 	display: none;
 .fancybox-close-small
@@ -3868,12 +4243,20 @@ button, input, select
 		&__sample_input
 			margin: 0 10px;
 
-@media screen and (max-width: 770px)
+
+
+// было (max-width: 770px)
+@media screen and (max-width: 1000px)
 	.card
+		margin-top: -44px;
+		background: transparent;
+		.main-catalog__cont
+			background: url(../img/card-bg-tab.png) no-repeat;
+			background-size: contain !important;
 		&__tabs
 			display: flex;
 			flex-direction: column;
-
+			
 		&__tabs_right
 			width: 100%;
 			order: 1;
@@ -3888,7 +4271,7 @@ button, input, select
 
 		&__tabs_right-title
 			width: 100%;
-
+			text-align: center;
 		&__tabs_right_item
 			width: calc(100% / 3);
 			padding: 85px 5px 0 5px;
@@ -3910,11 +4293,6 @@ button, input, select
 			h3
 				width: 100%;
 				margin-bottom: 35px;
-		&__slick_nav
-			// display: none;
-
-		&__sample_slider
-			// display: none;
 
 		&__top
 			flex-direction: column;
@@ -3983,9 +4361,11 @@ button, input, select
 			display: flex;
 			margin-bottom: 30px;
 			flex-wrap: wrap;
-			justify-content: space-around;
+			// justify-content: space-around;
 			.card__form_btn
 				margin-bottom: 10px;
+				&:first-child
+					margin-right: 15px;
 
 	.sale
 		.card__slider
@@ -4014,8 +4394,22 @@ button, input, select
 
 		&__sample_buy
 			padding: 0;
-
+	.card__feedback_form 
+		.forms-submit-cont 
+			input
+				width: 180px
+				min-width: 150px !important;
+		.card__form_btn-fix
+			&:after
+				right: 40px;
+		.forms-input-cont--file 
+			label
+				width: 200px
 @media screen and (max-width: 480px)
+	.card__feedback_form
+		padding: 30px;
+	.card__form_btns
+		flex-wrap: nowrap;
 	.card
 		&__select
 			display: block;
@@ -4083,13 +4477,16 @@ button, input, select
 		&__sample_buy 
 			.cat-item__bot-price
 				margin-bottom: 10px;
-				flex-direction: column;
+				align-items: flex-start
+				// flex-direction: column;
 
 		&__sample
 			padding-left: 4vw;
 			padding-right: 4vw;
 			h1, h2
 				padding-left: 0;
+				font-size: 20px;
+				line-height: 1.1;
 		&__sample_input
 			margin: 0;
 // product_card-------------------------------END
@@ -4150,6 +4547,7 @@ div.fake-select
 
 					&-text
 						font-weight: 400
+						color: #000;
 
 	&__item
 		display: flex
@@ -4165,6 +4563,61 @@ div.fake-select
 		&-text
 			color: $second-color
 			font-weight: bold
+.cart-aside__mobile-btn
+	display: none;
+
+.card__popup
+	display: flex
+	width: 100%
+
+	.slick
+
+		&-track
+			height: auto
+			max-height: none
+
+	.card
+
+		&__slider
+			display: flex
+			flex-direction: column
+			width: 340px
+			flex: none
+
+		&__sample
+			width: calc(100% - 340px)
+
+		&__slick
+			flex: 1 1 auto
+			flex-direction: column
+			align-items: stretch
+
+			.slick
+
+				&-list
+					flex: 1 1 auto
+					display: flex
+
+				&-track
+					flex: none
+
+				&-slide
+					flex: none
+
+			&_nav
+				flex: none
+				height: auto
+
+.slick-dots
+
+	li
+		flex: none
+
+	button
+		display: block
+
+.bx-sls .bx-ui-sls-container
+	min-height: 33px
 
 @import "_grid"
 @import "media"

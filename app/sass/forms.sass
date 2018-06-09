@@ -167,7 +167,7 @@ $error-color: #ff0024
 
 		&[required] + .forms__label:after
 			content: "*"
-			color: red
+			color: $second-color
 
 		&--select
 			-webkit-appearance: none
@@ -358,6 +358,7 @@ $error-color: #ff0024
 		display: inline-block
 		vertical-align: top
 		cursor: pointer
+		display: table-cell
 
 
 	input[type="radio"] + label::before 

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg width="13" height="15" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="-405 578.5 31 35" enable-background="new -405 578.5 31 35" xml:space="preserve">
+<g>
+	<g>
+		<defs>
+			<rect id="SVGID_1_" x="-405" y="578.5" width="31" height="35"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  overflow="visible"/>
+		</clipPath>
+		<path clip-path="url(#SVGID_2_)" fill="#A075F5" stroke="#A075F5" stroke-miterlimit="10" d="M-378.2,589.5c1.2,0,2.2,1,2.2,2.2
+			v17.7c0,1.2-1,2.2-2.2,2.2h-22.6c-1.2-0.1-2.2-1.1-2.2-2.3v-17.6c0-1.2,1-2.2,2.2-2.2H-378.2 M-378.2,587.5h-22.6
+			c-2.3,0-4.2,1.9-4.2,4.2v17.7c0,2.2,1.9,4.1,4.2,4.1h22.7c2.3,0,4.2-1.9,4.2-4.2v-17.6C-374,589.4-375.9,587.5-378.2,587.5"/>
+		<use xlink:href="#SVGID_1_"  overflow="visible" fill="none" stroke="#D063A7" stroke-miterlimit="10"/>
+	</g>
+	<g>
+		<defs>
+			<rect id="SVGID_3_" x="-405" y="578.5" width="31" height="35"/>
+		</defs>
+		<clipPath id="SVGID_4_">
+			<use xlink:href="#SVGID_3_"  overflow="visible"/>
+		</clipPath>
+		<path clip-path="url(#SVGID_4_)" fill="none" stroke="#A075F5" stroke-width="2" stroke-miterlimit="10" d="M-385.5,598.5
+			c0-2.2-1.8-4-4-4s-4,1.8-4,4c0,1.6,0.9,2.9,2.2,3.6l-0.7,4.9h5l-0.7-4.9C-386.4,601.4-385.5,600.1-385.5,598.5z"/>
+		<use xlink:href="#SVGID_3_"  overflow="visible" fill="none" stroke="#D063A7" stroke-miterlimit="10"/>
+	</g>
+	<g>
+		<defs>
+			<rect id="SVGID_5_" x="-405" y="578.5" width="31" height="35"/>
+		</defs>
+		<clipPath id="SVGID_6_">
+			<use xlink:href="#SVGID_5_"  overflow="visible"/>
+		</clipPath>
+		<path clip-path="url(#SVGID_6_)" fill="none" stroke="#A075F5" stroke-width="2" stroke-miterlimit="10" d="M-389,579.5h-1
+			c-5,0-9,4-9,9h19C-380,583.5-384,579.5-389,579.5z"/>
+		<use xlink:href="#SVGID_5_"  overflow="visible" fill="none" stroke="#FFFFFF" stroke-miterlimit="10"/>
+	</g>
+</g>
+</svg>

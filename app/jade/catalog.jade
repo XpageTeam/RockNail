@@ -71,7 +71,7 @@ html(lang="ru")
 										.catalog-filter
 											.forms-wrap
 												.forms-wrap__title Выбрать цвет
-												each img, i in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+												each img, i in ["1", "2", "3", "123", "6", "7", "8", "9"]
 													.forms-checkbox(data-title="Розовые")
 														input(type="checkbox" id="checkbox-"+(i+1)).forms__checkbox 
 														label(for="checkbox-"+(i+1)).forms__checkbox-label 
@@ -92,7 +92,7 @@ html(lang="ru")
 												each img, i in ["10", "11", "12", "13", "14"]
 													.forms-checkbox(data-title="Розовые")
 														input(type="checkbox" id="checkbox-1"+(i+1)).forms__checkbox 
-														label(for="checkbox-"+(i+1)).forms__checkbox-label 
+														label(for="checkbox-1"+(i+1)).forms__checkbox-label 
 															img(src="img/nail-"+img+".png", alt="")
 												.forms-input-cont.mobile
 													img(src="", alt="").ico-select-img
@@ -137,7 +137,82 @@ html(lang="ru")
 													input(type="submit" value="Сбросить")
 
 									.cat-items
-										- for (let i = 0; i < 9; i++)
+										.cat-item.hit
+											a.cat-item__img(href="#")
+												img(src="img/photos/catalog-img-0.png").img
+												img(src="img/photos/catalog-img-hover.jpg", alt="").img-hover
+											.cat-item__desc
+												a.cat-item__title(href="#")
+													span.cat-title Гель-лак Rock Nail Baby Nude
+												.cat-item__info 045 Blue Ocean
+												.cat-item__bot
+													.cat-item__bot-price
+														.cat-price 250 Р
+													.cat-item__bot-favorite
+														a.favorite-add(href="#")
+															span.favorite-add__title избранное
+											.cat-item__hover
+												a.btn-wrap.gradient-btn(href="#")
+													span В корзину
+
+												a(href="img/photos/catalog-img-hover.jpg" data-fancybox="quick-view").fancybox.quick-view Быстрый просмотр
+										.cat-item.new
+											a.cat-item__img(href="#")
+												img(src="img/photos/catalog-img-0.png").img
+												img(src="img/photos/catalog-img-hover.jpg", alt="").img-hover
+											.cat-item__desc
+												a.cat-item__title(href="#")
+													span.cat-title Гель-лак Rock Nail Baby Nude
+												.cat-item__info 045 Blue Ocean
+												.cat-item__bot
+													.cat-item__bot-price
+														.cat-price 250 Р
+													.cat-item__bot-favorite
+														a.favorite-add(href="#")
+															span.favorite-add__title избранное
+											.cat-item__hover
+												a.btn-wrap.gradient-btn(href="#")
+													span В корзину
+
+												a(href="img/photos/catalog-img-hover.jpg" data-fancybox="quick-view").fancybox.quick-view Быстрый просмотр
+										.cat-item.no_exist
+											a.cat-item__img(href="#")
+												img(src="img/photos/catalog-img-0.png").img
+											.cat-item__desc
+												a.cat-item__title(href="#")
+													span.cat-title Гель-лак Rock Nail Baby Nude
+												.cat-item__info 045 Blue Ocean
+												.cat-item__bot
+													.cat-item__bot-price
+														.cat-price 250 Р
+													.cat-item__bot-favorite
+														a.favorite-add(href="#")
+															span.favorite-add__title избранное
+											.cat-item__hover
+												.cat-item__hover-title Товара НЕТ <br /> В НАЛИЧИИ
+												.cat-item__hover-subscribe
+													a(href="#") Сообщить <br /> о поступлении
+										.cat-item.sale
+											a.cat-item__img(href="#")
+												img(src="img/photos/catalog-img-0.png").img
+												img(src="img/photos/catalog-img-hover.jpg", alt="").img-hover
+											.cat-item__desc
+												a.cat-item__title(href="#")
+													span.cat-title Гель-лак Rock Nail Baby Nude
+												.cat-item__info 045 Blue Ocean
+												.cat-item__bot
+													.cat-item__bot-price
+														.cat-price__new 2500 Р
+														.cat-price 250 Р
+													.cat-item__bot-favorite
+														a.favorite-add(href="#")
+															span.favorite-add__title избранное
+											.cat-item__hover
+												a.btn-wrap.gradient-btn(href="#")
+													span В корзину
+
+												a(href="img/photos/catalog-img-hover.jpg" data-fancybox="quick-view").fancybox.quick-view Быстрый просмотр
+										- for (let i = 0; i < 5; i++)
 											.cat-item
 												a.cat-item__img(href="#")
 													img(src="img/photos/catalog-img-0.png").img

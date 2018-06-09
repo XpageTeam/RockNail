@@ -18,7 +18,8 @@ html(lang="ru")
 										figure.main-slider__img
 											picture
 												source(srcset="img/photos/main-banner.png" media="screen and (min-width: 1000px)" data-main)
-												source(srcset="img/photos/main-banner-tab.png" media="screen and (max-width: 999px)")
+												source(srcset="img/photos/main-banner-tab.png" media="screen and (min-width: 481px) and (max-width: 999px)")
+												source(srcset="img/photos/main-banner-mob.png" media="screen and (max-width: 480px)")
 												img
 					.main-catalog__cont
 						.wrapper
@@ -39,12 +40,30 @@ html(lang="ru")
 							.main-catalog__slider
 								.catalog-slider.active(data-id="0")
 									- for (let j = 0; j < 2; j++)
+										.catalog-slider__slide
+											.cat-item.no_exist
+												a.cat-item__img(href="#")
+													img(src="img/photos/catalog-img-0.png").img
+												.cat-item__desc
+													a.cat-item__title(href="#")
+														span.cat-title Гель-лак Rock Nail Baby Nude
+													.cat-item__info 045 Blue Ocean
+													.cat-item__bot
+														.cat-item__bot-price
+															.cat-price 250 Р
+														.cat-item__bot-favorite
+															a.favorite-add(href="#")
+																span.favorite-add__title избранное
+												.cat-item__hover
+													.cat-item__hover-title Товара НЕТ <br /> В НАЛИЧИИ
+													.cat-item__hover-subscribe
+														a(href="#") Сообщить <br /> о поступлении
 										- for (let i = 0; i < 4; i++)
 											.catalog-slider__slide
 												.cat-item
 													a.cat-item__img(href="#")
 														img(src="img/photos/catalog-img-0.png").img
-														img(src="img/photos/catalog-img-hover.jpg", alt="").img-hover
+														img(src="img/photos/catalog-img-hover.jpg").img-hover
 													.cat-item__desc
 														a.cat-item__title(href="#")
 															span.cat-title Гель-лак Rock Nail Baby Nude
@@ -133,12 +152,24 @@ html(lang="ru")
 							.big-slider__slide.big-slider__slide--many
 								figure.big-slider__slide-img
 									img(src="img/photos/big-slider-2.jpg")
+									.big-slider__counters
+										.big-slider__counters-likes 1500
+										.big-slider__counters-comments 87
 								figure.big-slider__slide-img
 									img(src="img/photos/big-slider-3.jpg")
+									.big-slider__counters
+										.big-slider__counters-likes 1500
+										.big-slider__counters-comments 87
 								figure.big-slider__slide-img.big-slider__slide-img_mobile
 									img(src="img/photos/big-slider-2.jpg")
+									.big-slider__counters
+										.big-slider__counters-likes 1500
+										.big-slider__counters-comments 87
 								figure.big-slider__slide-img.big-slider__slide-img_mobile
 									img(src="img/photos/big-slider-3.jpg")
+									.big-slider__counters
+										.big-slider__counters-likes 1500
+										.big-slider__counters-comments 87
 								.big-slider__slide-inst
 									.inst-block
 										.inst-block__text Смотри больше в нашем профиле в Instagram
@@ -149,50 +180,113 @@ html(lang="ru")
 							
 							.big-slider__slide
 								img(src="img/photos/big-slider-4.jpg")
+								.big-slider__counters
+									.big-slider__counters-likes 1500
+									.big-slider__counters-comments 87
 							.big-slider__slide.big-slider__slide--many
 								figure.big-slider__slide-img
 									img(src="img/photos/big-slider-5.jpg")
+									.big-slider__counters
+										.big-slider__counters-likes 1500
+										.big-slider__counters-comments 87
 								figure.big-slider__slide-img
 									img(src="img/photos/big-slider-6.jpg")
+									.big-slider__counters
+										.big-slider__counters-likes 1500
+										.big-slider__counters-comments 87
 								figure.big-slider__slide-img
 									img(src="img/photos/big-slider-2.jpg")
+									.big-slider__counters
+										.big-slider__counters-likes 1500
+										.big-slider__counters-comments 87
 								figure.big-slider__slide-img
 									img(src="img/photos/big-slider-8.jpg")
+									.big-slider__counters
+										.big-slider__counters-likes 1500
+										.big-slider__counters-comments 87
 							.big-slider__slide
 								img(src="img/photos/big-slider-1.jpg")
+								.big-slider__counters
+									.big-slider__counters-likes 1500
+									.big-slider__counters-comments 87
 							.big-slider__slide.big-slider__slide--many
 								figure.big-slider__slide-img
 									img(src="img/photos/big-slider-5.jpg")
+									.big-slider__counters
+										.big-slider__counters-likes 1500
+										.big-slider__counters-comments 87
 								figure.big-slider__slide-img
 									img(src="img/photos/big-slider-6.jpg")
+									.big-slider__counters
+										.big-slider__counters-likes 1500
+										.big-slider__counters-comments 87
 								figure.big-slider__slide-img
 									img(src="img/photos/big-slider-2.jpg")
+									.big-slider__counters
+										.big-slider__counters-likes 1500
+										.big-slider__counters-comments 87
 								figure.big-slider__slide-img
 									img(src="img/photos/big-slider-8.jpg")
+									.big-slider__counters
+										.big-slider__counters-likes 1500
+										.big-slider__counters-comments 87
 							.big-slider__slide
 								img(src="img/photos/big-slider-1.jpg")
+								.big-slider__counters
+									.big-slider__counters-likes 1500
+									.big-slider__counters-comments 87
 							.big-slider__slide.big-slider__slide--many
 								figure.big-slider__slide-img
 									img(src="img/photos/big-slider-5.jpg")
+									.big-slider__counters
+										.big-slider__counters-likes 1500
+										.big-slider__counters-comments 87
 								figure.big-slider__slide-img
 									img(src="img/photos/big-slider-6.jpg")
+									.big-slider__counters
+										.big-slider__counters-likes 1500
+										.big-slider__counters-comments 87
 								figure.big-slider__slide-img
 									img(src="img/photos/big-slider-2.jpg")
+									.big-slider__counters
+										.big-slider__counters-likes 1500
+										.big-slider__counters-comments 87
 								figure.big-slider__slide-img
 									img(src="img/photos/big-slider-8.jpg")
+									.big-slider__counters
+										.big-slider__counters-likes 1500
+										.big-slider__counters-comments 87
 							.big-slider__slide
 								img(src="img/photos/big-slider-4.jpg")
+								.big-slider__counters
+									.big-slider__counters-likes 1500
+									.big-slider__counters-comments 87
 							.big-slider__slide.big-slider__slide--many
 								figure.big-slider__slide-img
 									img(src="img/photos/big-slider-5.jpg")
+									.big-slider__counters
+										.big-slider__counters-likes 1500
+										.big-slider__counters-comments 87
 								figure.big-slider__slide-img
 									img(src="img/photos/big-slider-6.jpg")
+									.big-slider__counters
+										.big-slider__counters-likes 1500
+										.big-slider__counters-comments 87
 								figure.big-slider__slide-img
 									img(src="img/photos/big-slider-2.jpg")
+									.big-slider__counters
+										.big-slider__counters-likes 1500
+										.big-slider__counters-comments 87
 								figure.big-slider__slide-img
 									img(src="img/photos/big-slider-8.jpg")
+									.big-slider__counters
+										.big-slider__counters-likes 1500
+										.big-slider__counters-comments 87
 							.big-slider__slide
 								img(src="img/photos/big-slider-1.jpg")
+								.big-slider__counters
+									.big-slider__counters-likes 1500
+									.big-slider__counters-comments 87
 						.wrapper
 							.big-slider__arrows
 					.wrapper

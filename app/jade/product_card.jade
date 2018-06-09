@@ -133,10 +133,15 @@ html(lang="ru")
 												a(href="#-") -
 												a(href="#+") +
 											span
-												.gradient-btn.gradient-btn__wrap.not_exist_btn
-													input.bot-form__submit(type="submit" value="СООБЩИТЬ О ПОСТУПЛЕНИИ")
-												.gradient-btn.gradient-btn__wrap.exist_btn
-													input.bot-form__submit(type="submit" value="В КОРЗИНУ")
+												.gradient-btn__wrap.not_exist_btn
+													a(href="").gradient-btn
+														span СООБЩИТЬ О ПОСТУПЛЕНИИ
+													//- input.bot-form__submit(type="submit" value="СООБЩИТЬ О ПОСТУПЛЕНИИ")
+												.gradient-btn__wrap.exist_btn
+													a(href="").gradient-btn
+														span В КОРЗИНУ
+
+													//- input.bot-form__submit(type="submit" value="В КОРЗИНУ")
 												.cat-item__bot-favorite
 													a.favorite-add(href="#")
 														span.favorite-add__title избранное
@@ -224,13 +229,32 @@ html(lang="ru")
 											.card__tabs_right_item-text Умная кисть Soft Touch Эргономичная баночка До последней капли
 								.main-catalog__slider
 									.card__main-catalog__slider-title Похожие оттенки
-									.catalog-slider.active(data-id="0")
-										- for (let j = 0; j < 2; j++)
+									.card__bot-slider
+										.catalog-slider.active(data-id="0")
+											.catalog-slider__slide
+												.cat-item.no_exist
+													a.cat-item__img(href="#")
+														img(src="img/photos/catalog-img-0.png").img
+													.cat-item__desc
+														a.cat-item__title(href="#")
+															span.cat-title Гель-лак Rock Nail Baby Nude
+														.cat-item__info 045 Blue Ocean
+														.cat-item__bot
+															.cat-item__bot-price
+																.cat-price 250 Р
+															.cat-item__bot-favorite
+																a.favorite-add(href="#")
+																	span.favorite-add__title избранное
+													.cat-item__hover
+														.cat-item__hover-title Товара НЕТ <br /> В НАЛИЧИИ
+														.cat-item__hover-subscribe
+															a(href="#") Сообщить <br /> о поступлении
 											- for (let i = 0; i < 4; i++)
 												.catalog-slider__slide
 													.cat-item
 														a.cat-item__img(href="#")
-															img(src="/img/photos/cat-img-"+i+".png")
+															img(src="img/photos/catalog-img-0.png").img
+															img(src="img/photos/catalog-img-hover.jpg").img-hover
 														.cat-item__desc
 															a.cat-item__title(href="#")
 																span.cat-title Гель-лак Rock Nail Baby Nude
@@ -241,40 +265,11 @@ html(lang="ru")
 																.cat-item__bot-favorite
 																	a.favorite-add(href="#")
 																		span.favorite-add__title избранное
-									.catalog-slider(data-id="1")
-										- for (let j = 0; j < 2; j++)
-											- for (let i = 0; i < 4; i++)
-												.catalog-slider__slide
-													.cat-item
-														a.cat-item__img(href="#")
-															img(src="/img/photos/cat-img-"+i+".png")
-														.cat-item__desc
-															a.cat-item__title(href="#")
-																span.cat-title Гель-лак Rock Nail Baby Nude
-															.cat-item__info 045 Blue Ocean
-															.cat-item__bot
-																.cat-item__bot-price
-																	.cat-price 250 Р
-																.cat-item__bot-favorite
-																	a.favorite-add(href="#")
-																		span.favorite-add__title избранное
-									.catalog-slider(data-id="2")
-										- for (let j = 0; j < 2; j++)
-											- for (let i = 0; i < 4; i++)
-												.catalog-slider__slide
-													.cat-item
-														a.cat-item__img(href="#")
-															img(src="/img/photos/cat-img-"+i+".png")
-														.cat-item__desc
-															a.cat-item__title(href="#")
-																span.cat-title Гель-лак Rock Nail Baby Nude
-															.cat-item__info 045 Blue Ocean
-															.cat-item__bot
-																.cat-item__bot-price
-																	.cat-price 250 Р
-																.cat-item__bot-favorite
-																	a.favorite-add(href="#")
-																		span.favorite-add__title избранное
+														.cat-item__hover
+															.btn-wrap.gradient-btn
+																a(href="#").btn В корзину
+
+															a(href="img/photos/catalog-img-hover.jpg" data-fancybox="quick-view").fancybox.quick-view Быстрый просмотр
 								#form_anchor
 								.card__feedback
 									.card__feedback_top
@@ -326,8 +321,10 @@ html(lang="ru")
 										.card__feedback_btns
 											.card__btn
 												a(href="#form_anchor") Оставить отзыв
-											.gradient-btn.gradient-btn__wrap
-													input.bot-form__submit(type="submit" value="Показать еще")
+											.gradient-btn__wrap
+												a(href="").gradient-btn
+													span Показать еще
+												//- input.bot-form__submit(type="submit" value="Показать еще")
 										.card__feedback_paginator
 											include inc/paginator.jade
 									.card__feedback_form.form#form
@@ -366,9 +363,9 @@ html(lang="ru")
 														i.forms__error-message-icon
 											.card__form_btns
 												.forms-input-cont.forms-input-cont--file.card__form_btn
-													input#file-1
-													label.forms__label--file-1(for="file-1")
-														img(src="img/card-ico-feedback-btn.png", alt="")
+													input(type="file")#file-1
+													label.forms__label--file-1(for="file-1" )
+														img(src="img/card-ico-feedback-btn.svg", alt="")
 														span Добавить фото
 												.forms-submit-cont.card__form_btn.card__form_btn-fix
 													input.forms__submit(type="submit" value="Отправить")
@@ -384,8 +381,10 @@ html(lang="ru")
 												input.bot-form__input(type="email" placeholder="Почта")
 											.bot-form__input-cont.bot-form__input-cont--submit
 												label.bot-form__label Будь первой, узнавай <br />о наших акциях и конкурсах
-												.gradient-btn.gradient-btn__wrap
-													input.bot-form__submit(type="submit" value="Подписаться")
+												.gradient-btn__wrap
+													a(href="").gradient-btn
+														span Подписаться
+		
 					//- include inc/bot-blocks.jade
 			include inc/footer.jade
 		include inc/scripts.jade
